@@ -1,0 +1,18 @@
+---
+title: "Arêtes non fusionnées et maillage ouvert : pourquoi l’impression échoue ?"
+description: "Identifier les trous, faces ouvertes et géométries non-manifold qui empêchent un fichier 3D d’être imprimable."
+imageAlt: "Arêtes non-manifold sélectionnées sur un maillage dans Blender"
+imageCaption: "Des arêtes ouvertes ou non fusionnées rendent l’interprétation du volume ambiguë pour le slicer."
+readingTime: "5 min"
+order: 5
+---
+
+<GuideSection id="geometrie" eyebrow="Fichier imprimable" title="Un visuel 3D n’est pas forcément un volume fermé">
+
+Un modèle peut sembler correct à l’écran tout en présentant des trous, des faces inversées, des volumes qui s’interpénètrent ou des arêtes non fusionnées. Ces défauts peuvent empêcher le slicer de créer des parois cohérentes.
+
+<CauseSolution number="01" title="Volume non étanche" solution="Repérer les zones non-manifold puis corriger ou reconstruire les surfaces concernées.">
+Dans Blender, les sélections Non-Manifold et Loose Geometry aident à localiser les zones ambiguës et les éléments isolés.
+</CauseSolution>
+
+</GuideSection>

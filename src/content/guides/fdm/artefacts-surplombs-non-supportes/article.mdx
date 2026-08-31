@@ -1,0 +1,22 @@
+---
+title: "Artefacts sur les surplombs et zones sphériques non supportées"
+description: "Réduire les bavures et irrégularités sur les zones imprimées dans le vide en FDM."
+imageAlt: "Surface inférieure irrégulière sous une sphère imprimée sans support"
+imageCaption: "Un surplomb trop prononcé peut s’affaisser avant que le filament ne refroidisse."
+readingTime: "5 min"
+order: 4
+---
+
+<GuideSection id="surplombs" eyebrow="Surplombs" title="Pourquoi des artefacts apparaissent-ils sous une sphère ?">
+
+Sous une sphère, un dôme ou un fort surplomb, le filament déposé possède peu de matière sous lui. Il peut légèrement s’affaisser avant de refroidir et créer une surface moins nette.
+
+<CauseSolution number="01" title="Zone non supportée trop exigeante" solution="Réduire la vitesse et la hauteur de couche, augmenter le nombre de parois et adapter le refroidissement.">
+Ces paramètres donnent au filament de meilleures conditions pour se déposer correctement sur une zone difficile.
+</CauseSolution>
+
+<CauseSolution number="02" title="La géométrie dépasse les capacités sans support" solution="Ajouter des supports et une interface de support sur les zones prioritaires.">
+Lorsqu’une zone est réellement imprimée dans le vide, un bon support donnera un résultat plus fiable que de multiplier les corrections de vitesse.
+</CauseSolution>
+
+</GuideSection>

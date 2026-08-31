@@ -1,5 +1,10 @@
+const createMDX = require('@next/mdx')({
+  extension: /\.mdx?$/,
+})
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
   // Supprime les trailing slashes (/services/ → /services)
   trailingSlash: false,
   images: {
@@ -12,6 +17,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      {
+        source: '/guides/impression-3d-fdm',
+        destination: '/guides/fdm',
+        permanent: true,
+      },
       // Anciennes URLs WooCommerce (WordPress) → redirection 301
       {
         source: '/produit/:slug*',
@@ -82,4 +92,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig
+module.exports = createMDX(nextConfig)

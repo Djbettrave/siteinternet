@@ -1,0 +1,22 @@
+---
+title: "Effet escalier : lisser les pentes et objets sphériques"
+description: "Pourquoi les strates apparaissent sur les courbes en FDM et comment réduire l’effet escalier."
+imageAlt: "Comparaison de couches visibles sur une sphère imprimée en 3D"
+imageCaption: "La hauteur de couche et l’orientation ont une influence directe sur la visibilité des strates."
+readingTime: "5 min"
+order: 3
+---
+
+<GuideSection id="escalier" eyebrow="Qualité de surface" title="Une courbe est une approximation par couches">
+
+L’impression FDM fabrique une pièce couche après couche. Sur une pente, un dôme ou une sphère, elle doit donc approximer une courbe continue par une succession de petits paliers.
+
+<CauseSolution number="01" title="Détails placés à l’horizontale" solution="Orienter les pentes et détails importants aussi verticalement que possible.">
+Plus un détail est parallèle au plateau, plus l’effet escalier devient visible. Une orientation adaptée améliore souvent le rendu sans rallonger l’impression.
+</CauseSolution>
+
+<CauseSolution number="02" title="Sphère ou forme organique" solution="Activer la hauteur de couche adaptative dans OrcaSlicer ou Bambu Studio.">
+Le slicer peut conserver une couche épaisse dans les zones simples et la réduire dans les zones courbes, par exemple jusqu’à 0,08 mm selon la buse et le profil.
+</CauseSolution>
+
+</GuideSection>

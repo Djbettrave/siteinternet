@@ -160,6 +160,13 @@ export default function Header() {
             </Link>
 
             <Link
+              href="/guides"
+              className={`px-3 py-1.5 text-sm font-medium transition-colors ${pathname.startsWith('/guides') ? 'text-primary-600' : 'text-secondary-700 hover:text-primary-600'}`}
+            >
+              Guides
+            </Link>
+
+            <Link
               href="/qui-sommes-nous"
               className={`px-3 py-1.5 text-sm font-medium transition-colors ${pathname === '/qui-sommes-nous' ? 'text-primary-600' : 'text-secondary-700 hover:text-primary-600'}`}
             >
@@ -259,9 +266,16 @@ export default function Header() {
                 </div>
                 <div className="py-2 border-t border-secondary-100">
                   <Link
-                    href="/realisations"
+                    href="/guides"
                     onClick={() => setMobileMenuOpen(false)}
                     className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg"
+                  >
+                    Guides
+                  </Link>
+                  <Link
+                    href="/realisations"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
                   >
                     Réalisations
                   </Link>

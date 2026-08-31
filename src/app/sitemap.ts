@@ -1,4 +1,5 @@
 import { MetadataRoute } from 'next'
+import { getAllGuides } from '@/lib/guides'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://www.inphenix-system.fr'
@@ -22,9 +23,15 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/realisations',
     '/qui-sommes-nous',
     '/contact',
+    '/guides',
+    '/guides/fdm',
+    '/guides/fichiers-3d',
+    '/guides/resine',
   ]
 
-  return staticPages.map((route) => ({
+  const guidePages = getAllGuides().map((guide) => `/guides/${guide.category}/${guide.slug}`)
+
+  return [...staticPages, ...guidePages].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),
     changeFrequency: route === '' ? 'weekly' : 'monthly',

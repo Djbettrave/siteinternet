@@ -1,0 +1,22 @@
+---
+title: "Fichier 3D trop volumineux : comment l’alléger ?"
+description: "Réduire un maillage trop dense sans perdre les détails réellement utiles à l’impression."
+imageAlt: "Modèle 3D dense avec de nombreux polygones affiché dans Blender"
+imageCaption: "Un scan ou une sculpture peut contenir beaucoup plus de polygones que l’impression ne peut en reproduire."
+readingTime: "6 min"
+order: 3
+---
+
+<GuideSection id="optimisation" eyebrow="Optimisation" title="Conserver les détails utiles, supprimer le reste">
+
+Un scan 3D ou un modèle généré automatiquement peut contenir des centaines de milliers de polygones. Le fichier devient alors lent à ouvrir, modifier ou slicer sans que ce niveau de détail améliore nécessairement la pièce imprimée.
+
+<CauseSolution number="01" title="Maillage trop dense" solution="Utiliser Decimate dans Blender pour réduire le nombre de faces en limitant les changements de forme.">
+La simplification doit être progressive pour conserver les détails visibles à l’échelle réelle de la pièce.
+</CauseSolution>
+
+<CauseSolution number="02" title="Scan ou topologie irrégulière" solution="Utiliser Remesh avec prudence et conserver toujours une copie du fichier original.">
+Le remesh reconstruit un maillage plus homogène, mais peut adoucir des arêtes ou modifier légèrement une pièce mécanique.
+</CauseSolution>
+
+</GuideSection>

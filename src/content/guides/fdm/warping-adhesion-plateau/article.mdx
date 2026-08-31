@@ -1,0 +1,22 @@
+---
+title: "Pièce 3D qui se décolle du plateau : adhérence et warping"
+description: "Identifier les causes du warping et améliorer l’adhérence d’une impression 3D FDM dès la première couche."
+imageAlt: "Pièce PLA dont les coins se relèvent sur une plaque texturée"
+imageCaption: "Le warping apparaît fréquemment sur les grands objets plats et les angles vifs."
+readingTime: "6 min"
+order: 1
+---
+
+<GuideSection id="adherence" eyebrow="Diagnostic" title="Pourquoi la pièce se décolle-t-elle ?">
+
+Le warping apparaît lorsque le matériau se rétracte en refroidissant et tire sur les premières couches. Si l’adhérence au plateau n’est pas suffisante, les bords commencent à remonter.
+
+<DiagnosticBlock symptoms={['Coins relevés', 'Première couche qui se décolle', 'Déformation progressive pendant l’impression']} />
+
+<CauseSolution number="01" title="Plateau insuffisamment propre" solution="Laver une plaque texturée à l’eau savonneuse, puis conserver l’adhérence avec de l’alcool isopropylique et une microfibre.">
+Les traces de doigts, poussières et résidus réduisent fortement l’accroche de la première couche.
+</CauseSolution>
+
+<ParameterBlock title="PLA sur plaque texturée" parameters={[["Plateau", "50–55 °C"], ["Brim", "5–8 mm si nécessaire"], ["Première couche", "Homogène et régulière"]]} />
+
+</GuideSection>
