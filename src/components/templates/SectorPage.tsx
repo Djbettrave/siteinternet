@@ -106,8 +106,8 @@ export default function SectorPage({ sector }: SectorPageProps) {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
-          <div className="py-12 lg:py-16">
-            <div className="max-w-3xl">
+          <div className="w-full min-w-0 py-12 lg:py-16">
+            <div className="w-full min-w-0 max-w-3xl">
               {/* Breadcrumb */}
               <nav className="flex items-center gap-2 text-sm text-secondary-400 mb-8">
                 <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
@@ -125,18 +125,24 @@ export default function SectorPage({ sector }: SectorPageProps) {
               </div>
 
               {/* Headline */}
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+              <h1
+                className="mb-6 max-w-full text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
+                style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
+              >
                 {sector.headline.split('\n').map((line, index) => (
-                  <span key={index} className="block whitespace-nowrap">
+                  <span key={index} className="block">
                     {line}
                   </span>
                 ))}
               </h1>
 
               {/* Subheadline */}
-              <p className="text-xl text-secondary-300 mb-8 max-w-2xl">
+              <p
+                className="mb-8 max-w-full text-lg text-secondary-300 sm:max-w-2xl sm:text-xl"
+                style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
+              >
                 {sector.subheadline.split('. ').map((sentence, index, array) => (
-                  <span key={index} className="block whitespace-nowrap">
+                  <span key={index} className="block">
                     {sentence}{index < array.length - 1 ? '.' : sentence.endsWith('.') ? '' : '.'}
                   </span>
                 ))}
@@ -144,7 +150,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
               {/* Stats */}
               {sector.stats && (
-                <div className="flex flex-wrap items-center gap-8 mt-12 pt-8 border-t border-white/10">
+                <div className="mt-12 flex max-w-full flex-wrap items-center gap-8 border-t border-white/10 pt-8">
                   {sector.stats.map((stat) => (
                     <div key={stat.label}>
                       <div className="text-2xl font-bold text-white">{stat.value}</div>
