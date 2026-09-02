@@ -323,6 +323,27 @@ export const sectorsData: Record<string, SectorData> = {
     ],
   },
 
+  medical: {
+    slug: 'medical',
+    name: 'Santé & médical',
+    icon: '✚',
+    heroImage: '/images/secteurs/medical/Medical_2.jpg',
+    headline: 'Supports physiques pour les projets santé',
+    subheadline: 'Maquettes, supports de formation et prototypes de présentation pour le dentaire, les cabinets et la communication santé.',
+    description: 'Inphenix System accompagne les cabinets médicaux, le dentaire et la formation santé avec des maquettes, supports pédagogiques et prototypes de présentation sur mesure.',
+    useCases: [],
+    benefits: [],
+    faqs: [],
+    cta: {
+      title: 'Un projet santé à présenter ?',
+      description: 'Partagez votre besoin et nous vous aiderons à définir le support le plus adapté.',
+    },
+    stats: [
+      { value: 'Sur mesure', label: 'selon votre usage' },
+      { value: '3D', label: 'maquettes et supports' },
+    ],
+  },
+
   robotique: {
     slug: 'robotique',
     name: 'Robotique',

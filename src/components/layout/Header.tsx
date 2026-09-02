@@ -20,6 +20,7 @@ const secteurs = [
   { name: 'Luxe', href: '/secteurs/luxe' },
   { name: 'Événementiel', href: '/secteurs/evenementiel' },
   { name: 'Architecture', href: '/secteurs/architecture' },
+  { name: 'Santé & médical', href: '/secteurs/medical' },
   { name: 'Robotique', href: '/secteurs/robotique' },
 ]
 
