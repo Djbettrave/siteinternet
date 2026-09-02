@@ -1,6 +1,6 @@
 # Feuille de route — Guides impression 3D
 
-Dernière mise à jour : 31 août 2026.
+Dernière mise à jour : 2 septembre 2026.
 
 ## Terminé
 
@@ -13,6 +13,7 @@ Dernière mise à jour : 31 août 2026.
 - [x] Organisation par sujet : `article.mdx` et dossier image miroir.
 - [x] Couvertures associées aux 18 sujets et nommées selon leur slug.
 - [x] Interface harmonisée : entrées principales compactes, cartes catégories distinctes et hiérarchie typographique simplifiée.
+- [x] Titres de sections du hub Guides renforcés et textes descriptifs allégés pour une hiérarchie visuelle plus lisible.
 
 ## À enrichir
 
