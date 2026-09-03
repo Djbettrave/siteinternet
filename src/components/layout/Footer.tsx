@@ -78,7 +78,7 @@ export default function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-semibold text-sm mb-3">Nos Services</h3>
+            <h3 className="font-semibold text-sm mb-3">Ce que nous proposons...</h3>
             <ul className="space-y-2">
               {services.map((service) => (
                 <li key={service.href}>
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Secteurs */}
           <div>
-            <h3 className="font-semibold text-sm mb-3">Nos secteurs</h3>
+            <h3 className="font-semibold text-sm mb-3">Vous êtes dans...</h3>
             <ul className="space-y-2">
               {secteurs.map((secteur) => (
                 <li key={secteur.href}>
