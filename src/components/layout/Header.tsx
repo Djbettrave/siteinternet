@@ -16,12 +16,12 @@ const services = [
 ]
 
 const secteurs = [
-  { name: 'Retail', href: '/secteurs/retail' },
-  { name: 'Luxe', href: '/secteurs/luxe' },
-  { name: 'Événementiel', href: '/secteurs/evenementiel' },
   { name: 'Architecture', href: '/secteurs/architecture' },
-  { name: 'Santé & médical', href: '/secteurs/medical' },
+  { name: 'Événementiel', href: '/secteurs/evenementiel' },
+  { name: 'Luxe', href: '/secteurs/luxe' },
+  { name: 'Retail', href: '/secteurs/retail' },
   { name: 'Robotique', href: '/secteurs/robotique' },
+  { name: 'Santé & médical', href: '/secteurs/medical' },
 ]
 
 export default function Header() {

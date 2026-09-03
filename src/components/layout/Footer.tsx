@@ -12,12 +12,12 @@ const services = [
 ]
 
 const secteurs = [
-  { name: 'Retail', href: '/secteurs/retail' },
-  { name: 'Luxe', href: '/secteurs/luxe' },
-  { name: 'Événementiel', href: '/secteurs/evenementiel' },
   { name: 'Architecture', href: '/secteurs/architecture' },
-  { name: 'Santé & médical', href: '/secteurs/medical' },
+  { name: 'Événementiel', href: '/secteurs/evenementiel' },
+  { name: 'Luxe', href: '/secteurs/luxe' },
+  { name: 'Retail', href: '/secteurs/retail' },
   { name: 'Robotique', href: '/secteurs/robotique' },
+  { name: 'Santé & médical', href: '/secteurs/medical' },
 ]
 
 export default function Footer() {
@@ -92,7 +92,7 @@ export default function Footer() {
 
           {/* Secteurs */}
           <div>
-            <h3 className="font-semibold text-sm mb-3">Vous êtes dans...</h3>
+            <h3 className="font-semibold text-sm mb-3">Nos secteurs</h3>
             <ul className="space-y-2">
               {secteurs.map((secteur) => (
                 <li key={secteur.href}>
