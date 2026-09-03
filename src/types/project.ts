@@ -4,6 +4,7 @@ export interface ProjectImage {
   path: string
   status: 'completed' | 'process'
   title: string
+  alt: string
   services: string[]
   objectPosition: string
 }

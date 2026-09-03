@@ -1,20 +1,76 @@
 {
   "completed": {
-    "electronique ..jpeg": "center",
-    "electronique et impression fdm.jpeg": "center",
-    "electronique LED.jpeg": "center",
-    "electronique lumière jeux de lumière.jpeg": "center",
-    "electronique.jpeg": "center",
-    "impression résine et modélisation 3D.jpeg": "center",
-    "impression résine.jpeg": "center",
-    "modélisation 3D et impression résine.jpeg": "center"
+    "electronique ..jpeg": {
+      "objectPosition": "center",
+      "title": "Présentoir lumineux Guerlain sur mesure",
+      "alt": "Présentoir lumineux Guerlain avec flacons de parfum et écran intégré"
+    },
+    "electronique et impression fdm.jpeg": {
+      "objectPosition": "center",
+      "title": "Enseigne lumineuse Cacharel",
+      "alt": "Enseigne lumineuse Cacharel fabriquée sur mesure avec éclairage violet"
+    },
+    "electronique LED.jpeg": {
+      "objectPosition": "center",
+      "title": "Logo lumineux sur mesure",
+      "alt": "Logo blanc rétroéclairé par LED réalisé sur mesure"
+    },
+    "electronique lumière jeux de lumière.jpeg": {
+      "objectPosition": "center",
+      "title": "Installation lumineuse décorative",
+      "alt": "Installation décorative lumineuse avec projections de motifs sur les murs"
+    },
+    "electronique.jpeg": {
+      "objectPosition": "center",
+      "title": "Signalétique décorative J'Adore",
+      "alt": "Signalétique décorative J'Adore en métal poli pour espace de marque"
+    },
+    "impression résine et modélisation 3D.jpeg": {
+      "objectPosition": "center",
+      "title": "Maquette de présentoir de parfum Boss",
+      "alt": "Maquette de présentoir de parfum Boss issue de modélisation 3D et impression résine"
+    },
+    "impression résine.jpeg": {
+      "objectPosition": "center",
+      "title": "Prototype de flacon Byredo en résine",
+      "alt": "Prototype blanc de flacon de parfum Byredo réalisé par impression 3D résine"
+    },
+    "modélisation 3D et impression résine.jpeg": {
+      "objectPosition": "center",
+      "title": "Maquette anniversaire sur mesure",
+      "alt": "Maquette d'anniversaire avec gâteau, sac et bougies issue de modélisation 3D"
+    }
   },
   "process": {
-    "electronique et motorisation.jpeg": "center",
-    "impression grand format.jpeg": "center",
-    "prototypage.jpeg": "center",
-    "prototypage-recherche-developpement.jpeg": "center",
-    "resine-impression-1.jpeg": "center",
-    "resine-impression-2.jpeg": "center"
+    "electronique et motorisation.jpeg": {
+      "objectPosition": "center",
+      "title": "Assemblage électronique et motorisation",
+      "alt": "Étape d'assemblage d'un prototype avec électronique et motorisation"
+    },
+    "impression grand format.jpeg": {
+      "objectPosition": "center",
+      "title": "Impression 3D grand format",
+      "alt": "Fabrication d'une pièce en impression 3D grand format"
+    },
+    "prototypage.jpeg": {
+      "objectPosition": "center",
+      "title": "Prototypage sur mesure",
+      "alt": "Étape de prototypage d'une pièce conçue sur mesure"
+    },
+    "prototypage-recherche-developpement.jpeg": {
+      "objectPosition": "center",
+      "title": "Recherche et développement de prototype",
+      "alt": "Prototype en cours de recherche et développement avant fabrication"
+    },
+    "resine-impression-1.jpeg": {
+      "objectPosition": "center",
+      "title": "Impression 3D résine en atelier",
+      "alt": "Pièces en cours de fabrication par impression 3D résine"
+    },
+    "resine-impression-2.jpeg": {
+      "objectPosition": "center",
+      "title": "Post-traitement de pièces en résine",
+      "alt": "Étape de post-traitement de pièces fabriquées par impression 3D résine"
+    }
   }
 }
