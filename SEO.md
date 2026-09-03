@@ -19,6 +19,16 @@ Source : Audit SEOptimer – 21 février 2026
 
 ## 1️⃣ SEO On-Page (Priorité Moyenne)
 
+### 🔹 IndexNow activé
+
+La clé IndexNow est publiée à la racine du site. Après la mise en ligne d’une page nouvelle ou modifiée, envoyer uniquement les URL concernées :
+
+```bash
+npm run indexnow -- /guides/fdm/stringing /secteurs/medical
+```
+
+IndexNow notifie Bing et les moteurs compatibles d’une modification ; il n’assure pas à lui seul l’indexation ou le positionnement.
+
 ### 🔹 Balise Title trop longue (61 caractères)
 Objectif : 50–60 caractères.
 
