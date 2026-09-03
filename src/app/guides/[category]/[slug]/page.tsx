@@ -7,6 +7,22 @@ import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 const components = { CauseSolution, DiagnosticBlock, GuideImage, GuideLayout, GuidePhotoSlot, GuideSection, ParameterBlock, RelatedGuides, TipBlock }
 
+const businessLinksByCategory = {
+  fdm: [{ href: '/services/impression-3d/fdm', label: 'Service d’impression 3D FDM', description: 'Confiez la fabrication de vos pièces fonctionnelles, prototypes et petites séries à notre atelier.' }],
+  resine: [{ href: '/services/impression-3d/resine', label: 'Service d’impression 3D résine', description: 'Obtenez des pièces précises et détaillées avec une finition adaptée à votre projet.' }],
+  'fichiers-3d': [{ href: '/services/modelisation-3d', label: 'Service de modélisation 3D', description: 'Nous pouvons préparer, corriger ou concevoir un fichier 3D prêt à fabriquer.' }],
+} as const
+
+const scan3dBusinessLink = { href: '/services/scan-3d', label: 'Service de scan 3D', description: 'Nous numérisons vos pièces et objets pour obtenir une base 3D exploitable et prête à être retravaillée.' }
+const architectureBusinessLink = { href: '/secteurs/architecture', label: 'Impression 3D pour l’architecture', description: 'Pour une maquette, nous vous accompagnons de la préparation du fichier jusqu’à la fabrication.' }
+
+const file3dBusinessLinks: Record<string, readonly { href: string; label: string; description: string }[]> = {
+  'fichier-3d-trop-lourd': [...businessLinksByCategory['fichiers-3d'], scan3dBusinessLink],
+  'maillage-3d': [...businessLinksByCategory['fichiers-3d'], scan3dBusinessLink],
+  'nettoyer-reparer-fichier-3d': [...businessLinksByCategory['fichiers-3d'], scan3dBusinessLink],
+  'logiciels-3d': [...businessLinksByCategory['fichiers-3d'], architectureBusinessLink],
+}
+
 const seoTitles: Record<string, string> = {
   'fdm/warping-adhesion-plateau': 'Warping : pièce 3D qui se décolle du plateau',
   'fdm/remplissage-patterns': 'Remplissage FDM : taux et motifs à choisir',
@@ -44,11 +60,16 @@ export default function GuideArticlePage({ params }: { params: { category: strin
   const category = guideCategories[params.category]
   const toc: [string, string][] = [['guide', 'Le guide']]
   const imageBase = `/images/guides/${params.category}/${params.slug}`
+  const businessLinks = params.category === 'fichiers-3d' && params.slug === 'tolerances-fdm'
+    ? businessLinksByCategory.fdm
+    : params.category === 'fichiers-3d'
+      ? file3dBusinessLinks[params.slug] ?? businessLinksByCategory['fichiers-3d']
+      : businessLinksByCategory[params.category]
 
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Guides', path: '/guides' }, { name: category.name, path: `/guides/${params.category}` }, { name: guide.title, path: `/guides/${params.category}/${params.slug}` }]} />
-      <GuideLayout category={category.shortName} title={guide.title} description={guide.description} readingTime={guide.readingTime ?? '5 min'} updatedAt={guide.updatedAt ?? '28 août 2026'} toc={toc}>
+      <GuideLayout category={category.shortName} title={guide.title} description={guide.description} readingTime={guide.readingTime ?? '5 min'} updatedAt={guide.updatedAt ?? '28 août 2026'} toc={toc} businessLinks={businessLinks}>
         {guide.image ? <GuideImage src={guide.image} alt={guide.imageAlt} caption={guide.imageCaption} priority /> : <GuidePhotoSlot path={`${imageBase}/${params.slug}.webp`} alt={guide.imageAlt} caption={guide.imageCaption} />}
         <div id="guide" className="scroll-mt-24"><MDXRemote source={guide.content} components={components} /></div>
       </GuideLayout>

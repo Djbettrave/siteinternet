@@ -3,6 +3,11 @@ import Link from 'next/link'
 import type { ReactNode } from 'react'
 
 type TocItem = [string, string]
+type BusinessLink = {
+  href: string
+  label: string
+  description: string
+}
 
 interface GuideLayoutProps {
   category: string
@@ -11,6 +16,7 @@ interface GuideLayoutProps {
   readingTime: string
   updatedAt: string
   toc: TocItem[]
+  businessLinks?: readonly BusinessLink[]
   children: ReactNode
 }
 
@@ -22,7 +28,7 @@ function Arrow() {
   )
 }
 
-export function GuideLayout({ category, title, description, readingTime, updatedAt, toc = [], children }: GuideLayoutProps) {
+export function GuideLayout({ category, title, description, readingTime, updatedAt, toc = [], businessLinks = [], children }: GuideLayoutProps) {
   return (
     <article className="bg-white">
       <header className="border-b border-[#E8E8E8]">
@@ -47,7 +53,16 @@ export function GuideLayout({ category, title, description, readingTime, updated
         </div>
       </div>
 
-      <section className="border-y border-[#E8E8E8] bg-[#F7F8F8]"><div className="mx-auto flex max-w-[1200px] flex-col gap-7 px-5 py-14 sm:py-16 md:flex-row md:items-center md:justify-between lg:px-8"><div><h2 className="text-2xl font-semibold tracking-[-0.03em] text-[#171717]">Un projet d’impression 3D ?</h2><p className="mt-3 max-w-2xl leading-7 text-[#666]">Notre bureau d’études vous accompagne de la conception jusqu’à la fabrication de vos pièces.</p></div><Link href="/contact" className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#0D7A5A] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#09684C]">Parler de votre projet <Arrow /></Link></div></section>
+      <section className="border-y border-[#E8E8E8] bg-[#F7F8F8]">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-7 px-5 py-14 sm:py-16 md:flex-row md:items-center md:justify-between lg:px-8">
+          <div>
+            <h2 className="text-2xl font-semibold tracking-[-0.03em] text-[#171717]">Un projet d’impression 3D ?</h2>
+            <p className="mt-3 max-w-2xl leading-7 text-[#666]">Notre bureau d’études vous accompagne de la conception jusqu’à la fabrication de vos pièces.</p>
+            {businessLinks.length > 0 && <div className="mt-5 flex flex-wrap gap-3">{businessLinks.map((link) => <Link key={link.href} href={link.href} className="group rounded-md border border-[#D7E4DF] bg-white px-4 py-3 transition-colors hover:border-[#A9C9BD]"><span className="inline-flex items-center gap-2 text-sm font-semibold text-[#171717] group-hover:text-[#0D7A5A]">{link.label} <Arrow /></span><span className="mt-1 block max-w-xl text-sm leading-6 text-[#666]">{link.description}</span></Link>)}</div>}
+          </div>
+          <Link href="/contact" className="group inline-flex shrink-0 items-center justify-center gap-2 rounded-md bg-[#0D7A5A] px-5 py-3 text-sm font-medium text-white transition-colors hover:bg-[#09684C]">Parler de votre projet <Arrow /></Link>
+        </div>
+      </section>
     </article>
   )
 }

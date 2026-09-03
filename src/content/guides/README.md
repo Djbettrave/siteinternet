@@ -52,3 +52,16 @@ Le texte `alt` décrit précisément l’image pour l’accessibilité et le ré
 4. Remplacez ou ajoutez les images dans le dossier miroir sous `public/images/guides/`.
 
 Conservez de préférence des images WebP ou JPEG optimisées, avec des noms descriptifs.
+
+## Maillage interne vers les pages métier
+
+Chaque article affiche automatiquement, dans le bloc « Un projet d’impression 3D ? », un lien vers la page commerciale cohérente :
+
+- guides `fdm` → service Impression 3D FDM ;
+- guides `resine` → service Impression 3D Résine ;
+- guides `fichiers-3d` → service Modélisation 3D ;
+- les guides sur un maillage dense, un fichier issu d’un scan ou sa réparation proposent aussi le service Scan 3D ;
+- le guide sur les logiciels 3D propose aussi le secteur Architecture, pour les projets de maquette ;
+- le guide sur les tolérances FDM pointe vers le service Impression 3D FDM.
+
+Pour un nouveau guide dont le sujet ne correspond pas à cette règle, mettre à jour `businessLinksByCategory` dans `src/app/guides/[category]/[slug]/page.tsx` avec un lien réellement utile pour le lecteur.
