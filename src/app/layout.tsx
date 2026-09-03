@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://www.inphenix-system.fr'),
   title: {
     default: 'Impression 3D Grand Format & Sur Mesure | Inphenix',
-    template: '%s | Inphenix System'
+    template: '%s | Inphenix'
   },
   description: 'Impression 3D grand format, XXL et sur mesure. FDM, résine, pièces monobloc sans assemblage. Devis instantané gratuit en ligne.',
   keywords: ['impression 3D', 'impression 3D grand format', 'impression 3D XXL', 'impression 3D sur mesure', 'pièce monobloc', 'devis instantané', 'FDM', 'résine', 'prototypage rapide', 'scan 3D', 'modélisation 3D'],

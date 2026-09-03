@@ -164,6 +164,10 @@ export default function ContactPage() {
       {/* Contact Section */}
       <section className="pt-16 pb-24 bg-white">
         <div className="container-custom">
+          <div className="mb-10 max-w-2xl">
+            <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Contactez Inphenix System</h1>
+            <p className="mt-3 text-secondary-600">Parlez-nous de votre projet d’impression 3D, de prototypage ou de modélisation sur mesure.</p>
+          </div>
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-1 order-1">

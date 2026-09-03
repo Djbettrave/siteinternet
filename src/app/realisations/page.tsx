@@ -140,6 +140,13 @@ export default function RealisationsPage() {
 
   return (
     <>
+      <section className="bg-white pt-10 sm:pt-14">
+        <div className="container-custom">
+          <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Réalisations en impression 3D</h1>
+          <p className="mt-3 max-w-2xl text-secondary-600">Découvrez nos projets d’impression 3D, de prototypage, de modélisation et de fabrication sur mesure.</p>
+        </div>
+      </section>
+
       {/* Filters */}
       <section className={`bg-white border-b border-secondary-200 sticky z-40 transition-all duration-300 ${
         isHeaderVisible ? 'top-20' : 'top-0'

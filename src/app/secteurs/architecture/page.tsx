@@ -3,8 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Impression 3D architecture & maquettes architecturales | Inphenix',
-  description: 'Impression 3D de maquettes d’architecture pour soutenances étudiantes, concours, agences et chefs de projet : volumes, détails, prototypes et accompagnement fichier.',
+  title: 'Impression 3D et maquettes d’architecture',
+  description: 'Impression 3D de maquettes d’architecture pour soutenances, concours, agences et chefs de projet : volumes, prototypes et accompagnement fichier.',
   alternates: { canonical: 'https://www.inphenix-system.fr/secteurs/architecture' },
 }
 

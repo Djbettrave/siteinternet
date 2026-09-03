@@ -3,7 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Impression 3D santé, dentaire et cabinets médicaux | Inphenix",
+  title: "Impression 3D santé et dentaire",
   description:
     "Maquettes, supports de formation, prototypes de présentation et projets d’aménagement pour les cabinets médicaux, le dentaire et la communication santé.",
   alternates: { canonical: "https://www.inphenix-system.fr/secteurs/medical" },

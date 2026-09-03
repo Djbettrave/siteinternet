@@ -51,7 +51,7 @@ export function GuideCategoryCarousel({ category, categoryName, articles }: { ca
         const failed = imageErrors.includes(index)
         return <button key={article.slug} type="button" onClick={() => goTo(index)} aria-label={`Afficher : ${article.title}`} aria-current={selected ? 'true' : undefined} className={`group w-28 shrink-0 text-center sm:w-36 ${selected ? 'text-[#0D7A5A]' : 'text-[#171717]'}`}>
           <span className={`relative block h-20 overflow-hidden rounded-sm border transition-all sm:h-24 ${selected ? 'border-2 border-[#0D7A5A] ring-2 ring-[#0D7A5A]/25 ring-offset-2' : 'border-[#DDE4E0] group-hover:border-[#0D7A5A]'}`}>
-            {article.image && !failed ? <Image src={article.image} alt="" fill sizes="144px" className="object-cover" onError={() => markImageError(index)} /> : <ImageFallback />}
+            {article.image && !failed ? <Image src={article.image} alt={article.imageAlt} fill sizes="144px" className="object-cover" onError={() => markImageError(index)} /> : <ImageFallback />}
             <span className={`absolute left-0 top-0 px-2 py-1 font-mono text-[10px] font-semibold text-white ${selected ? 'bg-[#0D7A5A]/90' : 'bg-[#171717]/75'}`}>{String(index + 1).padStart(2, '0')}</span>
             {selected && <span className="absolute right-2 top-2 flex h-5 w-5 items-center justify-center rounded-full bg-[#0D7A5A] text-xs font-bold text-white shadow-sm" aria-hidden="true">✓</span>}
           </span>

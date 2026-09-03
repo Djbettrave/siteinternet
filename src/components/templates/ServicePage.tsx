@@ -42,7 +42,7 @@ export interface ServiceData {
 
 export function generateServiceMetadata(service: ServiceData, path?: string): Metadata {
   return {
-    title: `${service.name} sur mesure – Devis instantané`,
+    title: `${service.name} sur mesure`,
     description: service.subheadline,
     keywords: [
       service.name.toLowerCase(),

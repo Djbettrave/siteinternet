@@ -7,7 +7,7 @@ import FAQ from '@/components/home/FAQ'
 
 export const metadata: Metadata = {
   title: 'Impression 3D Grand Format Paris & Île-de-France | Inphenix',
-  description: 'Impression 3D grand format, XXL et sur mesure en Île-de-France. FDM, résine, pièces monobloc sans assemblage. Atelier basé à Suresnes (92). Devis instantané gratuit.',
+  description: 'Impression 3D grand format et sur mesure en Île-de-France : FDM, résine et pièces monobloc. Atelier à Suresnes (92), devis gratuit.',
   alternates: {
     canonical: 'https://www.inphenix-system.fr',
   },
