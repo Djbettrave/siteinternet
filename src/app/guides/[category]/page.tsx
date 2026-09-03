@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { notFound } from 'next/navigation'
 import { GuideCategoryCarousel } from '@/components/guides/GuideCategoryCarousel'
 import { getGuidesByCategory, guideCategories, isGuideCategory, type GuideCategorySlug } from '@/lib/guides'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export function generateStaticParams() {
   return Object.keys(guideCategories).map((category) => ({ category }))
@@ -28,6 +29,7 @@ export default function GuideCategoryPage({ params }: { params: { category: stri
 
   return <main className="mx-auto max-w-[1200px] px-5 py-8 sm:py-10 lg:px-8">
       <>
+        <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Guides', path: '/guides' }, { name: category.name, path: `/guides/${categorySlug}` }]} />
         <h1 className="sr-only">{category.name}</h1>
         <nav className="flex flex-wrap gap-2" aria-label="Changer de catégorie de guide">{(Object.keys(guideCategories) as GuideCategorySlug[]).map((slug) => <Link key={slug} href={`/guides/${slug}`} aria-current={slug === categorySlug ? 'page' : undefined} className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${slug === categorySlug ? 'border-[#0D7A5A] bg-[#0D7A5A] text-white' : 'border-[#E1E4E3] text-[#666] hover:border-[#CADCD5] hover:text-[#171717]'}`}>{guideCategories[slug].shortName}</Link>)}</nav>
         <div>

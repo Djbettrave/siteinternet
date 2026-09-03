@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export interface ServiceData {
   slug: string
@@ -72,6 +73,9 @@ interface ServicePageProps {
 }
 
 export default function ServicePage({ service }: ServicePageProps) {
+  const servicePath = service.slug.startsWith('impression-3d-')
+    ? `/services/impression-3d/${service.slug.replace('impression-3d-', '')}`
+    : `/services/${service.slug}`
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -87,6 +91,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Services', path: '/services' }, { name: service.name, path: servicePath }]} />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}

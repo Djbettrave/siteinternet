@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export interface SectorData {
   slug: string
@@ -93,6 +94,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
   return (
     <>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: sector.name, path: `/secteurs/${sector.slug}` }]} />
       {/* Schema markups */}
       <script
         type="application/ld+json"

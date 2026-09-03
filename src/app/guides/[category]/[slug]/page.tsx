@@ -3,8 +3,9 @@ import { MDXRemote } from 'next-mdx-remote/rsc'
 import { notFound } from 'next/navigation'
 import { getAllGuides, getGuide, guideCategories, isGuideCategory } from '@/lib/guides'
 import { CauseSolution, DiagnosticBlock, GuideImage, GuideLayout, GuidePhotoSlot, GuideSection, ParameterBlock, RelatedGuides, TipBlock } from '@/components/guides/GuideBlocks'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
-const components = { CauseSolution, DiagnosticBlock, GuideImage, GuidePhotoSlot, GuideSection, ParameterBlock, RelatedGuides, TipBlock }
+const components = { CauseSolution, DiagnosticBlock, GuideImage, GuideLayout, GuidePhotoSlot, GuideSection, ParameterBlock, RelatedGuides, TipBlock }
 
 const seoTitles: Record<string, string> = {
   'fdm/warping-adhesion-plateau': 'Warping : pièce 3D qui se décolle du plateau',
@@ -44,5 +45,13 @@ export default function GuideArticlePage({ params }: { params: { category: strin
   const toc: [string, string][] = [['guide', 'Le guide']]
   const imageBase = `/images/guides/${params.category}/${params.slug}`
 
-  return <GuideLayout category={category.shortName} title={guide.title} description={guide.description} readingTime={guide.readingTime ?? '5 min'} updatedAt={guide.updatedAt ?? '28 août 2026'} toc={toc}>{guide.image ? <GuideImage src={guide.image} alt={guide.imageAlt} caption={guide.imageCaption} priority /> : <GuidePhotoSlot path={`${imageBase}/${params.slug}.webp`} alt={guide.imageAlt} caption={guide.imageCaption} />}<div id="guide" className="scroll-mt-24"><MDXRemote source={guide.content} components={components} /></div></GuideLayout>
+  return (
+    <>
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Guides', path: '/guides' }, { name: category.name, path: `/guides/${params.category}` }, { name: guide.title, path: `/guides/${params.category}/${params.slug}` }]} />
+      <GuideLayout category={category.shortName} title={guide.title} description={guide.description} readingTime={guide.readingTime ?? '5 min'} updatedAt={guide.updatedAt ?? '28 août 2026'} toc={toc}>
+        {guide.image ? <GuideImage src={guide.image} alt={guide.imageAlt} caption={guide.imageCaption} priority /> : <GuidePhotoSlot path={`${imageBase}/${params.slug}.webp`} alt={guide.imageAlt} caption={guide.imageCaption} />}
+        <div id="guide" className="scroll-mt-24"><MDXRemote source={guide.content} components={components} /></div>
+      </GuideLayout>
+    </>
+  )
 }

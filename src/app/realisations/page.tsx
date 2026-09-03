@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import RealisationsGallery from '@/components/realisations/RealisationsGallery'
 import { getProjects } from '@/lib/projects'
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
 export const metadata: Metadata = {
   title: 'Réalisations en impression 3D',
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 export default async function RealisationsPage() {
   const projects = await getProjects()
 
-  return <RealisationsGallery initialProjects={projects} />
+  return <><BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Réalisations', path: '/realisations' }]} /><RealisationsGallery initialProjects={projects} /></>
 }

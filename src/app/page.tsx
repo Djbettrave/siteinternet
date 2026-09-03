@@ -4,6 +4,7 @@ import Services from '@/components/home/Services'
 import Viewer3D from '@/components/home/Viewer3D'
 import Trust from '@/components/home/Trust'
 import FAQ from '@/components/home/FAQ'
+import WebsiteSchema from '@/components/seo/WebsiteSchema'
 
 export const metadata: Metadata = {
   title: 'Impression 3D Grand Format Paris & Île-de-France | Inphenix',
@@ -16,6 +17,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <WebsiteSchema />
       <Hero />
       <Services />
       <Viewer3D />

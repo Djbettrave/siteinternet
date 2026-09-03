@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
+import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
 
 export const metadata: Metadata = {
   title: "Impression 3D santé et dentaire",
@@ -69,6 +70,7 @@ const steps = [
 export default function MedicalPage() {
   return (
     <main className="bg-white">
+      <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: 'Santé et médical', path: '/secteurs/medical' }]} />
       <section className="bg-secondary-900 text-white">
         <div className="container-custom grid gap-10 py-14 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:py-20">
           <div>

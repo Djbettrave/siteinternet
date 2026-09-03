@@ -91,21 +91,22 @@ export default function Header() {
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-0.5">
             {/* Services Dropdown */}
-            <div className="relative">
-              <button
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-                className="px-3 py-1.5 text-sm text-secondary-700 hover:text-primary-600 font-medium flex items-center gap-1 transition-colors"
+            <div
+              className="relative"
+              onMouseEnter={() => setServicesOpen(true)}
+              onMouseLeave={() => setServicesOpen(false)}
+            >
+              <Link
+                href="/services"
+                className={`px-3 py-1.5 text-sm font-medium flex items-center gap-1 transition-colors ${pathname.startsWith('/services') ? 'text-primary-600' : 'text-secondary-700 hover:text-primary-600'}`}
               >
                 Services
                 <svg className={`w-4 h-4 transition-transform ${servicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
+              </Link>
               {servicesOpen && (
                 <div
-                  onMouseEnter={() => setServicesOpen(true)}
-                  onMouseLeave={() => setServicesOpen(false)}
                   className="absolute left-0 mt-0 w-72 bg-white rounded-xl shadow-lg border border-secondary-100 py-2 z-50"
                 >
                   {services.map((service) => (
@@ -123,21 +124,22 @@ export default function Header() {
             </div>
 
             {/* Secteurs Dropdown */}
-            <div className="relative">
-              <button
-                onMouseEnter={() => setSecteursOpen(true)}
-                onMouseLeave={() => setSecteursOpen(false)}
-                className="px-3 py-1.5 text-sm text-secondary-700 hover:text-primary-600 font-medium flex items-center gap-1 transition-colors"
+            <div
+              className="relative"
+              onMouseEnter={() => setSecteursOpen(true)}
+              onMouseLeave={() => setSecteursOpen(false)}
+            >
+              <Link
+                href="/secteurs"
+                className={`px-3 py-1.5 text-sm font-medium flex items-center gap-1 transition-colors ${pathname.startsWith('/secteurs') ? 'text-primary-600' : 'text-secondary-700 hover:text-primary-600'}`}
               >
                 Secteurs
                 <svg className={`w-4 h-4 transition-transform ${secteursOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                 </svg>
-              </button>
+              </Link>
               {secteursOpen && (
                 <div
-                  onMouseEnter={() => setSecteursOpen(true)}
-                  onMouseLeave={() => setSecteursOpen(false)}
                   className="absolute left-0 mt-0 w-56 bg-white rounded-xl shadow-lg border border-secondary-100 py-2 z-50"
                 >
                   {secteurs.map((secteur) => (
@@ -224,15 +226,25 @@ export default function Header() {
             <div className="py-6 flex flex-col flex-1">
               <div className="space-y-1 flex-1">
                 <div className="py-2">
-                  <button
+                  <div className="flex items-center justify-between px-2">
+                    <Link
+                      href="/services"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                    >
+                      Services
+                    </Link>
+                    <button
                     onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="w-full flex items-center justify-between font-bold text-secondary-900 px-2 py-3 text-lg"
+                    className="p-3 text-secondary-900 hover:text-primary-600"
+                    aria-label="Afficher les services"
+                    aria-expanded={mobileServicesOpen}
                   >
-                    Services
                     <svg className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
+                  </div>
                   {mobileServicesOpen && services.map((service) => (
                     <Link
                       key={service.href}
@@ -245,15 +257,25 @@ export default function Header() {
                   ))}
                 </div>
                 <div className="py-2 border-t border-secondary-100">
-                  <button
+                  <div className="flex items-center justify-between px-2">
+                    <Link
+                      href="/secteurs"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                    >
+                      Secteurs
+                    </Link>
+                    <button
                     onClick={() => setMobileSecteursOpen(!mobileSecteursOpen)}
-                    className="w-full flex items-center justify-between font-bold text-secondary-900 px-2 py-3 text-lg"
+                    className="p-3 text-secondary-900 hover:text-primary-600"
+                    aria-label="Afficher les secteurs"
+                    aria-expanded={mobileSecteursOpen}
                   >
-                    Secteurs
                     <svg className={`w-5 h-5 transition-transform ${mobileSecteursOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
+                  </div>
                   {mobileSecteursOpen && secteurs.map((secteur) => (
                     <Link
                       key={secteur.href}
