@@ -9,6 +9,7 @@ const services = [
   { name: 'Impression 3D FDM', href: '/services/impression-3d/fdm', description: 'Filament haute résistance' },
   { name: 'Impression 3D Résine', href: '/services/impression-3d/resine', description: 'Précision et détails fins' },
   { name: 'Impression Grand Format', href: '/services/impression-3d/grand-format', description: 'Pièces de grande taille' },
+  { name: 'Impression 3D en série', href: '/services/impression-3d/en-serie', description: 'Petite et grande série' },
   { name: 'Scan 3D', href: '/services/scan-3d', description: 'Numérisation et rétro-ingénierie' },
   { name: 'Modélisation 3D', href: '/services/modelisation-3d', description: 'Conception sur mesure' },
   { name: 'Prototypage', href: '/services/prototypage', description: 'Du concept au prototype' },
