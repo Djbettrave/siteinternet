@@ -1,6 +1,137 @@
 import type { ServiceData } from '@/components/templates/ServicePage'
 
 export const servicesData: Record<string, ServiceData> = {
+  'impression-3d-en-serie': {
+    slug: 'impression-3d-en-serie',
+    name: 'Impression 3D en série',
+    category: 'Impression 3D',
+    metaTitle: 'Impression 3D en série | Petite et grande série',
+    metaDescription: 'Impression 3D en série pour petites et grandes quantités. Fabrication de pièces sur mesure, finitions et tarifs dégressifs.',
+    keywords: [
+      'impression 3D en série',
+      'impression 3D petite série',
+      'impression 3D grande série',
+      'fabrication de pièces en série',
+      'fabrication additive en série',
+      'production en série impression 3D',
+    ],
+    headline: 'Impression 3D en série\nDe la petite à la grande série',
+    subheadline: 'Fabrication de pièces identiques, avec des tarifs dégressifs selon les quantités et des finitions adaptées à votre projet.',
+    description: 'Nous réalisons des productions en impression 3D en série pour le retail, la PLV, l’événementiel, l’industrie, l’architecture et les projets sur mesure.',
+    features: [
+      {
+        title: 'Petite et grande série',
+        description: 'Production de pièces identiques, de quelques dizaines d’exemplaires à des volumes importants.',
+        icon: 'M4 6h16M4 12h16M4 18h16',
+      },
+      {
+        title: 'Sans moule',
+        description: 'Lancement direct à partir du fichier 3D, sans investissement initial dans un outillage.',
+        icon: 'M12 6v6l4 2m5-2a9 9 0 11-18 0 9 9 0 0118 0z',
+      },
+      {
+        title: 'Tarifs dégressifs',
+        description: 'Le coût unitaire est optimisé selon la quantité, la matière, les dimensions et le délai.',
+        icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z',
+      },
+      {
+        title: 'Finitions à la demande',
+        description: 'Pièces brutes, apprêtées, peintes, assemblées ou personnalisées par impression UV.',
+        icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+      },
+      {
+        title: 'Pièces adaptées à l’usage',
+        description: 'Choix du procédé, du matériau et du niveau de finition selon la destination finale de la pièce.',
+        icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+      },
+      {
+        title: 'Délais définis au devis',
+        description: 'Un calendrier de fabrication est établi en fonction du volume, de la pièce et des contraintes de livraison.',
+        icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+      },
+    ],
+    contentSections: [
+      {
+        title: 'Fabrication de pièces en série par impression 3D',
+        paragraphs: [
+          'Inphenix réalise des productions de pièces identiques par impression 3D, pour une petite série comme pour une grande série. Une fois le fichier 3D validé, la fabrication est organisée selon la quantité à produire, les contraintes d’usage, le matériau souhaité et le rendu final attendu.',
+          'Cette solution convient aux entreprises qui doivent lancer un produit, compléter une installation, produire une référence en quantité ou renouveler une pièce sans immobiliser un budget d’outillage. La fabrication est construite autour de la pièce réelle et de son usage, pas autour d’une quantité théorique.',
+        ],
+      },
+      {
+        title: 'De la petite série aux grandes quantités',
+        paragraphs: [
+          'L’impression 3D en série est pertinente pour produire quelques dizaines, plusieurs centaines, plusieurs milliers de pièces ou des volumes plus importants. Le bon volume ne se définit pas seulement par un chiffre : il dépend de la taille de la pièce, de son temps de fabrication, du matériau, de la finition et du calendrier de livraison.',
+          'Pour chaque demande, nous chiffrons une solution adaptée. Le prix unitaire évolue avec le volume de pièces identiques. Cette logique de tarifs dégressifs permet d’optimiser la production sans imposer de minimum de commande artificiel.',
+        ],
+      },
+      {
+        title: 'Une solution de fabrication additive sans moule',
+        paragraphs: [
+          'L’impression 3D, également appelée fabrication additive, produit directement la pièce à partir d’un fichier numérique. Il n’est donc pas nécessaire de fabriquer un moule avant de lancer la série. Le démarrage est plus souple et les évolutions de forme restent possibles entre deux productions.',
+          'Cette approche est particulièrement utile lorsqu’un modèle doit être ajusté, personnalisé ou décliné. Elle permet aussi de commander les quantités nécessaires, puis de relancer une fabrication lorsque le besoin revient.',
+        ],
+      },
+      {
+        title: 'Technologies et matériaux adaptés à chaque série',
+        paragraphs: [
+          'Les technologies FDM et résine font partie des solutions envisageables pour une impression 3D en série. Le FDM convient notamment aux pièces fonctionnelles, aux supports, aux boîtiers et aux éléments de grand format. La résine est choisie lorsque la précision, les détails fins ou la qualité de surface sont déterminants.',
+          'Le procédé et la matière sont sélectionnés selon les contraintes réelles de la pièce : résistance, usage intérieur ou extérieur, rendu visuel, dimensions, montage et finition. Les pages dédiées à l’impression 3D FDM et à l’impression 3D résine détaillent ces technologies.',
+        ],
+      },
+      {
+        title: 'Des finitions selon le projet',
+        paragraphs: [
+          'Selon le besoin, les pièces peuvent être livrées brutes ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, assemblage ou impression UV. Ces opérations sont définies avec vous lorsque le rendu final ou l’intégration à une installation le nécessite.',
+          'Nous réalisons notamment des séries pour la PLV, le retail, l’événementiel, l’architecture, les objets promotionnels, les supports techniques, les maquettes et les pièces de remplacement.',
+        ],
+      },
+    ],
+    specs: [
+      { label: 'Quantités', value: 'De la petite à la grande série' },
+      { label: 'Technologies', value: 'FDM et résine' },
+      { label: 'Production', value: 'À partir d’un fichier 3D validé' },
+      { label: 'Finitions', value: 'Brut, apprêt, peinture, UV, assemblage' },
+      { label: 'Tarification', value: 'Dégressive selon les quantités' },
+      { label: 'Délai', value: 'Défini selon la série' },
+    ],
+    faqs: [
+      {
+        question: 'Quelle quantité peut-on produire en impression 3D série ?',
+        answer: 'Nous réalisons des petites séries comme des grandes quantités. La capacité de production dépend de la taille de la pièce, de la technologie retenue, de la matière, des finitions et du délai demandé.',
+      },
+      {
+        question: 'Peut-on fabriquer une série sans moule ?',
+        answer: 'Oui. L’impression 3D fabrique directement à partir du fichier 3D, sans moule ni outillage initial. Cela permet de lancer une série rapidement et de modifier une pièce entre deux productions.',
+      },
+      {
+        question: 'Les tarifs sont-ils dégressifs selon la quantité ?',
+        answer: 'Oui. Le prix unitaire est calculé selon le nombre de pièces identiques, leurs dimensions, la matière, le procédé d’impression, les finitions et le délai. Plus le volume augmente, plus le coût unitaire peut être optimisé.',
+      },
+      {
+        question: 'FDM ou résine : quelle technologie choisir pour une série ?',
+        answer: 'Le FDM est souvent adapté aux pièces fonctionnelles et résistantes. La résine est plus pertinente pour des pièces précises, détaillées ou destinées à une présentation visuelle. Le choix dépend de l’usage final de la pièce.',
+      },
+      {
+        question: 'Peut-on ajouter une finition aux pièces imprimées ?',
+        answer: 'Oui. Les pièces peuvent être livrées brutes, préparées pour la peinture, apprêtées, peintes, assemblées ou personnalisées par impression UV selon le projet.',
+      },
+      {
+        question: 'Faut-il déjà disposer d’un fichier 3D ?',
+        answer: 'Pour lancer une série, un fichier 3D validé est nécessaire. Si votre pièce est encore au stade de l’idée ou doit être ajustée, nos services de modélisation et de prototypage peuvent intervenir en amont.',
+      },
+    ],
+    cta: {
+      title: 'Un projet d’impression 3D en série ?',
+      description: 'Envoyez votre fichier 3D, la quantité souhaitée et les finitions attendues. Nous établissons un devis adapté à votre série.',
+    },
+    relatedServices: [
+      { name: 'Impression 3D FDM', href: '/services/impression-3d/fdm' },
+      { name: 'Impression 3D Résine', href: '/services/impression-3d/resine' },
+      { name: 'Impression Grand Format', href: '/services/impression-3d/grand-format' },
+      { name: 'Prototypage', href: '/services/prototypage' },
+    ],
+  },
   'impression-3d-fdm': {
     slug: 'impression-3d-fdm',
     name: 'Impression 3D FDM',
