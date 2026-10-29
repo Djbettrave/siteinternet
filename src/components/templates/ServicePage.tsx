@@ -6,6 +6,9 @@ export interface ServiceData {
   slug: string
   name: string
   category?: string
+  metaTitle?: string
+  metaDescription?: string
+  keywords?: string[]
   headline: string
   subheadline: string
   description: string
@@ -27,6 +30,10 @@ export interface ServiceData {
     title: string
     description: string
   }[]
+  contentSections?: {
+    title: string
+    paragraphs: string[]
+  }[]
   faqs: {
     question: string
     answer: string
@@ -43,11 +50,12 @@ export interface ServiceData {
 
 export function generateServiceMetadata(service: ServiceData, path?: string): Metadata {
   return {
-    title: `${service.name} sur mesure`,
-    description: service.subheadline,
+    title: service.metaTitle || `${service.name} sur mesure`,
+    description: service.metaDescription || service.subheadline,
     keywords: [
       service.name.toLowerCase(),
       `${service.name.toLowerCase()} sur mesure`,
+      ...(service.keywords || []),
       'impression 3D',
       'impression 3D grand format',
       'devis instantané',
@@ -61,8 +69,8 @@ export function generateServiceMetadata(service: ServiceData, path?: string): Me
       },
     }),
     openGraph: {
-      title: `${service.name} sur mesure – Inphenix System`,
-      description: service.subheadline,
+      title: `${service.metaTitle || `${service.name} sur mesure`} – Inphenix System`,
+      description: service.metaDescription || service.subheadline,
       type: 'website',
     },
   }
@@ -174,6 +182,24 @@ export default function ServicePage({ service }: ServicePageProps) {
           </div>
         </div>
       </section>
+
+      {/* SEO content */}
+      {service.contentSections && (
+        <section className="py-20 bg-white">
+          <div className="container-custom max-w-4xl">
+            <div className="space-y-12">
+              {service.contentSections.map((section) => (
+                <section key={section.title}>
+                  <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>
+                  <div className="space-y-4 text-secondary-600 leading-relaxed">
+                    {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                  </div>
+                </section>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Specs */}
       {service.specs && (
