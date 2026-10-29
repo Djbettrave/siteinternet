@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '/services/impression-3d/fdm',
     '/services/impression-3d/resine',
     '/services/impression-3d/grand-format',
+    '/services/impression-3d/en-serie',
     '/services/scan-3d',
     '/services/modelisation-3d',
     '/services/prototypage',
