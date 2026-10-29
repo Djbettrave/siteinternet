@@ -32,6 +32,12 @@ const serviceCategories = [
         href: '/services/impression-3d/grand-format',
         features: ['85 cm monobloc', 'Événementiel', 'Maquettes XXL'],
       },
+      {
+        name: 'Impression 3D en série',
+        description: 'Fabrication de pièces identiques, de la petite à la grande série.',
+        href: '/services/impression-3d/en-serie',
+        features: ['Petite et grande série', 'Sans moule', 'Tarifs dégressifs'],
+      },
     ],
   },
   {
