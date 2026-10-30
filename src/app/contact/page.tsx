@@ -128,7 +128,7 @@ export default function ContactPage() {
         })
         setSubmitStatus({
           type: 'success',
-          message: 'Merci pour votre message ! Nous vous répondrons sous 24h.',
+          message: 'Merci pour votre message ! Nous vous répondrons sous 24 à 48 heures.',
         })
         // Réinitialiser Turnstile
         setTurnstileToken('')
@@ -165,8 +165,8 @@ export default function ContactPage() {
       <section className="pt-16 pb-24 bg-white">
         <div className="container-custom">
           <div className="mb-10 max-w-2xl">
-            <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Contactez Inphenix System</h1>
-            <p className="mt-3 text-secondary-600">Parlez-nous de votre projet d’impression 3D, de prototypage ou de modélisation sur mesure.</p>
+            <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Contactez-nous</h1>
+            <p className="mt-3 text-secondary-600">Décrivez-nous votre projet, nous vous répondons sous 24 à 48 heures.</p>
           </div>
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
@@ -226,7 +226,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="font-semibold text-secondary-900 mb-1">Réponse</h3>
-                    <p className="text-secondary-600">Sous 24h garantie</p>
+                    <p className="text-secondary-600">Sous 24 à 48 heures</p>
                   </div>
                 </div>
 
@@ -275,7 +275,7 @@ export default function ContactPage() {
                 <h3 className="font-semibold text-secondary-900 mb-4">Notre engagement</h3>
                 <ul className="space-y-3">
                   {[
-                    'Réponse sous 24h',
+                    'Réponse sous 24 à 48 heures',
                     'Devis gratuit et détaillé',
                     'Conseils techniques inclus',
                     'Confidentialité garantie',
@@ -294,8 +294,8 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className="lg:col-span-2 order-2">
 
-              {/* Devis Instantané Box - visible uniquement sur mobile après le form */}
-              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mb-8 order-3">
+              {/* Version déplacée après le formulaire ; conservée hors rendu pour éviter un doublon. */}
+              <div className="hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mb-8 order-3">
                 <svg className="w-16 h-16 text-primary-600 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -315,8 +315,7 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              {/* Engagement Box - visible uniquement sur mobile en dernier */}
-              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-4 border border-secondary-200/60 mb-8 order-4">
+              <div className="hidden bg-secondary-100/85 rounded-2xl p-4 border border-secondary-200/60 mb-8 order-4">
                 <h3 className="font-semibold text-secondary-900 mb-4">Notre engagement</h3>
                 <ul className="space-y-3">
                   {[
@@ -501,6 +500,40 @@ export default function ContactPage() {
                     )}
                   </button>
                 </form>
+              </div>
+
+              {/* Devis instantané - mobile uniquement, après le formulaire */}
+              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mt-8">
+                <svg className="w-16 h-16 text-primary-600 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                </svg>
+                <p className="font-bold text-secondary-900 mb-6 text-lg">Vous avez un fichier 3D ?</p>
+                <a href={CONTACT_INFO.devisUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-primary-600 font-semibold hover:text-primary-700 transition-colors text-base">
+                  Obtenez un devis instantané
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 002 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Engagements - mobile uniquement, en dernier */}
+              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-4 border border-secondary-200/60 mt-8">
+                <h3 className="font-semibold text-secondary-900 mb-4">Notre engagement</h3>
+                <ul className="space-y-3">
+                  {[
+                    'Réponse sous 24 à 48 heures',
+                    'Devis gratuit et détaillé',
+                    'Conseils techniques inclus',
+                    'Confidentialité garantie',
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2 text-secondary-600">
+                      <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                      </svg>
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
