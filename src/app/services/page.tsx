@@ -63,6 +63,12 @@ const serviceCategories = [
     description: 'Accompagnement complet pour vos projets de développement.',
     services: [
       {
+        name: 'Impression UV sur objet',
+        description: 'Personnalisation de pièces, objets et supports compatibles.',
+        href: '/services/impression-uv',
+        features: ['Logos et visuels', 'Objets cylindriques', 'Petites et grandes séries'],
+      },
+      {
         name: 'Prototypage',
         description: 'Du concept au prototype fonctionnel, itérations rapides.',
         href: '/services/prototypage',
