@@ -166,11 +166,11 @@ export default function ContactPage() {
         <div className="container-custom">
           <div className="mb-10 max-w-2xl">
             <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Contactez-nous</h1>
-            <p className="mt-3 text-secondary-600">Décrivez-nous votre projet, nous vous répondons sous 24 à 48 heures.</p>
+            <p className="mt-3 text-secondary-600">Décrivez-nous votre projet. Un expert vous recontactera dans les meilleurs délais.</p>
           </div>
           <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
             {/* Contact Info */}
-            <div className="lg:col-span-1 order-1">
+            <div className="lg:col-span-1 order-2 lg:order-1">
               <h2 className="text-2xl font-bold text-secondary-900 mb-8">Nos coordonnées</h2>
 
               <div className="space-y-6">
@@ -292,7 +292,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 order-2">
+            <div className="lg:col-span-2 order-1 lg:order-2">
 
               {/* Version déplacée après le formulaire ; conservée hors rendu pour éviter un doublon. */}
               <div className="hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mb-8 order-3">
