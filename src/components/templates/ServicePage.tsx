@@ -23,7 +23,8 @@ export interface ServiceData {
   }[]
   specsTitle?: string
   specsDescription?: string
-  specsLayout?: 'list' | 'grid'
+  specsNote?: string
+  specsLayout?: 'list' | 'grid' | 'project'
   materials?: {
     name: string
     properties: string
@@ -232,7 +233,25 @@ export default function ServicePage({ service }: ServicePageProps) {
               <h2 className="section-title">{service.specsTitle || 'Spécifications techniques'}</h2>
               <p className="section-subtitle mx-auto">{service.specsDescription || 'Les caractéristiques clés de cette technologie.'}</p>
             </div>
-            {service.specsLayout === 'grid' ? (
+            {service.specsLayout === 'project' ? (
+              <div className="max-w-4xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-x-12">
+                  {service.specs.map((spec) => (
+                    <div key={spec.label} className="border-t border-secondary-300 py-5">
+                      <p className="text-secondary-600 leading-relaxed">
+                        <span className="font-semibold text-secondary-900">{spec.label} :</span>{' '}
+                        {spec.value}
+                      </p>
+                    </div>
+                  ))}
+                </div>
+                {service.specsNote && (
+                  <p className="mt-8 pt-6 border-t border-secondary-300 text-secondary-600 leading-relaxed">
+                    {service.specsNote}
+                  </p>
+                )}
+              </div>
+            ) : service.specsLayout === 'grid' ? (
               <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
                 {service.specs.map((spec) => (
                   <div key={spec.label} className="border-t border-secondary-300 pt-4">
