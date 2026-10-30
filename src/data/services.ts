@@ -1,6 +1,141 @@
 import type { ServiceData } from '@/components/templates/ServicePage'
 
 export const servicesData: Record<string, ServiceData> = {
+  'impression-uv': {
+    slug: 'impression-uv',
+    name: 'Impression UV sur objet',
+    category: 'Finitions & personnalisation',
+    metaTitle: 'Impression UV sur objet | Personnalisation UV sur mesure',
+    metaDescription: 'Impression UV sur objets, pièces imprimées en 3D et supports rigides. Logos et visuels, de la pièce unique aux petites et grandes séries.',
+    keywords: [
+      'impression UV sur objet',
+      'impression UV',
+      'impression UV directe',
+      'personnalisation UV',
+      'impression UV pièce imprimée en 3D',
+      'impression UV objet cylindrique',
+      'impression UV petite série',
+      'impression UV grande série',
+      'impression UV Île-de-France',
+    ],
+    headline: 'Impression UV sur objets\net pièces sur mesure',
+    subheadline: 'Logos, textes et visuels imprimés directement sur vos objets, pièces imprimées en 3D et supports compatibles.',
+    description: 'Une finition visuelle pour personnaliser un objet, une pièce technique, un support de présentation ou une série destinée au retail, à la PLV et à l’événementiel.',
+    features: [
+      {
+        title: 'Logos, textes et visuels',
+        description: 'Impression d’éléments graphiques adaptés à votre charte, à votre fichier et à votre support.',
+        icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+      },
+      {
+        title: 'Objets cylindriques',
+        description: 'Personnalisation possible sur certains objets ronds ou cylindriques, après vérification de leurs dimensions et de leur zone imprimable.',
+        icon: 'M5 4v16M19 4v16M5 4h14M5 20h14M8 4v16m8-16v16',
+      },
+      {
+        title: 'Pièces imprimées en 3D',
+        description: 'Ajout d’un décor, d’un logo ou d’un repère visuel sur des pièces produites par impression 3D.',
+        icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10l8 4',
+      },
+      {
+        title: 'Pièce unique et séries',
+        description: 'De la pièce unique aux petites et grandes séries, selon le support, le visuel et le planning de production.',
+        icon: 'M4 6h16M4 12h16M4 18h16',
+      },
+      {
+        title: 'Faisabilité vérifiée',
+        description: 'Le support, son état de surface, sa forme et le fichier sont vérifiés avant le lancement.',
+        icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+      },
+      {
+        title: 'Production et finition',
+        description: 'Une solution intégrée à la fabrication d’une pièce, à son assemblage ou à sa préparation pour une opération de marque.',
+        icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+      },
+    ],
+    contentSections: [
+      {
+        title: 'Impression UV sur objets et pièces imprimées en 3D',
+        paragraphs: [
+          'L’impression UV permet d’ajouter un logo, un texte, un motif ou un visuel directement sur un objet ou une pièce. Elle s’utilise notamment pour personnaliser une pièce imprimée en 3D, un support de présentation, un élément de PLV, un objet promotionnel ou un prototype destiné à être présenté.',
+          'Le service peut intervenir comme une finition seule sur un objet déjà fabriqué, ou s’intégrer à une production complète réalisée par Inphenix. Cette continuité évite de multiplier les interlocuteurs lorsqu’une pièce doit être imprimée en 3D, préparée, assemblée puis personnalisée.',
+        ],
+      },
+      {
+        title: 'Personnalisation UV adaptée à votre support',
+        paragraphs: [
+          'Chaque projet est étudié selon l’objet réel : matière, état de surface, dimensions, zones à imprimer et rendu attendu. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe.',
+          'Les objets cylindriques peuvent également être personnalisés. Leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
+        ],
+      },
+      {
+        title: 'De la pièce unique aux petites et grandes séries',
+        paragraphs: [
+          'Nous réalisons des impressions UV pour une pièce unique, une présérie, une petite série ou une grande série. Le chiffrage dépend du nombre d’objets identiques, du format du visuel, de la préparation nécessaire, des contraintes de calage et du délai souhaité.',
+          'Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
+        ],
+      },
+      {
+        title: 'Applications pour le retail, la PLV et l’événementiel',
+        paragraphs: [
+          'L’impression UV est adaptée aux objets de marque, aux maquettes de présentation, aux éléments de PLV, aux prototypes visuels, aux pièces de décor et aux supports personnalisés pour une activation ou un point de vente. Elle permet d’intégrer une identité graphique sans recourir à une étiquette ou à un adhésif rapporté.',
+          'Lorsque le projet comprend une pièce imprimée en 3D, la personnalisation peut être prévue dès la fabrication afin que les zones graphiques, l’orientation et le niveau de finition soient cohérents avec le résultat attendu.',
+        ],
+      },
+      {
+        title: 'Préparer un projet d’impression UV',
+        paragraphs: [
+          'Pour évaluer un projet, il faut idéalement fournir une photo de l’objet ou un échantillon, ses dimensions, la quantité souhaitée et le visuel à imprimer. Les fichiers vectoriels sont préférables pour les logos et les textes ; un fichier image de bonne définition convient pour une création graphique.',
+          'Avant de lancer la production, nous validons la compatibilité du support, la taille de l’impression, le positionnement du visuel et le niveau de rendu attendu. Cette étape évite les écarts entre un visuel à l’écran et son application sur l’objet réel.',
+        ],
+      },
+    ],
+    visualPlaceholders: {
+      title: 'Exemples de réalisations',
+      description: 'Deux emplacements sont prévus pour présenter des projets finalisés.',
+      items: [
+        { label: 'Pièce imprimée en 3D personnalisée par impression UV' },
+        { label: 'Objet cylindrique personnalisé par impression UV' },
+      ],
+    },
+    specsTitle: 'Éléments à définir avant production',
+    specsDescription: 'Les informations utiles pour cadrer rapidement un projet.',
+    specs: [
+      { label: 'Supports', value: 'À valider selon le projet' },
+      { label: 'Formes', value: 'Planes, courbes ou cylindriques selon compatibilité' },
+      { label: 'Fichiers', value: 'Vectoriel ou image haute définition' },
+      { label: 'Quantités', value: 'Pièce unique, petite et grande série' },
+      { label: 'Tarification', value: 'Dégressive selon les quantités' },
+      { label: 'Délai', value: 'Défini après validation du support et du visuel' },
+    ],
+    faqs: [
+      {
+        question: 'Sur quels objets peut-on réaliser une impression UV ?',
+        answer: 'L’impression UV peut être envisagée sur de nombreux objets et supports rigides. La compatibilité dépend de la matière, de l’état de surface, de la forme et de la zone à imprimer. Une vérification est réalisée avant le lancement.',
+      },
+      {
+        question: 'Peut-on imprimer sur un objet cylindrique ?',
+        answer: 'Oui, pour des objets cylindriques compatibles. Le diamètre, la hauteur et la zone de personnalisation sont vérifiés afin d’adapter le visuel et le positionnement.',
+      },
+      {
+        question: 'Peut-on personnaliser une pièce imprimée en 3D ?',
+        answer: 'Oui. Un logo, un texte ou un visuel peut être ajouté sur une pièce imprimée en 3D, après validation de la matière, de la surface et de la zone d’impression.',
+      },
+      {
+        question: 'Réalisez-vous des petites et grandes séries ?',
+        answer: 'Oui. Nous réalisons des pièces uniques, des petites séries et des grandes séries. Le coût unitaire évolue selon la quantité, le support, le visuel et les contraintes de production.',
+      },
+      {
+        question: 'Quel fichier faut-il fournir pour une impression UV ?',
+        answer: 'Pour un logo ou un texte, un fichier vectoriel est préférable. Pour une image ou une création graphique, fournissez un fichier de bonne définition à la taille d’impression souhaitée.',
+      },
+    ],
+    relatedServices: [
+      { name: 'Impression 3D en série', href: '/services/impression-3d/en-serie' },
+      { name: 'Impression 3D FDM', href: '/services/impression-3d/fdm' },
+      { name: 'Prototypage', href: '/services/prototypage' },
+    ],
+  },
   'impression-3d-en-serie': {
     slug: 'impression-3d-en-serie',
     name: 'Impression 3D en série',
