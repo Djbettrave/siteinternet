@@ -90,16 +90,13 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
     ],
-    visualPlaceholders: {
-      title: 'Exemples de réalisations',
-      description: 'Deux emplacements sont prévus pour présenter des projets finalisés.',
-      items: [
-        { label: 'Pièce imprimée en 3D personnalisée par impression UV' },
-        { label: 'Objet cylindrique personnalisé par impression UV' },
-      ],
-    },
+    inlineVisuals: [
+      { afterSection: 1, position: 'right', alt: 'Exemple d’impression UV sur un objet cylindrique' },
+      { afterSection: 3, position: 'left', alt: 'Exemple de pièce imprimée en 3D personnalisée par impression UV' },
+    ],
     specsTitle: 'Éléments à définir avant production',
     specsDescription: 'Les informations utiles pour cadrer rapidement un projet.',
+    specsLayout: 'grid',
     specs: [
       { label: 'Supports', value: 'À valider selon le projet' },
       { label: 'Formes', value: 'Planes, courbes ou cylindriques selon compatibilité' },
