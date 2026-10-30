@@ -21,6 +21,8 @@ export interface ServiceData {
     label: string
     value: string
   }[]
+  specsTitle?: string
+  specsDescription?: string
   materials?: {
     name: string
     properties: string
@@ -34,11 +36,18 @@ export interface ServiceData {
     title: string
     paragraphs: string[]
   }[]
+  visualPlaceholders?: {
+    title: string
+    description: string
+    items: {
+      label: string
+    }[]
+  }
   faqs: {
     question: string
     answer: string
   }[]
-  cta: {
+  cta?: {
     title: string
     description: string
   }
@@ -201,13 +210,36 @@ export default function ServicePage({ service }: ServicePageProps) {
         </section>
       )}
 
+      {/* Réalisations à compléter */}
+      {service.visualPlaceholders && (
+        <section className="py-20 bg-secondary-50">
+          <div className="container-custom">
+            <div className="text-center mb-10">
+              <h2 className="section-title">{service.visualPlaceholders.title}</h2>
+              <p className="section-subtitle mx-auto">{service.visualPlaceholders.description}</p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+              {service.visualPlaceholders.items.map((item) => (
+                <div key={item.label} className="aspect-[4/3] rounded-2xl border-2 border-dashed border-secondary-300 bg-white flex flex-col items-center justify-center p-8 text-center">
+                  <svg className="w-10 h-10 text-secondary-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-sm font-medium text-secondary-600">{item.label}</span>
+                  <span className="text-xs text-secondary-400 mt-2">Visuel à ajouter</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Specs */}
       {service.specs && (
         <section className="py-24 bg-secondary-50">
           <div className="container-custom">
             <div className="text-center mb-12">
-              <h2 className="section-title">Spécifications techniques</h2>
-              <p className="section-subtitle mx-auto">Les caractéristiques clés de cette technologie.</p>
+              <h2 className="section-title">{service.specsTitle || 'Spécifications techniques'}</h2>
+              <p className="section-subtitle mx-auto">{service.specsDescription || 'Les caractéristiques clés de cette technologie.'}</p>
             </div>
             <div className="max-w-3xl mx-auto">
               <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-200">
@@ -314,21 +346,23 @@ export default function ServicePage({ service }: ServicePageProps) {
       </section>
 
       {/* CTA */}
-      <section className="py-24 bg-primary-600">
-        <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              {service.cta.title}
-            </h2>
-            <p className="text-xl text-primary-100 mb-8">
-              {service.cta.description}
-            </p>
-            <Link href="/contact" className="bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block">
-              Nous contacter
-            </Link>
+      {service.cta && (
+        <section className="py-24 bg-primary-600">
+          <div className="container-custom">
+            <div className="text-center max-w-2xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                {service.cta.title}
+              </h2>
+              <p className="text-xl text-primary-100 mb-8">
+                {service.cta.description}
+              </p>
+              <Link href="/contact" className="bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block">
+                Nous contacter
+              </Link>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   )
 }
