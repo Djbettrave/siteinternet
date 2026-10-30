@@ -23,6 +23,7 @@ export interface ServiceData {
   }[]
   specsTitle?: string
   specsDescription?: string
+  specsLayout?: 'list' | 'grid'
   materials?: {
     name: string
     properties: string
@@ -36,13 +37,11 @@ export interface ServiceData {
     title: string
     paragraphs: string[]
   }[]
-  visualPlaceholders?: {
-    title: string
-    description: string
-    items: {
-      label: string
-    }[]
-  }
+  inlineVisuals?: {
+    afterSection: number
+    position: 'left' | 'right'
+    alt: string
+  }[]
   faqs: {
     question: string
     answer: string
@@ -197,37 +196,29 @@ export default function ServicePage({ service }: ServicePageProps) {
         <section className="py-20 bg-white">
           <div className="container-custom max-w-4xl">
             <div className="space-y-12">
-              {service.contentSections.map((section) => (
-                <section key={section.title}>
-                  <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>
-                  <div className="space-y-4 text-secondary-600 leading-relaxed">
-                    {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
-                  </div>
-                </section>
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
+              {service.contentSections.map((section, index) => {
+                const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
-      {/* Réalisations à compléter */}
-      {service.visualPlaceholders && (
-        <section className="py-20 bg-secondary-50">
-          <div className="container-custom">
-            <div className="text-center mb-10">
-              <h2 className="section-title">{service.visualPlaceholders.title}</h2>
-              <p className="section-subtitle mx-auto">{service.visualPlaceholders.description}</p>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-              {service.visualPlaceholders.items.map((item) => (
-                <div key={item.label} className="aspect-[4/3] rounded-2xl border-2 border-dashed border-secondary-300 bg-white flex flex-col items-center justify-center p-8 text-center">
-                  <svg className="w-10 h-10 text-secondary-400 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-sm font-medium text-secondary-600">{item.label}</span>
-                  <span className="text-xs text-secondary-400 mt-2">Visuel à ajouter</span>
-                </div>
-              ))}
+                return (
+                  <section key={section.title} className={visual ? 'grid md:grid-cols-[minmax(0,1.35fr)_minmax(220px,0.65fr)] items-center gap-8 md:gap-12' : ''}>
+                    <div className={visual?.position === 'left' ? 'md:order-2' : ''}>
+                      <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>
+                      <div className="space-y-4 text-secondary-600 leading-relaxed">
+                        {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                      </div>
+                    </div>
+                    {visual && (
+                      <div className={visual.position === 'left' ? 'md:order-1' : ''} role="img" aria-label={visual.alt}>
+                        <div className="aspect-[4/3] rounded-2xl border border-secondary-200 bg-secondary-50 flex items-center justify-center">
+                          <svg className="w-10 h-10 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+                          </svg>
+                        </div>
+                      </div>
+                    )}
+                  </section>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -241,19 +232,33 @@ export default function ServicePage({ service }: ServicePageProps) {
               <h2 className="section-title">{service.specsTitle || 'Spécifications techniques'}</h2>
               <p className="section-subtitle mx-auto">{service.specsDescription || 'Les caractéristiques clés de cette technologie.'}</p>
             </div>
-            <div className="max-w-3xl mx-auto">
-              <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-200">
-                {service.specs.map((spec, index) => (
-                  <div key={index} className={`flex items-center justify-between px-6 py-5 ${index !== service.specs!.length - 1 ? 'border-b border-secondary-100' : ''} hover:bg-secondary-50 transition-colors`}>
-                    <div className="flex items-center gap-3">
-                      <div className="w-2 h-2 rounded-full bg-primary-500 flex-shrink-0"></div>
-                      <span className="text-secondary-700 font-medium">{spec.label}</span>
+            {service.specsLayout === 'grid' ? (
+              <div className="max-w-5xl mx-auto grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-8">
+                {service.specs.map((spec) => (
+                  <div key={spec.label} className="border-t border-secondary-300 pt-4">
+                    <div className="flex items-center gap-2 text-xs font-semibold tracking-[0.14em] uppercase text-primary-700 mb-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary-500" />
+                      {spec.label}
                     </div>
-                    <span className="font-bold text-secondary-900 bg-secondary-100 px-3 py-1 rounded-lg text-sm">{spec.value}</span>
+                    <p className="text-lg font-semibold text-secondary-900 leading-snug">{spec.value}</p>
                   </div>
                 ))}
               </div>
-            </div>
+            ) : (
+              <div className="max-w-3xl mx-auto">
+                <div className="bg-white rounded-2xl overflow-hidden shadow-sm border border-secondary-200">
+                  {service.specs.map((spec, index) => (
+                    <div key={index} className={`flex items-center justify-between px-6 py-5 ${index !== service.specs!.length - 1 ? 'border-b border-secondary-100' : ''} hover:bg-secondary-50 transition-colors`}>
+                      <div className="flex items-center gap-3">
+                        <div className="w-2 h-2 rounded-full bg-primary-500 flex-shrink-0"></div>
+                        <span className="text-secondary-700 font-medium">{spec.label}</span>
+                      </div>
+                      <span className="font-bold text-secondary-900 bg-secondary-100 px-3 py-1 rounded-lg text-sm">{spec.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
         </section>
       )}
