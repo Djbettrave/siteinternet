@@ -334,8 +334,6 @@ export default function ContactPage() {
                 </ul>
               </div>
               <div className="order-1 bg-secondary-100/85 rounded-2xl p-6 sm:p-8 lg:p-12 border border-secondary-200/60">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-5 lg:mb-8">Décrivez votre projet</h2>
-
                 <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
                   <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div>
