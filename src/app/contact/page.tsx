@@ -168,7 +168,7 @@ export default function ContactPage() {
             <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Contactez-nous</h1>
             <p className="mt-3 text-secondary-600">Décrivez-nous votre projet. Un expert vous recontactera dans les meilleurs délais.</p>
           </div>
-          <div className="flex flex-col lg:grid lg:grid-cols-3 gap-16">
+          <div className="flex flex-col gap-8 lg:grid lg:grid-cols-3 lg:gap-16">
             {/* Contact Info */}
             <div className="lg:col-span-1 order-2 lg:order-1">
               <h2 className="text-2xl font-bold text-secondary-900 mb-8">Nos coordonnées</h2>
@@ -292,7 +292,7 @@ export default function ContactPage() {
             </div>
 
             {/* Contact Form */}
-            <div className="lg:col-span-2 order-1 lg:order-2">
+            <div className="contents lg:block lg:col-span-2 lg:order-2">
 
               {/* Version déplacée après le formulaire ; conservée hors rendu pour éviter un doublon. */}
               <div className="hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mb-8 order-3">
@@ -333,11 +333,11 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
-              <div className="bg-secondary-100/85 rounded-2xl p-8 lg:p-12 border border-secondary-200/60">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-8">Décrivez votre projet</h2>
+              <div className="order-1 bg-secondary-100/85 rounded-2xl p-6 sm:p-8 lg:p-12 border border-secondary-200/60">
+                <h2 className="text-2xl font-bold text-secondary-900 mb-5 lg:mb-8">Décrivez votre projet</h2>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
+                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
                         Nom complet *
@@ -368,7 +368,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div>
                       <label htmlFor="company" className="block text-sm font-medium text-secondary-700 mb-2">
                         Entreprise
@@ -399,7 +399,7 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
                     <div>
                       <label htmlFor="service" className="block text-sm font-medium text-secondary-700 mb-2">
                         Service souhaité
@@ -444,25 +444,24 @@ export default function ContactPage() {
                       rows={8}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none"
-                      placeholder="Décrivez votre projet, vos besoins, vos contraintes (dimensions, matériaux, délais, budget...)."
+                      className="w-full h-36 lg:h-auto px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none placeholder:text-sm lg:placeholder:text-base"
+                      placeholder="Décrivez votre besoin : dimensions, matériau, quantité, délai."
                     />
                   </div>
 
-                  <p className="text-sm text-secondary-500">
-                    Besoin d'envoyer un fichier 3D ? Mentionnez-le dans votre message, nous vous recontacterons pour le récupérer.
+                  <p className="text-xs leading-5 text-secondary-500 lg:text-sm lg:leading-normal">
+                    Fichier 3D à transmettre ? Indiquez-le dans votre message.
                   </p>
 
-                  <div className="flex items-start gap-3">
+                  <div className="flex items-start gap-2">
                     <input
                       type="checkbox"
                       id="privacy"
                       required
                       className="mt-1 w-4 h-4 text-primary-600 border-secondary-300 rounded focus:ring-primary-500"
                     />
-                    <label htmlFor="privacy" className="text-sm text-secondary-600">
-                      J'accepte que mes données soient utilisées pour traiter ma demande.
-                      Consultez notre <Link href="/politique-confidentialite" className="text-primary-600 hover:underline">politique de confidentialité</Link>.
+                    <label htmlFor="privacy" className="text-xs leading-5 text-secondary-600 lg:text-sm lg:leading-normal">
+                      J'accepte l'utilisation de mes données pour traiter ma demande. <Link href="/politique-confidentialite" className="text-primary-600 hover:underline">Politique de confidentialité</Link>.
                     </label>
                   </div>
 
@@ -485,7 +484,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="btn-primary w-full text-lg py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary w-full text-base py-3 lg:text-lg lg:py-4 disabled:opacity-50 disabled:cursor-not-allowed"
                   >
                     {isSubmitting ? 'Envoi en cours...' : 'Envoyer ma demande'}
                     {isSubmitting ? (
@@ -503,7 +502,7 @@ export default function ContactPage() {
               </div>
 
               {/* Devis instantané - mobile uniquement, après le formulaire */}
-              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center mt-8">
+              <div className="lg:hidden order-3 bg-secondary-100/85 rounded-2xl p-12 border border-secondary-200/60 min-h-[190px] flex flex-col items-center justify-center text-center">
                 <svg className="w-16 h-16 text-primary-600 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
@@ -517,7 +516,7 @@ export default function ContactPage() {
               </div>
 
               {/* Engagements - mobile uniquement, en dernier */}
-              <div className="lg:hidden bg-secondary-100/85 rounded-2xl p-4 border border-secondary-200/60 mt-8">
+              <div className="lg:hidden order-4 bg-secondary-100/85 rounded-2xl p-4 border border-secondary-200/60">
                 <h3 className="font-semibold text-secondary-900 mb-4">Notre engagement</h3>
                 <ul className="space-y-3">
                   {[
