@@ -7,18 +7,29 @@ export { seriesImages }
 
 function Lightbox({ image, className = '', priority = false }: { image: SeriesImage; className?: string; priority?: boolean }) {
   const [open, setOpen] = useState(false)
+  const [activeIndex, setActiveIndex] = useState(0)
+  const activeImage = seriesImages[activeIndex]
+
+  const openGallery = () => {
+    setActiveIndex(Math.max(0, seriesImages.findIndex((item) => item.src === image.src)))
+    setOpen(true)
+  }
 
   return (
     <>
-      <button type="button" onClick={() => setOpen(true)} className={`group relative block h-full w-full overflow-hidden bg-secondary-100 text-left focus:outline-none focus:ring-4 focus:ring-primary-300 ${className}`} aria-label={`Agrandir : ${image.alt}`}>
+      <button type="button" onClick={openGallery} className={`group relative block h-full w-full overflow-hidden bg-secondary-100 text-left focus:outline-none focus:ring-4 focus:ring-primary-300 ${className}`} aria-label={`Agrandir : ${image.alt}`}>
         <Image src={image.src} alt={image.alt} width={image.width} height={image.height} priority={priority} sizes="(max-width: 768px) 100vw, 50vw" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]" />
       </button>
-      {open && (
-        <div role="dialog" aria-modal="true" aria-label={image.caption} className="fixed inset-0 z-[70] grid place-items-center bg-secondary-950/90 p-5 backdrop-blur-sm" onClick={() => setOpen(false)}>
-          <div className="relative max-h-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
+      {open && activeImage && (
+        <div role="dialog" aria-modal="true" aria-label={activeImage.caption} className="fixed inset-0 z-[70] grid place-items-center bg-secondary-950/90 p-5 backdrop-blur-sm" onClick={() => setOpen(false)}>
+          <div className="relative max-h-full w-full max-w-5xl" onClick={(event) => event.stopPropagation()}>
             <button type="button" onClick={() => setOpen(false)} className="absolute -right-1 -top-11 grid h-9 w-9 place-items-center rounded-full bg-white text-2xl leading-none text-secondary-900" aria-label="Fermer l’image">×</button>
-            <Image src={image.src} alt={image.alt} width={image.width} height={image.height} sizes="95vw" className="max-h-[82vh] w-auto max-w-full rounded-sm object-contain" />
-            <p className="pt-3 text-center text-sm text-white">{image.caption}</p>
+            <div className="relative flex items-center justify-center">
+              {activeIndex > 0 && <button type="button" onClick={() => setActiveIndex((index) => index - 1)} className="absolute left-0 z-10 grid h-11 w-11 -translate-x-1/2 place-items-center rounded-full bg-white text-2xl text-secondary-900 shadow-lg" aria-label="Voir la réalisation précédente">‹</button>}
+              <Image src={activeImage.src} alt={activeImage.alt} width={activeImage.width} height={activeImage.height} sizes="95vw" className="max-h-[82vh] w-auto max-w-full rounded-sm object-contain" />
+              {activeIndex < seriesImages.length - 1 && <button type="button" onClick={() => setActiveIndex((index) => index + 1)} className="absolute right-0 z-10 grid h-11 w-11 translate-x-1/2 place-items-center rounded-full bg-white text-2xl text-secondary-900 shadow-lg" aria-label="Voir la réalisation suivante">›</button>}
+            </div>
+            <p className="pt-3 text-center text-sm text-white">{activeImage.caption}</p>
           </div>
         </div>
       )}

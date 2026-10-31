@@ -40,7 +40,7 @@ export default function Impression3DEnSeriePage() {
         <div className="container-custom">
           <div className="mb-16 text-center"><h2 className="section-title">Ce que nous proposons</h2><p className="section-subtitle mx-auto">{service.description}</p></div>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-            {service.features.map((feature) => <article key={feature.title} className="group card p-8 transition-all duration-200 hover:border-primary-300 hover:shadow-lg"><h3 className="text-xl font-semibold text-secondary-900 transition-colors group-hover:text-primary-600">{feature.title}</h3><p className="mt-3 text-secondary-600">{feature.description}</p></article>)}
+            {service.features.map((feature) => <article key={feature.title} className="group card p-8 transition-all duration-200 hover:border-primary-300 hover:shadow-lg"><div className="flex items-start gap-4"><div className="mt-0.5 flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-primary-100 transition-colors group-hover:bg-primary-600"><svg className="h-5 w-5 text-primary-700 transition-colors group-hover:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.6} d={feature.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} /></svg></div><div><h3 className="text-xl font-semibold text-secondary-900 transition-colors group-hover:text-primary-600">{feature.title}</h3><p className="mt-3 text-secondary-600">{feature.description}</p></div></div></article>)}
           </div>
         </div>
       </section>
