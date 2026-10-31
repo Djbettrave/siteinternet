@@ -258,6 +258,98 @@ export const servicesData: Record<string, ServiceData> = {
       { name: 'Prototypage', href: '/services/prototypage' },
     ],
   },
+  'impression-3d-metal': {
+    slug: 'impression-3d-metal',
+    name: 'Impression 3D Métal',
+    category: 'Impression 3D',
+    metaTitle: 'Impression 3D métal à Paris | Pièces techniques sur mesure',
+    metaDescription: 'Impression 3D métal pour pièces techniques, composants mécaniques et prototypes fonctionnels. Étude de faisabilité et fabrication sur mesure à Paris et en Île-de-France.',
+    keywords: [
+      'impression 3D métal Paris',
+      'fabrication additive métal',
+      'pièce métallique sur mesure',
+      'prototype métal',
+      'impression 3D pièce mécanique',
+    ],
+    headline: 'Impression 3D Métal -\nPièces techniques sur mesure',
+    subheadline: 'Une solution de fabrication additive adaptée aux composants mécaniques, prototypes fonctionnels et pièces techniques, selon les contraintes de votre projet.',
+    description: 'L’impression 3D métal permet de fabriquer des pièces complexes sans outillage traditionnel. Chaque demande est étudiée selon l’alliage, les efforts mécaniques, les tolérances, la finition et la quantité recherchée.',
+    features: [
+      {
+        title: 'Géométries complexes',
+        description: 'Production de formes techniques difficiles à obtenir par des procédés conventionnels, selon leur faisabilité.',
+        icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
+      },
+      {
+        title: 'Pièces mécaniques',
+        description: 'Solutions adaptées aux composants fonctionnels, pièces de remplacement et prototypes soumis à des contraintes mécaniques.',
+        icon: 'M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c.94-.94 2.706.827 1.766 1.767a1.724 1.724 0 001.066 2.573c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94.94-.826 2.706-1.766 1.766a1.724 1.724 0 00-2.573 1.066c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-.94.94-2.706-.826-1.766-1.766a1.724 1.724 0 00-1.066-2.573c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-.94.826-2.707 1.766-1.767a1.724 1.724 0 002.573-1.066z M15 12a3 3 0 11-6 0 3 3 0 016 0z',
+      },
+      {
+        title: 'Alliage adapté',
+        description: 'Le matériau est déterminé selon l’usage, l’environnement, la résistance attendue et les contraintes de poids.',
+        icon: 'M19.428 15.428a2 2 0 01-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 01-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
+      },
+      {
+        title: 'Étude de faisabilité',
+        description: 'Analyse du fichier, des zones critiques, des tolérances et des besoins de post-traitement avant fabrication.',
+        icon: 'M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z',
+      },
+      {
+        title: 'Petites et moyennes séries',
+        description: 'Fabrication de prototypes, pièces unitaires et séries lorsque la géométrie ou la flexibilité le justifie.',
+        icon: 'M4 6h16M4 12h16M4 18h16',
+      },
+      {
+        title: 'Finitions sur demande',
+        description: 'Les opérations de finition, usinage ou traitement sont définies selon le résultat attendu et la fonction finale de la pièce.',
+        icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+      },
+    ],
+    specs: [
+      { label: 'Procédé', value: 'Défini selon le projet' },
+      { label: 'Alliage', value: 'Sélectionné selon les contraintes' },
+      { label: 'Tolérances', value: 'À valider selon la géométrie' },
+      { label: 'Finitions', value: 'Sur étude' },
+      { label: 'Quantités', value: 'Pièce unitaire à moyenne série' },
+      { label: 'Délai', value: 'Défini après étude' },
+    ],
+    materials: [
+      { name: 'Acier inoxydable', properties: 'À étudier selon l’environnement, la résistance mécanique et la finition recherchée.' },
+      { name: 'Aluminium', properties: 'À étudier pour les projets recherchant un compromis entre poids, résistance et géométrie.' },
+      { name: 'Titane', properties: 'À étudier pour des besoins spécifiques de résistance, légèreté ou performance.' },
+    ],
+    process: [
+      { step: 1, title: 'Analyse du besoin', description: 'Partagez votre fichier 3D, les dimensions, la fonction de la pièce et les contraintes d’usage.' },
+      { step: 2, title: 'Étude de faisabilité', description: 'Nous vérifions la géométrie, l’alliage envisageable, les tolérances et les finitions nécessaires.' },
+      { step: 3, title: 'Proposition technique', description: 'Une solution de fabrication et un devis sont définis selon les éléments validés.' },
+      { step: 4, title: 'Fabrication et contrôle', description: 'La pièce est produite puis contrôlée selon les critères prévus pour votre projet.' },
+      { step: 5, title: 'Livraison', description: 'La pièce est livrée avec le niveau de finition convenu.' },
+    ],
+    faqs: [
+      {
+        question: 'Quelles pièces sont adaptées à l’impression 3D métal ?',
+        answer: 'L’impression 3D métal est particulièrement pertinente pour les pièces techniques, les géométries complexes, les composants mécaniques et les prototypes fonctionnels. La faisabilité dépend de la taille, de l’alliage, des tolérances et de l’usage prévu.',
+      },
+      {
+        question: 'Quel alliage choisir pour une pièce imprimée en 3D ?',
+        answer: 'Le choix de l’alliage dépend des efforts mécaniques, du poids, de l’environnement d’utilisation, de la corrosion, de la température et de la finition attendue. Il est défini au cas par cas.',
+      },
+      {
+        question: 'Peut-on produire une petite série de pièces métalliques ?',
+        answer: 'Oui. L’impression 3D métal peut convenir à des pièces unitaires, des prototypes et certaines petites ou moyennes séries, notamment lorsqu’un outillage classique serait disproportionné ou trop contraignant.',
+      },
+    ],
+    cta: {
+      title: 'Un projet de pièce métallique ?',
+      description: 'Transmettez votre fichier ou décrivez vos contraintes. Nous étudions la solution de fabrication adaptée.',
+    },
+    relatedServices: [
+      { name: 'Impression 3D FDM', href: '/services/impression-3d/fdm' },
+      { name: 'Impression 3D Résine', href: '/services/impression-3d/resine' },
+      { name: 'Prototypage', href: '/services/prototypage' },
+    ],
+  },
   'impression-3d-fdm': {
     slug: 'impression-3d-fdm',
     name: 'Impression 3D FDM',

@@ -7,8 +7,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     '',
     '/services',
+    '/impression-3d',
+    '/conception-fabrication',
     '/services/impression-3d/fdm',
     '/services/impression-3d/resine',
+    '/services/impression-3d/metal',
     '/services/impression-3d/grand-format',
     '/services/impression-3d/en-serie',
     '/services/impression-uv',
