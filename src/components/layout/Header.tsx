@@ -319,11 +319,11 @@ export default function Header() {
                         const expanded = mobileServiceCategory === group.name
                         return (
                           <div key={group.name} className="border-b border-secondary-100">
-                            <div className="flex min-h-[60px] items-center justify-between gap-2">
+                            <div className="flex min-h-[52px] items-center justify-between gap-2 pl-4">
                               <Link
                                 href={group.href}
                                 onClick={closeMobileMenu}
-                                className="flex-1 py-3 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-600"
+                                className="flex-1 py-2.5 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-600"
                               >
                                 {group.name}
                               </Link>
@@ -340,18 +340,18 @@ export default function Header() {
                               </button>
                             </div>
                             {expanded && (
-                              <div className="border-t border-secondary-100 pb-2 pt-1">
+                              <div className="border-t border-secondary-100 py-1">
                                 {group.items.map((item) => item.href ? (
                                   <Link
                                     key={item.name}
                                     href={item.href}
                                     onClick={closeMobileMenu}
-                                    className="block py-2 pl-4 text-[15px] text-secondary-600 transition-colors hover:text-primary-700"
+                                    className="block py-1.5 pl-8 text-sm text-secondary-500 transition-colors hover:text-primary-700"
                                   >
                                     {item.name}
                                   </Link>
                                 ) : (
-                                  <span key={item.name} className="block py-2 pl-4 text-[15px] text-secondary-500">{item.name}</span>
+                                  <span key={item.name} className="block py-1.5 pl-8 text-sm text-secondary-400">{item.name}</span>
                                 ))}
                               </div>
                             )}
@@ -363,7 +363,7 @@ export default function Header() {
                           key={service.href}
                           href={service.href}
                           onClick={closeMobileMenu}
-                          className="flex min-h-[60px] items-center border-b border-secondary-100 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-700"
+                          className="flex min-h-[52px] items-center border-b border-secondary-100 py-2.5 pl-4 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-700"
                         >
                           {service.name}
                         </Link>

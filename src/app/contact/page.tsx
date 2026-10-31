@@ -333,11 +333,11 @@ export default function ContactPage() {
                   ))}
                 </ul>
               </div>
-              <div className="order-1 bg-secondary-100/85 rounded-2xl p-6 sm:p-8 lg:p-12 border border-secondary-200/60">
-                <form onSubmit={handleSubmit} className="space-y-4 lg:space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+              <div className="order-1 rounded-2xl border border-secondary-200/60 bg-secondary-100/85 p-4 sm:p-6 lg:p-12">
+                <form onSubmit={handleSubmit} className="space-y-2.5 lg:space-y-6">
+                  <div className="grid gap-2.5 md:grid-cols-2 lg:gap-6">
                     <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="name" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Nom complet *
                       </label>
                       <input
@@ -346,12 +346,11 @@ export default function ContactPage() {
                         required
                         value={formData.name}
                         onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="Votre nom"
+                        className="w-full rounded-lg border border-secondary-200 px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       />
                     </div>
                     <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="email" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Email *
                       </label>
                       <input
@@ -360,15 +359,14 @@ export default function ContactPage() {
                         required
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="votre@email.com"
+                        className="w-full rounded-lg border border-secondary-200 px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                  <div className="grid gap-2.5 md:grid-cols-2 lg:gap-6">
                     <div>
-                      <label htmlFor="company" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="company" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Entreprise
                       </label>
                       <input
@@ -376,12 +374,11 @@ export default function ContactPage() {
                         id="company"
                         value={formData.company}
                         onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="Nom de votre entreprise"
+                        className="w-full rounded-lg border border-secondary-200 px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       />
                     </div>
                     <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="phone" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Téléphone
                       </label>
                       <input
@@ -391,38 +388,37 @@ export default function ContactPage() {
                         onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                         pattern="^[\+]?[(]?[0-9]{1,4}[)]?[-\s\.]?[(]?[0-9]{1,4}[)]?[-\s\.]?[0-9]{1,5}[-\s\.]?[0-9]{1,5}$"
                         title="Format attendu : 06 12 34 56 78, +33 6 12 34 56 78, ou tout format international"
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
-                        placeholder="06 00 00 00 00 ou +33 6 00 00 00 00"
+                        className="w-full rounded-lg border border-secondary-200 px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       />
                     </div>
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-4 lg:gap-6">
+                  <div className="grid gap-2.5 md:grid-cols-2 lg:gap-6">
                     <div>
-                      <label htmlFor="service" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="service" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Service souhaité
                       </label>
                       <select
                         id="service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
+                        className="w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       >
-                        <option value="">Sélectionnez un service</option>
+                        <option value="">—</option>
                         {services.map((service) => (
                           <option key={service} value={service}>{service}</option>
                         ))}
                       </select>
                     </div>
                     <div>
-                      <label htmlFor="sector" className="block text-sm font-medium text-secondary-700 mb-2">
+                      <label htmlFor="sector" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                         Votre secteur
                       </label>
                       <select
                         id="sector"
                         value={formData.sector}
                         onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
-                        className="w-full px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent bg-white"
+                        className="w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
                       >
                         <option value="">Sélectionnez un secteur</option>
                         {sectors.map((sector) => (
@@ -433,7 +429,7 @@ export default function ContactPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="message" className="block text-sm font-medium text-secondary-700 mb-2">
+                    <label htmlFor="message" className="mb-1.5 block text-sm font-medium text-secondary-700 lg:mb-2">
                       Décrivez votre projet *
                     </label>
                     <textarea
@@ -442,8 +438,7 @@ export default function ContactPage() {
                       rows={8}
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      className="w-full h-36 lg:h-auto px-4 py-3 border border-secondary-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent resize-none placeholder:text-sm lg:placeholder:text-base"
-                      placeholder="Décrivez votre besoin : dimensions, matériau, quantité, délai."
+                      className="h-36 w-full resize-none rounded-lg border border-secondary-200 px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:h-auto lg:px-4 lg:py-3"
                     />
                   </div>
 

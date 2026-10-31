@@ -18,6 +18,8 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   const [hasPassedTitle, setHasPassedTitle] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   const titleSectionRef = useRef<HTMLElement>(null)
+  const filtersSectionRef = useRef<HTMLElement>(null)
+  const projectsSectionRef = useRef<HTMLElement>(null)
 
   // Détecter la direction du scroll pour ajuster la position de la barre de filtres
   useEffect(() => {
@@ -43,6 +45,24 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   }, [lastScrollY])
 
   const filteredProjects = projects.filter((project) => project.category === selectedCategory)
+
+  const selectCategory = (category: ProjectCategory) => {
+    if (category === selectedCategory) return
+
+    setSelectedCategory(category)
+
+    requestAnimationFrame(() => {
+      const projectsTop = projectsSectionRef.current?.getBoundingClientRect().top
+      const filtersHeight = filtersSectionRef.current?.getBoundingClientRect().height ?? 0
+
+      if (projectsTop === undefined) return
+
+      window.scrollTo({
+        top: Math.max(0, window.scrollY + projectsTop - filtersHeight),
+        behavior: 'smooth',
+      })
+    })
+  }
 
   const closeLightbox = useCallback(() => {
     setLightboxOpen(false)
@@ -98,7 +118,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
       </section>
 
       {/* Filters */}
-      <section className={`bg-white border-b border-secondary-200 sticky z-40 transition-all duration-300 ${
+      <section ref={filtersSectionRef} className={`bg-white border-b border-secondary-200 sticky z-40 transition-all duration-300 ${
         isHeaderVisible ? 'top-20' : 'top-0'
       }`}>
         <div className="container-custom">
@@ -112,7 +132,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
               <button
                 key={category}
                 type="button"
-                onClick={() => setSelectedCategory(category)}
+                onClick={() => selectCategory(category)}
                 aria-pressed={selectedCategory === category}
                 className={`border-b pb-3 text-center text-[11px] font-semibold tracking-[-0.01em] transition-colors sm:text-sm ${
                   selectedCategory === category
@@ -128,7 +148,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
       </section>
 
       {/* Projects Grid */}
-      <section id="projects-section" className="py-2 bg-white">
+      <section ref={projectsSectionRef} id="projects-section" className="bg-white py-2">
         <div className="container-custom px-2">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
