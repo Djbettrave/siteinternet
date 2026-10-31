@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import ServiceNavigationPage from '@/components/services/ServiceNavigationPage'
 
 export const metadata: Metadata = {
-  title: 'Impression 3D Paris & Île-de-France | Inphenix',
+  title: 'Impression 3D Paris & Île-de-France',
   description: 'Impression 3D professionnelle à Paris et en Île-de-France : FDM, résine, métal, grand format et fabrication en série. Découvrez nos solutions.',
   alternates: { canonical: 'https://www.inphenix-system.fr/impression-3d' },
 }
