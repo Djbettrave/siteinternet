@@ -1,3 +1,6 @@
+'use client'
+
+import { useState } from 'react'
 import Link from 'next/link'
 
 type ServiceCard = {
@@ -36,14 +39,13 @@ interface ServiceNavigationPageProps {
 function PhotoPlaceholder({ alt, featured = false }: { alt: string; featured?: boolean }) {
   return (
     <div
-      className={`${featured ? 'aspect-[16/5] md:aspect-[16/6]' : 'aspect-[4/3]'} flex flex-col items-center justify-center gap-2 rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500`}
+      className={`${featured ? 'aspect-[16/6]' : 'aspect-square md:aspect-[4/3]'} flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500`}
       role="img"
       aria-label={alt}
     >
       <svg className="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
       </svg>
-      <span className="text-[11px] font-medium text-center px-3">Emplacement photo</span>
     </div>
   )
 }
@@ -74,6 +76,11 @@ function ServiceCard({ card }: { card: ServiceCard }) {
 }
 
 export default function ServiceNavigationPage({ eyebrow, title, intro, cards, comparison, faqs, showCta = false }: ServiceNavigationPageProps) {
+  const [tableHasScrolled, setTableHasScrolled] = useState(false)
+  const firstColumnStyle = { left: '0px', width: '60px', minWidth: '60px', maxWidth: '60px' }
+  const secondColumnStyle = { left: '60px', width: '78px', minWidth: '78px', maxWidth: '78px' }
+  const stickyDivider = tableHasScrolled ? 'shadow-[5px_0_8px_-6px_rgba(15,23,42,0.7)]' : ''
+
   return (
     <>
       <section className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-16 md:py-24">
@@ -97,23 +104,32 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
         <section className="py-16 md:py-24 bg-secondary-50">
           <div className="container-custom">
             <div className="max-w-3xl mb-10">
-              <h2 className="section-title">Quel matériau choisir pour votre impression 3D ?</h2>
-              <p className="section-subtitle">Comparez les principales caractéristiques de nos matériaux d’impression 3D pour identifier la solution adaptée à votre projet : prototype, pièce technique, élément décoratif ou fabrication en série.</p>
+              <h2 className="section-title">Quel matériau choisir ?</h2>
+              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-secondary-600 md:mt-4 md:text-lg">Comparez les principales caractéristiques de nos matériaux d’impression 3D pour identifier la solution adaptée à votre projet : prototype, pièce technique, élément décoratif ou fabrication en série.</p>
             </div>
-            <div className="overflow-x-auto rounded-xl border border-secondary-200 bg-white">
-              <table className="w-full min-w-[860px] text-left text-sm">
+            <div
+              className="overflow-x-auto rounded-xl border border-secondary-200 bg-white"
+              onScroll={(event) => setTableHasScrolled(event.currentTarget.scrollLeft > 0)}
+            >
+              <table className="w-full min-w-[760px] border-separate border-spacing-0 text-left text-sm">
                 <thead className="bg-secondary-100 text-secondary-900">
                   <tr>
                     {['Techno', 'Matériau', 'Précision', 'Résistance mécanique', 'Flexibilité', 'Finition', 'Coût relatif', 'Applications recommandées'].map((heading, index) => (
-                      <th key={heading} style={index === 1 ? { left: '72px', minWidth: '96px' } : index === 0 ? { minWidth: '72px' } : undefined} className={`px-3 py-4 font-semibold ${index < 2 ? 'sticky z-20 bg-secondary-100' : ''} ${index === 1 ? 'shadow-[4px_0_6px_-5px_rgba(15,23,42,0.45)]' : ''}`}>{heading}</th>
+                      <th
+                        key={heading}
+                        style={index === 0 ? firstColumnStyle : index === 1 ? secondColumnStyle : undefined}
+                        className={`px-2 py-4 font-semibold ${index === 0 ? 'sticky z-30 whitespace-nowrap bg-secondary-100 text-[11px]' : ''} ${index === 1 ? `sticky z-20 whitespace-nowrap bg-secondary-100 text-[11px] ${stickyDivider}` : ''}`}
+                      >
+                        {heading}
+                      </th>
                     ))}
                   </tr>
                 </thead>
                 <tbody className="divide-y divide-secondary-200 text-secondary-700">
                   {comparison.map((row) => (
                     <tr key={`${row.technology}-${row.material}`}>
-                      <td style={{ minWidth: '72px' }} className="sticky left-0 z-10 bg-white px-3 py-4 font-semibold text-secondary-900">{row.technology}</td>
-                      <td style={{ left: '72px', minWidth: '96px' }} className="sticky z-10 bg-white px-3 py-4 font-medium text-secondary-900 shadow-[4px_0_6px_-5px_rgba(15,23,42,0.45)]">{row.material}</td>
+                      <td style={firstColumnStyle} className="sticky z-20 whitespace-nowrap bg-white px-2 py-4 font-semibold text-secondary-900">{row.technology}</td>
+                      <td style={secondColumnStyle} className={`sticky z-10 whitespace-nowrap bg-white px-2 py-4 font-medium text-secondary-900 ${stickyDivider}`}>{row.material}</td>
                       <td className="px-4 py-4">{row.precision}</td>
                       <td className="px-4 py-4">{row.resistance}</td>
                       <td className="px-4 py-4">{row.flexibility}</td>

@@ -1,10 +1,10 @@
 import { access, readdir, readFile } from 'fs/promises'
 import { unstable_cache } from 'next/cache'
 import { join } from 'path'
-import type { ProjectImage } from '@/types/project'
+import type { ProjectCategory, ProjectImage } from '@/types/project'
 
 type ProjectStatus = ProjectImage['status']
-type ImageConfig = { objectPosition?: string; title?: string; alt?: string }
+type ImageConfig = { objectPosition?: string; title?: string; alt?: string; category?: ProjectCategory }
 type ProjectsConfig = Partial<Record<ProjectStatus, Record<string, ImageConfig | string>>>
 
 const serviceKeywordMap: Record<string, string[]> = {
@@ -68,6 +68,7 @@ async function readImagesFromDir(
           filename,
           path: `/images/projects/${status}/${filename}`,
           status,
+          category: imageConfig.category ?? (status === 'completed' ? 'realisations' : 'atelier'),
           title,
           alt: imageConfig.alt ?? title,
           services: extractServicesFromFilename(filename),

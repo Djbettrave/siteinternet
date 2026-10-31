@@ -18,8 +18,10 @@ const cards = [
 const comparison = [
   { technology: 'FDM', material: 'PLA', precision: 'Bonne', resistance: 'Moyenne', flexibility: 'Faible', finish: 'Bonne', cost: '€', applications: 'Maquettes, prototypes visuels, décoration' },
   { technology: 'FDM', material: 'PETG', precision: 'Bonne', resistance: 'Bonne', flexibility: 'Modérée', finish: 'Bonne', cost: '€', applications: 'Pièces fonctionnelles, boîtiers, supports' },
+  { technology: 'FDM', material: 'ABS', precision: 'Bonne', resistance: 'Bonne', flexibility: 'Faible', finish: 'Bonne', cost: '€€', applications: 'Boîtiers, pièces techniques, prototypes fonctionnels' },
   { technology: 'FDM', material: 'TPU', precision: 'Bonne', resistance: 'Bonne aux déformations', flexibility: 'Très élevée', finish: 'Moyenne', cost: '€€', applications: 'Joints, protections, pièces souples' },
-  { technology: 'Résine', material: 'Résine standard', precision: 'Excellente', resistance: 'Variable', flexibility: 'Faible', finish: 'Excellente', cost: '€€', applications: 'Pièces détaillées, prototypes esthétiques' },
+  { technology: 'Résine', material: 'Standard', precision: 'Excellente', resistance: 'Variable', flexibility: 'Faible', finish: 'Excellente', cost: '€€', applications: 'Pièces détaillées, prototypes esthétiques' },
+  { technology: 'Résine', material: 'Flexible', precision: 'Élevée', resistance: 'Bonne aux déformations', flexibility: 'Élevée', finish: 'Bonne', cost: '€€€', applications: 'Pièces souples, protections, joints et prototypes fonctionnels' },
   { technology: 'Métal', material: 'Métal', precision: 'Élevée', resistance: 'Très élevée selon alliage', flexibility: 'Faible', finish: 'Variable', cost: '€€€', applications: 'Pièces mécaniques, composants techniques' },
 ]
 
@@ -42,8 +44,8 @@ export default function Impression3DPage() {
   return (
     <ServiceNavigationPage
       eyebrow="Impression 3D"
-      title="Impression 3D professionnelle à Paris et en Île-de-France"
-      intro="Inphenix System vous accompagne dans vos projets d’impression 3D à Paris et en Île-de-France. Du prototypage à la production en série, découvrez nos solutions d’impression 3D FDM, résine, métal et grand format, adaptées aux besoins des professionnels."
+      title="Impression 3D à Paris et en Île-de-France"
+      intro="Inphenix System vous accompagne dans vos projets d’impression 3D à Paris et en Île-de-France. Du prototypage à la production en série, découvrez nos solutions d’impression 3D FDM, résine, métal et grand format, adaptées aux besoins des professionnels. Basé à Suresnes, en région parisienne, Inphenix System accompagne également les projets à distance et expédie les pièces partout en France."
       cards={cards}
       comparison={comparison}
       faqs={faqs}

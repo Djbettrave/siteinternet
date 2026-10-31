@@ -3,20 +3,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import type { ProjectImage } from '@/types/project'
-
-type FilterStatus = 'all' | 'completed' | 'process'
-
-// Mapping des services vers leurs URLs
-const serviceUrlMap: Record<string, string> = {
-  'Impression 3D FDM': '/services/impression-3d/fdm',
-  'Impression 3D Résine': '/services/impression-3d/resine',
-  'Impression Grand Format': '/services/impression-3d/grand-format',
-  'Scan 3D': '/services/scan-3d',
-  'Modélisation 3D': '/services/modelisation-3d',
-  'Prototypage': '/services/prototypage',
-  'Électronique & Motorisation': '/services/electronique',
-}
+import type { ProjectCategory, ProjectImage } from '@/types/project'
 
 type RealisationsGalleryProps = {
   initialProjects: ProjectImage[]
@@ -24,7 +11,7 @@ type RealisationsGalleryProps = {
 
 export default function RealisationsGallery({ initialProjects }: RealisationsGalleryProps) {
   const projects = initialProjects
-  const [selectedStatus, setSelectedStatus] = useState<FilterStatus>('completed')
+  const [selectedCategory, setSelectedCategory] = useState<ProjectCategory>('realisations')
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
@@ -50,10 +37,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY])
 
-  const filteredProjects = projects.filter((project) => {
-    if (selectedStatus === 'all') return true
-    return project.status === selectedStatus
-  })
+  const filteredProjects = projects.filter((project) => project.category === selectedCategory)
 
   // Scroll vers le haut quand le filtre change
   useEffect(() => {
@@ -62,7 +46,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
     // Scroller vers le haut de la page
     window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [selectedStatus, projects.length])
+  }, [selectedCategory, projects.length])
 
   const closeLightbox = useCallback(() => {
     setLightboxOpen(false)
@@ -93,10 +77,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   useEffect(() => {
     if (!lightboxOpen) return
 
-    const filteredLength = projects.filter((project) => {
-      if (selectedStatus === 'all') return true
-      return project.status === selectedStatus
-    }).length
+    const filteredLength = projects.filter((project) => project.category === selectedCategory).length
 
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') {
@@ -110,14 +91,13 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
     window.addEventListener('keydown', handleKeyDown)
     return () => window.removeEventListener('keydown', handleKeyDown)
-  }, [lightboxOpen, projects, selectedStatus, closeLightbox])
+  }, [lightboxOpen, projects, selectedCategory, closeLightbox])
 
   return (
     <>
       <section className="bg-white pt-10 sm:pt-14">
         <div className="container-custom">
-          <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Réalisations en impression 3D</h1>
-          <p className="mt-3 max-w-2xl text-secondary-600">Découvrez nos projets d’impression 3D, de prototypage, de modélisation et de fabrication sur mesure.</p>
+          <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Nos réalisations</h1>
         </div>
       </section>
 
@@ -126,37 +106,27 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
         isHeaderVisible ? 'top-20' : 'top-0'
       }`}>
         <div className="container-custom">
-          <nav className="flex items-center justify-center gap-8 py-4" aria-label="Filtres des projets">
-            <button
-              onClick={() => setSelectedStatus('completed')}
-              className={`text-sm font-semibold transition-colors pb-1.5 border-b-2 ${
-                selectedStatus === 'completed'
-                  ? 'text-primary-600 border-primary-600'
-                  : 'text-secondary-700 border-transparent hover:text-primary-600 hover:border-primary-300'
-              }`}
-            >
-              Projets clients
-            </button>
-            <button
-              onClick={() => setSelectedStatus('process')}
-              className={`text-sm font-semibold transition-colors pb-1.5 border-b-2 ${
-                selectedStatus === 'process'
-                  ? 'text-primary-600 border-primary-600'
-                  : 'text-secondary-700 border-transparent hover:text-primary-600 hover:border-primary-300'
-              }`}
-            >
-              Notre atelier
-            </button>
-            <button
-              onClick={() => setSelectedStatus('all')}
-              className={`text-sm font-semibold transition-colors pb-1.5 border-b-2 ${
-                selectedStatus === 'all'
-                  ? 'text-primary-600 border-primary-600'
-                  : 'text-secondary-700 border-transparent hover:text-primary-600 hover:border-primary-300'
-              }`}
-            >
-              Toutes les photos
-            </button>
+          <p className="pt-7 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary-500">Explorer par univers</p>
+          <nav className="grid grid-cols-3 items-end gap-1 py-3" aria-label="Explorer les réalisations par univers">
+            {([
+              ['realisations', 'Réalisations'],
+              ['fabrication', 'Fabrication'],
+              ['atelier', 'L’atelier'],
+            ] as const).map(([category, label]) => (
+              <button
+                key={category}
+                type="button"
+                onClick={() => setSelectedCategory(category)}
+                aria-pressed={selectedCategory === category}
+                className={`border-b pb-3 text-center text-[11px] font-semibold tracking-[-0.01em] transition-colors sm:text-sm ${
+                  selectedCategory === category
+                    ? 'border-secondary-900 text-secondary-900'
+                    : 'border-transparent text-secondary-400 hover:text-secondary-700'
+                }`}
+              >
+                {label}
+              </button>
+            ))}
           </nav>
         </div>
       </section>
@@ -172,10 +142,9 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
             </div>
           ) : (
             <>
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-2">
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                 {filteredProjects.map((project, index) => (
-                  <article key={project.id} className="group relative overflow-hidden rounded-lg shadow-sm hover:shadow-xl transition-all duration-300">
-                    {/* Image avec aspect ratio 4:3 */}
+                  <article key={project.id} className="group relative overflow-hidden bg-secondary-100">
                     <div
                       className="aspect-[4/3] relative overflow-hidden bg-secondary-100 cursor-pointer"
                       onClick={() => openLightbox(index)}
@@ -189,30 +158,6 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                         sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       />
 
-                      {/* Overlay au hover avec badges services */}
-                      <div className="absolute inset-0 bg-gradient-to-t from-secondary-900/95 via-secondary-900/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center p-6">
-                        {/* Badges services avec liens */}
-                        <div className="flex flex-wrap gap-2 justify-center">
-                          {(project.services.length > 0 ? project.services : ['Prototypage']).map((service, idx) => {
-                            const serviceUrl = serviceUrlMap[service]
-                            if (!serviceUrl) return (
-                              <span key={idx} className="text-xs font-medium text-white bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full border border-white/30">
-                                {service}
-                              </span>
-                            )
-                            return (
-                              <Link
-                                key={idx}
-                                href={serviceUrl}
-                                onClick={(e) => e.stopPropagation()}
-                                className="text-xs font-medium text-white bg-white/20 backdrop-blur-sm hover:bg-white/30 px-3 py-1.5 rounded-full border border-white/30 transition-colors"
-                              >
-                                {service}
-                              </Link>
-                            )
-                          })}
-                        </div>
-                      </div>
                     </div>
                   </article>
                 ))}
@@ -293,39 +238,15 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
             onClick={(e) => e.stopPropagation()}
           >
             {/* Image */}
-            <div className="relative w-full h-full flex items-center justify-center mb-4">
+            <div className="relative flex h-full w-full items-center justify-center">
               <Image
                 src={filteredProjects[currentImageIndex].path}
                 alt={filteredProjects[currentImageIndex].alt}
                 width={1920}
                 height={1080}
-                className="max-w-full max-h-[80vh] w-auto h-auto object-contain rounded-lg"
+                className="h-auto max-h-[80vh] w-auto max-w-full object-contain"
                 priority
               />
-            </div>
-
-            {/* Badges de services */}
-            <div className="flex flex-wrap gap-2 justify-center mt-4">
-              {(filteredProjects[currentImageIndex].services.length > 0
-                ? filteredProjects[currentImageIndex].services
-                : ['Prototypage']
-              ).map((service, idx) => {
-                const serviceUrl = serviceUrlMap[service]
-                if (!serviceUrl) return (
-                  <span key={idx} className="text-sm font-medium text-white bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full border border-white/30">
-                    {service}
-                  </span>
-                )
-                return (
-                  <Link
-                    key={idx}
-                    href={serviceUrl}
-                    className="text-sm font-medium text-white bg-white/20 backdrop-blur-sm hover:bg-white/30 px-4 py-2 rounded-full border border-white/30 transition-colors"
-                  >
-                    {service}
-                  </Link>
-                )
-              })}
             </div>
 
             {/* Compteur */}
