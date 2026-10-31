@@ -100,15 +100,15 @@ export default function Header() {
   }, [lastScrollY, pathname])
 
   return (
-    <header className={`bg-white z-50 ${
+    <header className={`z-50 bg-white ${
       mobileMenuOpen
-        ? 'fixed inset-0 overflow-y-auto flex flex-col animate-mobile-menu-in'
+        ? 'fixed inset-0 flex min-h-[100dvh] flex-col overflow-y-auto animate-mobile-menu-in'
         : `sticky top-0 border-b border-secondary-200 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`
     }`}>
-      <nav className={mobileMenuOpen ? 'flex flex-col flex-1 px-4 sm:px-6 w-full' : 'container-custom'} aria-label="Navigation principale">
-        <div className="flex items-center justify-between h-20">
+      <nav className={mobileMenuOpen ? 'flex w-full flex-1 flex-col px-6 sm:px-8' : 'container-custom'} aria-label="Navigation principale">
+        <div className={`flex items-center ${mobileMenuOpen ? 'h-24 justify-end pt-[env(safe-area-inset-top)]' : 'h-20 justify-between'}`}>
           {/* Logo */}
-          <div className="flex-shrink-0">
+          {!mobileMenuOpen && <div className="flex-shrink-0">
             <Link href="/" className="flex items-center space-x-2.5">
               <Image
                 src="/images/logos/inphenix/icon-only.svg"
@@ -123,10 +123,10 @@ export default function Header() {
                 <span className="text-xl font-light text-secondary-600">System</span>
               </div>
             </Link>
-          </div>
+          </div>}
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-0.5">
+          {!mobileMenuOpen && <div className="hidden lg:flex items-center space-x-0.5">
             {/* Services Dropdown */}
             <div
               className="relative"
@@ -248,10 +248,10 @@ export default function Header() {
             >
               Contact
             </Link>
-          </div>
+          </div>}
 
           {/* CTA Button */}
-          <div className="hidden lg:flex items-center space-x-4">
+          {!mobileMenuOpen && <div className="hidden lg:flex items-center space-x-4">
             <a
               href="https://impression3d.inphenix-system.fr"
               target="_blank"
@@ -263,96 +263,95 @@ export default function Header() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
               </svg>
             </a>
-          </div>
+          </div>}
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
             <button
               type="button"
               onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}
-              className="p-2 text-secondary-700 hover:text-primary-600"
-              aria-label="Menu"
+              className="p-2 text-secondary-800 transition-colors hover:text-primary-600"
+              aria-label={mobileMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
             >
-              {mobileMenuOpen ? (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              ) : (
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              )}
+              <span className="relative block h-6 w-7" aria-hidden="true">
+                <span className={`absolute left-0 top-1/2 h-[1.5px] w-7 -translate-y-1/2 rounded-full bg-current transition-all duration-300 [transition-timing-function:cubic-bezier(0.32,0.72,0,1)] ${mobileMenuOpen ? 'rotate-45' : '-translate-y-[7px]'}`} />
+                <span className={`absolute left-0 top-1/2 h-[1.5px] w-7 -translate-y-1/2 rounded-full bg-current transition-all duration-200 ${mobileMenuOpen ? 'scale-x-0 opacity-0' : 'opacity-100'}`} />
+                <span className={`absolute left-0 top-1/2 h-[1.5px] w-7 -translate-y-1/2 rounded-full bg-current transition-all duration-300 [transition-timing-function:cubic-bezier(0.32,0.72,0,1)] ${mobileMenuOpen ? '-rotate-45' : 'translate-y-[7px]'}`} />
+              </span>
             </button>
           </div>
         </div>
 
         {/* Mobile menu */}
         {mobileMenuOpen && (
-          <div className="lg:hidden flex-1 flex flex-col border-t border-secondary-200">
-            <div className="py-6 flex flex-col flex-1">
-              <div className="space-y-1 flex-1">
-                <div className="py-2">
-                  <div className="flex items-center justify-between px-2">
+          <div className="flex flex-1 flex-col lg:hidden">
+            <div className="flex flex-1 flex-col pb-8 pt-4">
+              <div className="flex-1">
+                <div className="mobile-menu-item">
+                  <div className="flex min-h-[72px] items-center justify-between border-b border-secondary-100">
                     <Link
                       href="/services"
                       onClick={closeMobileMenu}
-                      className="flex min-h-[72px] items-center py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                      className="flex flex-1 items-center py-4 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                     >
                       Services
                     </Link>
                     <button
+                    type="button"
                     onClick={() => {
-                      setMobileServicesOpen(!mobileServicesOpen)
-                      if (mobileServicesOpen) setMobileServiceCategory(null)
+                      const nextOpen = !mobileServicesOpen
+                      setMobileServicesOpen(nextOpen)
+                      setMobileServiceCategory(null)
+                      if (nextOpen) setMobileSecteursOpen(false)
                     }}
-                    className="min-h-[72px] p-3 text-secondary-900 hover:text-primary-600"
+                    className="p-3 text-secondary-900 transition-colors hover:text-primary-600"
                     aria-label="Afficher les services"
                     aria-expanded={mobileServicesOpen}
                   >
-                    <svg className={`w-5 h-5 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg className={`h-6 w-6 transition-transform ${mobileServicesOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   </div>
                   {mobileServicesOpen && (
-                    <div className="mx-2 space-y-2 pb-2">
+                    <div className="pb-2 pt-1">
                       {serviceGroups.map((group) => {
                         const expanded = mobileServiceCategory === group.name
                         return (
-                          <div key={group.name} className="overflow-hidden rounded-xl border border-primary-100 bg-primary-50">
-                            <div className="flex min-h-[72px] items-center justify-between gap-2 px-3">
+                          <div key={group.name} className="border-b border-secondary-100">
+                            <div className="flex min-h-[60px] items-center justify-between gap-2">
                               <Link
                                 href={group.href}
                                 onClick={closeMobileMenu}
-                                className="flex-1 py-3 text-base font-semibold text-primary-900 hover:text-primary-600"
+                                className="flex-1 py-3 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-600"
                               >
                                 {group.name}
                               </Link>
                               <button
                                 type="button"
                                 onClick={() => setMobileServiceCategory(expanded ? null : group.name)}
-                                className="min-h-[72px] p-3 text-primary-800 hover:text-primary-600"
+                                className="p-3 text-secondary-700 transition-colors hover:text-primary-600"
                                 aria-label={`Afficher ${group.name}`}
                                 aria-expanded={expanded}
                               >
-                                <svg className={`w-5 h-5 transition-transform ${expanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                                <svg className={`h-5 w-5 transition-transform ${expanded ? 'rotate-90' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M9 5l7 7-7 7" />
                                 </svg>
                               </button>
                             </div>
                             {expanded && (
-                              <div className="border-t border-primary-100 bg-white py-1">
+                              <div className="border-t border-secondary-100 pb-2 pt-1">
                                 {group.items.map((item) => item.href ? (
                                   <Link
                                     key={item.name}
                                     href={item.href}
                                     onClick={closeMobileMenu}
-                                    className="block border-l-2 border-primary-100 px-4 py-2.5 text-sm font-medium text-secondary-600 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-700"
+                                    className="block py-2 pl-4 text-[15px] text-secondary-600 transition-colors hover:text-primary-700"
                                   >
                                     {item.name}
                                   </Link>
                                 ) : (
-                                  <span key={item.name} className="block border-l-2 border-primary-100 px-4 py-2.5 text-sm font-medium text-secondary-500">{item.name}</span>
+                                  <span key={item.name} className="block py-2 pl-4 text-[15px] text-secondary-500">{item.name}</span>
                                 ))}
                               </div>
                             )}
@@ -364,7 +363,7 @@ export default function Header() {
                           key={service.href}
                           href={service.href}
                           onClick={closeMobileMenu}
-                          className="flex min-h-[72px] items-center rounded-xl border border-primary-100 bg-primary-50 px-3 py-3 text-base font-semibold text-primary-900 hover:bg-primary-100 hover:text-primary-700"
+                          className="flex min-h-[60px] items-center border-b border-secondary-100 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-700"
                         >
                           {service.name}
                         </Link>
@@ -372,23 +371,31 @@ export default function Header() {
                     </div>
                   )}
                 </div>
-                <div className="py-2 border-t border-secondary-100">
-                  <div className="flex items-center justify-between px-2">
+                <div className="mobile-menu-item">
+                  <div className="flex min-h-[72px] items-center justify-between border-b border-secondary-100">
                     <Link
                       href="/secteurs"
                       onClick={closeMobileMenu}
-                      className="flex min-h-[72px] items-center py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                      className="flex flex-1 items-center py-4 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                     >
                       Secteurs
                     </Link>
                     <button
-                    onClick={() => setMobileSecteursOpen(!mobileSecteursOpen)}
-                    className="min-h-[72px] p-3 text-secondary-900 hover:text-primary-600"
+                    type="button"
+                    onClick={() => {
+                      const nextOpen = !mobileSecteursOpen
+                      setMobileSecteursOpen(nextOpen)
+                      if (nextOpen) {
+                        setMobileServicesOpen(false)
+                        setMobileServiceCategory(null)
+                      }
+                    }}
+                    className="p-3 text-secondary-900 transition-colors hover:text-primary-600"
                     aria-label="Afficher les secteurs"
                     aria-expanded={mobileSecteursOpen}
                   >
-                    <svg className={`w-5 h-5 transition-transform ${mobileSecteursOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    <svg className={`h-6 w-6 transition-transform ${mobileSecteursOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M19 9l-7 7-7-7" />
                     </svg>
                   </button>
                   </div>
@@ -397,44 +404,44 @@ export default function Header() {
                       key={secteur.href}
                       href={secteur.href}
                       onClick={closeMobileMenu}
-                      className="block px-4 py-2.5 mx-2 text-sm font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg"
+                      className="flex min-h-[60px] items-center border-b border-secondary-100 py-3 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-700"
                     >
                       {secteur.name}
                     </Link>
                   ))}
                 </div>
-                <div className="border-t border-secondary-100">
+                <div className="mobile-menu-item">
                   <Link
                     href="/guides"
                     onClick={closeMobileMenu}
-                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg"
+                    className="flex min-h-[72px] items-center border-b border-secondary-100 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                   >
                     Guides
                   </Link>
                   <Link
                     href="/realisations"
                     onClick={closeMobileMenu}
-                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    className="flex min-h-[72px] items-center border-b border-secondary-100 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                   >
                     Réalisations
                   </Link>
                   <Link
                     href="/qui-sommes-nous"
                     onClick={closeMobileMenu}
-                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    className="flex min-h-[72px] items-center border-b border-secondary-100 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                   >
                     À propos
                   </Link>
                   <Link
                     href="/contact"
                     onClick={closeMobileMenu}
-                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    className="flex min-h-[72px] items-center border-b border-secondary-100 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600"
                   >
                     Contact
                   </Link>
                 </div>
               </div>
-              <div className="pt-6 pb-8">
+              <div className="pt-8">
                 <a
                   href="https://impression3d.inphenix-system.fr"
                   target="_blank"

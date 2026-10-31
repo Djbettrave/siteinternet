@@ -44,12 +44,13 @@ export default function Impression3DPage() {
   return (
     <ServiceNavigationPage
       eyebrow="Impression 3D"
-      title="Impression 3D à Paris et en Île-de-France"
-      intro="Inphenix System vous accompagne dans vos projets d’impression 3D à Paris et en Île-de-France. Du prototypage à la production en série, découvrez nos solutions d’impression 3D FDM, résine, métal et grand format, adaptées aux besoins des professionnels. Basé à Suresnes, en région parisienne, Inphenix System accompagne également les projets à distance et expédie les pièces partout en France."
+      title={'Impression 3D\nParis / Île-de-France'}
+      intro="Basé à Suresnes, Inphenix System accompagne vos projets d’impression 3D, du prototype à la production en série, à Paris, en Île-de-France et partout en France."
       cards={cards}
       comparison={comparison}
       faqs={faqs}
       showCta
+      introPlacement="after-cards"
     />
   )
 }

@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
+import { useState, useEffect, useCallback, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import type { ProjectCategory, ProjectImage } from '@/types/project'
@@ -15,7 +15,9 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [hasPassedTitle, setHasPassedTitle] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const titleSectionRef = useRef<HTMLElement>(null)
 
   // Détecter la direction du scroll pour ajuster la position de la barre de filtres
   useEffect(() => {
@@ -30,6 +32,9 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
         setIsHeaderVisible(true)
       }
 
+      const titleBottom = titleSectionRef.current?.getBoundingClientRect().bottom ?? Infinity
+      setHasPassedTitle(titleBottom <= 80)
+
       setLastScrollY(currentScrollY)
     }
 
@@ -38,15 +43,6 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   }, [lastScrollY])
 
   const filteredProjects = projects.filter((project) => project.category === selectedCategory)
-
-  // Scroll vers le haut quand le filtre change
-  useEffect(() => {
-    // Ne pas scroller au premier chargement
-    if (projects.length === 0) return
-
-    // Scroller vers le haut de la page
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }, [selectedCategory, projects.length])
 
   const closeLightbox = useCallback(() => {
     setLightboxOpen(false)
@@ -95,7 +91,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
   return (
     <>
-      <section className="bg-white pt-10 sm:pt-14">
+      <section ref={titleSectionRef} className="bg-white pt-10 sm:pt-14">
         <div className="container-custom">
           <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Nos réalisations</h1>
         </div>
@@ -106,8 +102,8 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
         isHeaderVisible ? 'top-20' : 'top-0'
       }`}>
         <div className="container-custom">
-          <p className="pt-7 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary-500">Explorer par univers</p>
-          <nav className="grid grid-cols-3 items-end gap-1 py-3" aria-label="Explorer les réalisations par univers">
+          {hasPassedTitle && <p className="pt-5 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary-500">Explorer par univers</p>}
+          <nav className={`grid grid-cols-3 items-end gap-1 ${isHeaderVisible ? 'py-4' : 'py-3'}`} aria-label="Explorer les réalisations par univers">
             {([
               ['realisations', 'Réalisations'],
               ['fabrication', 'Fabrication'],

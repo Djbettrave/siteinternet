@@ -47,19 +47,20 @@ export default function Trust() {
   }, [])
 
   return (
-    <section className="py-24 bg-secondary-50">
+    <section className="bg-white py-20 md:py-24">
       <div className="container-custom">
-        {/* Projets réalisés pour */}
-        <div className="text-center mb-8">
-          <h2 className="section-title">Projets réalisés pour</h2>
+        {/* Références */}
+        <div className="mb-10 text-center">
+          <p className="mb-3 text-xs font-semibold uppercase tracking-[0.16em] text-secondary-500">Inphenix System</p>
+          <h2 className="section-title">Références</h2>
         </div>
 
-        {/* Carousel marques avec flèches */}
-        <div className="relative">
+        {/* Carousel marques */}
+        <div className="relative border-y border-secondary-200 py-5">
           {/* Flèche gauche */}
           <button
             onClick={scrollPrev}
-            className="absolute -left-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md border border-secondary-200 flex items-center justify-center hover:bg-secondary-50 transition-colors"
+            className="absolute -left-3 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center text-secondary-500 transition-colors hover:text-secondary-900"
             aria-label="Précédent"
           >
             <svg className="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -70,7 +71,7 @@ export default function Trust() {
           {/* Flèche droite */}
           <button
             onClick={scrollNext}
-            className="absolute -right-4 top-1/2 -translate-y-1/2 z-10 w-10 h-10 bg-white rounded-full shadow-md border border-secondary-200 flex items-center justify-center hover:bg-secondary-50 transition-colors"
+            className="absolute -right-3 top-1/2 z-10 flex h-8 w-8 -translate-y-1/2 items-center justify-center text-secondary-500 transition-colors hover:text-secondary-900"
             aria-label="Suivant"
           >
             <svg className="w-5 h-5 text-secondary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -78,14 +79,14 @@ export default function Trust() {
             </svg>
           </button>
 
-          <div className="overflow-hidden mx-6" ref={brandsRef}>
+          <div className="mx-7 overflow-hidden" ref={brandsRef}>
             <div className="flex">
               {brands.map((brand, index) => (
                 <div
                   key={`${brand.name}-${index}`}
                   className="flex-none w-1/4 md:w-1/5 lg:w-[11.11%] px-2"
                 >
-                  <div className="flex items-center justify-center h-14 bg-white rounded-lg border border-secondary-200 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer px-3">
+                  <div className="flex h-14 items-center justify-center px-3 grayscale opacity-60 transition-all duration-300 hover:opacity-100">
                     {imageErrors.has(brand.logo) ? (
                       <svg className="w-8 h-8 text-secondary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
@@ -108,20 +109,20 @@ export default function Trust() {
         </div>
 
         {/* Disclaimer */}
-        <p className="text-[10px] italic text-secondary-400 text-center mt-6">
+        <p className="mt-5 text-center text-xs leading-relaxed text-secondary-400">
           Certains projets ont été réalisés en tant que sous-traitant ou partenaire technique, pour le compte d'agences ou de prestataires intermédiaires.
         </p>
 
         {/* Section Partenaires */}
-        <div className="mt-16">
-          <div className="text-center mb-8">
-            <h3 className="text-2xl font-bold text-secondary-900 mb-2">Partenaires</h3>
+        <div className="mt-14 border-t border-secondary-100 pt-10">
+          <div className="mb-6 text-center">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.16em] text-secondary-500">Partenaires</h3>
           </div>
-          <div className="flex justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-x-7 gap-y-5">
             {partners.map((partner) => (
               <div
                 key={partner.name}
-                className="flex items-center justify-center h-14 w-36 bg-white rounded-lg border border-secondary-200 grayscale hover:grayscale-0 opacity-60 hover:opacity-100 transition-all duration-300 cursor-pointer px-3"
+                className="flex h-10 w-28 items-center justify-center grayscale opacity-55 transition-all duration-300 hover:opacity-100"
               >
                 {imageErrors.has(partner.logo) ? (
                   <svg className="w-8 h-8 text-secondary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">

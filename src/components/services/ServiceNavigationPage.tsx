@@ -34,12 +34,13 @@ interface ServiceNavigationPageProps {
   comparison?: ComparisonRow[]
   faqs?: Faq[]
   showCta?: boolean
+  introPlacement?: 'hero' | 'after-cards'
 }
 
 function PhotoPlaceholder({ alt, featured = false }: { alt: string; featured?: boolean }) {
   return (
     <div
-      className={`${featured ? 'aspect-[16/6]' : 'aspect-square md:aspect-[4/3]'} flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500`}
+      className={`${featured ? 'aspect-[16/6]' : 'aspect-[4/5] md:aspect-[6/5]'} flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500`}
       role="img"
       aria-label={alt}
     >
@@ -56,13 +57,13 @@ function ServiceCard({ card }: { card: ServiceCard }) {
   const content = (
     <div className="relative overflow-hidden rounded-xl">
       <PhotoPlaceholder alt={card.alt} featured={card.featured} />
-      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-3 bg-gradient-to-t from-secondary-900/90 via-secondary-900/55 to-transparent px-3 pb-3 pt-10 text-white">
+      <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-secondary-900/90 via-secondary-900/55 to-transparent px-3 pb-3 pt-12 text-white">
         <h2 className="min-w-0 leading-tight">
           {isPrintingCard && <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-primary-100">Impression 3D</span>}
-          <span className="block text-base font-semibold md:text-xl">{label}</span>
+          <span className="block whitespace-nowrap text-[13px] font-semibold tracking-[-0.03em] md:text-lg">{label}</span>
         </h2>
         {card.href && (
-          <svg className="mb-0.5 h-5 w-5 shrink-0 text-white transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="mb-0.5 h-4 w-4 shrink-0 text-white transition-transform group-hover:translate-x-1 md:h-5 md:w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
           </svg>
         )}
@@ -75,7 +76,7 @@ function ServiceCard({ card }: { card: ServiceCard }) {
   return card.href ? <Link href={card.href} className={className}>{content}</Link> : <div className={className}>{content}</div>
 }
 
-export default function ServiceNavigationPage({ eyebrow, title, intro, cards, comparison, faqs, showCta = false }: ServiceNavigationPageProps) {
+export default function ServiceNavigationPage({ eyebrow, title, intro, cards, comparison, faqs, showCta = false, introPlacement = 'hero' }: ServiceNavigationPageProps) {
   const [tableHasScrolled, setTableHasScrolled] = useState(false)
   const firstColumnStyle = { left: '0px', width: '60px', minWidth: '60px', maxWidth: '60px' }
   const secondColumnStyle = { left: '60px', width: '78px', minWidth: '78px', maxWidth: '78px' }
@@ -83,20 +84,23 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
 
   return (
     <>
-      <section className="bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 py-16 md:py-24">
+      <section className={`bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 ${introPlacement === 'hero' ? 'py-16 md:py-24' : 'py-12 md:py-20'}`}>
         <div className="container-custom max-w-4xl">
           <p className="text-sm font-semibold uppercase tracking-[0.16em] text-primary-300 mb-5">{eyebrow}</p>
-          <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">{title}</h1>
-          <p className="text-lg md:text-xl leading-relaxed text-secondary-200 max-w-3xl">{intro}</p>
+          <h1 className="text-4xl font-bold leading-tight text-white md:text-5xl">
+            {title.split('\n').map((line) => <span key={line} className="block">{line}</span>)}
+          </h1>
+          {introPlacement === 'hero' && <p className="mt-6 max-w-3xl text-lg leading-relaxed text-secondary-200 md:text-xl">{intro}</p>}
         </div>
       </section>
 
-      <section className="py-10 md:py-24 bg-white">
+      <section className="bg-white pb-12 pt-8 md:py-24">
         <div className="container-custom max-w-5xl">
-          <h2 className="section-title text-center mb-6 md:mb-10">Nos solutions</h2>
+          <h2 className="mb-6 text-center text-3xl font-bold text-secondary-900 md:mb-10 md:text-4xl">Nos solutions</h2>
           <div className="grid grid-cols-2 gap-3 md:gap-6">
             {cards.map((card) => <ServiceCard key={card.name} card={card} />)}
           </div>
+          {introPlacement === 'after-cards' && <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-secondary-600 md:mt-10 md:text-base">{intro}</p>}
         </div>
       </section>
 

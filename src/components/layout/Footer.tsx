@@ -53,7 +53,7 @@ export default function Footer() {
             <p className="text-secondary-300 text-sm mb-4">
               Bureau d'études spécialisé en impression 3D.
             </p>
-            <div className="flex items-center justify-between gap-4 md:flex-col md:items-start md:gap-4">
+            <div className="flex items-center justify-center gap-5 md:flex-col md:items-start md:gap-4">
             <div className="order-2 flex items-center gap-2 text-primary-400 md:order-1">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
@@ -81,7 +81,7 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               {services.map((service) => (
                 <li key={service.href}>
-                  <Link href={service.href} className="block whitespace-nowrap text-xs font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
+                  <Link href={service.href} className="block whitespace-nowrap text-[12.5px] font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
                     {service.name}
                   </Link>
                 </li>
@@ -95,7 +95,7 @@ export default function Footer() {
             <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
               {secteurs.map((secteur) => (
                 <li key={secteur.href}>
-                  <Link href={secteur.href} className="block text-xs font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
+                  <Link href={secteur.href} className="block text-[12.5px] font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
                     {secteur.name}
                   </Link>
                 </li>
@@ -106,7 +106,7 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Contact</h3>
-            <ul className="grid grid-cols-[auto_1fr] items-center gap-x-2 gap-y-2 text-[11px] text-secondary-200 md:text-sm">
+            <ul className="grid grid-cols-[auto_1fr] items-center gap-x-2 gap-y-2 text-xs text-secondary-200 md:text-sm">
               <li className="order-2 justify-self-end">
                 <Link href="/contact" className="inline-flex items-center gap-1.5 text-secondary-200 transition-colors hover:text-white">
                   <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">

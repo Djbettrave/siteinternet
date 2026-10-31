@@ -53,10 +53,9 @@ export default function Services() {
       <div className="container-custom">
         {/* Header */}
         <div className="text-center mb-16">
-          <h2 className="section-title">Nos services</h2>
+          <h2 className="section-title">Nos expertises</h2>
           <p className="section-subtitle mx-auto">
-            Une expertise complète pour donner vie à vos projets,
-            du concept initial à la réalisation finale.
+            De la conception à la fabrication, pour des projets conçus sur mesure.
           </p>
         </div>
 
