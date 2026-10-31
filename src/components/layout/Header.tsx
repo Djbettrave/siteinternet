@@ -339,23 +339,23 @@ export default function Header() {
                   </button>
                   </div>
                   {mobileServicesOpen && (
-                    <div className="pb-2 pt-1">
+                    <div className="ml-3 border-l border-secondary-200 pb-2 pt-1">
                       {serviceGroups.map((group) => {
                         const expanded = mobileServiceCategory === group.name
                         return (
                           <div key={group.name} className="border-b border-secondary-100">
-                            <div className="flex min-h-[52px] items-center justify-between gap-2 pl-4">
+                            <div className="flex min-h-[46px] items-center justify-between gap-2 pl-5">
                               <Link
                                 href={group.href}
                                 onClick={closeMobileMenu}
-                                className="flex-1 py-2.5 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-600"
+                                className="flex-1 py-2 text-[15px] font-medium tracking-[-0.015em] text-secondary-700 transition-colors hover:text-primary-600"
                               >
                                 {group.name}
                               </Link>
                               <button
                                 type="button"
                                 onClick={() => setMobileServiceCategory(expanded ? null : group.name)}
-                                className="p-3 text-secondary-700 transition-colors hover:text-primary-600"
+                                className="p-2.5 text-secondary-700 transition-colors hover:text-primary-600"
                                 aria-label={`Afficher ${group.name}`}
                                 aria-expanded={expanded}
                               >
@@ -371,12 +371,12 @@ export default function Header() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={closeMobileMenu}
-                                    className="block py-1.5 pl-8 text-sm text-secondary-500 transition-colors hover:text-primary-700"
+                                    className="block py-1.5 pl-9 text-[13px] text-secondary-500 transition-colors hover:text-primary-700"
                                   >
                                     {item.name}
                                   </Link>
                                 ) : (
-                                  <span key={item.name} className="block py-1.5 pl-8 text-sm text-secondary-400">{item.name}</span>
+                                  <span key={item.name} className="block py-1.5 pl-9 text-[13px] text-secondary-400">{item.name}</span>
                                 ))}
                               </div>
                             )}
@@ -388,7 +388,7 @@ export default function Header() {
                           key={service.href}
                           href={service.href}
                           onClick={closeMobileMenu}
-                          className="flex min-h-[52px] items-center border-b border-secondary-100 py-2.5 pl-4 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-700"
+                          className="flex min-h-[46px] items-center border-b border-secondary-100 py-2 pl-5 text-[15px] font-medium tracking-[-0.015em] text-secondary-700 transition-colors hover:text-primary-700"
                         >
                           {service.name}
                         </Link>
@@ -424,16 +424,20 @@ export default function Header() {
                     </svg>
                   </button>
                   </div>
-                  {mobileSecteursOpen && secteurs.map((secteur) => (
-                    <Link
-                      key={secteur.href}
-                      href={secteur.href}
-                      onClick={closeMobileMenu}
-                      className="flex min-h-[52px] items-center border-b border-secondary-100 py-2.5 pl-4 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-700"
-                    >
-                      {secteur.name}
-                    </Link>
-                  ))}
+                  {mobileSecteursOpen && (
+                    <div className="ml-3 border-l border-secondary-200 pb-2 pt-1">
+                      {secteurs.map((secteur) => (
+                        <Link
+                          key={secteur.href}
+                          href={secteur.href}
+                          onClick={closeMobileMenu}
+                          className="flex min-h-[46px] items-center border-b border-secondary-100 py-2 pl-5 text-[15px] font-medium tracking-[-0.015em] text-secondary-700 transition-colors hover:text-primary-700"
+                        >
+                          {secteur.name}
+                        </Link>
+                      ))}
+                    </div>
+                  )}
                 </div>
                 <div className="mobile-menu-item">
                   <Link
