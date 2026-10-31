@@ -110,22 +110,6 @@ export default function SectorPage({ sector }: SectorPageProps) {
         <div className="container-custom relative">
           <div className="w-full min-w-0 py-12 lg:py-16">
             <div className="w-full min-w-0 max-w-3xl">
-              {/* Breadcrumb */}
-              <nav className="flex items-center gap-2 text-sm text-secondary-400 mb-8">
-                <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-                <span>/</span>
-                <Link href="/secteurs" className="hover:text-white transition-colors">Secteurs</Link>
-                <span>/</span>
-                <span className="text-white">{sector.name}</span>
-              </nav>
-
-              {/* Badge */}
-              <div className="mb-6">
-                <div className="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2">
-                  <span className="text-white/90 text-sm font-medium">Expertise sectorielle</span>
-                </div>
-              </div>
-
               {/* Headline */}
               <h1
                 className="mb-6 max-w-full text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"

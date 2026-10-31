@@ -1,5 +1,4 @@
 import { Metadata } from 'next'
-import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Politique de Confidentialité',
@@ -16,11 +15,6 @@ export default function PolitiqueConfidentialitePage() {
       <section className="bg-gradient-to-br from-secondary-900 to-secondary-800 py-16">
         <div className="container-custom">
           <div className="max-w-3xl">
-            <nav className="flex items-center gap-2 text-sm text-secondary-400 mb-6">
-              <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-              <span>/</span>
-              <span className="text-white">Politique de confidentialité</span>
-            </nav>
             <h1 className="text-3xl md:text-4xl font-bold text-white">
               Politique de confidentialité
             </h1>

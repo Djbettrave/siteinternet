@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
@@ -53,6 +53,7 @@ export default function Header() {
   const [mobileSecteursOpen, setMobileSecteursOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+  const galleryNavigationRef = useRef(false)
   const pathname = usePathname()
 
   const resetMobileMenu = () => {
@@ -72,6 +73,24 @@ export default function Header() {
   }
 
   useEffect(() => {
+    const hideForGalleryNavigation = () => {
+      galleryNavigationRef.current = true
+      setIsVisible(false)
+    }
+    const restoreAfterGalleryNavigation = () => {
+      galleryNavigationRef.current = false
+    }
+
+    window.addEventListener('inphenix-gallery-navigation-start', hideForGalleryNavigation)
+    window.addEventListener('inphenix-gallery-navigation-end', restoreAfterGalleryNavigation)
+
+    return () => {
+      window.removeEventListener('inphenix-gallery-navigation-start', hideForGalleryNavigation)
+      window.removeEventListener('inphenix-gallery-navigation-end', restoreAfterGalleryNavigation)
+    }
+  }, [])
+
+  useEffect(() => {
     const handleScroll = () => {
       // Auto-hide uniquement sur la page réalisations
       if (pathname !== '/realisations') {
@@ -80,6 +99,12 @@ export default function Header() {
       }
 
       const currentScrollY = window.scrollY
+
+      if (galleryNavigationRef.current) {
+        setIsVisible(false)
+        setLastScrollY(currentScrollY)
+        return
+      }
 
       if (currentScrollY < 50) {
         // Toujours visible en haut de page
@@ -404,7 +429,7 @@ export default function Header() {
                       key={secteur.href}
                       href={secteur.href}
                       onClick={closeMobileMenu}
-                      className="flex min-h-[60px] items-center border-b border-secondary-100 py-3 text-lg font-medium tracking-[-0.02em] text-secondary-800 transition-colors hover:text-primary-700"
+                      className="flex min-h-[52px] items-center border-b border-secondary-100 py-2.5 pl-4 text-base font-medium tracking-[-0.02em] text-secondary-700 transition-colors hover:text-primary-700"
                     >
                       {secteur.name}
                     </Link>

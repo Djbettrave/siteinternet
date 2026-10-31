@@ -119,20 +119,6 @@ export default function ServicePage({ service }: ServicePageProps) {
         <div className="container-custom relative">
           <div className="py-20 lg:py-28">
             <div className="max-w-3xl">
-              <nav className="flex items-center gap-2 text-sm text-secondary-400 mb-8">
-                <Link href="/" className="hover:text-white transition-colors">Accueil</Link>
-                <span>/</span>
-                <Link href="/services" className="hover:text-white transition-colors">Services</Link>
-                {service.category && (
-                  <>
-                    <span>/</span>
-                    <span className="text-secondary-300">{service.category}</span>
-                  </>
-                )}
-                <span>/</span>
-                <span className="text-white">{service.name}</span>
-              </nav>
-
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                 {service.headline.split('\n').map((line, index) => (
                   <span key={index} className={`block ${service.slug === 'impression-uv' && index === 1 ? 'text-[0.68em] md:text-[0.72em] leading-snug' : ''}`}>

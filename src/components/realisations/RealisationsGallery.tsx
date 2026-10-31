@@ -15,6 +15,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   const [lightboxOpen, setLightboxOpen] = useState(false)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
+  const [isNavigatingCategory, setIsNavigatingCategory] = useState(false)
   const [hasPassedTitle, setHasPassedTitle] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
   const titleSectionRef = useRef<HTMLElement>(null)
@@ -49,6 +50,8 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   const selectCategory = (category: ProjectCategory) => {
     if (category === selectedCategory) return
 
+    setIsNavigatingCategory(true)
+    window.dispatchEvent(new Event('inphenix-gallery-navigation-start'))
     setSelectedCategory(category)
 
     requestAnimationFrame(() => {
@@ -61,6 +64,12 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
         top: Math.max(0, window.scrollY + projectsTop - filtersHeight),
         behavior: 'smooth',
       })
+
+      window.setTimeout(() => {
+        setIsNavigatingCategory(false)
+        setIsHeaderVisible(false)
+        window.dispatchEvent(new Event('inphenix-gallery-navigation-end'))
+      }, 850)
     })
   }
 
@@ -119,7 +128,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
       {/* Filters */}
       <section ref={filtersSectionRef} className={`bg-white border-b border-secondary-200 sticky z-40 transition-all duration-300 ${
-        isHeaderVisible ? 'top-20' : 'top-0'
+        isNavigatingCategory || !isHeaderVisible ? 'top-0' : 'top-20'
       }`}>
         <div className="container-custom">
           {hasPassedTitle && <p className="pt-5 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary-500">Explorer par univers</p>}
