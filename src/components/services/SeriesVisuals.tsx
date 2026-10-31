@@ -12,7 +12,6 @@ function Lightbox({ image, className = '', priority = false }: { image: SeriesIm
     <>
       <button type="button" onClick={() => setOpen(true)} className={`group relative block h-full w-full overflow-hidden bg-secondary-100 text-left focus:outline-none focus:ring-4 focus:ring-primary-300 ${className}`} aria-label={`Agrandir : ${image.alt}`}>
         <Image src={image.src} alt={image.alt} width={image.width} height={image.height} priority={priority} sizes="(max-width: 768px) 100vw, 50vw" className="h-full w-full object-cover transition duration-500 group-hover:scale-[1.035]" />
-        <span className="absolute right-3 top-3 grid h-9 w-9 place-items-center rounded-full bg-white/95 text-lg text-secondary-900 shadow-sm opacity-0 transition group-hover:opacity-100" aria-hidden="true">↗</span>
       </button>
       {open && (
         <div role="dialog" aria-modal="true" aria-label={image.caption} className="fixed inset-0 z-[70] grid place-items-center bg-secondary-950/90 p-5 backdrop-blur-sm" onClick={() => setOpen(false)}>
