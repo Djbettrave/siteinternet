@@ -371,12 +371,12 @@ export default function Header() {
                                     key={item.name}
                                     href={item.href}
                                     onClick={closeMobileMenu}
-                                    className="block py-1.5 pl-9 text-[13px] text-secondary-500 transition-colors hover:text-primary-700"
+                                    className="block py-1.5 pl-9 text-[13px] text-secondary-500 transition-colors active:text-primary-700"
                                   >
                                     {item.name}
                                   </Link>
                                 ) : (
-                                  <span key={item.name} className="block py-1.5 pl-9 text-[13px] text-secondary-400">{item.name}</span>
+                                  <span key={item.name} className="block py-1.5 pl-9 text-[13px] text-secondary-500">{item.name}</span>
                                 ))}
                               </div>
                             )}
