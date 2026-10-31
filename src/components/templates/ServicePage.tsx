@@ -135,7 +135,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                 {service.headline.split('\n').map((line, index) => (
-                  <span key={index} className="block">
+                  <span key={index} className={`block ${service.slug === 'impression-uv' && index === 1 ? 'text-[0.68em] md:text-[0.72em] leading-snug' : ''}`}>
                     {line}
                   </span>
                 ))}

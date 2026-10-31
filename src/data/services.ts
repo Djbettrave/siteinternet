@@ -18,7 +18,7 @@ export const servicesData: Record<string, ServiceData> = {
       'impression UV grande série',
       'impression UV Île-de-France',
     ],
-    headline: 'Impression UV sur objets\net pièces sur mesure',
+    headline: 'Impression UV\nobjets & pièces sur mesure',
     subheadline: 'Logos, textes et visuels imprimés directement sur vos objets, pièces imprimées en 3D et supports compatibles.',
     description: 'Une finition visuelle pour personnaliser un objet, une pièce technique, un support de présentation ou une série destinée au retail, à la PLV et à l’événementiel.',
     features: [

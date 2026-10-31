@@ -2,12 +2,9 @@ import Link from 'next/link'
 import { CONTACT_INFO } from '@/data/contact'
 
 const services = [
-  { name: 'Impression 3D FDM', href: '/services/impression-3d/fdm' },
-  { name: 'Impression 3D Résine', href: '/services/impression-3d/resine' },
-  { name: 'Impression Grand Format', href: '/services/impression-3d/grand-format' },
-  { name: 'Scan 3D', href: '/services/scan-3d' },
-  { name: 'Modélisation 3D', href: '/services/modelisation-3d' },
-  { name: 'Prototypage', href: '/services/prototypage' },
+  { name: 'Impression 3D', href: '/impression-3d' },
+  { name: 'Conception & fabrication', href: '/conception-fabrication' },
+  { name: 'Impression UV sur objet', href: '/services/impression-uv' },
   { name: 'Électronique & Motorisation', href: '/services/electronique' },
 ]
 
@@ -45,8 +42,8 @@ export default function Footer() {
       </div>
 
       {/* Main Footer */}
-      <div className="container-custom py-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <div className="container-custom py-8 md:py-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link href="/" className="flex items-center space-x-2 mb-4">
@@ -79,10 +76,10 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Ce que nous proposons...</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
               {services.map((service) => (
                 <li key={service.href}>
-                  <Link href={service.href} className="text-secondary-300 hover:text-white transition-colors text-sm">
+                  <Link href={service.href} className="block text-secondary-300 hover:text-white transition-colors text-sm leading-snug">
                     {service.name}
                   </Link>
                 </li>
@@ -93,10 +90,10 @@ export default function Footer() {
           {/* Secteurs */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Vous êtes dans...</h3>
-            <ul className="space-y-2">
+            <ul className="grid grid-cols-2 gap-x-6 gap-y-3">
               {secteurs.map((secteur) => (
                 <li key={secteur.href}>
-                  <Link href={secteur.href} className="text-secondary-300 hover:text-white transition-colors text-sm">
+                  <Link href={secteur.href} className="block text-secondary-300 hover:text-white transition-colors text-sm leading-snug">
                     {secteur.name}
                   </Link>
                 </li>

@@ -55,6 +55,22 @@ export default function Header() {
   const [lastScrollY, setLastScrollY] = useState(0)
   const pathname = usePathname()
 
+  const resetMobileMenu = () => {
+    setMobileServicesOpen(false)
+    setMobileServiceCategory(null)
+    setMobileSecteursOpen(false)
+  }
+
+  const openMobileMenu = () => {
+    resetMobileMenu()
+    setMobileMenuOpen(true)
+  }
+
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false)
+    resetMobileMenu()
+  }
+
   useEffect(() => {
     const handleScroll = () => {
       // Auto-hide uniquement sur la page réalisations
@@ -86,7 +102,7 @@ export default function Header() {
   return (
     <header className={`bg-white z-50 ${
       mobileMenuOpen
-        ? 'fixed inset-0 overflow-y-auto flex flex-col'
+        ? 'fixed inset-0 overflow-y-auto flex flex-col animate-mobile-menu-in'
         : `sticky top-0 border-b border-secondary-200 transition-transform duration-300 ${isVisible ? 'translate-y-0' : '-translate-y-full'}`
     }`}>
       <nav className={mobileMenuOpen ? 'flex flex-col flex-1 px-4 sm:px-6 w-full' : 'container-custom'} aria-label="Navigation principale">
@@ -253,7 +269,7 @@ export default function Header() {
           <div className="lg:hidden">
             <button
               type="button"
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              onClick={mobileMenuOpen ? closeMobileMenu : openMobileMenu}
               className="p-2 text-secondary-700 hover:text-primary-600"
               aria-label="Menu"
             >
@@ -279,14 +295,17 @@ export default function Header() {
                   <div className="flex items-center justify-between px-2">
                     <Link
                       href="/services"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                      onClick={closeMobileMenu}
+                      className="flex min-h-[72px] items-center py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
                     >
                       Services
                     </Link>
                     <button
-                    onClick={() => setMobileServicesOpen(!mobileServicesOpen)}
-                    className="p-3 text-secondary-900 hover:text-primary-600"
+                    onClick={() => {
+                      setMobileServicesOpen(!mobileServicesOpen)
+                      if (mobileServicesOpen) setMobileServiceCategory(null)
+                    }}
+                    className="min-h-[72px] p-3 text-secondary-900 hover:text-primary-600"
                     aria-label="Afficher les services"
                     aria-expanded={mobileServicesOpen}
                   >
@@ -296,23 +315,23 @@ export default function Header() {
                   </button>
                   </div>
                   {mobileServicesOpen && (
-                    <div className="mx-2 space-y-1">
+                    <div className="mx-2 space-y-2 pb-2">
                       {serviceGroups.map((group) => {
                         const expanded = mobileServiceCategory === group.name
                         return (
-                          <div key={group.name} className="rounded-lg border border-secondary-100">
-                            <div className="flex items-center justify-between gap-2 px-2">
+                          <div key={group.name} className="overflow-hidden rounded-xl border border-primary-100 bg-primary-50">
+                            <div className="flex min-h-[72px] items-center justify-between gap-2 px-3">
                               <Link
                                 href={group.href}
-                                onClick={() => setMobileMenuOpen(false)}
-                                className="flex-1 py-3 text-base font-semibold text-secondary-900 hover:text-primary-600"
+                                onClick={closeMobileMenu}
+                                className="flex-1 py-3 text-base font-semibold text-primary-900 hover:text-primary-600"
                               >
                                 {group.name}
                               </Link>
                               <button
                                 type="button"
                                 onClick={() => setMobileServiceCategory(expanded ? null : group.name)}
-                                className="p-3 text-secondary-900 hover:text-primary-600"
+                                className="min-h-[72px] p-3 text-primary-800 hover:text-primary-600"
                                 aria-label={`Afficher ${group.name}`}
                                 aria-expanded={expanded}
                               >
@@ -322,18 +341,18 @@ export default function Header() {
                               </button>
                             </div>
                             {expanded && (
-                              <div className="border-t border-secondary-100 py-1">
+                              <div className="border-t border-primary-100 bg-white py-1">
                                 {group.items.map((item) => item.href ? (
                                   <Link
                                     key={item.name}
                                     href={item.href}
-                                    onClick={() => setMobileMenuOpen(false)}
-                                    className="block px-4 py-2 text-secondary-600 hover:bg-primary-50 hover:text-primary-600"
+                                    onClick={closeMobileMenu}
+                                    className="block border-l-2 border-primary-100 px-4 py-2.5 text-sm font-medium text-secondary-600 hover:border-primary-500 hover:bg-primary-50 hover:text-primary-700"
                                   >
                                     {item.name}
                                   </Link>
                                 ) : (
-                                  <span key={item.name} className="block px-4 py-2 text-secondary-500">{item.name}</span>
+                                  <span key={item.name} className="block border-l-2 border-primary-100 px-4 py-2.5 text-sm font-medium text-secondary-500">{item.name}</span>
                                 ))}
                               </div>
                             )}
@@ -344,8 +363,8 @@ export default function Header() {
                         <Link
                           key={service.href}
                           href={service.href}
-                          onClick={() => setMobileMenuOpen(false)}
-                          className="block rounded-lg px-2 py-3 text-base font-semibold text-secondary-900 hover:bg-primary-50 hover:text-primary-600"
+                          onClick={closeMobileMenu}
+                          className="flex min-h-[72px] items-center rounded-xl border border-primary-100 bg-primary-50 px-3 py-3 text-base font-semibold text-primary-900 hover:bg-primary-100 hover:text-primary-700"
                         >
                           {service.name}
                         </Link>
@@ -357,14 +376,14 @@ export default function Header() {
                   <div className="flex items-center justify-between px-2">
                     <Link
                       href="/secteurs"
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
+                      onClick={closeMobileMenu}
+                      className="flex min-h-[72px] items-center py-3 text-lg font-bold text-secondary-900 hover:text-primary-600"
                     >
                       Secteurs
                     </Link>
                     <button
                     onClick={() => setMobileSecteursOpen(!mobileSecteursOpen)}
-                    className="p-3 text-secondary-900 hover:text-primary-600"
+                    className="min-h-[72px] p-3 text-secondary-900 hover:text-primary-600"
                     aria-label="Afficher les secteurs"
                     aria-expanded={mobileSecteursOpen}
                   >
@@ -377,39 +396,39 @@ export default function Header() {
                     <Link
                       key={secteur.href}
                       href={secteur.href}
-                      onClick={() => setMobileMenuOpen(false)}
-                      className="block px-4 py-2 mx-2 text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg"
+                      onClick={closeMobileMenu}
+                      className="block px-4 py-2.5 mx-2 text-sm font-medium text-secondary-600 hover:text-primary-600 hover:bg-primary-50 rounded-lg"
                     >
                       {secteur.name}
                     </Link>
                   ))}
                 </div>
-                <div className="py-2 border-t border-secondary-100">
+                <div className="border-t border-secondary-100">
                   <Link
                     href="/guides"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg"
+                    onClick={closeMobileMenu}
+                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg"
                   >
                     Guides
                   </Link>
                   <Link
                     href="/realisations"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    onClick={closeMobileMenu}
+                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
                   >
                     Réalisations
                   </Link>
                   <Link
                     href="/qui-sommes-nous"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    onClick={closeMobileMenu}
+                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
                   >
                     À propos
                   </Link>
                   <Link
                     href="/contact"
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="block px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
+                    onClick={closeMobileMenu}
+                    className="flex min-h-[72px] items-center px-2 py-3 text-secondary-900 hover:text-primary-600 font-bold text-lg border-t border-secondary-100"
                   >
                     Contact
                   </Link>
@@ -420,7 +439,7 @@ export default function Header() {
                   href="https://impression3d.inphenix-system.fr"
                   target="_blank"
                   rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={closeMobileMenu}
                   className="btn-primary w-full text-center flex items-center justify-center gap-2 py-4 text-lg"
                 >
                   Devis instantané
