@@ -168,52 +168,62 @@ export default function Header() {
                 </svg>
               </Link>
               {servicesOpen && (
-                <div className="absolute left-0 mt-0 w-80 bg-white rounded-xl shadow-lg border border-secondary-100 py-2 z-50">
-                  {serviceGroups.map((group) => {
-                    const expanded = desktopServiceCategory === group.name
-                    return (
-                      <div key={group.name} className="mx-2 border-b border-secondary-100 last:border-b-0">
-                        <div className="flex items-center justify-between gap-2 py-2">
-                          <Link href={group.href} className="flex-1 rounded-lg px-2 py-2 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700">
-                            {group.name}
-                          </Link>
-                          <button
-                            type="button"
-                            onClick={() => setDesktopServiceCategory(expanded ? null : group.name)}
-                            className="rounded-lg p-2 text-secondary-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
-                            aria-label={`Afficher ${group.name}`}
+                <div className="absolute left-0 top-full z-50 mt-0">
+                  <div className="relative w-80 rounded-xl border border-secondary-100 bg-white py-2 shadow-lg">
+                    {serviceGroups.map((group) => {
+                      const expanded = desktopServiceCategory === group.name
+                      return (
+                        <div key={group.name} className="mx-2">
+                          <Link
+                            href={group.href}
+                            onMouseEnter={() => setDesktopServiceCategory(group.name)}
+                            onFocus={() => setDesktopServiceCategory(group.name)}
                             aria-expanded={expanded}
+                            className={`flex w-full items-center justify-between rounded-lg px-3 py-3 text-sm font-semibold transition-colors ${
+                              expanded
+                                ? 'bg-primary-50 text-primary-700'
+                                : 'text-secondary-900 hover:bg-primary-50 hover:text-primary-700'
+                            }`}
                           >
-                            <svg className={`w-4 h-4 transition-transform ${expanded ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            <span>{group.name}</span>
+                            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="m9 5 7 7-7 7" />
                             </svg>
-                          </button>
+                          </Link>
                         </div>
-                        {expanded && (
-                          <div className="pb-2">
-                            {group.items.map((item) => item.href ? (
-                              <Link key={item.name} href={item.href} className="block rounded-lg px-4 py-2 text-sm text-secondary-600 transition-colors hover:bg-primary-50 hover:text-primary-700">
-                                {item.name}
-                              </Link>
-                            ) : (
-                              <span key={item.name} className="block px-4 py-2 text-sm text-secondary-500">{item.name}</span>
-                            ))}
-                          </div>
-                        )}
-                      </div>
-                    )
-                  })}
-                  <div className="mx-2 pt-1">
-                    {directServices.map((service) => (
-                      <Link key={service.href} href={service.href} className="block rounded-lg px-2 py-3 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700">
-                        {service.name}
-                      </Link>
-                    ))}
+                      )
+                    })}
+                    <div className="mx-2 mt-1 border-t border-secondary-100 pt-1">
+                      {directServices.map((service) => (
+                        <Link key={service.href} href={service.href} className="block rounded-lg px-3 py-3 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700">
+                          {service.name}
+                        </Link>
+                      ))}
+                    </div>
+
+                    {desktopServiceCategory && (() => {
+                      const group = serviceGroups.find((item) => item.name === desktopServiceCategory)
+                      if (!group) return null
+
+                      return (
+                        <div className="absolute left-full top-0 ml-2 w-72 rounded-xl border border-secondary-100 bg-white py-2 shadow-lg">
+                          {group.items.map((item) => item.href ? (
+                            <Link
+                              key={item.name}
+                              href={item.href}
+                              className="mx-2 block rounded-lg px-3 py-3 text-sm text-secondary-600 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                            >
+                              {item.name}
+                            </Link>
+                          ) : (
+                            <span key={item.name} className="mx-2 block px-3 py-3 text-sm text-secondary-500">{item.name}</span>
+                          ))}
+                        </div>
+                      )
+                    })()}
                   </div>
                 </div>
               )}
-            </div>
-
             {/* Secteurs Dropdown */}
             <div
               className="relative"
