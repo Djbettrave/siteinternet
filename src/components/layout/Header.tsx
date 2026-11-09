@@ -156,7 +156,10 @@ export default function Header() {
             <div
               className="relative"
               onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => setServicesOpen(false)}
+              onMouseLeave={() => {
+                setServicesOpen(false)
+                setDesktopServiceCategory(null)
+              }}
             >
               <Link
                 href="/services"
