@@ -402,9 +402,9 @@ export default function ContactPage() {
                         id="service"
                         value={formData.service}
                         onChange={(e) => setFormData({ ...formData, service: e.target.value })}
-                        className="w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
+                        className={`w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3 ${formData.service ? 'text-base not-italic text-secondary-900' : 'text-xs italic text-secondary-400'}`}
                       >
-                        <option value="">—</option>
+                        <option value="" disabled hidden>Sélectionner un service</option>
                         {services.map((service) => (
                           <option key={service} value={service}>{service}</option>
                         ))}
@@ -418,9 +418,9 @@ export default function ContactPage() {
                         id="sector"
                         value={formData.sector}
                         onChange={(e) => setFormData({ ...formData, sector: e.target.value })}
-                        className="w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3"
+                        className={`w-full rounded-lg border border-secondary-200 bg-white px-3 py-2.5 focus:border-transparent focus:outline-none focus:ring-2 focus:ring-primary-500 lg:px-4 lg:py-3 ${formData.sector ? 'text-base not-italic text-secondary-900' : 'text-xs italic text-secondary-400'}`}
                       >
-                        <option value="">Sélectionnez un secteur</option>
+                        <option value="" disabled hidden>Sélectionner un secteur</option>
                         {sectors.map((sector) => (
                           <option key={sector} value={sector}>{sector}</option>
                         ))}
