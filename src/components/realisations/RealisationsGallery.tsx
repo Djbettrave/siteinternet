@@ -167,7 +167,10 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
             </div>
           ) : (
             <>
-              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+              <div className={filteredProjects.length === 1
+                ? 'mx-auto grid max-w-4xl gap-2'
+                : 'grid gap-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4'
+              }>
                 {filteredProjects.map((project, index) => (
                   <article key={project.id} className="group relative overflow-hidden bg-secondary-100">
                     <div
