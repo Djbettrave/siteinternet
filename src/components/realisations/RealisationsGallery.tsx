@@ -120,7 +120,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
   return (
     <>
-      <section ref={titleSectionRef} className="bg-white pt-10 sm:pt-14">
+      <section ref={titleSectionRef} className="bg-white pb-5 pt-6 sm:pb-7 sm:pt-8">
         <div className="container-custom">
           <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Nos réalisations</h1>
         </div>
@@ -157,7 +157,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
       </section>
 
       {/* Projects Grid */}
-      <section ref={projectsSectionRef} id="projects-section" className="bg-white py-2">
+      <section ref={projectsSectionRef} id="projects-section" className="bg-white pb-2 pt-5">
         <div className="container-custom px-2">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
@@ -167,7 +167,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
             </div>
           ) : (
             <>
-              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
+              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {filteredProjects.map((project, index) => (
                   <article key={project.id} className="group relative overflow-hidden bg-secondary-100">
                     <div
@@ -180,7 +180,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                         style={{ objectPosition: project.objectPosition || 'center' }}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
                       />
 
                     </div>
