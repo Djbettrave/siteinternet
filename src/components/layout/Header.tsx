@@ -227,6 +227,8 @@ export default function Header() {
                   </div>
                 </div>
               )}
+            </div>
+
             {/* Secteurs Dropdown */}
             <div
               className="relative"
