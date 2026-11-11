@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 
@@ -10,6 +11,14 @@ export interface SectorData {
   subheadline: string
   description: string
   heroImage?: string
+  editorial?: {
+    eyebrow?: string
+    title: string
+    paragraphs: string[]
+    image: string
+    imageAlt: string
+    imagePosition?: 'left' | 'right'
+  }
   useCases: {
     title: string
     description: string
@@ -108,7 +117,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
-          <div className="w-full min-w-0 py-12 lg:py-16">
+          <div className={`w-full min-w-0 py-12 lg:py-16 ${sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
             <div className="w-full min-w-0 max-w-3xl">
               {/* Headline */}
               <h1
@@ -146,6 +155,19 @@ export default function SectorPage({ sector }: SectorPageProps) {
                 </div>
               )}
             </div>
+
+            {sector.heroImage && (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
+                <Image
+                  src={sector.heroImage}
+                  alt={`Projet Inphenix System pour le secteur ${sector.name}`}
+                  fill
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  className="object-cover"
+                  priority
+                />
+              </div>
+            )}
           </div>
         </div>
 
@@ -180,8 +202,44 @@ export default function SectorPage({ sector }: SectorPageProps) {
         </div>
       </section>
 
+      {/* Sector perspective */}
+      {sector.editorial && (
+        <section className="bg-secondary-50 py-20 lg:py-24">
+          <div className="container-custom">
+            <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+              <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-2' : ''}>
+                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+                  <Image
+                    src={sector.editorial.image}
+                    alt={sector.editorial.imageAlt}
+                    fill
+                    sizes="(min-width: 1024px) 50vw, 100vw"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-1' : ''}>
+                {sector.editorial.eyebrow && (
+                  <p className="mb-4 text-sm font-semibold uppercase tracking-[0.16em] text-primary-600">
+                    {sector.editorial.eyebrow}
+                  </p>
+                )}
+                <h2 className="mb-6 text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">
+                  {sector.editorial.title}
+                </h2>
+                <div className="space-y-5 text-lg leading-relaxed text-secondary-600">
+                  {sector.editorial.paragraphs.map((paragraph) => (
+                    <p key={paragraph}>{paragraph}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Benefits Section */}
-      <section className="py-24 bg-secondary-50">
+      <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="section-title mb-6">
