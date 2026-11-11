@@ -1,5 +1,26 @@
 {
   "completed": {
+    "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
+      "category": "realisations",
+      "order": 65,
+      "objectPosition": "center",
+      "title": "Scan 3D et reproduction résine d’une sculpture de lion",
+      "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
+    },
+    "panneaux-promotionnels-coty-power-prestige.jpeg": {
+      "category": "realisations",
+      "order": 75,
+      "objectPosition": "center",
+      "title": "Panneaux promotionnels Power Prestige pour Coty",
+      "alt": "Panneaux promotionnels Power Prestige réalisés sur mesure pour Coty"
+    },
+    "scan-3d-sculpture-serpent-miniature-resine.jpeg": {
+      "category": "realisations",
+      "order": 115,
+      "objectPosition": "center",
+      "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
+      "alt": "Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine"
+    },
     "electronique ..jpeg": {
       "category": "realisations",
       "order": 50,
@@ -100,6 +121,20 @@
     }
   },
   "process": {
+    "production-serie-mini-telephones-violets-noirs.jpeg": {
+      "category": "fabrication",
+      "order": 35,
+      "objectPosition": "center",
+      "title": "Production en série de mini téléphones personnalisés",
+      "alt": "Série de mini téléphones violets et noirs personnalisés, fabriqués par impression 3D"
+    },
+    "maquette-architecturale-impression-3d.jpeg": {
+      "category": "fabrication",
+      "order": 45,
+      "objectPosition": "center",
+      "title": "Maquette architecturale réalisée en impression 3D",
+      "alt": "Maquette architecturale blanche réalisée par impression 3D"
+    },
     "atelier-imprimantes-3d-grand-format-suresnes.jpeg": {
       "category": "atelier",
       "order": 10,

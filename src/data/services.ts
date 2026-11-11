@@ -726,6 +726,11 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'De l’objet existant à un fichier exploitable',
         paragraphs: [
           'Le scan 3D permet de récupérer la géométrie d’un objet réel lorsqu’il n’existe plus de plan, de fichier ou de modèle numérique exploitable. Il constitue une base utile pour reproduire une pièce, l’adapter, l’archiver ou engager un travail de rétro-ingénierie.',
+        ],
+      },
+      {
+        title: 'Du scan à la reproduction',
+        paragraphs: [
           'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce.',
         ],
       },
@@ -734,12 +739,22 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
-        alt: 'Séquence à ajouter montrant l’objet réel, le scan 3D et le fichier final',
-        images: [
-          { label: 'Visuel scan 3D 01 — objet réel', alt: 'Photo à ajouter de l’objet avant scan 3D' },
-          { label: 'Visuel scan 3D 02 — scan', alt: 'Capture à ajouter du maillage obtenu par scan 3D' },
-          { label: 'Visuel scan 3D 03 — fichier final', alt: 'Capture à ajouter du fichier 3D exploitable' },
-        ],
+        alt: 'Scan 3D d’une sculpture et reproduction miniature en résine',
+        image: {
+          src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
+          alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
+          aspect: 'portrait',
+        },
+      },
+      {
+        afterSection: 1,
+        position: 'left',
+        alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
+        image: {
+          src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
+          alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
+          aspect: 'landscape',
+        },
       },
     ],
     specs: [

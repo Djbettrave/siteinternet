@@ -142,7 +142,7 @@ export default function QuiSommesNousPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {capabilities.map((cap) => (
-              <div key={cap.category} className="card p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
+              <div key={cap.category} className="rounded-2xl border border-[#C9D5E3] bg-white p-8 shadow-[0_6px_18px_rgba(15,37,64,0.055)] transition-all duration-200 hover:border-primary-300 hover:shadow-lg">
                 <h3 className="text-xl font-semibold text-secondary-900 mb-6">{cap.category}</h3>
                 <ul className="space-y-3">
                   {cap.items.map((item) => (

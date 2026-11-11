@@ -12,6 +12,16 @@ function Arrow() {
   return <svg className="h-4 w-4 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M5 12h14m-6-6 6 6-6 6" /></svg>
 }
 
+function CategoryIcon({ category }: { category: GuideCategorySlug }) {
+  const paths = {
+    fdm: <><path d="m4 7 8-4 8 4-8 4-8-4Z" /><path d="m4 12 8 4 8-4" /><path d="m4 17 8 4 8-4" /></>,
+    'fichiers-3d': <><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z" /><path d="M14 3v5h5" /><path d="m8.5 15 3.5-2 3.5 2v3L12 20l-3.5-2v-3Z" /></>,
+    resine: <><path d="M12 3s-4 4.3-4 7a4 4 0 0 0 8 0c0-2.7-4-7-4-7Z" /><path d="M5 19h14" /><path d="M8 16.5v2.5m8-2.5v2.5" /></>,
+  } as const
+
+  return <span className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-100 text-primary-700"><svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[category]}</svg></span>
+}
+
 export default function GuidesPage() {
   const categories = Object.keys(guideCategories) as GuideCategorySlug[]
   const featuredArticles = getGuidesByCategory('fdm')
@@ -26,7 +36,7 @@ export default function GuidesPage() {
           {categories.map((slug) => {
             const category = guideCategories[slug]
             const count = getGuidesByCategory(slug).length
-            return <Link key={slug} href={`/guides/${slug}`} className="group rounded-lg border border-primary-100 bg-white p-6 transition-colors hover:border-primary-300 sm:p-7"><div className="flex items-start justify-between gap-4"><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3><span className="text-primary-700">↗</span></div><p className="mt-3 text-[13px] leading-6 text-secondary-600">{category.description}</p><p className="mt-5 text-[13px] italic text-secondary-500">{count} guides disponibles</p></Link>
+            return <Link key={slug} href={`/guides/${slug}`} className="group flex min-h-[290px] flex-col rounded-xl border border-primary-200 bg-white p-6 transition-colors hover:border-primary-400 sm:min-h-[320px] sm:p-7"><div className="flex items-start justify-between gap-4"><CategoryIcon category={slug} /><span className="pt-1 text-primary-700">↗</span></div><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3><p className="mt-3 text-[13px] leading-6 text-secondary-600">{category.description}</p><p className="mt-auto pt-6 text-[13px] italic text-secondary-500">{count} guides disponibles</p></Link>
           })}
         </div>
       </section>

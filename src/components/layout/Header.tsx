@@ -75,6 +75,10 @@ export default function Header() {
     }, 260)
   }
 
+  const clearDesktopServiceCategory = () => {
+    setDesktopServiceCategory(null)
+  }
+
   const resetMobileMenu = () => {
     setMobileServicesOpen(false)
     setMobileServiceCategory(null)
@@ -218,7 +222,13 @@ export default function Header() {
                     })}
                     <div className="mx-2 mt-1 pt-1">
                       {directServices.map((service) => (
-                        <Link key={service.href} href={service.href} className="block rounded-lg px-3 py-3 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700">
+                        <Link
+                          key={service.href}
+                          href={service.href}
+                          onMouseEnter={clearDesktopServiceCategory}
+                          onFocus={clearDesktopServiceCategory}
+                          className="block rounded-lg px-3 py-3 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700"
+                        >
                           {service.name}
                         </Link>
                       ))}

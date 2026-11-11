@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
@@ -49,6 +50,11 @@ export interface ServiceData {
     position: 'left' | 'right'
     alt: string
     label?: string
+    image?: {
+      src: string
+      alt: string
+      aspect?: 'portrait' | 'landscape'
+    }
     images?: {
       alt: string
       label: string
@@ -215,7 +221,17 @@ export default function ServicePage({ service }: ServicePageProps) {
                     </div>
                     {visual && (
                       <div className={visual.position === 'left' ? 'md:order-1' : ''}>
-                        {visual.images ? (
+                        {visual.image ? (
+                          <div className={`relative overflow-hidden rounded-2xl border border-secondary-100 bg-secondary-50 ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
+                            <Image
+                              src={visual.image.src}
+                              alt={visual.image.alt}
+                              fill
+                              sizes="(min-width: 768px) 32vw, 100vw"
+                              className="object-contain"
+                            />
+                          </div>
+                        ) : visual.images ? (
                           <div className={`grid aspect-[4/3] ${visual.images.length === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-3`}>
                             {visual.images.map((image) => (
                               <ImagePlaceholder key={image.label} ariaLabel={image.alt} className="h-full min-h-0" />
