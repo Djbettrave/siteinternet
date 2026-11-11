@@ -52,7 +52,7 @@
     "modélisation 3D et impression résine.jpeg": {
       "category": "realisations",
       "order": 10,
-      "objectPosition": "center top",
+      "objectPosition": "center",
       "title": "Maquette anniversaire sur mesure",
       "alt": "Maquette d'anniversaire avec gâteau, sac et bougies issue de modélisation 3D"
     },
@@ -102,7 +102,7 @@
   "process": {
     "atelier-imprimantes-3d-grand-format-suresnes.jpeg": {
       "category": "atelier",
-      "order": 20,
+      "order": 10,
       "objectPosition": "center",
       "title": "Impression 3D grand format à Suresnes",
       "alt": "Parc d’imprimantes 3D grand format dans l’atelier Inphenix System à Suresnes, près de Paris"
@@ -158,7 +158,7 @@
     },
     "assemblage-noeud-chanel-evenementiel-sur-mesure.jpeg": {
       "category": "atelier",
-      "order": 10,
+      "order": 20,
       "objectPosition": "center",
       "title": "Assemblage d’un nœud Chanel",
       "alt": "Assemblage d’un grand nœud décoratif Chanel pour une installation événementielle sur mesure"
