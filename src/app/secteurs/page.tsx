@@ -38,7 +38,7 @@ export default function SecteursPage() {
                 href={`/secteurs/${sector.slug}`}
                 className="group card p-8 hover:border-primary-200 transition-all hover:-translate-y-1"
               >
-                <div className="text-5xl mb-4">{sector.icon}</div>
+                {sector.icon && <div className="text-5xl mb-4">{sector.icon}</div>}
                 <h2 className="text-2xl font-bold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">
                   {sector.name}
                 </h2>

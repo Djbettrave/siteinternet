@@ -12,7 +12,7 @@ const secteurs = [
   { name: 'Architecture', href: '/secteurs/architecture' },
   { name: 'Événementiel', href: '/secteurs/evenementiel' },
   { name: 'Luxe', href: '/secteurs/luxe' },
-  { name: 'Retail', href: '/secteurs/retail' },
+  { name: 'Retail & merchandising', href: '/secteurs/retail' },
   { name: 'Robotique', href: '/secteurs/robotique' },
   { name: 'Santé & médical', href: '/secteurs/medical' },
 ]

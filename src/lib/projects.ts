@@ -4,7 +4,7 @@ import { join } from 'path'
 import type { ProjectCategory, ProjectImage } from '@/types/project'
 
 type ProjectStatus = ProjectImage['status']
-type ImageConfig = { objectPosition?: string; title?: string; alt?: string; category?: ProjectCategory }
+type ImageConfig = { objectPosition?: string; title?: string; alt?: string; category?: ProjectCategory; order?: number }
 type ProjectsConfig = Partial<Record<ProjectStatus, Record<string, ImageConfig | string>>>
 
 const serviceKeywordMap: Record<string, string[]> = {
@@ -60,6 +60,11 @@ async function readImagesFromDir(
     const files = await readdir(dirPath)
     return files
       .filter((file) => /\.(jpg|jpeg|png|webp)$/i.test(file))
+      .sort((a, b) => {
+        const orderA = normalizeImageConfig(imageConfigs[a]).order ?? Number.MAX_SAFE_INTEGER
+        const orderB = normalizeImageConfig(imageConfigs[b]).order ?? Number.MAX_SAFE_INTEGER
+        return orderA - orderB || a.localeCompare(b, 'fr')
+      })
       .map((filename, index) => {
         const imageConfig = normalizeImageConfig(imageConfigs[filename])
         const title = imageConfig.title ?? fallbackTitle(filename)

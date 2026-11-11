@@ -1,12 +1,13 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, type CSSProperties } from 'react'
 
 interface MobileRevealProps {
   children: React.ReactNode
+  delay?: number
 }
 
-export default function MobileReveal({ children }: MobileRevealProps) {
+export default function MobileReveal({ children, delay = 0 }: MobileRevealProps) {
   const ref = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -31,5 +32,5 @@ export default function MobileReveal({ children }: MobileRevealProps) {
     return () => observer.disconnect()
   }, [])
 
-  return <div ref={ref} className="mobile-reveal">{children}</div>
+  return <div ref={ref} className="mobile-reveal" style={{ '--mobile-reveal-delay': `${delay}ms` } as CSSProperties}>{children}</div>
 }

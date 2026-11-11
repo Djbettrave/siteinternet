@@ -91,6 +91,7 @@ interface SectorPageProps {
 }
 
 export default function SectorPage({ sector }: SectorPageProps) {
+  const showHeroVisual = sector.slug === 'architecture' || sector.slug === 'medical'
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -120,7 +121,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
-          <div className={`w-full min-w-0 py-12 lg:py-16 ${sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
+          <div className={`w-full min-w-0 py-12 lg:py-16 ${showHeroVisual && sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
             <div className="w-full min-w-0 max-w-3xl">
               {/* Headline */}
               <h1
@@ -159,7 +160,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
               )}
             </div>
 
-            {sector.heroImage && <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />}
+            {showHeroVisual && sector.heroImage && <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />}
           </div>
         </div>
 
@@ -180,15 +181,15 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sector.useCases.map((useCase, index) => (
-              <MobileReveal key={index}>
-                <div className="group card p-6 md:p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
+              <MobileReveal key={index} delay={index * 55}>
+                <div className="group card p-6 md:p-8 md:hover:shadow-lg md:hover:border-primary-300 transition-all duration-200">
                   <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
-                      <svg className="h-5 w-5 text-primary-600 transition-colors group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors md:group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
+                      <svg className="h-5 w-5 text-primary-600 transition-colors md:group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={useCase.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors group-hover:text-primary-600 md:text-xl">{useCase.title}</h3>
+                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors md:group-hover:text-primary-600 md:text-xl">{useCase.title}</h3>
                   </div>
                   <p className="leading-relaxed text-secondary-600">{useCase.description}</p>
                 </div>

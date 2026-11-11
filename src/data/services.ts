@@ -273,7 +273,6 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     headline: 'Impression 3D Métal -\nPièces techniques sur mesure',
     subheadline: 'Une solution de fabrication additive adaptée aux composants mécaniques, prototypes fonctionnels et pièces techniques, selon les contraintes de votre projet.',
-    heroVisual: { label: 'Visuel métal 00', alt: 'Photo à ajouter d’une pièce technique réalisée en métal' },
     description: 'L’impression 3D métal permet de fabriquer des pièces complexes sans outillage traditionnel. Chaque demande est étudiée selon l’alliage, les efforts mécaniques, les tolérances, la finition et la quantité recherchée.',
     features: [
       {
@@ -369,10 +368,6 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D FDM -\nPièces résistantes et fonctionnelles',
     subheadline: 'La technologie FDM (Fused Deposition Modeling) pour des pièces solides, fonctionnelles et économiques. Idéale pour le prototypage et les petites séries.',
-    heroVisual: {
-      label: 'Visuel FDM 00 — pièce FDM fonctionnelle ou grand format',
-      alt: 'Photo à ajouter d’une pièce fonctionnelle fabriquée par impression 3D FDM',
-    },
     description: 'L\'impression 3D FDM utilise des filaments thermoplastiques pour créer des pièces couche par couche. Cette technologie offre un excellent rapport qualité-prix pour les prototypes fonctionnels et les pièces de production.',
     features: [
       {
@@ -498,7 +493,6 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D Résine -\nPrécision et haute résolution',
     subheadline: 'La technologie SLA/DLP pour des pièces ultra-détaillées avec des surfaces lisses. Idéale pour la joaillerie, les prototypes visuels et les moules.',
-    heroVisual: { label: 'Visuel résine 00', alt: 'Photo à ajouter d’une pièce imprimée en résine montrant des détails fins' },
     description: 'L\'impression résine (SLA/DLP) offre une précision au centième de millimètre et des surfaces parfaitement lisses. Technologie de choix pour les applications nécessitant des détails fins.',
     features: [
       {
@@ -601,7 +595,6 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D Grand Format -\nPièces jusqu\'à 85 cm en un seul bloc',
     subheadline: 'Imprimez des pièces de grande taille d\'un seul tenant, sans limite de taille par assemblage. Idéal pour l\'événementiel, les maquettes architecturales et les installations artistiques.',
-    heroVisual: { label: 'Visuel grand format 00', alt: 'Photo à ajouter d’une réalisation grand format en situation' },
     description: 'Notre imprimante grand format permet de créer des pièces jusqu\'à 85 cm de haut en un seul bloc. Pour les pièces plus grandes, nous assemblons plusieurs éléments avec des finitions invisibles - sans limite de taille.',
     features: [
       {
@@ -695,7 +688,6 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Scan 3D',
     headline: 'Scan 3D -\nNumérisez la réalité',
     subheadline: 'Transformez des objets physiques en fichiers 3D exploitables. Rétro-ingénierie, reproduction, archivage digital.',
-    heroVisual: { label: 'Visuel scan 3D 00', alt: 'Photo à ajouter d’un objet réel en cours de numérisation 3D' },
     description: 'Le scan 3D capture la géométrie exacte d\'objets existants. Idéal pour reproduire des pièces, créer des bases de travail ou archiver numériquement.',
     features: [
       {
@@ -797,7 +789,6 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Modélisation 3D',
     headline: 'Modélisation 3D -\nDe l\'idée au fichier',
     subheadline: 'Création de modèles 3D sur mesure à partir de vos croquis, plans ou idées. Prêts pour l\'impression ou la production.',
-    heroVisual: { label: 'Visuel modélisation 3D 00', alt: 'Photo ou rendu à ajouter d’un modèle 3D conçu pour la fabrication' },
     description: 'Notre équipe crée des modèles 3D optimisés pour l\'impression. Du simple croquis au fichier prêt à imprimer, nous donnons forme à vos projets.',
     features: [
       {
@@ -893,7 +884,6 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Prototypage',
     headline: 'Prototypage -\nDu concept au prototype',
     subheadline: 'Validez vos idées rapidement avec des prototypes fonctionnels. Itérations rapides, tests utilisateurs, validation avant production.',
-    heroVisual: { label: 'Visuel prototypage 00', alt: 'Photo à ajouter d’un prototype en cours de test ou d’assemblage' },
     description: 'Le prototypage rapide permet de tester vos concepts avant investissement lourd. Prototypes visuels ou fonctionnels, nous adaptons l\'approche à vos objectifs.',
     features: [
       {
@@ -980,7 +970,6 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Électronique & Motorisation',
     headline: 'Électronique & Motorisation sur mesure',
     subheadline: 'Développement de solutions électroniques et électromécaniques intégrées. Notre différenciateur : combiner impression 3D et électronique.',
-    heroVisual: { label: 'Visuel électronique 00', alt: 'Photo à ajouter d’un objet lumineux, motorisé ou interactif' },
     description: 'Nous concevons et fabriquons des solutions électroniques sur mesure : cartes de contrôle, motorisation, capteurs, systèmes embarqués. Parfaitement intégrées à vos boîtiers imprimés en 3D.',
     features: [
       {

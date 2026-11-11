@@ -2,95 +2,180 @@
   "completed": {
     "electronique ..jpeg": {
       "category": "realisations",
+      "order": 50,
       "objectPosition": "center",
       "title": "Présentoir lumineux Guerlain sur mesure",
       "alt": "Présentoir lumineux Guerlain avec flacons de parfum et écran intégré"
     },
     "electronique et impression fdm.jpeg": {
       "category": "realisations",
+      "order": 140,
       "objectPosition": "center",
       "title": "Enseigne lumineuse Cacharel",
       "alt": "Enseigne lumineuse Cacharel fabriquée sur mesure avec éclairage violet"
     },
     "electronique LED.jpeg": {
       "category": "realisations",
+      "order": 100,
       "objectPosition": "center",
       "title": "Logo lumineux sur mesure",
       "alt": "Logo blanc rétroéclairé par LED réalisé sur mesure"
     },
     "electronique lumière jeux de lumière.jpeg": {
       "category": "realisations",
+      "order": 120,
       "objectPosition": "center",
       "title": "Installation lumineuse décorative",
       "alt": "Installation décorative lumineuse avec projections de motifs sur les murs"
     },
     "electronique.jpeg": {
       "category": "realisations",
+      "order": 110,
       "objectPosition": "center",
       "title": "Signalétique décorative J'Adore",
       "alt": "Signalétique décorative J'Adore en métal poli pour espace de marque"
     },
     "impression résine et modélisation 3D.jpeg": {
       "category": "realisations",
+      "order": 60,
       "objectPosition": "center",
       "title": "Maquette de présentoir de parfum Boss",
       "alt": "Maquette de présentoir de parfum Boss issue de modélisation 3D et impression résine"
     },
     "impression résine.jpeg": {
       "category": "realisations",
+      "order": 70,
       "objectPosition": "center",
       "title": "Prototype de flacon Byredo en résine",
       "alt": "Prototype blanc de flacon de parfum Byredo réalisé par impression 3D résine"
     },
     "modélisation 3D et impression résine.jpeg": {
       "category": "realisations",
-      "objectPosition": "center",
+      "order": 10,
+      "objectPosition": "center top",
       "title": "Maquette anniversaire sur mesure",
       "alt": "Maquette d'anniversaire avec gâteau, sac et bougies issue de modélisation 3D"
+    },
+    "installation-evenementielle-luxe-chanel.jpeg": {
+      "category": "realisations",
+      "order": 90,
+      "objectPosition": "center 25%",
+      "title": "Installation événementielle de Noël Chanel",
+      "alt": "Installation événementielle de Noël devant une boutique Chanel, avec sapin décoré et éléments lumineux"
+    },
+    "dispositif-jeu-interactif-ticket-parfum.jpeg": {
+      "category": "realisations",
+      "order": 30,
+      "objectPosition": "center",
+      "title": "Dispositif de jeu interactif pour parfum",
+      "alt": "Série de dispositifs rouges personnalisés avec boutons physiques et impression de tickets, conçus pour une opération autour d’un parfum"
+    },
+    "scan-3d-modelisation-bagage-luxe.jpeg": {
+      "category": "realisations",
+      "order": 130,
+      "objectPosition": "center",
+      "title": "Scan 3D et modélisation d’un bagage",
+      "alt": "Modèle 3D de bagage Rimowa issu d’un scan 3D pour une étude de reproduction ou de personnalisation"
+    },
+    "sapin-noel-chanel-installation-evenementielle.jpeg": {
+      "category": "realisations",
+      "order": 20,
+      "objectPosition": "center",
+      "title": "Sapin de Noël Chanel",
+      "alt": "Sapin de Noël Chanel réalisé pour une installation événementielle de marque"
+    },
+    "mascottes-imprimees-3d-couleur-evenement.jpeg": {
+      "category": "realisations",
+      "order": 40,
+      "objectPosition": "center",
+      "title": "Impression 3D en couleur pour événement",
+      "alt": "Mascottes imprimées en 3D en couleur pour un événement"
+    },
+    "maquette-architecture-impression-3d.jpeg": {
+      "category": "realisations",
+      "order": 80,
+      "objectPosition": "center",
+      "title": "Maquette d’architecture réalisée en impression 3D",
+      "alt": "Maquette d’architecture réalisée en impression 3D"
     }
   },
   "process": {
     "atelier-imprimantes-3d-grand-format-suresnes.jpeg": {
       "category": "atelier",
+      "order": 20,
       "objectPosition": "center",
       "title": "Impression 3D grand format à Suresnes",
       "alt": "Parc d’imprimantes 3D grand format dans l’atelier Inphenix System à Suresnes, près de Paris"
     },
     "electronique et motorisation.jpeg": {
       "category": "atelier",
+      "order": 40,
       "objectPosition": "center",
       "title": "Assemblage électronique et motorisation",
       "alt": "Étape d'assemblage d'un prototype avec électronique et motorisation"
     },
     "impression grand format.jpeg": {
       "category": "atelier",
+      "order": 30,
       "objectPosition": "center",
       "title": "Impression 3D grand format",
       "alt": "Fabrication d'une pièce en impression 3D grand format"
     },
     "prototypage.jpeg": {
       "category": "atelier",
+      "order": 50,
       "objectPosition": "center",
       "title": "Prototypage sur mesure",
       "alt": "Étape de prototypage d'une pièce conçue sur mesure"
     },
     "prototypage-recherche-developpement.jpeg": {
       "category": "atelier",
+      "order": 60,
       "objectPosition": "center",
       "title": "Recherche et développement de prototype",
       "alt": "Prototype en cours de recherche et développement avant fabrication"
     },
     "resine-impression-1.jpeg": {
       "category": "fabrication",
+      "order": 50,
       "objectPosition": "center",
       "title": "Impression 3D résine en atelier",
       "alt": "Pièces en cours de fabrication par impression 3D résine"
     },
     "resine-impression-2.jpeg": {
       "category": "fabrication",
+      "order": 40,
       "objectPosition": "center",
       "title": "Impression 3D résine en cours",
       "alt": "Pièce en résine en cours d’impression 3D"
+    },
+    "fabrication-additive-grand-format-piece-technique.jpeg": {
+      "category": "fabrication",
+      "order": 30,
+      "objectPosition": "center",
+      "title": "Grande pièce en cours de fabrication additive",
+      "alt": "Grande pièce technique en cours de fabrication additive, avec structure en treillis apparent"
+    },
+    "assemblage-noeud-chanel-evenementiel-sur-mesure.jpeg": {
+      "category": "atelier",
+      "order": 10,
+      "objectPosition": "center",
+      "title": "Assemblage d’un nœud Chanel",
+      "alt": "Assemblage d’un grand nœud décoratif Chanel pour une installation événementielle sur mesure"
+    },
+    "structure-imprimee-3d-sur-mesure.jpeg": {
+      "category": "fabrication",
+      "order": 10,
+      "objectPosition": "center",
+      "title": "Structure imprimée en 3D",
+      "alt": "Structure blanche en cours d’impression 3D dans l’atelier Inphenix"
+    },
+    "piece-decorative-luxe-parc-francartier-impression-3d.jpeg": {
+      "category": "fabrication",
+      "order": 20,
+      "objectPosition": "center",
+      "title": "Élément décoratif de luxe pour le parc Francartier",
+      "alt": "Élément décoratif de luxe pour le parc Francartier, en cours de fabrication par impression 3D"
     }
   }
 }

@@ -360,7 +360,6 @@ export const sectorsData: Record<string, SectorData> = {
   medical: {
     slug: 'medical',
     name: 'Santé & médical',
-    icon: '✚',
     heroImage: '/images/secteurs/medical/Medical_2.jpg',
     headline: 'Supports physiques pour les projets santé',
     subheadline: 'Maquettes, supports de formation et prototypes de présentation pour le dentaire, les cabinets et la communication santé.',
