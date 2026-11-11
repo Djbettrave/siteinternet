@@ -11,6 +11,10 @@ export interface ServiceData {
   keywords?: string[]
   headline: string
   subheadline: string
+  heroVisual?: {
+    alt: string
+    label: string
+  }
   description: string
   features: {
     title: string
@@ -35,13 +39,18 @@ export interface ServiceData {
     description: string
   }[]
   contentSections?: {
-    title: string
+    title?: string
     paragraphs: string[]
   }[]
   inlineVisuals?: {
     afterSection: number
     position: 'left' | 'right'
     alt: string
+    label?: string
+    images?: {
+      alt: string
+      label: string
+    }[]
   }[]
   faqs: {
     question: string
@@ -117,7 +126,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       {/* Hero */}
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
-          <div className="py-20 lg:py-28">
+          <div className={`py-20 lg:py-28 ${service.heroVisual ? 'grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.62fr)]' : ''}`}>
             <div className="max-w-3xl">
               <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
                 {service.headline.split('\n').map((line, index) => (
@@ -146,6 +155,17 @@ export default function ServicePage({ service }: ServicePageProps) {
                 </a>
               )}
             </div>
+
+            {service.heroVisual && (
+              <div role="img" aria-label={service.heroVisual.alt}>
+                <div className="aspect-[4/5] rounded-2xl border border-white/20 bg-white/5 flex flex-col items-center justify-center gap-3 px-6 text-center">
+                  <svg className="w-11 h-11 text-secondary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+                  </svg>
+                  <span className="text-xs font-semibold tracking-[0.12em] uppercase text-secondary-300">{service.heroVisual.label}</span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
 
@@ -187,19 +207,29 @@ export default function ServicePage({ service }: ServicePageProps) {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
                 return (
-                  <section key={section.title} className={visual ? 'grid md:grid-cols-[minmax(0,1.35fr)_minmax(220px,0.65fr)] items-center gap-8 md:gap-12' : ''}>
+                  <section key={section.title || `section-${index}`} className={visual ? 'grid md:grid-cols-[minmax(0,1.35fr)_minmax(220px,0.65fr)] items-center gap-8 md:gap-12' : ''}>
                     <div className={visual?.position === 'left' ? 'md:order-2' : ''}>
-                      <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>
+                      {section.title && <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
                         {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
                       </div>
                     </div>
                     {visual && (
                       <div className={visual.position === 'left' ? 'md:order-1' : ''} role="img" aria-label={visual.alt}>
-                        <div className="aspect-[4/3] rounded-2xl border border-secondary-200 bg-secondary-50 flex items-center justify-center">
-                          <svg className="w-10 h-10 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
-                          </svg>
+                        <div className={`aspect-[4/3] rounded-2xl border border-dashed border-secondary-300 bg-secondary-50 ${visual.images ? `grid ${visual.images.length === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-px overflow-hidden` : 'flex flex-col items-center justify-center gap-3 px-6 text-center'}`}>
+                          {visual.images ? visual.images.map((image) => (
+                            <div key={image.label} className="flex flex-col items-center justify-center gap-3 bg-secondary-50 px-3 text-center" aria-label={image.alt}>
+                              <svg className="w-8 h-8 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-secondary-500">{image.label}</span>
+                            </div>
+                          )) : <>
+                            <svg className="w-10 h-10 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+                            </svg>
+                            {visual.label && <span className="text-xs font-semibold tracking-[0.12em] uppercase text-secondary-500">{visual.label}</span>}
+                          </>}
                         </div>
                       </div>
                     )}
