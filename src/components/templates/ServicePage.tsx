@@ -222,7 +222,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                     {visual && (
                       <div className={visual.position === 'left' ? 'md:order-1' : ''}>
                         {visual.image ? (
-                          <div className={`relative overflow-hidden rounded-2xl border border-secondary-100 bg-secondary-50 ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
+                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-video'}`}>
                             <Image
                               src={visual.image.src}
                               alt={visual.image.alt}
