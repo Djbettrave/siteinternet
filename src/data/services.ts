@@ -273,6 +273,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     headline: 'Impression 3D Métal -\nPièces techniques sur mesure',
     subheadline: 'Une solution de fabrication additive adaptée aux composants mécaniques, prototypes fonctionnels et pièces techniques, selon les contraintes de votre projet.',
+    heroVisual: { label: 'Visuel métal 00', alt: 'Photo à ajouter d’une pièce technique réalisée en métal' },
     description: 'L’impression 3D métal permet de fabriquer des pièces complexes sans outillage traditionnel. Chaque demande est étudiée selon l’alliage, les efforts mécaniques, les tolérances, la finition et la quantité recherchée.',
     features: [
       {
@@ -305,6 +306,18 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Les opérations de finition, usinage ou traitement sont définies selon le résultat attendu et la fonction finale de la pièce.',
         icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
       },
+    ],
+    contentSections: [
+      {
+        title: 'Une fabrication définie par les contraintes de la pièce',
+        paragraphs: [
+          'L’impression 3D métal est envisagée lorsque la pièce doit répondre à des contraintes particulières : efforts mécaniques, environnement exigeant, température, poids, géométrie complexe ou besoin de limiter les assemblages. Elle s’adresse aux composants techniques, prototypes fonctionnels et pièces de remplacement pour lesquels le matériau est déterminant.',
+          'Chaque projet est étudié selon l’alliage envisageable, les tolérances attendues, les zones critiques et le niveau de finition nécessaire. L’objectif n’est pas de proposer systématiquement du métal, mais de définir une solution de fabrication cohérente avec la fonction réelle de la pièce.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      { afterSection: 0, position: 'right', label: 'Visuel métal 01', alt: 'Photo à ajouter d’une pièce métallique technique' },
     ],
     specs: [
       { label: 'Procédé', value: 'Défini selon le projet' },
@@ -356,6 +369,10 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D FDM -\nPièces résistantes et fonctionnelles',
     subheadline: 'La technologie FDM (Fused Deposition Modeling) pour des pièces solides, fonctionnelles et économiques. Idéale pour le prototypage et les petites séries.',
+    heroVisual: {
+      label: 'Visuel FDM 00 — pièce FDM fonctionnelle ou grand format',
+      alt: 'Photo à ajouter d’une pièce fonctionnelle fabriquée par impression 3D FDM',
+    },
     description: 'L\'impression 3D FDM utilise des filaments thermoplastiques pour créer des pièces couche par couche. Cette technologie offre un excellent rapport qualité-prix pour les prototypes fonctionnels et les pièces de production.',
     features: [
       {
@@ -387,6 +404,39 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Post-traitement',
         description: 'Ponçage, peinture, assemblage, inserts filetés... Finitions adaptées à vos besoins.',
         icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
+      },
+    ],
+    contentSections: [
+      {
+        title: 'Pièces techniques, fonctionnelles et grand format',
+        paragraphs: [
+          'L’impression 3D FDM est particulièrement adaptée aux pièces qui doivent être manipulées, montées ou intégrées à un produit, une installation ou un décor. Boîtiers, supports, gabarits, pièces d’assemblage, prototypes fonctionnels et éléments de grande dimension peuvent être fabriqués directement à partir d’un fichier 3D.',
+          'Le choix du matériau, de l’épaisseur, du remplissage et de l’orientation d’impression se fait selon la fonction réelle de la pièce. Une pièce destinée à une présentation, à un test mécanique ou à un usage répété ne demande pas la même préparation.',
+        ],
+      },
+      {
+        title: 'Du brut à la finition finale',
+        paragraphs: [
+          'Selon la destination de la pièce, une impression 3D FDM peut être livrée brute, avec ses stries de couches visibles, lorsqu’elle est destinée à un usage technique, un test ou une intégration non visible.',
+          'Lorsqu’un rendu plus soigné est nécessaire, la pièce peut être poncée et apprêtée afin d’être prête à peindre, puis recevoir une peinture et un vernis adaptés au projet. Des inserts filetés, assemblages ou éléments complémentaires peuvent également être intégrés lorsque la pièce doit devenir un objet final.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      {
+        afterSection: 0,
+        position: 'right',
+        label: 'Visuel FDM 01 — pièce FDM en usage',
+        alt: 'Photo à ajouter d’une pièce FDM utilisée dans un projet',
+      },
+      {
+        afterSection: 1,
+        position: 'left',
+        alt: 'Comparaison entre une pièce FDM brute et une pièce avec finition finale',
+        images: [
+          { label: 'Visuel FDM 02A — brut, stries visibles', alt: 'Photo à ajouter d’une pièce FDM brute avec des stries visibles' },
+          { label: 'Visuel FDM 02B — finition finale', alt: 'Photo à ajouter d’une pièce FDM apprêtée, peinte ou intégrée' },
+        ],
       },
     ],
     specs: [
@@ -448,6 +498,7 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D Résine -\nPrécision et haute résolution',
     subheadline: 'La technologie SLA/DLP pour des pièces ultra-détaillées avec des surfaces lisses. Idéale pour la joaillerie, les prototypes visuels et les moules.',
+    heroVisual: { label: 'Visuel résine 00', alt: 'Photo à ajouter d’une pièce imprimée en résine montrant des détails fins' },
     description: 'L\'impression résine (SLA/DLP) offre une précision au centième de millimètre et des surfaces parfaitement lisses. Technologie de choix pour les applications nécessitant des détails fins.',
     features: [
       {
@@ -480,6 +531,18 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Peinture, métallisation, vernis. Résultat professionnel garanti.',
         icon: 'M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01',
       },
+    ],
+    contentSections: [
+      {
+        title: 'Quand chaque détail compte',
+        paragraphs: [
+          'L’impression 3D résine est choisie lorsque les détails fins, les reliefs, les gravures ou la qualité de surface sont déterminants. Elle permet de reproduire avec précision des textures, des formes délicates et des éléments qui doivent être vus de près.',
+          'Elle convient aux prototypes esthétiques, aux objets de présentation, aux figurines, aux bijoux, aux petites pièces détaillées et aux modèles destinés à la création d’un moule. Ici, la précision et le rendu visuel priment sur la production de grandes dimensions.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      { afterSection: 0, position: 'right', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
     ],
     specs: [
       { label: 'Volume max', value: '190 x 120 x 200 mm' },
@@ -538,6 +601,7 @@ export const servicesData: Record<string, ServiceData> = {
     category: 'Impression 3D',
     headline: 'Impression 3D Grand Format -\nPièces jusqu\'à 85 cm en un seul bloc',
     subheadline: 'Imprimez des pièces de grande taille d\'un seul tenant, sans limite de taille par assemblage. Idéal pour l\'événementiel, les maquettes architecturales et les installations artistiques.',
+    heroVisual: { label: 'Visuel grand format 00', alt: 'Photo à ajouter d’une réalisation grand format en situation' },
     description: 'Notre imprimante grand format permet de créer des pièces jusqu\'à 85 cm de haut en un seul bloc. Pour les pièces plus grandes, nous assemblons plusieurs éléments avec des finitions invisibles - sans limite de taille.',
     features: [
       {
@@ -570,6 +634,25 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Pour les pièces plus grandes, assemblage avec finitions parfaites.',
         icon: 'M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z',
       },
+    ],
+    contentSections: [
+      {
+        title: 'Impression 3D grand format : pièces, décors et installations sur mesure',
+        paragraphs: [
+          'L’impression 3D grand format permet de réaliser des volumes qui prennent place dans un décor, un point de vente, une exposition, une maquette ou une installation artistique. Elle s’adresse aux projets pour lesquels la taille, la présence physique et le rendu final comptent autant que la forme de la pièce.',
+          'Du prototype grandeur nature à la sculpture, de la PLV à l’élément architectural, nous adaptons la fabrication à l’usage, aux dimensions et aux contraintes d’installation du projet.',
+        ],
+      },
+      {
+        paragraphs: [
+          'Lorsque le volume le permet, la pièce peut être imprimée d’un seul tenant. Lorsque les dimensions dépassent le volume machine, la fabrication est pensée en plusieurs éléments dès la conception afin de conserver la solidité, la précision et le rendu attendu.',
+          'Préparation de surface, ponçage, apprêt, peinture et intégration sont définis selon la destination finale de l’objet. La fabrication ne s’arrête pas à l’impression : elle prépare une pièce prête à être installée, présentée ou utilisée.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      { afterSection: 0, position: 'right', label: 'Visuel grand format 01', alt: 'Photo à ajouter d’un décor, d’une maquette ou d’une installation de grand format' },
+      { afterSection: 1, position: 'left', label: 'Visuel grand format 02', alt: 'Photo à ajouter d’une pièce grand format préparée ou intégrée' },
     ],
     specs: [
       { label: 'Volume max monobloc', value: '850 mm de hauteur' },
@@ -612,6 +695,7 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Scan 3D',
     headline: 'Scan 3D -\nNumérisez la réalité',
     subheadline: 'Transformez des objets physiques en fichiers 3D exploitables. Rétro-ingénierie, reproduction, archivage digital.',
+    heroVisual: { label: 'Visuel scan 3D 00', alt: 'Photo à ajouter d’un objet réel en cours de numérisation 3D' },
     description: 'Le scan 3D capture la géométrie exacte d\'objets existants. Idéal pour reproduire des pièces, créer des bases de travail ou archiver numériquement.',
     features: [
       {
@@ -643,6 +727,27 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Export multi-formats',
         description: 'STL, OBJ, STEP selon vos besoins. Compatible tous logiciels CAO.',
         icon: 'M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12',
+      },
+    ],
+    contentSections: [
+      {
+        title: 'De l’objet existant à un fichier exploitable',
+        paragraphs: [
+          'Le scan 3D permet de récupérer la géométrie d’un objet réel lorsqu’il n’existe plus de plan, de fichier ou de modèle numérique exploitable. Il constitue une base utile pour reproduire une pièce, l’adapter, l’archiver ou engager un travail de rétro-ingénierie.',
+          'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      {
+        afterSection: 0,
+        position: 'right',
+        alt: 'Séquence à ajouter montrant l’objet réel, le scan 3D et le fichier final',
+        images: [
+          { label: 'Visuel scan 3D 01 — objet réel', alt: 'Photo à ajouter de l’objet avant scan 3D' },
+          { label: 'Visuel scan 3D 02 — scan', alt: 'Capture à ajouter du maillage obtenu par scan 3D' },
+          { label: 'Visuel scan 3D 03 — fichier final', alt: 'Capture à ajouter du fichier 3D exploitable' },
+        ],
       },
     ],
     specs: [
@@ -692,6 +797,7 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Modélisation 3D',
     headline: 'Modélisation 3D -\nDe l\'idée au fichier',
     subheadline: 'Création de modèles 3D sur mesure à partir de vos croquis, plans ou idées. Prêts pour l\'impression ou la production.',
+    heroVisual: { label: 'Visuel modélisation 3D 00', alt: 'Photo ou rendu à ajouter d’un modèle 3D conçu pour la fabrication' },
     description: 'Notre équipe crée des modèles 3D optimisés pour l\'impression. Du simple croquis au fichier prêt à imprimer, nous donnons forme à vos projets.',
     features: [
       {
@@ -723,6 +829,27 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Rendus visuels',
         description: 'Rendus photoréalistes pour validation avant production si besoin.',
         icon: 'M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z',
+      },
+    ],
+    contentSections: [
+      {
+        title: 'Concevoir une pièce prête à être fabriquée',
+        paragraphs: [
+          'Un croquis, une photo, un plan ou une idée ne suffisent pas toujours à lancer une fabrication. La modélisation 3D transforme cette intention en une pièce définie dans ses formes, ses dimensions, ses assemblages et son usage réel.',
+          'Le fichier est ensuite pensé selon le procédé de fabrication final : impression 3D, usinage, moulage ou assemblage. Cette préparation évite de découvrir trop tard une contrainte de fabrication et permet de valider la pièce avant sa production.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      {
+        afterSection: 0,
+        position: 'right',
+        alt: 'Séquence à ajouter montrant une intention, un modèle 3D et une pièce fabriquée',
+        images: [
+          { label: 'Visuel modélisation 01 — intention', alt: 'Photo à ajouter d’un croquis, plan ou objet de référence' },
+          { label: 'Visuel modélisation 02 — modèle 3D', alt: 'Capture à ajouter du modèle 3D' },
+          { label: 'Visuel modélisation 03 — pièce finale', alt: 'Photo à ajouter de la pièce fabriquée' },
+        ],
       },
     ],
     process: [
@@ -766,6 +893,7 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Prototypage',
     headline: 'Prototypage -\nDu concept au prototype',
     subheadline: 'Validez vos idées rapidement avec des prototypes fonctionnels. Itérations rapides, tests utilisateurs, validation avant production.',
+    heroVisual: { label: 'Visuel prototypage 00', alt: 'Photo à ajouter d’un prototype en cours de test ou d’assemblage' },
     description: 'Le prototypage rapide permet de tester vos concepts avant investissement lourd. Prototypes visuels ou fonctionnels, nous adaptons l\'approche à vos objectifs.',
     features: [
       {
@@ -798,6 +926,18 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Orientation vers les matériaux et process adaptés à la production future.',
         icon: 'M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z',
       },
+    ],
+    contentSections: [
+      {
+        title: 'Valider avant de produire',
+        paragraphs: [
+          'Le prototypage permet de vérifier ce qui compte avant d’engager une fabrication plus importante : proportions, ergonomie, mécanisme, assemblage, résistance ou rendu visuel. Un prototype donne une lecture concrète du projet que ni un plan ni un rendu ne remplacent complètement.',
+          'Les retours obtenus sur la pièce permettent d’ajuster le modèle, le matériau ou le procédé avant de poursuivre. Le prototype devient ainsi un outil de décision et limite les corrections coûteuses au stade de la production.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      { afterSection: 0, position: 'right', label: 'Visuel prototypage 01', alt: 'Photo à ajouter d’un prototype monté, manipulé ou testé' },
     ],
     process: [
       { step: 1, title: 'Analyse du besoin', description: 'Compréhension de vos objectifs : validation technique, esthétique, tests utilisateurs...' },
@@ -840,6 +980,7 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Électronique & Motorisation',
     headline: 'Électronique & Motorisation sur mesure',
     subheadline: 'Développement de solutions électroniques et électromécaniques intégrées. Notre différenciateur : combiner impression 3D et électronique.',
+    heroVisual: { label: 'Visuel électronique 00', alt: 'Photo à ajouter d’un objet lumineux, motorisé ou interactif' },
     description: 'Nous concevons et fabriquons des solutions électroniques sur mesure : cartes de contrôle, motorisation, capteurs, systèmes embarqués. Parfaitement intégrées à vos boîtiers imprimés en 3D.',
     features: [
       {
@@ -872,6 +1013,18 @@ export const servicesData: Record<string, ServiceData> = {
         description: 'Boîtiers imprimés 3D optimisés pour vos cartes. Ensemble cohérent.',
         icon: 'M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4',
       },
+    ],
+    contentSections: [
+      {
+        title: 'Tout est pensé ensemble',
+        paragraphs: [
+          'Une carte, un moteur ou une lumière ne se conçoivent pas séparément de l’objet qui les accueille. L’encombrement, l’alimentation, les éléments mécaniques, l’assemblage et l’usage final sont définis ensemble dès le départ.',
+          'Cette approche permet d’intégrer l’électronique directement dans une pièce, un boîtier ou une installation, afin d’obtenir un objet cohérent, fonctionnel et fabriquable.',
+        ],
+      },
+    ],
+    inlineVisuals: [
+      { afterSection: 0, position: 'right', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
     ],
     process: [
       { step: 1, title: 'Cahier des charges', description: 'Définition des fonctionnalités, contraintes d\'encombrement, alimentation...' },
