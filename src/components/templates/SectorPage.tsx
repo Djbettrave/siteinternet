@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
@@ -19,6 +20,7 @@ export interface SectorData {
     paragraphs: string[]
     image: string
     imageAlt: string
+    showImage?: boolean
     imagePosition?: 'left' | 'right'
   }
   useCases: {
@@ -205,7 +207,13 @@ export default function SectorPage({ sector }: SectorPageProps) {
           <div className="container-custom">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-2' : ''}>
-                <ImagePlaceholder ariaLabel={sector.editorial.imageAlt} className="aspect-[4/3] shadow-lg" />
+                {sector.editorial.showImage ? (
+                  <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
+                    <Image src={sector.editorial.image} alt={sector.editorial.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                  </div>
+                ) : (
+                  <ImagePlaceholder ariaLabel={sector.editorial.imageAlt} className="aspect-[4/3] shadow-lg" />
+                )}
               </div>
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-1' : ''}>
                 {sector.editorial.eyebrow && (

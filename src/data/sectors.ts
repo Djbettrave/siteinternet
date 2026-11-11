@@ -110,8 +110,9 @@ export const sectorsData: Record<string, SectorData> = {
         'Dans le luxe, un support de présentation, un prototype ou un objet de vitrine doit prolonger l’univers de la maison avec la même précision que le produit qu’il accompagne. Proportions, détails, matière, couleur et lumière participent ensemble à la qualité perçue.',
         'Inphenix développe des objets dont le rendu est pensé dès la conception : un flacon, un packaging, un présentoir ou une pièce événementielle doit mettre le produit en valeur, respecter les codes de la marque et conserver son exigence jusque dans sa finition.',
       ],
-      image: '/images/secteurs/luxe/luxe-3.jpeg',
-      imageAlt: 'Pièce de présentation pour une maison de luxe',
+      image: '/images/secteurs/luxe/sapin-noel-chanel-installation-interieure.jpeg',
+      imageAlt: 'Installation événementielle de Noël Chanel dans un intérieur',
+      showImage: true,
       imagePosition: 'left',
     },
     useCases: [

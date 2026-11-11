@@ -850,12 +850,12 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
-        alt: 'Séquence à ajouter montrant une intention, un modèle 3D et une pièce fabriquée',
-        images: [
-          { label: 'Visuel modélisation 01 — intention', alt: 'Photo à ajouter d’un croquis, plan ou objet de référence' },
-          { label: 'Visuel modélisation 02 — modèle 3D', alt: 'Capture à ajouter du modèle 3D' },
-          { label: 'Visuel modélisation 03 — pièce finale', alt: 'Photo à ajouter de la pièce fabriquée' },
-        ],
+        alt: 'Sac de référence et son modèle 3D en cours de conception',
+        image: {
+          src: '/images/services/modelisation-3d/modelisation-sac-reference-modele-3d.jpeg',
+          alt: 'Sac de référence et son modèle 3D en cours de conception',
+          aspect: 'landscape',
+        },
       },
     ],
     process: [
@@ -940,9 +940,35 @@ export const servicesData: Record<string, ServiceData> = {
           'Les retours obtenus sur la pièce permettent d’ajuster le modèle, le matériau ou le procédé avant de poursuivre. Le prototype devient ainsi un outil de décision et limite les corrections coûteuses au stade de la production.',
         ],
       },
+      {
+        title: 'Intégrer une alimentation dans un dispositif existant',
+        paragraphs: [
+          'Un prototype peut aussi porter sur un élément précis d’un équipement. Ici, l’intervention a consisté à concevoir une powerbank sur mesure destinée à s’intégrer dans un distributeur automatique existant, avec ses contraintes de format, de connectique et d’accès aux ports bancaires.',
+          'Le travail a porté sur le développement et l’intégration de la powerbank, et non sur la conception de la machine elle-même. Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
+        ],
+      },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'right', label: 'Visuel prototypage 01', alt: 'Photo à ajouter d’un prototype monté, manipulé ou testé' },
+      {
+        afterSection: 0,
+        position: 'right',
+        alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
+        image: {
+          src: '/images/services/prototypage/prototype-mecanisme-defilement-film.jpeg',
+          alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
+          aspect: 'landscape',
+        },
+      },
+      {
+        afterSection: 1,
+        position: 'left',
+        alt: 'Powerbank sur mesure intégrée à un distributeur automatique existant',
+        image: {
+          src: '/images/services/prototypage/powerbank-sur-mesure-distributeur-automatique.jpeg',
+          alt: 'Powerbank sur mesure intégrée à un distributeur automatique existant',
+          aspect: 'landscape',
+        },
+      },
     ],
     process: [
       { step: 1, title: 'Analyse du besoin', description: 'Compréhension de vos objectifs : validation technique, esthétique, tests utilisateurs...' },

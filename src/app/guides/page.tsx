@@ -19,7 +19,7 @@ function CategoryIcon({ category }: { category: GuideCategorySlug }) {
     resine: <><path d="M12 3s-4 4.3-4 7a4 4 0 0 0 8 0c0-2.7-4-7-4-7Z" /><path d="M5 19h14" /><path d="M8 16.5v2.5m8-2.5v2.5" /></>,
   } as const
 
-  return <span className="mb-6 flex h-11 w-11 items-center justify-center rounded-xl bg-primary-100 text-primary-700"><svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[category]}</svg></span>
+  return <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-primary-100 text-primary-700"><svg className="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{paths[category]}</svg></span>
 }
 
 export default function GuidesPage() {
@@ -36,7 +36,7 @@ export default function GuidesPage() {
           {categories.map((slug) => {
             const category = guideCategories[slug]
             const count = getGuidesByCategory(slug).length
-            return <Link key={slug} href={`/guides/${slug}`} className="group flex min-h-[290px] flex-col rounded-xl border border-primary-200 bg-white p-6 transition-colors hover:border-primary-400 sm:min-h-[320px] sm:p-7"><div className="flex items-start justify-between gap-4"><CategoryIcon category={slug} /><span className="pt-1 text-primary-700">↗</span></div><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3><p className="mt-3 text-[13px] leading-6 text-secondary-600">{category.description}</p><p className="mt-auto pt-6 text-[13px] italic text-secondary-500">{count} guides disponibles</p></Link>
+            return <Link key={slug} href={`/guides/${slug}`} className="group flex min-h-[290px] flex-col rounded-xl border border-primary-200 bg-white p-6 transition-colors hover:border-primary-400 sm:min-h-[320px] sm:p-7"><div className="flex items-center gap-4"><CategoryIcon category={slug} /><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3></div><p className="mt-6 text-[13px] leading-6 text-secondary-600">{category.description}</p><div className="mt-auto flex items-center justify-between gap-4 pt-6"><p className="text-[13px] italic text-secondary-500">{count} guides disponibles</p><span className="text-xl leading-none text-primary-700 transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span></div></Link>
           })}
         </div>
       </section>
