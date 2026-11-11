@@ -31,13 +31,13 @@ export default function GuideCategoryPage({ params }: { params: { category: stri
       <>
         <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Guides', path: '/guides' }, { name: category.name, path: `/guides/${categorySlug}` }]} />
         <h1 className="sr-only">{category.name}</h1>
-        <nav className="flex flex-wrap gap-2" aria-label="Changer de catégorie de guide">{(Object.keys(guideCategories) as GuideCategorySlug[]).map((slug) => <Link key={slug} href={`/guides/${slug}`} aria-current={slug === categorySlug ? 'page' : undefined} className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${slug === categorySlug ? 'border-[#0D7A5A] bg-[#0D7A5A] text-white' : 'border-[#E1E4E3] text-[#666] hover:border-[#CADCD5] hover:text-[#171717]'}`}>{guideCategories[slug].shortName}</Link>)}</nav>
+        <nav className="flex flex-wrap gap-2" aria-label="Changer de catégorie de guide">{(Object.keys(guideCategories) as GuideCategorySlug[]).map((slug) => <Link key={slug} href={`/guides/${slug}`} aria-current={slug === categorySlug ? 'page' : undefined} className={`rounded-full border px-3 py-1.5 text-sm transition-colors ${slug === categorySlug ? 'border-primary-700 bg-primary-700 text-white' : 'border-secondary-200 text-secondary-600 hover:border-primary-200 hover:text-primary-800'}`}>{guideCategories[slug].shortName}</Link>)}</nav>
         <div>
-          <h2 className="mt-10 text-2xl font-semibold tracking-[-0.035em] text-[#171717] sm:text-3xl lg:whitespace-nowrap">{selectorTitle}</h2>
-          <p className="mt-4 leading-7 text-[#666]">{selectorDescription}</p>
+          <h2 className="mt-10 text-2xl font-semibold tracking-[-0.035em] text-secondary-900 sm:text-3xl lg:whitespace-nowrap">{selectorTitle}</h2>
+          <p className="mt-4 leading-7 text-secondary-600">{selectorDescription}</p>
         </div>
         <div className="mt-10"><GuideCategoryCarousel category={categorySlug} categoryName={category.shortName} articles={articles} /></div>
-        <section className="mt-16 border-t border-[#E8E8E8] pt-8"><h2 className="text-lg font-semibold text-[#171717]">À propos des guides {category.shortName}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-[#666]">{category.description} Retrouvez des explications pratiques, des réglages de départ et des conseils pour préparer vos fichiers ou améliorer vos impressions.</p></section>
+        <section className="mt-16 border-t border-secondary-200 pt-8"><h2 className="text-lg font-semibold text-secondary-900">À propos des guides {category.shortName}</h2><p className="mt-3 max-w-4xl text-sm leading-7 text-secondary-600">{category.description} Retrouvez des explications pratiques, des réglages de départ et des conseils pour préparer vos fichiers ou améliorer vos impressions.</p></section>
       </>
     </main>
 }

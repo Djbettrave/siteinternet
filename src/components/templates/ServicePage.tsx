@@ -1,6 +1,8 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
+import MobileReveal from '@/components/ui/MobileReveal'
 
 export interface ServiceData {
   slug: string
@@ -157,14 +159,7 @@ export default function ServicePage({ service }: ServicePageProps) {
             </div>
 
             {service.heroVisual && (
-              <div role="img" aria-label={service.heroVisual.alt}>
-                <div className="aspect-[4/5] rounded-2xl border border-white/20 bg-white/5 flex flex-col items-center justify-center gap-3 px-6 text-center">
-                  <svg className="w-11 h-11 text-secondary-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
-                  </svg>
-                  <span className="text-xs font-semibold tracking-[0.12em] uppercase text-secondary-300">{service.heroVisual.label}</span>
-                </div>
-              </div>
+              <ImagePlaceholder ariaLabel={service.heroVisual.alt} dark className="aspect-[4/5]" />
             )}
           </div>
         </div>
@@ -184,15 +179,19 @@ export default function ServicePage({ service }: ServicePageProps) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {service.features.map((feature, index) => (
-              <div key={index} className="group card p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
-                <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary-600 transition-colors">
-                  <svg className="w-7 h-7 text-primary-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={feature.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
-                  </svg>
+              <MobileReveal key={index}>
+                <div className="group card p-6 md:p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
+                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
+                      <svg className="h-5 w-5 text-primary-600 transition-colors group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={feature.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors group-hover:text-primary-600 md:text-xl">{feature.title}</h3>
+                  </div>
+                  <p className="leading-relaxed text-secondary-600">{feature.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">{feature.title}</h3>
-                <p className="text-secondary-600">{feature.description}</p>
-              </div>
+              </MobileReveal>
             ))}
           </div>
         </div>
@@ -215,22 +214,16 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                      <div className={visual.position === 'left' ? 'md:order-1' : ''} role="img" aria-label={visual.alt}>
-                        <div className={`aspect-[4/3] rounded-2xl border border-dashed border-secondary-300 bg-secondary-50 ${visual.images ? `grid ${visual.images.length === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-px overflow-hidden` : 'flex flex-col items-center justify-center gap-3 px-6 text-center'}`}>
-                          {visual.images ? visual.images.map((image) => (
-                            <div key={image.label} className="flex flex-col items-center justify-center gap-3 bg-secondary-50 px-3 text-center" aria-label={image.alt}>
-                              <svg className="w-8 h-8 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
-                              </svg>
-                              <span className="text-[10px] font-semibold tracking-[0.1em] uppercase text-secondary-500">{image.label}</span>
-                            </div>
-                          )) : <>
-                            <svg className="w-10 h-10 text-secondary-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
-                            </svg>
-                            {visual.label && <span className="text-xs font-semibold tracking-[0.12em] uppercase text-secondary-500">{visual.label}</span>}
-                          </>}
-                        </div>
+                      <div className={visual.position === 'left' ? 'md:order-1' : ''}>
+                        {visual.images ? (
+                          <div className={`grid aspect-[4/3] ${visual.images.length === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-3`}>
+                            {visual.images.map((image) => (
+                              <ImagePlaceholder key={image.label} ariaLabel={image.alt} className="h-full min-h-0" />
+                            ))}
+                          </div>
+                        ) : (
+                          <ImagePlaceholder ariaLabel={visual.alt} className="aspect-[4/3]" />
+                        )}
                       </div>
                     )}
                   </section>

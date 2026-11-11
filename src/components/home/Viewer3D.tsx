@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 export default function Viewer3D() {
   return (
     <section className="py-24 bg-white">
@@ -28,9 +30,7 @@ export default function Viewer3D() {
                 'Commande en ligne simplifiée',
               ].map((feature) => (
                 <li key={feature} className="flex items-center gap-3 text-secondary-700">
-                  <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
+                  <span className="flex-shrink-0 text-primary-600">✓</span>
                   {feature}
                 </li>
               ))}
@@ -53,13 +53,15 @@ export default function Viewer3D() {
             <div className="bg-gradient-to-br from-secondary-100 to-secondary-200 rounded-2xl p-2">
               <div className="bg-white rounded-xl overflow-hidden shadow-lg">
                 {/* Browser Chrome */}
-                <div className="bg-secondary-100 px-4 py-3 flex items-center gap-2">
-                  <div className="flex gap-1.5">
-                    <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                    <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                  </div>
-                  <div className="flex-1 bg-white rounded-md px-3 py-1 text-xs text-secondary-500 ml-2">
+                <div className="bg-secondary-100 px-4 py-3 flex items-center gap-2.5">
+                  <Image
+                    src="/images/logos/inphenix/icon-only.svg"
+                    alt="Inphenix System"
+                    width={22}
+                    height={22}
+                    className="h-[22px] w-[22px] flex-none"
+                  />
+                  <div className="flex-1 bg-white rounded-md px-3 py-1 text-xs text-secondary-500">
                     impression3d.inphenix-system.fr
                   </div>
                 </div>

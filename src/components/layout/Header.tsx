@@ -38,7 +38,7 @@ const secteurs = [
   { name: 'Architecture', href: '/secteurs/architecture' },
   { name: 'Événementiel', href: '/secteurs/evenementiel' },
   { name: 'Luxe', href: '/secteurs/luxe' },
-  { name: 'Retail', href: '/secteurs/retail' },
+  { name: 'Retail & merchandising', href: '/secteurs/retail' },
   { name: 'Robotique', href: '/secteurs/robotique' },
   { name: 'Santé & médical', href: '/secteurs/medical' },
 ]
@@ -54,7 +54,26 @@ export default function Header() {
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
   const galleryNavigationRef = useRef(false)
+  const desktopServicesCloseTimer = useRef<number | null>(null)
   const pathname = usePathname()
+
+  const openDesktopServices = () => {
+    if (desktopServicesCloseTimer.current) {
+      window.clearTimeout(desktopServicesCloseTimer.current)
+      desktopServicesCloseTimer.current = null
+    }
+    setServicesOpen(true)
+  }
+
+  const closeDesktopServicesWithDelay = () => {
+    if (desktopServicesCloseTimer.current) window.clearTimeout(desktopServicesCloseTimer.current)
+
+    desktopServicesCloseTimer.current = window.setTimeout(() => {
+      setServicesOpen(false)
+      setDesktopServiceCategory(null)
+      desktopServicesCloseTimer.current = null
+    }, 260)
+  }
 
   const resetMobileMenu = () => {
     setMobileServicesOpen(false)
@@ -124,6 +143,10 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [lastScrollY, pathname])
 
+  useEffect(() => () => {
+    if (desktopServicesCloseTimer.current) window.clearTimeout(desktopServicesCloseTimer.current)
+  }, [])
+
   return (
     <header className={`z-50 bg-white ${
       mobileMenuOpen
@@ -155,11 +178,8 @@ export default function Header() {
             {/* Services Dropdown */}
             <div
               className="relative"
-              onMouseEnter={() => setServicesOpen(true)}
-              onMouseLeave={() => {
-                setServicesOpen(false)
-                setDesktopServiceCategory(null)
-              }}
+              onMouseEnter={openDesktopServices}
+              onMouseLeave={closeDesktopServicesWithDelay}
             >
               <Link
                 href="/services"
@@ -196,7 +216,7 @@ export default function Header() {
                         </div>
                       )
                     })}
-                    <div className="mx-2 mt-1 border-t border-secondary-100 pt-1">
+                    <div className="mx-2 mt-1 pt-1">
                       {directServices.map((service) => (
                         <Link key={service.href} href={service.href} className="block rounded-lg px-3 py-3 text-sm font-semibold text-secondary-900 transition-colors hover:bg-primary-50 hover:text-primary-700">
                           {service.name}
@@ -209,7 +229,7 @@ export default function Header() {
                       if (!group) return null
 
                       return (
-                        <div className="absolute left-full top-0 ml-2 w-72 rounded-xl border border-secondary-100 bg-white py-2 shadow-lg">
+                        <div className="absolute left-full top-0 -ml-px w-72 rounded-r-xl border border-l-0 border-secondary-100 bg-white py-2 shadow-lg">
                           {group.items.map((item) => item.href ? (
                             <Link
                               key={item.name}

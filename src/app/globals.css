@@ -92,3 +92,24 @@
     transform: translateY(0);
   }
 }
+
+@media (max-width: 767px) {
+  .mobile-reveal {
+    opacity: 0;
+    transform: translateY(7px);
+    transition: opacity 180ms ease-out, transform 180ms ease-out;
+  }
+
+  .mobile-reveal.is-revealed {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}

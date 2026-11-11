@@ -59,8 +59,11 @@ export default function Hero() {
               </div>
               <div className="h-6 w-px bg-white/20 hidden sm:block"></div>
               <div className="text-secondary-400 text-xs lg:text-sm flex items-center gap-1.5">
-                <span className="text-base lg:text-lg">🇫🇷</span>
-                <span className="text-white font-semibold whitespace-nowrap">Made in France</span>
+                <svg className="h-4 w-4 text-primary-200" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 21s7-5.4 7-12a7 7 0 10-14 0c0 6.6 7 12 7 12z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z" />
+                </svg>
+                <span className="text-white font-semibold whitespace-nowrap">Atelier à Suresnes</span>
               </div>
             </div>
           </div>

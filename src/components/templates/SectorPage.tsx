@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import Image from 'next/image'
 import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
+import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
+import MobileReveal from '@/components/ui/MobileReveal'
 
 export interface SectorData {
   slug: string
@@ -10,6 +11,7 @@ export interface SectorData {
   headline: string
   subheadline: string
   description: string
+  keywords?: string[]
   heroImage?: string
   editorial?: {
     eyebrow?: string
@@ -53,6 +55,7 @@ export function generateSectorMetadata(sector: SectorData, path?: string): Metad
       `${sector.name.toLowerCase()} sur mesure`,
       'bureau d\'étude',
       'électronique',
+      ...(sector.keywords ?? []),
     ],
     ...(path && {
       alternates: {
@@ -156,18 +159,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
               )}
             </div>
 
-            {sector.heroImage && (
-              <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-white/10 shadow-2xl">
-                <Image
-                  src={sector.heroImage}
-                  alt={`Projet Inphenix System pour le secteur ${sector.name}`}
-                  fill
-                  sizes="(min-width: 1024px) 38vw, 100vw"
-                  className="object-cover"
-                  priority
-                />
-              </div>
-            )}
+            {sector.heroImage && <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />}
           </div>
         </div>
 
@@ -188,15 +180,19 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sector.useCases.map((useCase, index) => (
-              <div key={index} className="group card p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
-                <div className="w-14 h-14 rounded-xl bg-primary-100 flex items-center justify-center mb-5 group-hover:bg-primary-600 transition-colors">
-                  <svg className="w-7 h-7 text-primary-600 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={useCase.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
-                  </svg>
+              <MobileReveal key={index}>
+                <div className="group card p-6 md:p-8 hover:shadow-lg hover:border-primary-300 transition-all duration-200">
+                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
+                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
+                      <svg className="h-5 w-5 text-primary-600 transition-colors group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={useCase.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
+                      </svg>
+                    </div>
+                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors group-hover:text-primary-600 md:text-xl">{useCase.title}</h3>
+                  </div>
+                  <p className="leading-relaxed text-secondary-600">{useCase.description}</p>
                 </div>
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">{useCase.title}</h3>
-                <p className="text-secondary-600">{useCase.description}</p>
-              </div>
+              </MobileReveal>
             ))}
           </div>
         </div>
@@ -208,15 +204,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
           <div className="container-custom">
             <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-2' : ''}>
-                <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-                  <Image
-                    src={sector.editorial.image}
-                    alt={sector.editorial.imageAlt}
-                    fill
-                    sizes="(min-width: 1024px) 50vw, 100vw"
-                    className="object-cover"
-                  />
-                </div>
+                <ImagePlaceholder ariaLabel={sector.editorial.imageAlt} className="aspect-[4/3] shadow-lg" />
               </div>
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-1' : ''}>
                 {sector.editorial.eyebrow && (
@@ -251,11 +239,9 @@ export default function SectorPage({ sector }: SectorPageProps) {
             </p>
             <ul className="space-y-4">
               {sector.benefits.map((benefit, index) => (
-                <li key={index} className="flex items-start gap-3">
-                  <svg className="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="text-secondary-700">{benefit}</span>
+                <li key={index} className="flex items-start gap-3 text-secondary-700">
+                  <span className="mt-0.5 flex-shrink-0 text-primary-600">✓</span>
+                  {benefit}
                 </li>
               ))}
             </ul>

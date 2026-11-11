@@ -50,6 +50,12 @@
     }
   },
   "process": {
+    "atelier-imprimantes-3d-grand-format-suresnes.jpeg": {
+      "category": "atelier",
+      "objectPosition": "center",
+      "title": "Impression 3D grand format à Suresnes",
+      "alt": "Parc d’imprimantes 3D grand format dans l’atelier Inphenix System à Suresnes, près de Paris"
+    },
     "electronique et motorisation.jpeg": {
       "category": "atelier",
       "objectPosition": "center",
@@ -81,10 +87,10 @@
       "alt": "Pièces en cours de fabrication par impression 3D résine"
     },
     "resine-impression-2.jpeg": {
-      "category": "atelier",
+      "category": "fabrication",
       "objectPosition": "center",
-      "title": "Post-traitement de pièces en résine",
-      "alt": "Étape de post-traitement de pièces fabriquées par impression 3D résine"
+      "title": "Impression 3D résine en cours",
+      "alt": "Pièce en résine en cours d’impression 3D"
     }
   }
 }

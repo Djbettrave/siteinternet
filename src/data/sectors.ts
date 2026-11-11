@@ -3,17 +3,18 @@ import type { SectorData } from '@/components/templates/SectorPage'
 export const sectorsData: Record<string, SectorData> = {
   retail: {
     slug: 'retail',
-    name: 'Retail',
+    name: 'Retail & merchandising',
     heroImage: '/images/secteurs/retail/retail-1.jpeg',
-    headline: 'Solutions sur mesure pour le Retail',
-    subheadline: 'PLV, présentoirs, displays et solutions de merchandising innovantes grâce à l\'impression 3D et l\'électronique.',
-    description: 'Inphenix System accompagne le secteur Retail avec des solutions de PLV, présentoirs et displays sur mesure. Impression 3D pour prototypes et petites séries, électronique intégrée pour displays interactifs.',
+    headline: 'PLV, présentoirs et dispositifs retail sur mesure',
+    subheadline: 'Personnalisation de PLV, présentoirs, glorificateurs et supports de produits grâce à l’impression 3D, l’électronique et la motorisation.',
+    description: 'Inphenix System conçoit et fabrique à Suresnes, près de Paris, des PLV, présentoirs, glorificateurs et dispositifs retail personnalisés sur mesure. Impression 3D, électronique, LED et motorisation pour le prototype, la petite série et le déploiement en point de vente.',
+    keywords: ['PLV sur mesure Paris', 'fabrication présentoir sur mesure', 'glorificateur personnalisé', 'merchandising retail', 'dispositif retail interactif'],
     editorial: {
       eyebrow: 'Retail · point de vente',
-      title: 'Mettre le produit au centre de l’expérience',
+      title: 'Créer une présence retail sur mesure',
       paragraphs: [
-        'Dans un point de vente, un produit doit être vu, compris et manipulé immédiatement. Sa forme, son format, sa position et la façon dont il se découvre influencent directement la conception d’un présentoir, d’un display ou d’un élément de PLV.',
-        'Inphenix transforme l’intention de marque en un dispositif concret, pensé autour du produit et de son environnement. Le résultat peut réunir volume, matière, lumière et interaction pour créer une présence cohérente en boutique.',
+        'Dans un point de vente, un produit doit être vu, compris et manipulé immédiatement. Sa forme, son format, sa position et la façon dont il se découvre orientent la conception d’un présentoir, d’un glorificateur, d’un display ou d’un élément de PLV personnalisé.',
+        'Inphenix transforme l’intention de marque en un dispositif concret, conçu sur mesure autour du produit et de son environnement. Volume, matière, lumière, électronique et interaction peuvent être réunis pour créer une présence cohérente en boutique.',
       ],
       image: '/images/secteurs/retail/retail-2.jpeg',
       imageAlt: 'Présentoir et éléments de PLV dans un environnement retail',
@@ -21,13 +22,13 @@ export const sectorsData: Record<string, SectorData> = {
     },
     useCases: [
       {
-        title: 'PLV et Présentoirs',
-        description: 'Créez des présentoirs uniques et impactants pour mettre en valeur vos produits en point de vente. Prototypage rapide pour tester vos concepts.',
+        title: 'PLV, Présentoirs & Glorificateurs',
+        description: 'Présentoirs, glorificateurs et PLV personnalisés pour mettre vos produits en valeur en point de vente. Prototype sur mesure avant déploiement.',
         icon: 'M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z',
       },
       {
-        title: 'Displays Interactifs',
-        description: 'Intégrez de l\'électronique dans vos displays : éclairage LED, écrans, capteurs de présence. Créez une expérience client mémorable.',
+        title: 'Dispositifs Interactifs',
+        description: 'Intégration sur mesure de LED, écrans, capteurs de présence et motorisation dans vos displays et supports de produits.',
         icon: 'M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z',
       },
       {
@@ -52,10 +53,10 @@ export const sectorsData: Record<string, SectorData> = {
       },
     ],
     benefits: [
-      'Prototypes fonctionnels en 24-48h pour validation rapide',
-      'Matériaux variés : du plastique au métal, finitions premium',
-      'Intégration électronique pour displays interactifs',
-      'Flexibilité totale sur les formes et dimensions',
+      'Prototypes fonctionnels et personnalisés en 24-48h pour validation rapide',
+      'Matériaux variés et finitions premium pour chaque support sur mesure',
+      'Intégration électronique pour dispositifs retail interactifs',
+      'Personnalisation totale des formes, dimensions et détails',
       'Petites séries économiques sans outillage',
       'Accompagnement de la conception à la livraison',
     ],

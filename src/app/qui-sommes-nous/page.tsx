@@ -3,8 +3,8 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
-  title: 'Qui sommes-nous ?',
-  description: 'Découvrez Inphenix System, bureau d\'étude spécialisé en impression 3D et électronique. Notre histoire, nos valeurs et notre engagement qualité.',
+  title: 'Inphenix System à Suresnes | Impression 3D et fabrication',
+  description: 'Découvrez Inphenix System, atelier de fabrication à Suresnes, près de Paris, créé en 2022. Impression 3D, électronique, modélisation et finitions sur mesure en Île-de-France.',
   alternates: {
     canonical: 'https://www.inphenix-system.fr/qui-sommes-nous',
   },
@@ -31,11 +31,6 @@ const values = [
     description: 'Contrôle qualité rigoureux sur chaque pièce. Nous ne livrons que ce dont nous sommes fiers.',
     icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', // Badge check (qualité)
   },
-  {
-    title: '🇫🇷 Made in France',
-    description: 'Atelier basé à Suresnes. Fabrication locale, savoir-faire français, réactivité et proximité garanties.',
-    icon: 'M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z M15 11a3 3 0 11-6 0 3 3 0 016 0z', // Map pin (localisation)
-  },
 ]
 
 const stats = [
@@ -55,7 +50,7 @@ const capabilities = [
     items: ['Conception de PCB', 'Motorisation', 'Systèmes embarqués', 'Programmation'],
   },
   {
-    category: 'Services',
+    category: 'Conception & fabrication',
     items: ['Scan 3D', 'Modélisation CAO', 'Prototypage', 'Conseil technique'],
   },
 ]
@@ -86,48 +81,25 @@ export default function QuiSommesNousPage() {
               <h2 className="section-title mb-6">Notre histoire</h2>
               <div className="space-y-4 text-secondary-600">
                 <p>
-                  <strong className="text-secondary-900">Inphenix System</strong> est né de la conviction
-                  que la fabrication sur mesure doit être accessible à tous les créateurs,
-                  entrepreneurs et entreprises.
+                  Basé à Suresnes, aux portes de Paris, <strong className="text-secondary-900">Inphenix System</strong> accompagne les marques, agences et entreprises qui souhaitent transformer une idée, un objet ou un projet technique en une pièce concrète.
                 </p>
                 <p>
-                  Fort d'une double expertise en impression 3D et en développement électronique,
-                  nous accompagnons nos clients de l'idée au produit fini. Cette combinaison
-                  unique nous permet de proposer des solutions complètes, là où d'autres
-                  se limitent à un seul domaine.
+                  Impression 3D, électronique, modélisation et finitions se réunissent dans notre atelier d’Île-de-France pour concevoir, fabriquer et finaliser des prototypes, des installations et des productions sur mesure.
                 </p>
                 <p>
-                  Aujourd'hui, nous travaillons avec des clients de tous secteurs :
-                  retail, luxe, événementiel, architecture, robotique...
-                  Chaque projet est une nouvelle aventure technique et créative.
+                  Créé en 2022, Inphenix System développe une approche directe : comprendre l’intention du projet, trouver la bonne solution de fabrication et livrer une pièce prête à être utilisée, présentée ou produite.
                 </p>
               </div>
             </div>
             <div className="relative rounded-2xl overflow-hidden aspect-square">
               <Image
-                src="/images/atelier/bureau-1.jpeg"
-                alt="L'atelier Inphenix System"
+                src="/images/atelier/atelier-imprimantes-3d-grand-format-suresnes.jpeg"
+                alt="Parc d’imprimantes 3D grand format dans l’atelier Inphenix System à Suresnes, près de Paris"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Stats */}
-      <section className="py-16 bg-primary-600">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-4xl lg:text-5xl font-bold text-white mb-2">
-                  {stat.value}
-                </div>
-                <div className="text-primary-200">{stat.label}</div>
-              </div>
-            ))}
           </div>
         </div>
       </section>
@@ -142,7 +114,7 @@ export default function QuiSommesNousPage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {values.map((value) => (
               <div key={value.title} className="bg-white rounded-2xl p-8 text-center border border-secondary-200 hover:border-primary-300 transition-colors">
                 {value.icon && (
@@ -162,9 +134,9 @@ export default function QuiSommesNousPage() {
       <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="section-title">Nos capacités</h2>
+            <h2 className="section-title">De l’idée à la pièce finie</h2>
             <p className="section-subtitle mx-auto">
-              Un parc machine et une expertise pour répondre à tous vos besoins.
+              Une même équipe réunit les savoir-faire nécessaires pour concevoir, fabriquer et finaliser votre projet.
             </p>
           </div>
 
@@ -175,9 +147,7 @@ export default function QuiSommesNousPage() {
                 <ul className="space-y-3">
                   {cap.items.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-secondary-600">
-                      <svg className="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
+                      <span className="flex-shrink-0 text-primary-600">✓</span>
                       {item}
                     </li>
                   ))}
@@ -188,28 +158,18 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      {/* Engagement */}
-      <section className="py-24 bg-secondary-900">
+      {/* Chiffres clés */}
+      <section className="bg-primary-600 py-12 sm:py-14">
         <div className="container-custom">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Notre engagement
-            </h2>
-            <p className="text-xl text-secondary-300 mb-8">
-              "Chaque projet mérite une attention particulière.
-              Nous ne sommes pas satisfaits tant que vous ne l'êtes pas.
-              C'est aussi simple que ça."
-            </p>
-            <div className="flex items-center justify-center gap-4">
-              <div className="flex -space-x-1">
-                {[1, 2, 3, 4, 5].map((i) => (
-                  <svg key={i} className="w-6 h-6 text-yellow-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
+          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
+            {stats.map((stat) => (
+              <div key={stat.label} className="text-center">
+                <div className="mb-2 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
+                  {stat.value}
+                </div>
+                <div className="text-sm text-primary-200 sm:text-base">{stat.label}</div>
               </div>
-              <span className="text-white font-semibold">5/5 sur Google</span>
-            </div>
+            ))}
           </div>
         </div>
       </section>
