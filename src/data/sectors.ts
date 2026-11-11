@@ -8,6 +8,17 @@ export const sectorsData: Record<string, SectorData> = {
     headline: 'Solutions sur mesure pour le Retail',
     subheadline: 'PLV, présentoirs, displays et solutions de merchandising innovantes grâce à l\'impression 3D et l\'électronique.',
     description: 'Inphenix System accompagne le secteur Retail avec des solutions de PLV, présentoirs et displays sur mesure. Impression 3D pour prototypes et petites séries, électronique intégrée pour displays interactifs.',
+    editorial: {
+      eyebrow: 'Retail · point de vente',
+      title: 'Mettre le produit au centre de l’expérience',
+      paragraphs: [
+        'Dans un point de vente, un produit doit être vu, compris et manipulé immédiatement. Sa forme, son format, sa position et la façon dont il se découvre influencent directement la conception d’un présentoir, d’un display ou d’un élément de PLV.',
+        'Inphenix transforme l’intention de marque en un dispositif concret, pensé autour du produit et de son environnement. Le résultat peut réunir volume, matière, lumière et interaction pour créer une présence cohérente en boutique.',
+      ],
+      image: '/images/secteurs/retail/retail-2.jpeg',
+      imageAlt: 'Présentoir et éléments de PLV dans un environnement retail',
+      imagePosition: 'right',
+    },
     useCases: [
       {
         title: 'PLV et Présentoirs',
@@ -91,6 +102,17 @@ export const sectorsData: Record<string, SectorData> = {
     headline: 'L\'excellence au service du Luxe',
     subheadline: 'Packaging premium, displays haute couture et pièces d\'exception pour les maisons de luxe.',
     description: 'Inphenix System accompagne les maisons de luxe avec des solutions de packaging, displays et pièces sur mesure. Finitions premium, détails impeccables, confidentialité garantie.',
+    editorial: {
+      eyebrow: 'Luxe · création et présentation',
+      title: 'Répondre aux exigences des maisons de luxe',
+      paragraphs: [
+        'Dans le luxe, un support de présentation, un prototype ou un objet de vitrine doit prolonger l’univers de la maison avec la même précision que le produit qu’il accompagne. Proportions, détails, matière, couleur et lumière participent ensemble à la qualité perçue.',
+        'Inphenix développe des objets dont le rendu est pensé dès la conception : un flacon, un packaging, un présentoir ou une pièce événementielle doit mettre le produit en valeur, respecter les codes de la marque et conserver son exigence jusque dans sa finition.',
+      ],
+      image: '/images/secteurs/luxe/luxe-3.jpeg',
+      imageAlt: 'Pièce de présentation pour une maison de luxe',
+      imagePosition: 'left',
+    },
     useCases: [
       {
         title: 'Packaging de Prestige',
@@ -172,6 +194,17 @@ export const sectorsData: Record<string, SectorData> = {
     headline: 'Créez l\'impact pour vos événements',
     subheadline: 'Installations spectaculaires, décors sur mesure et expériences immersives pour marquer les esprits.',
     description: 'Inphenix System crée des installations et décors sur mesure pour l\'événementiel : salons, lancements produits, soirées corporate, spectacles. Impact visuel et réalisation technique garantis.',
+    editorial: {
+      eyebrow: 'Événementiel · expérience de marque',
+      title: 'Créer une expérience qui se vit',
+      paragraphs: [
+        'Un événement ne se résume pas à un lieu ou à un décor. Il crée une atmosphère, un rythme, une émotion et un souvenir. Chaque volume, lumière, matière ou objet participe à la manière dont le public perçoit la marque et entre dans son univers.',
+        'Inphenix donne une forme physique à cette intention : éléments de scénographie, objets iconiques, installations lumineuses, pièces interactives ou décors sur mesure. L’objectif est de créer une expérience visible, sensible et cohérente avec l’identité de l’événement.',
+      ],
+      image: '/images/secteurs/evenementiel/evenementiel-2.jpeg',
+      imageAlt: 'Élément de scénographie pour un événement',
+      imagePosition: 'right',
+    },
     useCases: [
       {
         title: 'Stands et Salons',
@@ -351,6 +384,17 @@ export const sectorsData: Record<string, SectorData> = {
     headline: 'Du prototype au robot fonctionnel',
     subheadline: 'Châssis, boîtiers, pièces mécaniques et électronique embarquée pour vos projets robotiques.',
     description: 'Inphenix System accompagne les projets robotiques de A à Z : conception mécanique, impression 3D de pièces fonctionnelles, développement électronique et motorisation. Votre partenaire technique complet.',
+    editorial: {
+      eyebrow: 'Robotique · développement et validation',
+      title: 'Donner une forme tangible à l’innovation',
+      paragraphs: [
+        'Avant qu’un système robotique puisse être présenté, testé ou développé, il doit prendre une forme réelle. Une pièce, un châssis, un boîtier ou un mécanisme permet de confronter une idée aux dimensions, aux mouvements et aux composants qui la rendent possible.',
+        'Inphenix accompagne cette phase de concrétisation en reliant les éléments mécaniques, les pièces imprimées et l’électronique embarquée. Le prototype devient un support de validation, capable d’évoluer avec le projet plutôt qu’une simple démonstration théorique.',
+      ],
+      image: '/images/secteurs/robotique/robotique-1.jpeg',
+      imageAlt: 'Prototype robotique avec pièces mécaniques et électronique intégrée',
+      imagePosition: 'right',
+    },
     useCases: [
       {
         title: 'Châssis et Structures',
