@@ -10,7 +10,7 @@
     "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
       "category": "realisations",
       "order": 65,
-      "objectPosition": "center 72%",
+      "objectPosition": "center 64%",
       "title": "Scan 3D et reproduction résine d’une sculpture de lion",
       "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
     },
@@ -24,8 +24,7 @@
     "scan-3d-sculpture-serpent-miniature-resine.jpeg": {
       "category": "realisations",
       "order": 115,
-      "objectPosition": "center 46%",
-      "scale": 0.9,
+      "objectPosition": "center 55%",
       "tone": "soft",
       "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
       "alt": "Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine"
