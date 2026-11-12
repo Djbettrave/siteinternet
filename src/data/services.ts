@@ -747,9 +747,9 @@ export const servicesData: Record<string, ServiceData> = {
           src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'portrait',
+          fit: 'cover',
           priority: true,
         },
-        visualSize: 'compact',
       },
       {
         afterSection: 1,
