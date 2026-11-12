@@ -69,7 +69,7 @@ export default function QuiSommesNousPage() {
       <section className="py-24 bg-secondary-50">
         <div className="container-custom">
           <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-            <div className="max-w-xl">
+            <div className="max-w-xl lg:order-2">
               <h2 className="section-title mb-6">Notre approche</h2>
               <div className="space-y-4 text-secondary-600">
                 <p>Chaque projet part d’un usage réel, d’une intention et de contraintes précises. Nous prenons le temps de les comprendre avant de choisir une technologie, un matériau ou un procédé.</p>
@@ -77,7 +77,7 @@ export default function QuiSommesNousPage() {
                 <p>Nous privilégions un échange direct, des solutions adaptées et une fabrication maîtrisée, qu’il s’agisse d’une pièce unique, d’un prototype ou d’une production en série.</p>
               </div>
             </div>
-            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl lg:order-1">
               <Image
                 src="/images/atelier/travail-2.jpeg"
                 alt="Mise au point de pièces imprimées en 3D dans l’atelier Inphenix System"
