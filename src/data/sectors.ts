@@ -100,7 +100,7 @@ export const sectorsData: Record<string, SectorData> = {
     slug: 'luxe',
     name: 'Luxe',
     heroImage: '/images/secteurs/luxe/luxe-1.jpeg',
-    headline: 'L\'excellence au service du Luxe',
+    headline: 'Objets, décors et dispositifs pour les maisons de luxe',
     subheadline: 'Packaging premium, displays haute couture et pièces d\'exception pour les maisons de luxe.',
     description: 'Inphenix System accompagne les maisons de luxe avec des solutions de packaging, displays et pièces sur mesure. Finitions premium, détails impeccables, confidentialité garantie.',
     editorial: {
