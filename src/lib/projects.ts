@@ -4,7 +4,7 @@ import { join } from 'path'
 import type { ProjectCategory, ProjectImage } from '@/types/project'
 
 type ProjectStatus = ProjectImage['status']
-type ImageConfig = { objectPosition?: string; title?: string; alt?: string; category?: ProjectCategory; order?: number }
+type ImageConfig = { objectPosition?: string; title?: string; alt?: string; category?: ProjectCategory; order?: number; tone?: 'normal' | 'soft' }
 type ProjectsConfig = Partial<Record<ProjectStatus, Record<string, ImageConfig | string>>>
 
 const serviceKeywordMap: Record<string, string[]> = {
@@ -78,6 +78,7 @@ async function readImagesFromDir(
           alt: imageConfig.alt ?? title,
           services: extractServicesFromFilename(filename),
           objectPosition: imageConfig.objectPosition ?? 'center',
+          tone: imageConfig.tone,
         }
       })
   } catch {

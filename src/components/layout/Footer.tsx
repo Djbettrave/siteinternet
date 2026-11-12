@@ -78,7 +78,7 @@ export default function Footer() {
           {/* Services */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Ce que nous proposons...</h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-1">
               {services.map((service) => (
                 <li key={service.href}>
                   <Link href={service.href} className="block whitespace-nowrap text-[12.5px] font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
@@ -92,7 +92,7 @@ export default function Footer() {
           {/* Secteurs */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Vous êtes dans...</h3>
-            <ul className="grid grid-cols-2 gap-x-4 gap-y-3">
+            <ul className="grid grid-cols-2 gap-x-4 gap-y-3 lg:grid-cols-1">
               {secteurs.map((secteur) => (
                 <li key={secteur.href}>
                   <Link href={secteur.href} className="block text-[12.5px] font-normal leading-snug text-secondary-200 transition-colors hover:text-white md:text-sm">
@@ -106,8 +106,8 @@ export default function Footer() {
           {/* Contact */}
           <div>
             <h3 className="font-semibold text-sm mb-3">Contact</h3>
-            <ul className="grid grid-cols-[auto_1fr] items-center gap-x-2 gap-y-2 text-xs text-secondary-200 md:text-sm">
-              <li className="order-2 justify-self-end">
+            <ul className="grid grid-cols-[auto_1fr] items-center gap-x-2 gap-y-2 text-xs text-secondary-200 md:text-sm lg:grid-cols-1 lg:items-start">
+              <li className="order-2 justify-self-end lg:order-2 lg:justify-self-start">
                 <Link href="/contact" className="inline-flex items-center gap-1.5 text-secondary-200 transition-colors hover:text-white">
                   <svg className="h-4 w-4 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
@@ -123,7 +123,7 @@ export default function Footer() {
                   <span>{CONTACT_INFO.phone}</span>
                 </a>
               </li>
-              <li className="order-3 col-span-2 flex items-center gap-1.5 whitespace-nowrap text-secondary-200">
+              <li className="order-3 col-span-2 flex items-center gap-1.5 whitespace-nowrap text-secondary-200 lg:col-span-1">
                 <svg className="w-4 h-4 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
@@ -156,7 +156,7 @@ export default function Footer() {
         <div className="container-custom py-4">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <p className="text-secondary-500 text-sm">
-              © {new Date().getFullYear()} Inphenix System. Tous droits réservés.
+              © 2022 Inphenix System. Tous droits réservés.
             </p>
             <div className="flex items-center gap-6">
               <Link href="/mentions-legales" className="text-secondary-500 hover:text-white text-sm transition-colors">

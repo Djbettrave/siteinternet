@@ -10,7 +10,7 @@
     "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
       "category": "realisations",
       "order": 65,
-      "objectPosition": "center",
+      "objectPosition": "center 55%",
       "title": "Scan 3D et reproduction résine d’une sculpture de lion",
       "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
     },
@@ -25,6 +25,7 @@
       "category": "realisations",
       "order": 115,
       "objectPosition": "center",
+      "tone": "soft",
       "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
       "alt": "Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine"
     },
@@ -108,7 +109,7 @@
     "sapin-noel-chanel-installation-evenementielle.jpeg": {
       "category": "realisations",
       "order": 20,
-      "objectPosition": "center",
+      "objectPosition": "center 43%",
       "title": "Sapin de Noël Chanel",
       "alt": "Sapin de Noël Chanel réalisé pour une installation événementielle de marque"
     },

@@ -10,4 +10,5 @@ export interface ProjectImage {
   alt: string
   services: string[]
   objectPosition: string
+  tone?: 'normal' | 'soft'
 }

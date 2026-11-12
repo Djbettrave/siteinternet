@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import MobileReveal from '@/components/ui/MobileReveal'
+import Print3DHeroGallery from '@/components/services/Print3DHeroGallery'
 
 export interface ServiceData {
   slug: string
@@ -44,6 +45,7 @@ export interface ServiceData {
   contentSections?: {
     title?: string
     paragraphs: string[]
+    layout?: 'default' | 'wide'
   }[]
   inlineVisuals?: {
     afterSection: number
@@ -56,7 +58,9 @@ export interface ServiceData {
       alt: string
       aspect?: 'portrait' | 'landscape' | 'standard'
       fit?: 'contain' | 'cover'
+      tone?: 'normal' | 'soft'
     }
+    visualSize?: 'normal' | 'compact'
     images?: {
       alt: string
       label: string
@@ -124,6 +128,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
+  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal'].includes(service.slug)
 
   return (
     <>
@@ -134,6 +139,21 @@ export default function ServicePage({ service }: ServicePageProps) {
       />
 
       {/* Hero */}
+      {usesPrint3DGallery ? (
+        <section className="overflow-hidden bg-[#f8fafc]">
+          <div className="container-custom py-14 md:py-20 lg:py-24">
+            <div className="grid items-center gap-12 lg:grid-cols-[.88fr_1.12fr] lg:gap-20">
+              <div>
+                <h1 className="text-4xl font-bold leading-[.98] tracking-[-0.055em] text-secondary-950 sm:text-5xl lg:text-6xl">
+                  {service.headline.split('\n').map((line, index) => <span key={line} className={`block ${index === 1 ? 'mt-2 text-primary-700' : ''}`}>{line}</span>)}
+                </h1>
+                <p className="mt-7 max-w-xl text-lg leading-relaxed text-secondary-600">{service.subheadline}</p>
+              </div>
+              <Print3DHeroGallery />
+            </div>
+          </div>
+        </section>
+      ) : (
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
           <div className={`py-20 lg:py-28 ${service.heroVisual ? 'grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.62fr)]' : ''}`}>
@@ -174,6 +194,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
         <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
       </section>
+      )}
 
       {/* Features */}
       <section className="py-24 bg-white">
@@ -214,11 +235,12 @@ export default function ServicePage({ service }: ServicePageProps) {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
                 const stacked = visual?.layout === 'stacked'
+                const wide = section.layout === 'wide'
 
                 return (
                   <section
                     key={section.title || `section-${index}`}
-                    className={visual ? (stacked ? 'space-y-10' : 'grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,1fr)] lg:gap-16') : 'max-w-4xl'}
+                    className={visual ? (stacked ? 'space-y-10' : 'grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,1fr)] lg:gap-16') : wide ? 'max-w-none py-4' : 'max-w-4xl'}
                   >
                     <div className={`${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''} ${stacked ? 'max-w-5xl' : ''}`}>
                       {section.title && <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>}
@@ -227,7 +249,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                      <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? 'w-full' : ''}`}>
+                      <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? 'w-full' : ''} ${visual.visualSize === 'compact' && !stacked ? 'lg:max-w-[440px] lg:justify-self-end' : ''}`}>
                         {visual.image ? (
                           <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : 'aspect-video'}`}>
                             <Image
@@ -235,7 +257,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                               alt={visual.image.alt}
                               fill
                               sizes={stacked ? '(min-width: 1024px) 1200px, 100vw' : '(min-width: 1024px) 50vw, 100vw'}
-                              className={visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'}
+                              className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                             />
                           </div>
                         ) : visual.images ? (

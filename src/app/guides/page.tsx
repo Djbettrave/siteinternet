@@ -25,6 +25,11 @@ function CategoryIcon({ category }: { category: GuideCategorySlug }) {
 export default function GuidesPage() {
   const categories = Object.keys(guideCategories) as GuideCategorySlug[]
   const featuredArticles = getGuidesByCategory('fdm')
+  const categoryPreviews: Record<GuideCategorySlug, string> = {
+    fdm: 'Adhérence, remplissage, qualité de surface…',
+    'fichiers-3d': 'Formats, maillage, réparation de fichier…',
+    resine: 'Exposition, supports, adhérence…',
+  }
 
   return <>
     <main className="mx-auto max-w-[1200px] px-5 py-10 sm:py-14 lg:px-8">
@@ -36,12 +41,12 @@ export default function GuidesPage() {
           {categories.map((slug) => {
             const category = guideCategories[slug]
             const count = getGuidesByCategory(slug).length
-            return <Link key={slug} href={`/guides/${slug}`} className="group flex min-h-[290px] flex-col rounded-xl border border-primary-200 bg-white p-6 transition-colors hover:border-primary-400 sm:min-h-[320px] sm:p-7"><div className="mt-2 flex items-center gap-4"><CategoryIcon category={slug} /><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3></div><p className="mt-7 text-[13px] leading-6 text-secondary-600">{category.description}</p><div className="mt-auto flex items-center justify-between gap-4 pb-1 pt-6"><p className="text-[13px] italic text-secondary-500">{count} guides disponibles</p><span className="text-xl leading-none text-primary-700 transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span></div></Link>
+            return <Link key={slug} href={`/guides/${slug}`} className="group flex min-h-[306px] flex-col rounded-xl border border-primary-200 bg-white p-6 transition-colors hover:border-primary-400 sm:min-h-[334px] sm:p-7"><div className="mt-2 flex items-center gap-4"><CategoryIcon category={slug} /><h3 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900">{category.name}</h3></div><p className="mt-7 text-[13px] leading-6 text-secondary-600">{category.description}</p><p className="mt-5 text-[12px] italic leading-5 text-secondary-500">{categoryPreviews[slug]}</p><div className="mt-auto flex justify-center pt-6"><span className="inline-flex items-center gap-1.5 text-[13px] italic text-secondary-500">{count} guides disponibles <span className="text-lg leading-none text-primary-700 transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span></span></div></Link>
           })}
         </div>
-        <div className="mt-7 border-t border-primary-200 pt-5">
-          <h2 className="text-base font-semibold text-secondary-900">À propos de ces guides</h2>
-          <p className="mt-2 max-w-4xl text-sm leading-7 text-secondary-600">Retrouvez des conseils pour l’impression 3D FDM et résine, la préparation de fichiers 3D, le maillage, les réglages de slicer et la résolution des défauts d’impression les plus courants.</p>
+        <div className="mt-7 pt-5">
+          <h2 className="text-base font-semibold text-secondary-900">Ce que vous trouverez dans ces guides</h2>
+          <p className="mt-2 text-sm leading-7 text-secondary-600">Retrouvez des conseils pratiques sur l’impression 3D FDM et résine, la préparation des fichiers 3D, le maillage, les réglages de slicer et la résolution des défauts d’impression les plus courants.</p>
         </div>
       </section>
 

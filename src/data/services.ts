@@ -63,6 +63,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Personnalisation UV adaptée à votre support',
+        layout: 'wide',
         paragraphs: [
           'Chaque projet est étudié selon l’objet réel : matière, état de surface, dimensions, zones à imprimer et rendu attendu. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe.',
           'Les objets cylindriques peuvent également être personnalisés. Leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
@@ -70,6 +71,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'De la pièce unique aux petites et grandes séries',
+        layout: 'wide',
         paragraphs: [
           'Nous réalisons des impressions UV pour une pièce unique, une présérie, une petite série ou une grande série. Le chiffrage dépend du nombre d’objets identiques, du format du visuel, de la préparation nécessaire, des contraintes de calage et du délai souhaité.',
           'Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
@@ -726,6 +728,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'De l’objet existant à un fichier exploitable',
         paragraphs: [
           'Le scan 3D permet de récupérer la géométrie d’un objet réel lorsqu’il n’existe plus de plan, de fichier ou de modèle numérique exploitable. Il constitue une base utile pour reproduire une pièce, l’adapter, l’archiver ou engager un travail de rétro-ingénierie.',
+          'Le relevé numérique conserve les proportions, les volumes et les détails utiles du modèle. Il permet de repartir d’une pièce réelle, y compris lorsqu’elle ne peut pas être mesurée directement dans toutes ses zones.',
         ],
       },
       {
@@ -745,16 +748,19 @@ export const servicesData: Record<string, ServiceData> = {
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'portrait',
         },
+        visualSize: 'compact',
       },
       {
         afterSection: 1,
         position: 'left',
+        layout: 'stacked',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
           alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
-          aspect: 'standard',
+          aspect: 'landscape',
           fit: 'cover',
+          tone: 'soft',
         },
       },
     ],
