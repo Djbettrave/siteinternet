@@ -45,16 +45,6 @@ export default function SecteursPage() {
                 <p className="text-secondary-600 mb-6">
                   {sector.subheadline}
                 </p>
-                {sector.stats && (
-                  <div className="flex items-center gap-4 pt-4 border-t border-secondary-100">
-                    {sector.stats.slice(0, 2).map((stat) => (
-                      <div key={stat.label} className="text-sm">
-                        <span className="font-semibold text-primary-600">{stat.value}</span>
-                        <span className="text-secondary-500 ml-1">{stat.label}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
                 <div className="mt-6 flex items-center text-primary-600 font-medium">
                   Découvrir
                   <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
