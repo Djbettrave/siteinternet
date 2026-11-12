@@ -15,7 +15,7 @@ function GallerySlot({ image, className }: { image?: Print3DGalleryImage; classN
   if (!image) return <ImagePlaceholder ariaLabel="Emplacement image" className={className} />
 
   return (
-    <div className={`relative overflow-hidden rounded-2xl bg-secondary-100 ${className}`}>
+    <div className={`relative overflow-hidden ${image.fit === 'contain' ? '' : 'rounded-2xl bg-secondary-100'} ${className}`}>
       <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className={image.fit === 'contain' ? 'object-contain' : 'object-cover'} />
     </div>
   )
