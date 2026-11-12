@@ -4,6 +4,7 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 export type Print3DGalleryImage = {
   src: string
   alt: string
+  fit?: 'cover' | 'contain'
 }
 
 type Print3DHeroGalleryProps = {
@@ -15,7 +16,7 @@ function GallerySlot({ image, className }: { image?: Print3DGalleryImage; classN
 
   return (
     <div className={`relative overflow-hidden rounded-2xl bg-secondary-100 ${className}`}>
-      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className="object-cover" />
+      <Image src={image.src} alt={image.alt} fill sizes="(max-width: 1024px) 100vw, 50vw" className={image.fit === 'contain' ? 'object-contain' : 'object-cover'} />
     </div>
   )
 }

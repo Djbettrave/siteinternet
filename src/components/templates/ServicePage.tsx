@@ -22,6 +22,7 @@ export interface ServiceData {
   galleryImages?: {
     src: string
     alt: string
+    fit?: 'cover' | 'contain'
   }[]
   description: string
   features: {

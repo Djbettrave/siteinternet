@@ -155,13 +155,6 @@
       "objectPosition": "center",
       "title": "Lettrages décoratifs",
       "alt": "Lettrages décoratifs imprimés en résine, peints et finis sur mesure"
-    },
-    "noeud-decoratif-grand-format.webp": {
-      "category": "atelier",
-      "order": 90,
-      "objectPosition": "center 48%",
-      "title": "Nœud décoratif grand format",
-      "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
     }
   },
   "process": {
@@ -209,7 +202,7 @@
     },
     "prototypage-recherche-developpement.jpeg": {
       "category": "atelier",
-      "order": 60,
+      "order": 100,
       "objectPosition": "center",
       "title": "Recherche et développement de prototype",
       "alt": "Prototype en cours de recherche et développement avant fabrication"
@@ -300,10 +293,17 @@
     },
     "neon-cacharel-plexiglas-sur-mesure.webp": {
       "category": "atelier",
-      "order": 100,
+      "order": 80,
       "objectPosition": "center 62%",
       "title": "Néon Cacharel",
       "alt": "Fabrication dans l’atelier d’un lettrage en plexiglas pour une installation lumineuse Cacharel"
+    },
+    "noeud-decoratif-grand-format.webp": {
+      "category": "atelier",
+      "order": 90,
+      "objectPosition": "center 48%",
+      "title": "Nœud décoratif grand format",
+      "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
     }
   }
 }
