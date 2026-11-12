@@ -22,6 +22,7 @@ export interface SectorData {
     imageAlt: string
     showImage?: boolean
     imagePosition?: 'left' | 'right'
+    imageFocus?: 'center' | 'top'
   }
   useCases: {
     title: string
@@ -209,7 +210,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-2' : ''}>
                 {sector.editorial.showImage ? (
                   <div className="relative aspect-[4/3] overflow-hidden rounded-2xl shadow-lg">
-                    <Image src={sector.editorial.image} alt={sector.editorial.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                    <Image src={sector.editorial.image} alt={sector.editorial.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className={`object-cover ${sector.editorial.imageFocus === 'top' ? 'object-top' : 'object-center'}`} />
                   </div>
                 ) : (
                   <ImagePlaceholder ariaLabel={sector.editorial.imageAlt} className="aspect-[4/3] shadow-lg" />

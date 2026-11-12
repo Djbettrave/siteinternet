@@ -53,7 +53,8 @@ export interface ServiceData {
     image?: {
       src: string
       alt: string
-      aspect?: 'portrait' | 'landscape'
+      aspect?: 'portrait' | 'landscape' | 'standard'
+      fit?: 'contain' | 'cover'
     }
     images?: {
       alt: string
@@ -222,13 +223,13 @@ export default function ServicePage({ service }: ServicePageProps) {
                     {visual && (
                       <div className={visual.position === 'left' ? 'md:order-1' : ''}>
                         {visual.image ? (
-                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : 'aspect-video'}`}>
+                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : 'aspect-video'}`}>
                             <Image
                               src={visual.image.src}
                               alt={visual.image.alt}
                               fill
                               sizes="(min-width: 768px) 32vw, 100vw"
-                              className="object-contain"
+                              className={visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'}
                             />
                           </div>
                         ) : visual.images ? (

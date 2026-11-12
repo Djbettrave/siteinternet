@@ -956,7 +956,8 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/prototypage/prototype-mecanisme-defilement-film.jpeg',
           alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
-          aspect: 'landscape',
+          aspect: 'standard',
+          fit: 'cover',
         },
       },
       {
@@ -966,7 +967,8 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/prototypage/powerbank-sur-mesure-distributeur-automatique.jpeg',
           alt: 'Powerbank sur mesure intégrée à un distributeur automatique existant',
-          aspect: 'landscape',
+          aspect: 'standard',
+          fit: 'cover',
         },
       },
     ],

@@ -114,6 +114,7 @@ export const sectorsData: Record<string, SectorData> = {
       imageAlt: 'Installation événementielle de Noël Chanel dans un intérieur',
       showImage: true,
       imagePosition: 'left',
+      imageFocus: 'top',
     },
     useCases: [
       {
