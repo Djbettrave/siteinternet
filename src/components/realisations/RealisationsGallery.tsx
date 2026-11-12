@@ -16,9 +16,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [isHeaderVisible, setIsHeaderVisible] = useState(true)
   const [isNavigatingCategory, setIsNavigatingCategory] = useState(false)
-  const [hasPassedTitle, setHasPassedTitle] = useState(false)
   const [lastScrollY, setLastScrollY] = useState(0)
-  const titleSectionRef = useRef<HTMLElement>(null)
   const filtersSectionRef = useRef<HTMLElement>(null)
   const projectsSectionRef = useRef<HTMLElement>(null)
 
@@ -34,9 +32,6 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
       } else {
         setIsHeaderVisible(true)
       }
-
-      const titleBottom = titleSectionRef.current?.getBoundingClientRect().bottom ?? Infinity
-      setHasPassedTitle(titleBottom <= 80)
 
       setLastScrollY(currentScrollY)
     }
@@ -120,19 +115,15 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
   return (
     <>
-      <section ref={titleSectionRef} className="bg-white pb-5 pt-6 sm:pb-7 sm:pt-8">
-        <div className="container-custom">
-          <h1 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900 sm:text-4xl">Nos réalisations</h1>
-        </div>
-      </section>
+      <h1 className="sr-only">Réalisations</h1>
 
       {/* Filters */}
       <section ref={filtersSectionRef} className={`bg-white border-b border-secondary-200 sticky z-40 transition-all duration-300 ${
         isNavigatingCategory || !isHeaderVisible ? 'top-0' : 'top-20'
       }`}>
         <div className="container-custom">
-          {hasPassedTitle && <p className="pt-5 text-center text-[10px] font-semibold uppercase tracking-[0.18em] text-secondary-500">Explorer par univers</p>}
-          <nav className={`grid grid-cols-3 items-end gap-1 ${isHeaderVisible ? 'py-4' : 'py-3'}`} aria-label="Explorer les réalisations par univers">
+          <p className="pt-5 text-left text-lg font-semibold tracking-[-0.01em] text-secondary-800">Explorer par univers</p>
+          <nav className={`grid grid-cols-3 items-end gap-1 ${isHeaderVisible ? 'pb-4 pt-3' : 'pb-3 pt-2'}`} aria-label="Explorer les réalisations par univers">
             {([
               ['realisations', 'Réalisations'],
               ['fabrication', 'Fabrication'],
@@ -174,14 +165,16 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                       className="aspect-[4/3] relative overflow-hidden bg-secondary-100 cursor-pointer"
                       onClick={() => openLightbox(index)}
                     >
-                      <Image
-                        src={project.path}
-                        alt={project.alt}
-                        fill
-                        className={`object-cover transition-transform duration-500 group-hover:scale-105 ${project.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
-                        style={{ objectPosition: project.objectPosition || 'center' }}
-                        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
-                      />
+                      <div className="absolute inset-0" style={project.rotation ? { transform: `rotate(${project.rotation}deg) scale(1.03)` } : undefined}>
+                        <Image
+                          src={project.path}
+                          alt={project.alt}
+                          fill
+                          className={`object-cover transition-transform duration-500 group-hover:scale-105 ${project.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
+                          style={{ objectPosition: project.objectPosition || 'center' }}
+                          sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
+                        />
+                      </div>
 
                     </div>
                   </article>

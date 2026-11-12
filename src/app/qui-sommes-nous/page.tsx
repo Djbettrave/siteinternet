@@ -10,29 +10,6 @@ export const metadata: Metadata = {
   },
 }
 
-const values = [
-  {
-    title: 'Expertise technique',
-    description: 'Une maîtrise approfondie de l\'impression 3D et de l\'électronique, constamment mise à jour avec les dernières technologies.',
-    icon: 'M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z', // Ampoule (idée/expertise)
-  },
-  {
-    title: 'Réactivité',
-    description: 'Réponse sous 24h garantie. Nous comprenons l\'importance des délais dans vos projets.',
-    icon: 'M13 10V3L4 14h7v7l9-11h-7z', // Éclair (rapidité)
-  },
-  {
-    title: 'Sur mesure',
-    description: 'Chaque projet est unique. Nous adaptons nos solutions à vos besoins spécifiques.',
-    icon: 'M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4', // Sliders (personnalisation)
-  },
-  {
-    title: 'Qualité',
-    description: 'Contrôle qualité rigoureux sur chaque pièce. Nous ne livrons que ce dont nous sommes fiers.',
-    icon: 'M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z', // Badge check (qualité)
-  },
-]
-
 const stats = [
   { value: '+300', label: 'Projets réalisés' },
   { value: '5+', label: 'Secteurs d\'expertise' },
@@ -58,21 +35,6 @@ const capabilities = [
 export default function QuiSommesNousPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-secondary-900 to-secondary-800 py-20">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Qui sommes-nous ?
-            </h1>
-            <p className="text-xl text-secondary-300">
-              Un bureau d'étude passionné par la fabrication et l'innovation,
-              au service de vos projets les plus ambitieux.
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Story */}
       <section className="py-24 bg-white">
         <div className="container-custom">
@@ -80,6 +42,9 @@ export default function QuiSommesNousPage() {
             <div>
               <h2 className="section-title mb-6">Notre histoire</h2>
               <div className="space-y-4 text-secondary-600">
+                <p>
+                  Inphenix System est un bureau d’études spécialisé dans la conception, le prototypage et la fabrication de pièces sur mesure. Nous réunissons création, ingénierie et fabrication pour accompagner un projet de l’idée à sa réalisation.
+                </p>
                 <p>
                   Basé à Suresnes, aux portes de Paris, <strong className="text-secondary-900">Inphenix System</strong> accompagne les marques, agences et entreprises qui souhaitent transformer une idée, un objet ou un projet technique en une pièce concrète.
                 </p>
@@ -104,28 +69,27 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      {/* Values */}
+      {/* Approach */}
       <section className="py-24 bg-secondary-50">
         <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="section-title">Nos valeurs</h2>
-            <p className="section-subtitle mx-auto">
-              Ce qui guide notre travail au quotidien.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {values.map((value) => (
-              <div key={value.title} className="bg-white rounded-2xl p-8 text-center border border-secondary-200 hover:border-primary-300 transition-colors">
-                {value.icon && (
-                  <svg className="w-12 h-12 mx-auto mb-4 text-secondary-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d={value.icon} />
-                  </svg>
-                )}
-                <h3 className="text-xl font-semibold text-secondary-900 mb-3">{value.title}</h3>
-                <p className="text-secondary-600">{value.description}</p>
+          <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+            <div className="max-w-xl">
+              <h2 className="section-title mb-6">Notre approche</h2>
+              <div className="space-y-4 text-secondary-600">
+                <p>Chaque projet part d’un usage réel, d’une intention et de contraintes précises. Nous prenons le temps de les comprendre avant de choisir une technologie, un matériau ou un procédé.</p>
+                <p>Notre rôle est de réunir les compétences utiles au bon moment : conception, mise au point, fabrication et finitions. Cela permet d’avancer avec des choix techniques cohérents et une vision claire du résultat attendu.</p>
+                <p>Nous privilégions un échange direct, des solutions adaptées et une fabrication maîtrisée, qu’il s’agisse d’une pièce unique, d’un prototype ou d’une production en série.</p>
               </div>
-            ))}
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-2xl">
+              <Image
+                src="/images/atelier/travail-2.jpeg"
+                alt="Mise au point de pièces imprimées en 3D dans l’atelier Inphenix System"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
           </div>
         </div>
       </section>

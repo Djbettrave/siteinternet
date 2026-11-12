@@ -747,6 +747,7 @@ export const servicesData: Record<string, ServiceData> = {
           src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'portrait',
+          priority: true,
         },
         visualSize: 'compact',
       },
@@ -754,6 +755,7 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 1,
         position: 'left',
         layout: 'stacked',
+        visualSize: 'compact',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
@@ -864,6 +866,7 @@ export const servicesData: Record<string, ServiceData> = {
           aspect: 'landscape',
         },
         layout: 'stacked',
+        visualSize: 'compact',
       },
     ],
     process: [

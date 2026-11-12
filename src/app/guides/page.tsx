@@ -51,7 +51,7 @@ export default function GuidesPage() {
       </section>
 
       <section className="mt-16 sm:mt-20">
-        <div className="mb-7"><h2 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900 sm:text-2xl">À la une</h2><p className="mt-2 text-[13px] leading-6 text-secondary-600">Retrouvez ici nos articles les plus consultés pour résoudre rapidement les problèmes les plus courants en impression 3D.</p></div>
+        <div className="mb-7"><h2 className="text-xl font-semibold tracking-[-0.025em] text-secondary-900 sm:text-2xl">À la une</h2><p className="mt-2 text-[13px] leading-6 text-secondary-600">Retrouvez ici nos articles les plus consultés :</p></div>
         <div className="mx-auto max-w-4xl divide-y divide-secondary-200 border-y border-secondary-200">{featuredArticles.map((article, index) => <Link key={article.slug} href={`/guides/${article.category}/${article.slug}`} className="group grid gap-4 py-5 sm:grid-cols-[44px_minmax(0,1fr)_auto] sm:items-center"><span className="font-mono text-sm text-primary-700">{String(index + 1).padStart(2, '0')}</span><div><h3 className="text-lg font-semibold tracking-[-0.02em] text-secondary-900 group-hover:text-primary-700">{article.title}</h3><p className="mt-1 text-sm leading-6 text-secondary-600">{article.description}</p></div><span className="inline-flex items-center gap-2 text-sm font-medium text-secondary-900 group-hover:text-primary-700">Lire <Arrow /></span></Link>)}</div>
       </section>
     </main>

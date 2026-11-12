@@ -10,7 +10,7 @@
     "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
       "category": "realisations",
       "order": 65,
-      "objectPosition": "center 55%",
+      "objectPosition": "center 60%",
       "title": "Scan 3D et reproduction résine d’une sculpture de lion",
       "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
     },
@@ -24,7 +24,7 @@
     "scan-3d-sculpture-serpent-miniature-resine.jpeg": {
       "category": "realisations",
       "order": 115,
-      "objectPosition": "center",
+      "objectPosition": "center 46%",
       "tone": "soft",
       "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
       "alt": "Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine"
@@ -82,6 +82,7 @@
       "category": "realisations",
       "order": 10,
       "objectPosition": "center",
+      "rotation": -0.8,
       "title": "Maquette anniversaire sur mesure",
       "alt": "Maquette d'anniversaire avec gâteau, sac et bougies issue de modélisation 3D"
     },
@@ -160,7 +161,7 @@
     "impression grand format.jpeg": {
       "category": "atelier",
       "order": 30,
-      "objectPosition": "center",
+      "objectPosition": "center 58%",
       "title": "Impression 3D grand format",
       "alt": "Fabrication d'une pièce en impression 3D grand format"
     },

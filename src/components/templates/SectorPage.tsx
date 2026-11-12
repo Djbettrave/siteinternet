@@ -211,7 +211,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
               <div className={sector.editorial.imagePosition === 'right' ? 'lg:order-2' : ''}>
                 {sector.editorial.showImage ? (
                   <div className={`relative overflow-hidden rounded-2xl shadow-lg ${sector.editorial.imageAspect === 'tall' ? 'aspect-[4/5]' : 'aspect-[4/3]'}`}>
-                    <Image src={sector.editorial.image} alt={sector.editorial.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className={`object-cover ${sector.editorial.imageFocus === 'upper' ? 'object-[20%_62%] scale-[1.3]' : 'object-center'}`} />
+                    <Image src={sector.editorial.image} alt={sector.editorial.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className={`object-cover ${sector.editorial.imageFocus === 'upper' ? 'object-[20%_66%] scale-[1.34]' : 'object-center'}`} />
                   </div>
                 ) : (
                   <ImagePlaceholder ariaLabel={sector.editorial.imageAlt} className="aspect-[4/3] shadow-lg" />

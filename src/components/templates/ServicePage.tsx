@@ -59,6 +59,7 @@ export interface ServiceData {
       aspect?: 'portrait' | 'landscape' | 'standard'
       fit?: 'contain' | 'cover'
       tone?: 'normal' | 'soft'
+      priority?: boolean
     }
     visualSize?: 'normal' | 'compact'
     images?: {
@@ -249,13 +250,14 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                      <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? 'w-full' : ''} ${visual.visualSize === 'compact' && !stacked ? 'lg:max-w-[440px] lg:justify-self-end' : ''}`}>
+                    <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto w-full max-w-4xl' : 'w-full') : ''} ${visual.visualSize === 'compact' && !stacked ? 'lg:max-w-[440px] lg:justify-self-end' : ''}`}>
                         {visual.image ? (
                           <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : 'aspect-video'}`}>
                             <Image
                               src={visual.image.src}
                               alt={visual.image.alt}
                               fill
+                              priority={visual.image.priority}
                               sizes={stacked ? '(min-width: 1024px) 1200px, 100vw' : '(min-width: 1024px) 50vw, 100vw'}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                             />

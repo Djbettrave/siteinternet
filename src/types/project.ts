@@ -11,4 +11,5 @@ export interface ProjectImage {
   services: string[]
   objectPosition: string
   tone?: 'normal' | 'soft'
+  rotation?: number
 }
