@@ -12,7 +12,7 @@ const cards = [
   { name: 'Impression 3D Résine', href: '/services/impression-3d/resine', alt: 'Photo de réalisation Inphenix – Impression 3D Résine' },
   { name: 'Impression 3D Métal', href: '/services/impression-3d/metal', alt: 'Photo de réalisation Inphenix – Impression 3D Métal' },
   { name: 'Impression 3D Grand Format', href: '/services/impression-3d/grand-format', alt: 'Photo de réalisation Inphenix – Impression 3D Grand Format' },
-  { name: 'Impression 3D en série', href: '/services/impression-3d/en-serie', alt: 'Photo de réalisation Inphenix – Impression 3D en série', featured: true },
+  { name: 'Impression 3D en série', href: '/services/impression-3d/en-serie', alt: 'Photo de réalisation Inphenix – Impression 3D en série' },
 ]
 
 const comparison = [
@@ -44,7 +44,7 @@ export default function Impression3DPage() {
   return (
     <ServiceNavigationPage
       eyebrow="Impression 3D"
-      title={'Impression 3D\nParis / Île-de-France'}
+      title={'Les technologies\nd’impression 3D'}
       intro="Basé à Suresnes, Inphenix System accompagne vos projets d’impression 3D, du prototype à la production en série, à Paris, en Île-de-France et partout en France."
       cards={cards}
       comparison={comparison}
