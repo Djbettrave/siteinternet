@@ -9,7 +9,7 @@
     },
     "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
       "category": "realisations",
-      "order": 65,
+      "order": 45,
       "objectPosition": "center 64%",
       "title": "Scan 3D et reproduction résine d’une sculpture de lion",
       "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
@@ -45,28 +45,28 @@
     },
     "electronique LED.jpeg": {
       "category": "realisations",
-      "order": 20,
+      "order": 70,
       "objectPosition": "center",
       "title": "Logo lumineux sur mesure",
       "alt": "Logo blanc rétroéclairé par LED réalisé sur mesure"
     },
     "electronique lumière jeux de lumière.jpeg": {
       "category": "realisations",
-      "order": 110,
+      "order": 120,
       "objectPosition": "center",
       "title": "Installation lumineuse décorative",
       "alt": "Installation décorative lumineuse avec projections de motifs sur les murs"
     },
     "electronique.jpeg": {
       "category": "realisations",
-      "order": 110,
+      "order": 25,
       "objectPosition": "center",
       "title": "Signalétique décorative J'Adore",
       "alt": "Signalétique décorative J'Adore en métal poli pour espace de marque"
     },
     "impression résine et modélisation 3D.jpeg": {
       "category": "realisations",
-      "order": 60,
+      "order": 40,
       "objectPosition": "center",
       "title": "Maquette de présentoir de parfum Boss",
       "alt": "Maquette de présentoir de parfum Boss issue de modélisation 3D et impression résine"
@@ -88,7 +88,7 @@
     },
     "installation-evenementielle-luxe-chanel.jpeg": {
       "category": "realisations",
-      "order": 70,
+      "order": 20,
       "objectPosition": "center 25%",
       "title": "Installation événementielle de Noël Chanel",
       "alt": "Installation événementielle de Noël devant une boutique Chanel, avec sapin décoré et éléments lumineux"
@@ -103,6 +103,7 @@
     "scan-3d-modelisation-bagage-luxe.jpeg": {
       "category": "realisations",
       "order": 130,
+      "hidden": true,
       "objectPosition": "center",
       "title": "Scan 3D et modélisation d’un bagage",
       "alt": "Modèle 3D de bagage Rimowa issu d’un scan 3D pour une étude de reproduction ou de personnalisation"
@@ -116,7 +117,7 @@
     },
     "mascottes-imprimees-3d-couleur-evenement.jpeg": {
       "category": "realisations",
-      "order": 40,
+      "order": 135,
       "objectPosition": "center",
       "title": "Impression 3D en couleur pour événement",
       "alt": "Mascottes imprimées en 3D en couleur pour un événement"
@@ -144,14 +145,14 @@
     },
     "camelia-resine-epoxy-transparente.webp": {
       "category": "realisations",
-      "order": 25,
+      "order": 110,
       "objectPosition": "center",
       "title": "Camélia en résine transparente",
       "alt": "Camélia décoratif réalisé par coulée de résine époxy transparente"
     },
     "lettrages-decoratifs-resine-peinture-sur-mesure.webp": {
       "category": "realisations",
-      "order": 45,
+      "order": 130,
       "objectPosition": "center",
       "title": "Lettrages décoratifs",
       "alt": "Lettrages décoratifs imprimés en résine, peints et finis sur mesure"

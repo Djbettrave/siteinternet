@@ -101,10 +101,10 @@ export default function ServicesPage() {
       {/* Services */}
       <section className="bg-white pb-24 pt-10 md:pt-14">
         <div className="container-custom">
-          <header className="mb-12 max-w-3xl md:mb-16">
+          <header className="mb-12 md:mb-16">
             <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">Services</p>
-            <h1 className="text-4xl font-bold tracking-[-0.04em] text-secondary-900 md:text-5xl">Les pôles d’expertise</h1>
-            <p className="mt-5 text-lg leading-relaxed text-secondary-600">Impression 3D, conception, fabrication et développement produit : les expertises mobilisées selon votre projet.</p>
+            <h1 className="text-4xl font-bold tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
+            <p className="mt-5 text-lg leading-relaxed text-secondary-600">Trois expertises à mobiliser seules ou ensemble : impression 3D, numérisation & conception, développement produit.</p>
           </header>
           {serviceCategories.map((category, categoryIndex) => (
             <div key={category.title} className={categoryIndex > 0 ? 'mt-20' : ''}>

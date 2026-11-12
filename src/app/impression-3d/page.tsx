@@ -50,7 +50,6 @@ export default function Impression3DPage() {
       comparison={comparison}
       faqs={faqs}
       showCta
-      introPlacement="after-cards"
     />
   )
 }
