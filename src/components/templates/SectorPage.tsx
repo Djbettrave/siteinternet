@@ -43,10 +43,6 @@ export interface SectorData {
     title: string
     description: string
   }
-  stats?: {
-    value: string
-    label: string
-  }[]
 }
 
 export function generateSectorMetadata(sector: SectorData, path?: string): Metadata {
@@ -151,17 +147,6 @@ export default function SectorPage({ sector }: SectorPageProps) {
                 ))}
               </p>
 
-              {/* Stats */}
-              {sector.stats && (
-                <div className="mt-12 flex max-w-full flex-wrap items-center gap-8 border-t border-white/10 pt-8">
-                  {sector.stats.map((stat) => (
-                    <div key={stat.label}>
-                      <div className="text-2xl font-bold text-white">{stat.value}</div>
-                      <div className="text-secondary-400 text-sm">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              )}
             </div>
 
             {showHeroVisual && sector.heroImage && <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />}
