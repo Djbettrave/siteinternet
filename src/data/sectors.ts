@@ -89,11 +89,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un projet PLV ou display en tête ?',
       description: 'Discutons de votre concept. Nous vous accompagnons de l\'idée au prototype, puis à la production.',
     },
-    stats: [
-      { value: '+25', label: 'projets Retail' },
-      { value: '24-48h', label: 'prototypage rapide' },
-      { value: '100%', label: 'sur mesure' },
-    ],
   },
 
   luxe: {
@@ -185,10 +180,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un projet d\'exception à concrétiser ?',
       description: 'Nous comprenons les exigences du luxe. Parlons de votre projet en toute confidentialité.',
     },
-    stats: [
-      { value: '+40', label: 'projets Luxe' },
-      { value: 'NDA', label: 'confidentialité' },
-    ],
   },
 
   evenementiel: {
@@ -277,10 +268,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un événement à marquer ?',
       description: 'De l\'idée à l\'installation, nous créons des éléments qui captent l\'attention et créent le souvenir.',
     },
-    stats: [
-      { value: '+35', label: 'projets Événementiel' },
-      { value: '48h', label: 'prototypage express' },
-    ],
   },
 
   architecture: {
@@ -354,10 +341,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un projet architectural à visualiser ?',
       description: 'Maquettes, prototypes ou scans : nous donnons une forme tangible à vos visions architecturales.',
     },
-    stats: [
-      { value: '+15', label: 'projets Architecture' },
-      { value: 'BIM', label: 'compatible' },
-    ],
   },
 
   medical: {
@@ -374,10 +357,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un projet santé à présenter ?',
       description: 'Partagez votre besoin et nous vous aiderons à définir le support le plus adapté.',
     },
-    stats: [
-      { value: 'Sur mesure', label: 'selon votre usage' },
-      { value: '3D', label: 'maquettes et supports' },
-    ],
   },
 
   robotique: {
@@ -466,10 +445,6 @@ export const sectorsData: Record<string, SectorData> = {
       title: 'Un projet robotique à développer ?',
       description: 'De la mécanique à l\'électronique, nous sommes votre partenaire technique pour concrétiser vos robots.',
     },
-    stats: [
-      { value: '+20', label: 'projets Robotique' },
-      { value: '360°', label: 'accompagnement' },
-    ],
   },
 }
 
