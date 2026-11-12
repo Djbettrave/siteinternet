@@ -131,16 +131,14 @@
     "sculpture-boss-impression-3d-grand-format.webp": {
       "category": "realisations",
       "order": 5,
-      "objectPosition": "center",
-      "fit": "contain",
+      "objectPosition": "center 52%",
       "title": "Sculpture BOSS grand format",
       "alt": "Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum"
     },
     "cheval-guerlain-impression-3d-grand-format.webp": {
       "category": "realisations",
       "order": 15,
-      "objectPosition": "center",
-      "fit": "contain",
+      "objectPosition": "center 47%",
       "title": "Cheval Guerlain grand format",
       "alt": "Sculpture Guerlain grand format imprimée en 3D et finie pour une installation de marque"
     },
@@ -161,8 +159,7 @@
     "noeud-decoratif-grand-format.webp": {
       "category": "realisations",
       "order": 85,
-      "objectPosition": "center 55%",
-      "fit": "contain",
+      "objectPosition": "center 48%",
       "title": "Nœud décoratif grand format",
       "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
     }
