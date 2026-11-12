@@ -1,5 +1,4 @@
 import { access, readdir, readFile } from 'fs/promises'
-import { unstable_cache } from 'next/cache'
 import { join } from 'path'
 import type { ProjectCategory, ProjectImage } from '@/types/project'
 
@@ -89,16 +88,12 @@ async function readImagesFromDir(
   }
 }
 
-export const getProjects = unstable_cache(
-  async () => {
-    const projectsPath = join(process.cwd(), 'public', 'images', 'projects')
-    const config = await loadConfig(projectsPath)
-    const [completed, inProgress] = await Promise.all([
-      readImagesFromDir(join(projectsPath, 'completed'), 'completed', config.completed),
-      readImagesFromDir(join(projectsPath, 'process'), 'process', config.process),
-    ])
-    return [...completed, ...inProgress]
-  },
-  ['projects-list'],
-  { revalidate: 3600, tags: ['projects'] },
-)
+export async function getProjects() {
+  const projectsPath = join(process.cwd(), 'public', 'images', 'projects')
+  const config = await loadConfig(projectsPath)
+  const [completed, inProgress] = await Promise.all([
+    readImagesFromDir(join(projectsPath, 'completed'), 'completed', config.completed),
+    readImagesFromDir(join(projectsPath, 'process'), 'process', config.process),
+  ])
+  return [...completed, ...inProgress]
+}

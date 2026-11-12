@@ -36,10 +36,10 @@ interface ServiceNavigationPageProps {
   introPlacement?: 'hero' | 'after-cards'
 }
 
-function PhotoPlaceholder({ alt }: { alt: string }) {
+function PhotoPlaceholder({ alt, wide = false }: { alt: string; wide?: boolean }) {
   return (
     <div
-      className="aspect-[5/4] md:aspect-[16/9] flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500"
+      className={`${wide ? 'aspect-[5/2] md:aspect-[32/9]' : 'aspect-[5/4] md:aspect-[16/9]'} flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500`}
       role="img"
       aria-label={alt}
     >
@@ -50,12 +50,12 @@ function PhotoPlaceholder({ alt }: { alt: string }) {
   )
 }
 
-function ServiceCard({ card }: { card: ServiceCard }) {
+function ServiceCard({ card, wide = false }: { card: ServiceCard; wide?: boolean }) {
   const isPrintingCard = card.name.startsWith('Impression 3D ')
   const label = isPrintingCard ? card.name.replace('Impression 3D ', '') : card.name
   const content = (
     <div className="relative overflow-hidden rounded-xl">
-      <PhotoPlaceholder alt={card.alt} />
+      <PhotoPlaceholder alt={card.alt} wide={wide} />
       <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-2 bg-gradient-to-t from-secondary-900/90 via-secondary-900/55 to-transparent px-3 pb-3 pt-12 text-white">
         <h2 className="min-w-0 leading-tight">
           {isPrintingCard && <span className="block text-[10px] font-semibold uppercase tracking-[0.08em] text-primary-100">Impression 3D</span>}
@@ -95,7 +95,7 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
           <div className="grid grid-cols-2 gap-3 md:gap-5">
             {cards.map((card, index) => (
               <div key={card.name} className={cards.length % 2 === 1 && index === cards.length - 1 ? 'col-span-2' : undefined}>
-                <ServiceCard card={card} />
+                <ServiceCard card={card} wide={cards.length % 2 === 1 && index === cards.length - 1} />
               </div>
             ))}
           </div>
