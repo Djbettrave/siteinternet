@@ -43,7 +43,6 @@ const faqs = [
 export default function Impression3DPage() {
   return (
     <ServiceNavigationPage
-      eyebrow="Impression 3D"
       title={'Les technologies\nd’impression 3D'}
       intro="Basé à Suresnes, Inphenix System accompagne vos projets d’impression 3D, du prototype à la production en série, à Paris, en Île-de-France et partout en France."
       cards={cards}

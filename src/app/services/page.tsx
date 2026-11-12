@@ -102,15 +102,17 @@ export default function ServicesPage() {
       <section className="bg-white pb-24 pt-10 md:pt-14">
         <div className="container-custom">
           <header className="mb-12 md:mb-16">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">Services</p>
             <h1 className="text-4xl font-bold tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
             <p className="mt-5 text-lg leading-relaxed text-secondary-600">Trois expertises à mobiliser seules ou ensemble : impression 3D, numérisation & conception, développement produit.</p>
           </header>
           {serviceCategories.map((category, categoryIndex) => (
-            <div key={category.title} className={categoryIndex > 0 ? 'mt-20' : ''}>
-              <div className="mb-10">
-                <h2 className="text-2xl font-bold text-secondary-900 mb-2">{category.title}</h2>
-                <p className="text-secondary-600">{category.description}</p>
+            <div key={category.title} className={categoryIndex > 0 ? 'mt-16 border-t border-secondary-200 pt-16' : ''}>
+              <div className="mb-8 flex items-start gap-4 md:mb-10 md:gap-6">
+                <span className="pt-1 font-mono text-sm text-primary-700">0{categoryIndex + 1}</span>
+                <div>
+                  <h2 className="text-2xl font-bold text-secondary-900 md:text-3xl">{category.title}</h2>
+                  <p className="mt-2 text-secondary-600">{category.description}</p>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

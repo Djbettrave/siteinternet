@@ -17,7 +17,6 @@ const cards = [
 export default function ConceptionFabricationPage() {
   return (
     <ServiceNavigationPage
-      eyebrow="Conception & fabrication"
       title={'Nos expertises en\nconception & fabrication'}
       intro="À Paris et en Île-de-France, Inphenix System accompagne vos projets sur mesure : scan 3D, modélisation, découpe laser et prototypage. Une idée, un fichier ou un objet existant devient une solution concrète."
       cards={cards}

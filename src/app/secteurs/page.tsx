@@ -13,23 +13,19 @@ export const metadata: Metadata = {
 export default function SecteursPage() {
   return (
     <>
-      {/* Hero */}
-      <section className="bg-gradient-to-br from-secondary-900 to-secondary-800 py-20">
-        <div className="container-custom">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">
-              Nos secteurs d'expertise
-            </h1>
-            <p className="text-xl text-secondary-300">
-              Chaque secteur a ses exigences. Nous adaptons nos solutions
-              d'impression 3D et d'électronique à vos besoins spécifiques.
+      <section className="bg-white pb-10 pt-8 md:pb-12 md:pt-12">
+        <div className="container-custom max-w-5xl">
+          <header className="text-center">
+            <h1 className="text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">Nos secteurs d’expertise</h1>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">
+              Chaque secteur a ses exigences. Nous adaptons l’impression 3D, la conception et la fabrication aux contraintes de votre projet.
             </p>
-          </div>
+          </header>
         </div>
       </section>
 
       {/* Sectors Grid */}
-      <section className="py-24 bg-white">
+      <section className="bg-white pb-16 md:pb-24">
         <div className="container-custom">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {sectorsList.map((sector) => (

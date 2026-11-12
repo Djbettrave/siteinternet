@@ -26,7 +26,7 @@ type Faq = {
 }
 
 interface ServiceNavigationPageProps {
-  eyebrow: string
+  eyebrow?: string
   title: string
   intro: string
   cards: ServiceCard[]
@@ -39,7 +39,7 @@ interface ServiceNavigationPageProps {
 function PhotoPlaceholder({ alt }: { alt: string }) {
   return (
     <div
-      className="aspect-[4/5] md:aspect-[6/5] flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500"
+      className="aspect-[5/4] md:aspect-[16/9] flex items-center justify-center rounded-xl border border-dashed border-secondary-300 bg-secondary-50 text-secondary-500"
       role="img"
       aria-label={alt}
     >
@@ -86,14 +86,18 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
       <section className="bg-white pb-12 pt-8 md:pb-24 md:pt-12">
         <div className="container-custom max-w-5xl">
           <header className="mb-6 text-center md:mb-10">
-            <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">{eyebrow}</p>
+            {eyebrow && <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">{eyebrow}</p>}
             <h1 className="text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">
               {title.split('\n').map((line) => <span key={line} className="block">{line}</span>)}
             </h1>
             {introPlacement === 'hero' && <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">{intro}</p>}
           </header>
-          <div className="grid grid-cols-2 gap-3 md:gap-6">
-            {cards.map((card) => <ServiceCard key={card.name} card={card} />)}
+          <div className="grid grid-cols-2 gap-3 md:gap-5">
+            {cards.map((card, index) => (
+              <div key={card.name} className={cards.length % 2 === 1 && index === cards.length - 1 ? 'col-span-2' : undefined}>
+                <ServiceCard card={card} />
+              </div>
+            ))}
           </div>
           {introPlacement === 'after-cards' && <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-secondary-600 md:mt-10 md:text-base">{intro}</p>}
         </div>
@@ -104,7 +108,7 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
           <div className="container-custom">
             <div className="max-w-3xl mb-10">
               <h2 className="section-title">Quel matériau choisir ?</h2>
-              <p className="mt-3 max-w-2xl text-sm leading-relaxed text-secondary-600 md:mt-4 md:text-lg">Comparez les principales caractéristiques de nos matériaux d’impression 3D pour identifier la solution adaptée à votre projet : prototype, pièce technique, élément décoratif ou fabrication en série.</p>
+              <p className="mt-3 text-sm leading-relaxed text-secondary-600 md:mt-4 md:text-base">Comparez précision, résistance, finition et coût pour choisir le matériau adapté à votre prototype, pièce technique, élément décoratif ou série.</p>
             </div>
             <div
               className="overflow-x-auto rounded-xl border border-secondary-200 bg-white"
