@@ -122,7 +122,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
         isNavigatingCategory || !isHeaderVisible ? 'top-0' : 'top-20'
       }`}>
         <div className="container-custom">
-          <p className="pt-5 text-left text-lg font-semibold tracking-[-0.01em] text-secondary-800">Explorer par univers</p>
+          <p className="pt-4 text-center font-serif text-[15px] italic tracking-[0.01em] text-secondary-700">Explorer par univers</p>
           <nav className={`grid grid-cols-3 items-end gap-1 ${isHeaderVisible ? 'pb-4 pt-3' : 'pb-3 pt-2'}`} aria-label="Explorer les réalisations par univers">
             {([
               ['realisations', 'Réalisations'],
@@ -165,7 +165,12 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                       className="aspect-[4/3] relative overflow-hidden bg-secondary-100 cursor-pointer"
                       onClick={() => openLightbox(index)}
                     >
-                      <div className="absolute inset-0" style={project.rotation ? { transform: `rotate(${project.rotation}deg) scale(1.03)` } : undefined}>
+                      <div
+                        className="absolute inset-0"
+                        style={project.rotation || project.scale ? {
+                          transform: `${project.rotation ? `rotate(${project.rotation}deg) ` : ''}scale(${project.scale ?? 1.03})`,
+                        } : undefined}
+                      >
                         <Image
                           src={project.path}
                           alt={project.alt}

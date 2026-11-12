@@ -12,4 +12,5 @@ export interface ProjectImage {
   objectPosition: string
   tone?: 'normal' | 'soft'
   rotation?: number
+  scale?: number
 }

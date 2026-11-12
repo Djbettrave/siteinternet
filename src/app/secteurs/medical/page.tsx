@@ -115,7 +115,7 @@ export default function MedicalPage() {
       </section>
 
     <section id="votre-projet" className="container-custom py-16 lg:py-20">
-        <div className="max-w-3xl">
+        <div className="max-w-6xl">
           <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-600">
             Trois besoins, une approche sur mesure
           </p>

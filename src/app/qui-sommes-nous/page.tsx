@@ -10,24 +10,20 @@ export const metadata: Metadata = {
   },
 }
 
-const stats = [
-  { value: '+300', label: 'Projets réalisés' },
-  { value: '5+', label: 'Secteurs d\'expertise' },
-  { value: '24h', label: 'Délai de réponse' },
-  { value: '5/5', label: 'Avis Google' },
-]
-
 const capabilities = [
   {
     category: 'Impression 3D',
+    href: '/impression-3d',
     items: ['FDM multi-matériaux', 'Résine haute précision', 'Grand format jusqu\'à 85 cm', 'Post-traitement et finitions'],
   },
   {
-    category: 'Électronique',
+    category: 'Électronique & motorisation',
+    href: '/services/electronique',
     items: ['Conception de PCB', 'Motorisation', 'Systèmes embarqués', 'Programmation'],
   },
   {
     category: 'Conception & fabrication',
+    href: '/conception-fabrication',
     items: ['Scan 3D', 'Modélisation CAO', 'Prototypage', 'Conseil technique'],
   },
 ]
@@ -36,14 +32,14 @@ export default function QuiSommesNousPage() {
   return (
     <>
       {/* Story */}
-      <section className="py-24 bg-white">
+      <section className="pb-24 pt-12 bg-white">
         <div className="container-custom">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="section-title mb-6">Notre histoire</h2>
               <div className="space-y-4 text-secondary-600">
                 <p>
-                  Inphenix System est un bureau d’études spécialisé dans la conception, le prototypage et la fabrication de pièces sur mesure. Nous réunissons création, ingénierie et fabrication pour accompagner un projet de l’idée à sa réalisation.
+                  Inphenix System est un bureau d’études spécialisé dans la conception, le prototypage et la fabrication de pièces sur mesure. Nous réunissons création, ingénierie et fabrication pour accompagner un projet de l’idée à <span className="whitespace-nowrap">sa réalisation.</span>
                 </p>
                 <p>
                   Basé à Suresnes, aux portes de Paris, <strong className="text-secondary-900">Inphenix System</strong> accompagne les marques, agences et entreprises qui souhaitent transformer une idée, un objet ou un projet technique en une pièce concrète.
@@ -106,7 +102,7 @@ export default function QuiSommesNousPage() {
 
           <div className="grid md:grid-cols-3 gap-8">
             {capabilities.map((cap) => (
-              <div key={cap.category} className="rounded-2xl border border-[#C9D5E3] bg-white p-8 shadow-[0_6px_18px_rgba(15,37,64,0.055)] transition-all duration-200 hover:border-primary-300 hover:shadow-lg">
+              <Link key={cap.category} href={cap.href} className="group rounded-2xl border border-[#C9D5E3] bg-white p-8 shadow-[0_6px_18px_rgba(15,37,64,0.055)] transition-all duration-200 hover:-translate-y-0.5 hover:border-primary-300 hover:shadow-lg focus-visible:-translate-y-0.5 focus-visible:border-primary-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary-300">
                 <h3 className="text-xl font-semibold text-secondary-900 mb-6">{cap.category}</h3>
                 <ul className="space-y-3">
                   {cap.items.map((item) => (
@@ -116,23 +112,7 @@ export default function QuiSommesNousPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Chiffres clés */}
-      <section className="bg-primary-600 py-12 sm:py-14">
-        <div className="container-custom">
-          <div className="grid grid-cols-2 gap-8 lg:grid-cols-4">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="mb-2 text-3xl font-bold text-white sm:text-4xl lg:text-5xl">
-                  {stat.value}
-                </div>
-                <div className="text-sm text-primary-200 sm:text-base">{stat.label}</div>
-              </div>
+              </Link>
             ))}
           </div>
         </div>

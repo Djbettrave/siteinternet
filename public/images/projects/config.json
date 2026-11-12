@@ -10,7 +10,7 @@
     "scan-3d-sculpture-lion-reproduction-resine.jpeg": {
       "category": "realisations",
       "order": 65,
-      "objectPosition": "center 60%",
+      "objectPosition": "center 72%",
       "title": "Scan 3D et reproduction résine d’une sculpture de lion",
       "alt": "Sculpture de lion scannée en 3D avec sa reproduction miniature en résine"
     },
@@ -25,6 +25,7 @@
       "category": "realisations",
       "order": 115,
       "objectPosition": "center 46%",
+      "scale": 0.9,
       "tone": "soft",
       "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
       "alt": "Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine"
@@ -161,7 +162,7 @@
     "impression grand format.jpeg": {
       "category": "atelier",
       "order": 30,
-      "objectPosition": "center 58%",
+      "objectPosition": "center 62%",
       "title": "Impression 3D grand format",
       "alt": "Fabrication d'une pièce en impression 3D grand format"
     },
