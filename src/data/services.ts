@@ -647,7 +647,18 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     inlineVisuals: [
       { afterSection: 0, position: 'right', label: 'Visuel grand format 01', alt: 'Photo à ajouter d’un décor, d’une maquette ou d’une installation de grand format' },
-      { afterSection: 1, position: 'left', label: 'Visuel grand format 02', alt: 'Photo à ajouter d’une pièce grand format préparée ou intégrée' },
+      {
+        afterSection: 1,
+        position: 'left',
+        label: 'Sculpture BOSS grand format',
+        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+        image: {
+          src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
+          alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+          aspect: 'portrait',
+          fit: 'cover',
+        },
+      },
     ],
     specs: [
       { label: 'Volume max monobloc', value: '850 mm de hauteur' },

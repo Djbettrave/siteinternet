@@ -138,7 +138,7 @@
     "cheval-guerlain-impression-3d-grand-format.webp": {
       "category": "realisations",
       "order": 15,
-      "objectPosition": "center 47%",
+      "objectPosition": "center 34%",
       "title": "Cheval Guerlain grand format",
       "alt": "Sculpture Guerlain grand format imprimée en 3D et finie pour une installation de marque"
     },
@@ -157,8 +157,8 @@
       "alt": "Lettrages décoratifs imprimés en résine, peints et finis sur mesure"
     },
     "noeud-decoratif-grand-format.webp": {
-      "category": "realisations",
-      "order": 85,
+      "category": "atelier",
+      "order": 90,
       "objectPosition": "center 48%",
       "title": "Nœud décoratif grand format",
       "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
