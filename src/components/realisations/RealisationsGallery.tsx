@@ -175,7 +175,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                           src={project.path}
                           alt={project.alt}
                           fill
-                          className={`object-cover transition-transform duration-500 group-hover:scale-105 ${project.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
+                          className={`${project.fit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105 ${project.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                           style={{ objectPosition: project.objectPosition || 'center' }}
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
                         />

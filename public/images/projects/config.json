@@ -127,6 +127,44 @@
       "objectPosition": "center",
       "title": "Maquette d’architecture réalisée en impression 3D",
       "alt": "Maquette d’architecture réalisée en impression 3D"
+    },
+    "sculpture-boss-impression-3d-grand-format.webp": {
+      "category": "realisations",
+      "order": 5,
+      "objectPosition": "center",
+      "fit": "contain",
+      "title": "Sculpture BOSS grand format",
+      "alt": "Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum"
+    },
+    "cheval-guerlain-impression-3d-grand-format.webp": {
+      "category": "realisations",
+      "order": 15,
+      "objectPosition": "center",
+      "fit": "contain",
+      "title": "Cheval Guerlain grand format",
+      "alt": "Sculpture Guerlain grand format imprimée en 3D et finie pour une installation de marque"
+    },
+    "camelia-resine-epoxy-transparente.webp": {
+      "category": "realisations",
+      "order": 25,
+      "objectPosition": "center",
+      "title": "Camélia en résine transparente",
+      "alt": "Camélia décoratif réalisé par coulée de résine époxy transparente"
+    },
+    "lettrages-decoratifs-resine-peinture-sur-mesure.webp": {
+      "category": "realisations",
+      "order": 45,
+      "objectPosition": "center",
+      "title": "Lettrages décoratifs",
+      "alt": "Lettrages décoratifs imprimés en résine, peints et finis sur mesure"
+    },
+    "noeud-decoratif-grand-format.webp": {
+      "category": "realisations",
+      "order": 85,
+      "objectPosition": "center 55%",
+      "fit": "contain",
+      "title": "Nœud décoratif grand format",
+      "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
     }
   },
   "process": {
@@ -220,6 +258,55 @@
       "objectPosition": "center",
       "title": "Élément décoratif de luxe pour le parc Francartier",
       "alt": "Élément décoratif de luxe pour le parc Francartier, en cours de fabrication par impression 3D"
+    },
+    "supports-clips-impression-3d-sur-mesure.webp": {
+      "category": "fabrication",
+      "order": 15,
+      "objectPosition": "center",
+      "title": "Supports clips sur mesure",
+      "alt": "Supports imprimés en 3D sur mesure pour intégrer des clips et composants dans une installation de PLV"
+    },
+    "supports-magnetiques-impression-3d-sur-mesure.webp": {
+      "category": "fabrication",
+      "order": 25,
+      "objectPosition": "center",
+      "title": "Supports magnétiques",
+      "alt": "Systèmes imprimés en 3D avec aimants intégrés pour maintenir des éléments interchangeables"
+    },
+    "boitiers-electroniques-impression-3d-sur-mesure.webp": {
+      "category": "fabrication",
+      "order": 35,
+      "objectPosition": "center",
+      "title": "Boîtiers électroniques sur mesure",
+      "alt": "Boîtiers sur mesure imprimés en 3D pour l’intégration de cartes électroniques et de câblage"
+    },
+    "moule-camelia-fabrication-sur-mesure.webp": {
+      "category": "fabrication",
+      "order": 45,
+      "objectPosition": "center",
+      "title": "Moule camélia",
+      "alt": "Préparation d’un moule sur mesure à partir d’un camélia en volume"
+    },
+    "prototype-motorise-sur-mesure.webp": {
+      "category": "fabrication",
+      "order": 55,
+      "objectPosition": "center",
+      "title": "Prototype motorisé sur mesure",
+      "alt": "Prototype de structure transparente avec mécanisme motorisé pour une installation interactive"
+    },
+    "prototype-chaussure-resine-flexible.webp": {
+      "category": "fabrication",
+      "order": 65,
+      "objectPosition": "center 58%",
+      "title": "Prototype en résine flexible",
+      "alt": "Prototype de chaussure réalisé par impression 3D en résine flexible"
+    },
+    "neon-cacharel-plexiglas-sur-mesure.webp": {
+      "category": "atelier",
+      "order": 15,
+      "objectPosition": "center 62%",
+      "title": "Néon Cacharel",
+      "alt": "Fabrication dans l’atelier d’un lettrage en plexiglas pour une installation lumineuse Cacharel"
     }
   }
 }

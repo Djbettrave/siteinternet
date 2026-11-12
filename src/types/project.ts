@@ -10,6 +10,7 @@ export interface ProjectImage {
   alt: string
   services: string[]
   objectPosition: string
+  fit?: 'cover' | 'contain'
   tone?: 'normal' | 'soft'
   rotation?: number
   scale?: number

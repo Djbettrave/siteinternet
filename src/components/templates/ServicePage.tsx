@@ -19,6 +19,10 @@ export interface ServiceData {
     alt: string
     label: string
   }
+  galleryImages?: {
+    src: string
+    alt: string
+  }[]
   description: string
   features: {
     title: string
@@ -150,7 +154,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                 </h1>
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-secondary-600">{service.subheadline}</p>
               </div>
-              <Print3DHeroGallery />
+              <Print3DHeroGallery images={service.galleryImages} />
             </div>
           </div>
         </section>
