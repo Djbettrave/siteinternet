@@ -323,12 +323,6 @@ export const servicesData: Record<string, ServiceData> = {
           'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires.',
         ],
       },
-      {
-        title: 'Visuel de pièce finale',
-        paragraphs: [
-          'Un emplacement est réservé pour montrer une pièce métal après retrait des supports et finition. Il permettra de rendre visible le niveau de surface et le résultat final du procédé.',
-        ],
-      },
     ],
     inlineVisuals: [
       {
@@ -339,23 +333,23 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
           alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
-          aspect: 'portrait',
+          aspect: 'standard',
           fit: 'cover',
         },
       },
       {
         afterSection: 1,
-        position: 'left',
+        position: 'right',
+        layout: 'stacked',
         label: 'Pièces métal sur plateau de fabrication',
         alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
         image: {
           src: '/images/projects/process/impression-3d-metal-pieces-techniques.jpeg',
           alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
-          aspect: 'portrait',
+          aspect: 'landscape',
           fit: 'cover',
         },
       },
-      { afterSection: 2, position: 'right', label: 'Visuel métal 03', alt: 'Photo à ajouter d’une pièce métallique finie après retrait des supports' },
     ],
     specs: [
       { label: 'Procédé', value: 'Défini selon le projet' },
@@ -694,7 +688,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
           alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
-          aspect: 'portrait',
+          aspect: 'standard',
           fit: 'contain',
           priority: true,
         },
@@ -702,7 +696,6 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 1,
         position: 'left',
-        visualSize: 'compact',
         label: 'Impression 3D grand format en plusieurs éléments',
         alt: 'Éléments d’une impression 3D grand format avant assemblage',
         image: {
@@ -803,7 +796,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
-          aspect: 'portrait',
+          aspect: 'standard',
           fit: 'cover',
           priority: true,
         },
@@ -812,7 +805,6 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 1,
         position: 'left',
         layout: 'stacked',
-        visualSize: 'compact',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',

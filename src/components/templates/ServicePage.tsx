@@ -139,7 +139,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
-  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal'].includes(service.slug)
+  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'scan-3d', 'modelisation-3d', 'prototypage'].includes(service.slug)
 
   return (
     <>
@@ -221,19 +221,19 @@ export default function ServicePage({ service }: ServicePageProps) {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className={`grid md:grid-cols-2 ${service.slug === 'prototypage' ? 'gap-4' : 'lg:grid-cols-3 gap-8'}`}>
             {service.features.map((feature, index) => (
               <MobileReveal key={index} delay={index * 55}>
-                <div className="group card p-6 md:p-8 md:hover:shadow-lg md:hover:border-primary-300 transition-all duration-200">
-                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors md:group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
+                <div className={`group card transition-all duration-200 md:hover:shadow-lg md:hover:border-primary-300 ${service.slug === 'prototypage' ? 'p-4' : 'p-6 md:p-8'}`}>
+                  <div className={`flex items-center gap-3 ${service.slug === 'prototypage' ? 'mb-2' : 'mb-4 md:mb-5 md:block'}`}>
+                    <div className={`flex flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors md:group-hover:bg-primary-600 ${service.slug === 'prototypage' ? 'h-9 w-9' : 'h-11 w-11 md:mb-5 md:h-14 md:w-14'}`}>
                       <svg className="h-5 w-5 text-primary-600 transition-colors md:group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={feature.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
                       </svg>
                     </div>
-                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors md:group-hover:text-primary-600 md:text-xl">{feature.title}</h3>
+                    <h3 className={`font-semibold text-secondary-900 transition-colors md:group-hover:text-primary-600 ${service.slug === 'prototypage' ? 'text-base' : 'text-lg md:text-xl'}`}>{feature.title}</h3>
                   </div>
-                  <p className="leading-relaxed text-secondary-600">{feature.description}</p>
+                  <p className={`leading-relaxed text-secondary-600 ${service.slug === 'prototypage' ? 'text-sm' : ''}`}>{feature.description}</p>
                 </div>
               </MobileReveal>
             ))}
@@ -296,7 +296,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Specs */}
-      {service.specs && (
+      {service.specs && service.slug !== 'impression-3d-metal' && (
         <section className="py-24 bg-secondary-50">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -380,7 +380,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Process */}
-      {service.process && (
+      {service.process && service.slug !== 'impression-3d-metal' && (
         <section className="py-24 bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
@@ -442,7 +442,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* CTA */}
-      {service.cta && (
+      {service.cta && service.slug === '__hidden-cta__' && (
         <section className="py-24 bg-primary-600">
           <div className="container-custom">
             <div className="text-center max-w-2xl mx-auto">

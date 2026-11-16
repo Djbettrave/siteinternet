@@ -100,12 +100,6 @@ export default function Services() {
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="text-center mt-12">
-          <Link href="/contact" className="btn-primary">
-            Discutons de votre projet
-          </Link>
-        </div>
       </div>
     </section>
   )

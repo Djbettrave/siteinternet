@@ -97,7 +97,7 @@ export const sectorsData: Record<string, SectorData> = {
     heroImage: '/images/secteurs/luxe/luxe-1.jpeg',
     heroImageAlt: 'Sapin de Noël Chanel réalisé pour une installation de marque',
     headline: 'Création sur mesure pour les maisons de luxe',
-    subheadline: 'Inphenix conçoit et fabrique des décors, présentoirs, objets et dispositifs destinés aux vitrines, lancements et points de vente. Du prototype à la petite série, chaque pièce est développée selon l’univers de la maison, l’usage prévu, les contraintes techniques et le niveau de finition recherché.',
+    subheadline: 'Décors, présentoirs et installations sur mesure pour vitrines, lancements et points de vente.',
     description: 'Inphenix System conçoit et fabrique des décors, présentoirs, objets et dispositifs sur mesure pour les maisons de luxe, du prototype à la petite série.',
     projects: [
       { image: '/images/projects/completed/electronique.jpeg', alt: 'Signalétique décorative J’Adore en métal poli pour espace de marque', title: 'Signalétique décorative J’Adore' },

@@ -53,21 +53,6 @@ export default function SecteursPage() {
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-secondary-50">
-        <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="section-title mb-6">Vous ne trouvez pas votre secteur ?</h2>
-            <p className="text-lg text-secondary-600 mb-8">
-              Nous accompagnons tous types de projets. Contactez-nous pour discuter
-              de vos besoins spécifiques.
-            </p>
-            <Link href="/contact" className="btn-primary">
-              Contactez-nous
-            </Link>
-          </div>
-        </div>
-      </section>
     </>
   )
 }

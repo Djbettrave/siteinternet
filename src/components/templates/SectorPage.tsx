@@ -278,7 +278,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
       </section>}
 
       {/* CTA Section */}
-      {!isLuxe && <section className="py-24 bg-primary-600">
+      {false && !isLuxe && <section className="py-24 bg-primary-600">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">

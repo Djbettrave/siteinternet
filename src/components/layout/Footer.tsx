@@ -24,19 +24,24 @@ export default function Footer() {
       <div className="bg-primary-600">
         <div className="container-custom py-4">
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 text-center">
-            <div className="flex items-center gap-2">
+            <Link href="/contact" className="flex items-center gap-2 hover:text-primary-100">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="font-semibold">Réponse sous 24h garantie</span>
-            </div>
+            </Link>
             <span className="hidden sm:block">•</span>
-            <div className="flex items-center gap-2">
+            <a href="https://impression3d.inphenix-system.fr" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary-100">
               <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
               </svg>
               <span className="font-semibold">Devis gratuit en ligne</span>
-            </div>
+            </a>
+            <span className="hidden sm:block">•</span>
+            <Link href="/contact" className="flex items-center gap-2 hover:text-primary-100">
+              <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
+              <span className="font-semibold">Nous contacter</span>
+            </Link>
           </div>
         </div>
       </div>
@@ -50,8 +55,8 @@ export default function Footer() {
               <span className="text-2xl font-bold text-white">Inphenix</span>
               <span className="text-2xl font-light text-secondary-400">System</span>
             </Link>
-            <p className="mb-4 whitespace-nowrap text-[13px] text-secondary-300 sm:text-sm">
-              Bureau d'études spécialisé en impression 3D.
+            <p className="mb-4 whitespace-nowrap text-[13px] text-secondary-300 sm:text-sm lg:whitespace-normal">
+              Bureau d'études spécialisé en<span className="lg:block"> impression 3D.</span>
             </p>
             <div className="flex items-center justify-center gap-5 md:flex-col md:items-start md:gap-4">
             <div className="order-2 flex items-center gap-2 text-primary-400 md:order-1">

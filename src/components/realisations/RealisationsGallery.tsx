@@ -186,21 +186,6 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                 ))}
               </div>
 
-              {/* CTA vers contact */}
-              <div className="text-center mt-8 bg-secondary-100 rounded-2xl py-12 px-6">
-                <h3 className="text-2xl font-bold text-secondary-900 mb-3">
-                  Vous avez un projet similaire ?
-                </h3>
-                <p className="text-lg text-secondary-600 mb-6">
-                  Nous vous accompagnons de la conception à la production.
-                </p>
-                <Link href="/contact" className="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
-                  Échanger avec un expert
-                  <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                  </svg>
-                </Link>
-              </div>
             </>
           )}
         </div>

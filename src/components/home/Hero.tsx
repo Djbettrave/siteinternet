@@ -15,9 +15,9 @@ export default function Hero() {
       <div className="absolute inset-0 bg-white/46" aria-hidden="true" />
 
       <div className="container-custom relative">
-        <div className="pt-16 pb-12 lg:pt-20 lg:pb-16">
+        <div className="flex min-h-[calc(100vh-5rem)] items-center py-16 lg:py-20">
           <div className="max-w-3xl">
-            <h1 className="text-4xl font-bold leading-tight text-secondary-950 md:text-5xl lg:mt-8 lg:text-6xl">
+            <h1 className="text-4xl font-bold leading-tight text-primary-700 md:text-5xl lg:text-6xl">
               Conception &amp; <br />
               fabrication sur mesure
             </h1>
@@ -27,11 +27,11 @@ export default function Hero() {
             </p>
 
             <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
-              <Link href="/realisations" className="inline-flex items-center gap-3 rounded-sm bg-secondary-950 px-6 py-3.5 text-[15px] font-medium tracking-[0.01em] text-white transition-colors hover:bg-primary-800">
-                Voir les réalisations <span aria-hidden="true" className="text-base font-normal">↗</span>
+              <Link href="/realisations" className="group inline-flex items-center gap-2 border-b border-secondary-700 pb-1 text-[15px] font-medium text-secondary-900 transition-colors hover:border-primary-700 hover:text-primary-700">
+                Voir les réalisations
               </Link>
               <Link href="/contact" className="group inline-flex items-center gap-2 border-b border-secondary-700 pb-1 text-[15px] font-medium text-secondary-900 transition-colors hover:border-primary-700 hover:text-primary-700">
-                Nous contacter <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
+                Nous contacter
               </Link>
             </div>
 
