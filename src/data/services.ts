@@ -560,6 +560,7 @@ export const servicesData: Record<string, ServiceData> = {
     contentSections: [
       {
         title: 'Quand chaque détail compte',
+        layout: 'wide',
         paragraphs: [
           'L’impression 3D résine est choisie lorsque les détails fins, les reliefs, les gravures ou la qualité de surface sont déterminants. Elle permet de reproduire avec précision des textures, des formes délicates et des éléments qui doivent être vus de près.',
           'Elle convient aux prototypes esthétiques, aux objets de présentation, aux figurines, aux bijoux, aux petites pièces détaillées et aux modèles destinés à la création d’un moule. Ici, la précision et le rendu visuel priment sur la production de grandes dimensions.',
@@ -574,6 +575,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Choisir la résine selon l’usage',
+        layout: 'wide',
         paragraphs: [
           'Les résines ne répondent pas toutes au même besoin. Une résine standard convient à un prototype visuel ou à une maquette détaillée ; une résine flexible, calcinable, transparente ou résistante à la température répond à des contraintes plus spécifiques. La matière est retenue en fonction de la forme, de la manipulation prévue et de la finition.',
           'Pour une pièce destinée à être très sollicitée ou de grande dimension, une autre technologie peut être plus cohérente. Nous orientons alors le projet vers le procédé et le matériau adaptés, en tenant compte du résultat visuel attendu et des contraintes de fabrication.',
@@ -698,6 +700,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Une fabrication adaptée au lieu et à l’installation',
+        layout: 'wide',
         paragraphs: [
           'Un projet grand format se prépare aussi en fonction de son environnement : accès au lieu, transport, montage, stabilité, fixation, contraintes de poids et conditions d’exposition. Ces paramètres sont intégrés dès l’étude pour que la pièce soit compatible avec son installation réelle.',
           'Nous pouvons intervenir sur la conception du volume, sa fabrication, les éléments d’assemblage, la finition et la préparation à la pose. Pour une installation plus grande que le volume d’impression, les découpes et raccords sont placés de manière à rester cohérents avec la forme et le rendu final.',
@@ -708,14 +711,13 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
-        visualSize: 'compact',
         label: 'Sculpture BOSS grand format',
         alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
         image: {
           src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
           alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
           aspect: 'standard',
-          fit: 'contain',
+          fit: 'cover',
           priority: true,
         },
       },
@@ -1151,6 +1153,7 @@ export const servicesData: Record<string, ServiceData> = {
     contentSections: [
       {
         title: 'Tout est pensé ensemble',
+        layout: 'wide',
         paragraphs: [
           'Une carte, un moteur ou une lumière ne se conçoivent pas séparément de l’objet qui les accueille. L’encombrement, l’alimentation, les éléments mécaniques, l’assemblage et l’usage final sont définis ensemble dès le départ.',
           'Cette approche permet d’intégrer l’électronique directement dans une pièce, un boîtier ou une installation, afin d’obtenir un objet cohérent, fonctionnel et fabriquable.',
@@ -1165,6 +1168,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Du mécanisme au boîtier final',
+        layout: 'wide',
         paragraphs: [
           'Une motorisation nécessite de coordonner le moteur, la transmission, les éléments de guidage, les pièces imprimées ou usinées et la commande électronique. Nous réalisons les essais nécessaires pour vérifier les mouvements, les accès de maintenance et l’intégration des composants dans le volume disponible.',
           'Le boîtier ou la structure peut être conçu en même temps que l’électronique. Cela évite les adaptations tardives et permet de prévoir les fixations, passages de câbles, zones de ventilation, connecteurs et finitions dès les premières versions.',
