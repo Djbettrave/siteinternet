@@ -23,16 +23,16 @@ function GallerySlot({ image, className }: { image?: Print3DGalleryImage; classN
 
 /** Empty visual framework until the selected service images are added. */
 export default function Print3DHeroGallery({ images = [] }: Print3DHeroGalleryProps) {
-  if (images.length === 0) return <GallerySlot className="h-[260px] sm:h-[330px] lg:h-[400px]" />
+  if (images.length === 0) return <GallerySlot className="h-[280px] sm:h-[360px] lg:h-[min(58svh,560px)]" />
 
-  if (images.length === 1) return <GallerySlot image={images[0]} className="h-[260px] sm:h-[330px] lg:h-[400px]" />
+  if (images.length === 1) return <GallerySlot image={images[0]} className="h-[280px] sm:h-[360px] lg:h-[min(58svh,560px)]" />
 
   if (images.length === 2) {
     return <div className="grid h-[400px] grid-cols-[1.45fr_1fr] gap-4 sm:h-[510px] lg:h-[590px]"><GallerySlot image={images[0]} className="h-full" /><GallerySlot image={images[1]} className="h-full" /></div>
   }
 
   return (
-    <div className="relative h-[260px] sm:h-[330px] lg:h-[400px]" aria-label="Emplacements d’images">
+    <div className="relative h-[280px] sm:h-[360px] lg:h-[min(58svh,560px)]" aria-label="Emplacements d’images">
       <div className="absolute left-0 top-[5%] h-[87%] w-[61%]"><GallerySlot image={images[0]} className="h-full w-full" /></div>
       <div className="absolute right-0 top-0 h-[45%] w-[35%]"><GallerySlot image={images[1]} className="h-full w-full" /></div>
       <div className="absolute bottom-0 right-0 h-[45%] w-[35%]"><GallerySlot image={images[2]} className="h-full w-full" /></div>
