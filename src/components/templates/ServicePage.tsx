@@ -62,12 +62,17 @@ export interface ServiceData {
     image?: {
       src: string
       alt: string
-      aspect?: 'portrait' | 'landscape' | 'standard'
+      aspect?: 'portrait' | 'landscape' | 'panoramic' | 'standard'
       fit?: 'contain' | 'cover'
       tone?: 'normal' | 'soft'
+      objectPosition?: string
       priority?: boolean
     }
     visualSize?: 'normal' | 'compact'
+    note?: {
+      title: string
+      items: string[]
+    }
     images?: {
       alt: string
       label: string
@@ -140,7 +145,7 @@ export default function ServicePage({ service }: ServicePageProps) {
     })),
   }
   const usesPrint3DGallery = Boolean(service.galleryImages?.length)
-  const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
+  const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal', 'impression-3d-grand-format'].includes(service.slug)
   const showSpecs = !['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
   const showProcess = service.slug === 'impression-uv'
 
@@ -244,8 +249,15 @@ export default function ServicePage({ service }: ServicePageProps) {
                     </div>
                     {visual && (
                     <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto w-full max-w-4xl' : 'w-full') : ''} ${visual.visualSize === 'compact' && !stacked ? 'lg:max-w-[440px] lg:justify-self-end' : ''}`}>
-                        {visual.image ? (
-                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : 'aspect-video'}`}>
+                        {visual.note ? (
+                          <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
+                            <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
+                            <ul className="mt-4 space-y-3 text-sm leading-relaxed text-secondary-600">
+                              {visual.note.items.map((item) => <li key={item} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-600" />{item}</li>)}
+                            </ul>
+                          </aside>
+                        ) : visual.image ? (
+                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : visual.image.aspect === 'panoramic' ? 'aspect-[16/7]' : 'aspect-video'}`}>
                             <Image
                               src={visual.image.src}
                               alt={visual.image.alt}
@@ -253,6 +265,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                               priority={visual.image.priority}
                               sizes={stacked ? '(min-width: 1024px) 1200px, 100vw' : '(min-width: 1024px) 50vw, 100vw'}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
+                              style={{ objectPosition: visual.image.objectPosition }}
                             />
                           </div>
                         ) : visual.images ? (
