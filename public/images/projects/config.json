@@ -273,7 +273,7 @@
     },
     "supports-magnetiques-impression-3d-sur-mesure.webp": {
       "category": "fabrication",
-      "order": 25,
+      "order": 85,
       "objectPosition": "center",
       "title": "Supports magnétiques",
       "alt": "Systèmes imprimés en 3D avec aimants intégrés pour maintenir des éléments interchangeables"
