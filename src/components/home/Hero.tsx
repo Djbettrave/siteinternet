@@ -26,12 +26,12 @@ export default function Hero() {
               Bureau d’études et atelier de fabrication à Suresnes.
             </p>
 
-            <div className="flex flex-col gap-4 sm:flex-row">
-              <Link href="/realisations" className="btn-primary px-8 py-4 text-lg">
-                Nos réalisations
+            <div className="flex flex-col items-start gap-5 sm:flex-row sm:items-center sm:gap-7">
+              <Link href="/realisations" className="inline-flex items-center gap-3 rounded-sm bg-secondary-950 px-6 py-3.5 text-[15px] font-medium tracking-[0.01em] text-white transition-colors hover:bg-primary-800">
+                Voir les réalisations <span aria-hidden="true" className="text-base font-normal">↗</span>
               </Link>
-              <Link href="/contact" className="btn-outline border-2 border-primary-700 bg-white/90 px-8 py-4 text-lg font-semibold text-primary-800 shadow-[0_5px_15px_rgba(15,37,64,0.10)] hover:border-primary-800 hover:bg-white">
-                Nous contacter
+              <Link href="/contact" className="group inline-flex items-center gap-2 border-b border-secondary-700 pb-1 text-[15px] font-medium text-secondary-900 transition-colors hover:border-primary-700 hover:text-primary-700">
+                Nous contacter <span aria-hidden="true" className="transition-transform group-hover:translate-x-0.5">→</span>
               </Link>
             </div>
 
