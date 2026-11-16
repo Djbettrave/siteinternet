@@ -11,11 +11,6 @@ export default function GrandFormatPage() {
     ...service,
     galleryImages: [
       {
-        src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
-        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
-        fit: 'cover',
-      },
-      {
         src: '/images/projects/completed/cheval-guerlain-impression-3d-grand-format.webp',
         alt: 'Sculpture Guerlain grand format imprimée en 3D et finie pour une installation de marque',
         fit: 'contain',
