@@ -139,7 +139,10 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
-  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'scan-3d', 'modelisation-3d', 'prototypage'].includes(service.slug)
+  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'modelisation-3d', 'prototypage'].includes(service.slug)
+  const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
+  const showSpecs = !['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
+  const showProcess = ['prototypage', 'impression-uv'].includes(service.slug)
 
   return (
     <>
@@ -212,7 +215,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Features */}
-      <section className="py-24 bg-white">
+      {showFeatures && <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Ce que nous proposons</h2>
@@ -239,7 +242,7 @@ export default function ServicePage({ service }: ServicePageProps) {
             ))}
           </div>
         </div>
-      </section>
+      </section>}
 
       {/* SEO content */}
       {service.contentSections && (
@@ -296,7 +299,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Specs */}
-      {service.specs && service.slug !== 'impression-3d-metal' && (
+      {service.specs && showSpecs && (
         <section className="py-24 bg-secondary-50">
           <div className="container-custom">
             <div className="text-center mb-12">
@@ -380,7 +383,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Process */}
-      {service.process && service.slug !== 'impression-3d-metal' && (
+      {service.process && showProcess && (
         <section className="py-24 bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
