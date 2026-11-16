@@ -102,6 +102,24 @@ interface SectorPageProps {
 
 export default function SectorPage({ sector }: SectorPageProps) {
   const showHeroVisual = sector.slug === 'architecture' || sector.slug === 'medical' || sector.slug === 'luxe'
+  const isLuxe = sector.slug === 'luxe'
+  const projectsSection = sector.projects && (
+    <section className="bg-white py-20 lg:py-24">
+      <div className="container-custom">
+        <h2 className="mb-10 text-3xl font-bold tracking-[-0.04em] text-secondary-900 md:text-4xl">Réalisations pour les maisons de luxe</h2>
+        <div className="grid gap-6 md:grid-cols-3">
+          {sector.projects.map((project) => (
+            <figure key={project.title}>
+              <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100">
+                <Image src={project.image} alt={project.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+              </div>
+              <figcaption className="mt-3 text-sm font-medium text-secondary-800">{project.title}</figcaption>
+            </figure>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
 
   return (
     <>
@@ -113,13 +131,13 @@ export default function SectorPage({ sector }: SectorPageProps) {
       />
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
+      <section className={`relative overflow-hidden ${isLuxe ? 'bg-[#f5f3ef]' : 'bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900'}`}>
         <div className="container-custom relative">
           <div className={`w-full min-w-0 py-12 lg:py-16 ${showHeroVisual && sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
             <div className={`w-full min-w-0 max-w-3xl ${sector.slug === 'luxe' ? 'lg:order-2' : ''}`}>
               {/* Headline */}
               <h1
-                className="mb-6 max-w-full text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
+                className={`mb-6 max-w-full text-3xl font-bold leading-tight sm:text-4xl md:text-5xl ${isLuxe ? 'text-secondary-950' : 'text-white'}`}
                 style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
               >
                 {sector.headline.split('\n').map((line, index) => (
@@ -131,7 +149,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
               {/* Subheadline */}
               <p
-                className="mb-8 max-w-full text-lg text-secondary-300 sm:max-w-2xl sm:text-xl"
+                className={`mb-8 max-w-full text-lg sm:max-w-2xl sm:text-xl ${isLuxe ? 'text-secondary-600' : 'text-secondary-300'}`}
                 style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
               >
                 {sector.subheadline.split('. ').map((sentence, index, array) => (
@@ -145,51 +163,60 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
             {showHeroVisual && sector.heroImage && (
               sector.slug === 'luxe'
-                ? <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-2xl lg:order-1"><Image src={sector.heroImage} alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`} fill priority sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover object-[center_45%]" /></div>
+                ? <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)] lg:order-1"><Image src={sector.heroImage} alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`} fill priority sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover object-[center_45%]" /></div>
                 : <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />
             )}
           </div>
         </div>
 
         {/* Decorative */}
-        <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
+        {!isLuxe && <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>}
       </section>
 
-      {sector.projects && (
-        <section className="bg-white py-20 lg:py-24"><div className="container-custom"><h2 className="mb-10 text-3xl font-bold tracking-[-0.04em] text-secondary-900 md:text-4xl">Réalisations pour les maisons de luxe</h2><div className="grid gap-6 md:grid-cols-3">{sector.projects.map((project) => <figure key={project.title}><div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100"><Image src={project.image} alt={project.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" /></div><figcaption className="mt-3 text-sm font-medium text-secondary-800">{project.title}</figcaption></figure>)}</div></div></section>
-      )}
+      {!isLuxe && projectsSection}
 
       {/* Use Cases Section */}
-      <section className={`py-24 ${sector.projects ? 'bg-secondary-50' : 'bg-white'}`}>
+      <section className={`py-20 lg:py-24 ${isLuxe ? 'bg-white' : sector.projects ? 'bg-secondary-50' : 'bg-white'}`}>
         <div className="container-custom">
-          <div className="text-center mb-16">
+          <div className={`${isLuxe ? 'mb-10' : 'text-center mb-16'}`}>
             <h2 className="section-title">{sector.useCasesTitle || `Applications pour le secteur ${sector.name}`}</h2>
-            <p className="section-subtitle mx-auto">
+            <p className={`section-subtitle ${isLuxe ? 'max-w-none lg:whitespace-nowrap' : 'mx-auto'}`}>
               {sector.useCasesSubtitle || `Découvrez comment nous accompagnons les professionnels du ${sector.name.toLowerCase()} avec des solutions sur mesure.`}
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {sector.useCases.map((useCase, index) => (
-              <MobileReveal key={index} delay={index * 55}>
-                <div className="group card p-6 md:p-8 md:hover:shadow-lg md:hover:border-primary-300 transition-all duration-200">
-                  <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
-                    <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors md:group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
-                      <svg className="h-5 w-5 text-primary-600 transition-colors md:group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={useCase.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
-                      </svg>
+          {isLuxe ? (
+            <ul className="max-w-4xl divide-y divide-secondary-200 border-y border-secondary-200">
+              {sector.useCases.map((useCase) => (
+                <li key={useCase.title} className="grid gap-2 py-5 md:grid-cols-[14rem_1fr] md:gap-8">
+                  <span className="flex items-center gap-3 font-semibold text-secondary-900"><span className="h-1.5 w-1.5 rounded-full bg-primary-700" />{useCase.title}</span>
+                  <span className="leading-relaxed text-secondary-600">{useCase.description}</span>
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {sector.useCases.map((useCase, index) => (
+                <MobileReveal key={index} delay={index * 55}>
+                  <div className="group card p-6 md:p-8 md:hover:shadow-lg md:hover:border-primary-300 transition-all duration-200">
+                    <div className="mb-4 flex items-center gap-3 md:mb-5 md:block">
+                      <div className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-primary-100 transition-colors md:group-hover:bg-primary-600 md:mb-5 md:h-14 md:w-14">
+                        <svg className="h-5 w-5 text-primary-600 transition-colors md:group-hover:text-white md:h-7 md:w-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d={useCase.icon || 'M13 10V3L4 14h7v7l9-11h-7z'} />
+                        </svg>
+                      </div>
+                      <h3 className="text-lg font-semibold text-secondary-900 transition-colors md:group-hover:text-primary-600 md:text-xl">{useCase.title}</h3>
                     </div>
-                    <h3 className="text-lg font-semibold text-secondary-900 transition-colors md:group-hover:text-primary-600 md:text-xl">{useCase.title}</h3>
+                    <p className="leading-relaxed text-secondary-600">{useCase.description}</p>
                   </div>
-                  <p className="leading-relaxed text-secondary-600">{useCase.description}</p>
-                </div>
-              </MobileReveal>
-            ))}
-          </div>
+                </MobileReveal>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
-      {sector.why && (
+      {sector.why && !isLuxe && (
         <section className="bg-secondary-50 py-20 lg:py-24"><div className="container-custom"><div className="max-w-4xl"><h2 className="text-3xl font-bold tracking-[-0.04em] text-secondary-900 md:text-4xl">{sector.why.title}</h2><div className="mt-7 max-w-3xl space-y-5 text-lg leading-relaxed text-secondary-600">{sector.why.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div><div className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-3">{sector.why.points.map((point) => <div key={point.title} className="border-t-2 border-primary-500 pt-5"><h3 className="text-base font-semibold text-secondary-900">{point.title}</h3><p className="mt-2 text-sm leading-relaxed text-secondary-600">{point.description}</p></div>)}</div></div></section>
       )}
 
@@ -251,7 +278,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
       </section>}
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary-600">
+      {!isLuxe && <section className="py-24 bg-primary-600">
         <div className="container-custom">
           <div className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
@@ -278,7 +305,9 @@ export default function SectorPage({ sector }: SectorPageProps) {
             </div>
           </div>
         </div>
-      </section>
+      </section>}
+
+      {isLuxe && projectsSection}
     </>
   )
 }

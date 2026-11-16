@@ -100,9 +100,9 @@ export const sectorsData: Record<string, SectorData> = {
     subheadline: 'Inphenix conçoit et fabrique des décors, présentoirs, objets et dispositifs destinés aux vitrines, lancements et points de vente. Du prototype à la petite série, chaque pièce est développée selon l’univers de la maison, l’usage prévu, les contraintes techniques et le niveau de finition recherché.',
     description: 'Inphenix System conçoit et fabrique des décors, présentoirs, objets et dispositifs sur mesure pour les maisons de luxe, du prototype à la petite série.',
     projects: [
-      { image: '/images/projects/completed/presentoir-lumineux-guerlain-sur-mesure.jpeg', alt: 'Présentoir lumineux Guerlain avec flacons de parfum et écran intégré', title: 'Présentoir lumineux Guerlain' },
-      { image: '/images/projects/completed/impression résine et modélisation 3D.jpeg', alt: 'Maquette de présentoir de parfum Boss issue de modélisation 3D et impression résine', title: 'Maquette de présentoir Boss' },
       { image: '/images/projects/completed/electronique.jpeg', alt: 'Signalétique décorative J’Adore en métal poli pour espace de marque', title: 'Signalétique décorative J’Adore' },
+      { image: '/images/projects/completed/sapin-noel-chanel-installation-evenementielle.jpeg', alt: 'Sapin de Noël Chanel réalisé pour une installation événementielle de marque', title: 'Installation Chanel' },
+      { image: '/images/secteurs/luxe/sac-scane-transforme-en-faux-gateau.jpeg', alt: 'Sac de luxe scanné, modifié en 3D puis transformé en faux gâteau anniversaire', title: 'Scan 3D et transformation d’un sac en faux gâteau' },
     ],
     useCasesTitle: 'Ce que nous fabriquons',
     useCasesSubtitle: 'Des pièces conçues autour d’un produit, d’un espace ou d’une activation de marque.',

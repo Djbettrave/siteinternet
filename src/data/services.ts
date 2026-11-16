@@ -264,6 +264,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'impression-3d-metal',
     name: 'Impression 3D Métal',
     category: 'Impression 3D',
+    heroLayout: 'text-left',
     metaTitle: 'Impression 3D métal à Paris | Pièces techniques sur mesure',
     metaDescription: 'Impression 3D métal pour pièces techniques, composants mécaniques et prototypes fonctionnels. Étude de faisabilité et fabrication sur mesure à Paris et en Île-de-France.',
     keywords: [
@@ -316,9 +317,45 @@ export const servicesData: Record<string, ServiceData> = {
           'Chaque projet est étudié selon l’alliage envisageable, les tolérances attendues, les zones critiques et le niveau de finition nécessaire. L’objectif n’est pas de proposer systématiquement du métal, mais de définir une solution de fabrication cohérente avec la fonction réelle de la pièce.',
         ],
       },
+      {
+        title: 'Du plateau de fabrication à la pièce préparée',
+        paragraphs: [
+          'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires.',
+        ],
+      },
+      {
+        title: 'Visuel de pièce finale',
+        paragraphs: [
+          'Un emplacement est réservé pour montrer une pièce métal après retrait des supports et finition. Il permettra de rendre visible le niveau de surface et le résultat final du procédé.',
+        ],
+      },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'right', label: 'Visuel métal 01', alt: 'Photo à ajouter d’une pièce métallique technique' },
+      {
+        afterSection: 0,
+        position: 'right',
+        label: 'Fabrication additive métal avec supports',
+        alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
+        image: {
+          src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
+          alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
+          aspect: 'portrait',
+          fit: 'cover',
+        },
+      },
+      {
+        afterSection: 1,
+        position: 'left',
+        label: 'Pièces métal sur plateau de fabrication',
+        alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
+        image: {
+          src: '/images/projects/process/impression-3d-metal-pieces-techniques.jpeg',
+          alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
+          aspect: 'portrait',
+          fit: 'cover',
+        },
+      },
+      { afterSection: 2, position: 'right', label: 'Visuel métal 03', alt: 'Photo à ajouter d’une pièce métallique finie après retrait des supports' },
     ],
     specs: [
       { label: 'Procédé', value: 'Défini selon le projet' },
@@ -368,6 +405,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'impression-3d-fdm',
     name: 'Impression 3D FDM',
     category: 'Impression 3D',
+    heroLayout: 'text-left',
     headline: 'Impression 3D FDM -\nPièces résistantes et fonctionnelles',
     subheadline: 'La technologie FDM (Fused Deposition Modeling) pour des pièces solides, fonctionnelles et économiques. Idéale pour le prototypage et les petites séries.',
     description: 'L\'impression 3D FDM utilise des filaments thermoplastiques pour créer des pièces couche par couche. Cette technologie offre un excellent rapport qualité-prix pour les prototypes fonctionnels et les pièces de production.',
@@ -493,6 +531,7 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'impression-3d-resine',
     name: 'Impression 3D Résine',
     category: 'Impression 3D',
+    heroLayout: 'image-left',
     headline: 'Impression 3D Résine -\nPrécision et haute résolution',
     subheadline: 'La technologie SLA/DLP pour des pièces ultra-détaillées avec des surfaces lisses. Idéale pour la joaillerie, les prototypes visuels et les moules.',
     description: 'L\'impression résine (SLA/DLP) offre une précision au centième de millimètre et des surfaces parfaitement lisses. Technologie de choix pour les applications nécessitant des détails fins.',
@@ -538,7 +577,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'right', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
+      { afterSection: 0, position: 'left', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
     ],
     specs: [
       { label: 'Volume max', value: '190 x 120 x 200 mm' },
@@ -656,18 +695,20 @@ export const servicesData: Record<string, ServiceData> = {
           src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
           alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
           aspect: 'portrait',
-          fit: 'cover',
+          fit: 'contain',
+          priority: true,
         },
       },
       {
         afterSection: 1,
         position: 'left',
+        visualSize: 'compact',
         label: 'Impression 3D grand format en plusieurs éléments',
         alt: 'Éléments d’une impression 3D grand format avant assemblage',
         image: {
           src: '/images/projects/process/impression-3d-grand-format-elements.jpeg',
           alt: 'Éléments d’une impression 3D grand format avant assemblage',
-          aspect: 'portrait',
+          aspect: 'standard',
           fit: 'contain',
         },
       },

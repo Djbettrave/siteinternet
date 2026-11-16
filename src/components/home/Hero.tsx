@@ -10,9 +10,9 @@ export default function Hero() {
         fill
         priority
         sizes="100vw"
-        className="object-cover object-center opacity-[0.14] grayscale-[12%]"
+        className="object-cover object-center opacity-[0.42] grayscale-[5%]"
       />
-      <div className="absolute inset-0 bg-white/78" aria-hidden="true" />
+      <div className="absolute inset-0 bg-white/46" aria-hidden="true" />
 
       <div className="container-custom relative">
         <div className="pt-16 pb-12 lg:pt-20 lg:pb-16">
@@ -30,7 +30,7 @@ export default function Hero() {
               <Link href="/realisations" className="btn-primary px-8 py-4 text-lg">
                 Nos réalisations
               </Link>
-              <Link href="/contact" className="btn-outline border-secondary-300 px-8 py-4 text-lg text-secondary-800 hover:bg-white/80">
+              <Link href="/contact" className="btn-outline border-2 border-primary-700 bg-white/90 px-8 py-4 text-lg font-semibold text-primary-800 shadow-[0_5px_15px_rgba(15,37,64,0.10)] hover:border-primary-800 hover:bg-white">
                 Nous contacter
               </Link>
             </div>

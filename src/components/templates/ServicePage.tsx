@@ -24,6 +24,7 @@ export interface ServiceData {
     alt: string
     fit?: 'cover' | 'contain'
   }[]
+  heroLayout?: 'text-left' | 'image-left'
   description: string
   features: {
     title: string
@@ -155,13 +156,15 @@ export default function ServicePage({ service }: ServicePageProps) {
         <section className="overflow-hidden bg-[#f8fafc]">
           <div className="container-custom py-14 md:py-20 lg:py-24">
             <div className="grid items-center gap-12 lg:grid-cols-[.88fr_1.12fr] lg:gap-20">
-              <div>
+              <div className={service.heroLayout === 'image-left' ? 'lg:order-2' : ''}>
                 <h1 className="text-4xl font-bold leading-[.98] tracking-[-0.055em] text-secondary-950 sm:text-5xl lg:text-6xl">
                   {service.headline.split('\n').map((line, index) => <span key={line} className={`block ${index === 1 ? 'mt-2 text-primary-700' : index > 1 ? 'text-primary-700' : ''}`}>{line}</span>)}
                 </h1>
                 <p className="mt-7 max-w-xl text-lg leading-relaxed text-secondary-600">{service.subheadline}</p>
               </div>
-              <Print3DHeroGallery images={service.galleryImages} />
+              <div className={service.heroLayout === 'image-left' ? 'lg:order-1' : ''}>
+                <Print3DHeroGallery images={service.galleryImages} />
+              </div>
             </div>
           </div>
         </section>

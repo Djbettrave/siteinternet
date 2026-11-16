@@ -23,6 +23,8 @@ function GallerySlot({ image, className }: { image?: Print3DGalleryImage; classN
 
 /** Empty visual framework until the selected service images are added. */
 export default function Print3DHeroGallery({ images = [] }: Print3DHeroGalleryProps) {
+  if (images.length === 0) return <GallerySlot className="h-[400px] sm:h-[510px] lg:h-[590px]" />
+
   if (images.length === 1) return <GallerySlot image={images[0]} className="h-[400px] sm:h-[510px] lg:h-[590px]" />
 
   if (images.length === 2) {
