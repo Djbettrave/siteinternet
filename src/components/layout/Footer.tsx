@@ -50,8 +50,8 @@ export default function Footer() {
               <span className="text-2xl font-bold text-white">Inphenix</span>
               <span className="text-2xl font-light text-secondary-400">System</span>
             </Link>
-            <p className="text-secondary-300 text-sm mb-4">
-              Bureau d'études spécialisé en<br />impression 3D.
+            <p className="mb-4 whitespace-nowrap text-[13px] text-secondary-300 sm:text-sm">
+              Bureau d'études spécialisé en impression 3D.
             </p>
             <div className="flex items-center justify-center gap-5 md:flex-col md:items-start md:gap-4">
             <div className="order-2 flex items-center gap-2 text-primary-400 md:order-1">
