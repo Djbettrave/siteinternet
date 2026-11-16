@@ -644,8 +644,8 @@ export const servicesData: Record<string, ServiceData> = {
     description: 'Notre imprimante grand format permet de créer des pièces jusqu\'à 85 cm de haut en un seul bloc. Pour les pièces plus grandes, nous assemblons plusieurs éléments avec des finitions invisibles - sans limite de taille.',
     galleryImages: [
       {
-        src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
-        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+        src: '/images/projects/completed/cheval-guerlain-impression-3d-grand-format.webp',
+        alt: 'Cheval Guerlain grand format imprimé en 3D et fini pour une installation de marque',
         fit: 'contain',
       },
     ],
@@ -710,10 +710,10 @@ export const servicesData: Record<string, ServiceData> = {
         position: 'right',
         visualSize: 'compact',
         label: 'Sculpture BOSS grand format',
-        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+        alt: 'Cheval Guerlain grand format imprimé en 3D et fini pour une installation de marque',
         image: {
-          src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
-          alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+          src: '/images/projects/completed/cheval-guerlain-impression-3d-grand-format.webp',
+          alt: 'Cheval Guerlain grand format imprimé en 3D et fini pour une installation de marque',
           aspect: 'standard',
           fit: 'contain',
           priority: true,
