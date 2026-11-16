@@ -139,10 +139,10 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
-  const usesPrint3DGallery = ['impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'modelisation-3d', 'prototypage'].includes(service.slug)
+  const usesPrint3DGallery = Boolean(service.galleryImages?.length)
   const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
   const showSpecs = !['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
-  const showProcess = ['prototypage', 'impression-uv'].includes(service.slug)
+  const showProcess = service.slug === 'impression-uv'
 
   return (
     <>
@@ -157,13 +157,13 @@ export default function ServicePage({ service }: ServicePageProps) {
       {/* Hero */}
       {usesPrint3DGallery ? (
         <section className="overflow-hidden bg-[#f8fafc]">
-          <div className="container-custom py-14 md:py-20 lg:py-24">
-            <div className="grid items-center gap-12 lg:grid-cols-[.88fr_1.12fr] lg:gap-20">
+          <div className="container-custom py-10 md:py-14 lg:py-16">
+            <div className="grid items-center gap-8 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
               <div className={service.heroLayout === 'image-left' ? 'lg:order-2' : ''}>
-                <h1 className="text-4xl font-bold leading-[.98] tracking-[-0.055em] text-secondary-950 sm:text-5xl lg:text-6xl">
+                <h1 className="text-4xl font-bold leading-[.98] tracking-[-0.055em] text-secondary-950 sm:text-5xl lg:text-[3.4rem]">
                   {service.headline.split('\n').map((line, index) => <span key={line} className={`block ${index === 1 ? 'mt-2 text-primary-700' : index > 1 ? 'text-primary-700' : ''}`}>{line}</span>)}
                 </h1>
-                <p className="mt-7 max-w-xl text-lg leading-relaxed text-secondary-600">{service.subheadline}</p>
+                <p className="mt-5 max-w-xl text-base leading-relaxed text-secondary-600 md:text-lg">{service.subheadline}</p>
               </div>
               <div className={service.heroLayout === 'image-left' ? 'lg:order-1' : ''}>
                 <Print3DHeroGallery images={service.galleryImages} />
@@ -172,46 +172,20 @@ export default function ServicePage({ service }: ServicePageProps) {
           </div>
         </section>
       ) : (
-      <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
-        <div className="container-custom relative">
-          <div className={`py-20 lg:py-28 ${service.heroVisual ? 'grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(280px,0.62fr)]' : ''}`}>
+        <section className="border-b border-secondary-100 bg-white">
+          <div className="container-custom py-12 md:py-16 lg:py-20">
             <div className="max-w-3xl">
-              <h1 className="text-4xl md:text-5xl font-bold text-white leading-tight mb-6">
+              <h1 className="text-4xl font-bold leading-[1.02] tracking-[-0.05em] text-secondary-950 md:text-5xl">
                 {service.headline.split('\n').map((line, index) => (
-                  <span key={index} className={`block ${service.slug === 'impression-uv' && index === 1 ? 'text-[0.68em] md:text-[0.72em] leading-snug' : ''}`}>
+                  <span key={index} className={`block ${index > 0 ? 'mt-2 text-primary-700' : ''} ${service.slug === 'impression-uv' && index === 1 ? 'text-[0.72em] leading-snug md:text-[0.76em]' : ''}`}>
                     {line}
                   </span>
                 ))}
               </h1>
-
-              <p className="text-xl text-secondary-300 mb-8 max-w-2xl">
-                {service.subheadline}
-              </p>
-
-              {/* CTA uniquement pour FDM et Résine */}
-              {(service.slug === 'impression-3d-fdm' || service.slug === 'impression-3d-resine') && (
-                <a
-                  href="https://impression3d.inphenix-system.fr"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn-primary text-lg px-8 py-4 inline-flex items-center"
-                >
-                  Devis instantané Impression 3D
-                  <svg className="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                  </svg>
-                </a>
-              )}
+              <p className="mt-6 max-w-2xl text-lg leading-relaxed text-secondary-600 md:text-xl">{service.subheadline}</p>
             </div>
-
-            {service.heroVisual && (
-              <ImagePlaceholder ariaLabel={service.heroVisual.alt} dark className="aspect-[4/5]" />
-            )}
           </div>
-        </div>
-
-        <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
-      </section>
+        </section>
       )}
 
       {/* Features */}
@@ -263,7 +237,9 @@ export default function ServicePage({ service }: ServicePageProps) {
                     <div className={`${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''} ${stacked ? 'max-w-5xl' : ''}`}>
                       {section.title && <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
-                        {section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                        {section.paragraphs.map((paragraph, paragraphIndex) => (
+                          <p key={paragraph} className={service.slug === 'impression-3d-metal' && index === 1 && paragraphIndex === 0 ? 'pt-5' : ''}>{paragraph}</p>
+                        ))}
                       </div>
                     </div>
                     {visual && (
