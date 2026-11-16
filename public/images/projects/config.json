@@ -353,7 +353,8 @@
       "order": 20,
       "objectPosition": "center",
       "title": "Étude de volumes de flacons",
-      "alt": "Étude de volumes et prototypes de flacons en trois formats"
+      "alt": "Étude de volumes et prototypes de flacons en trois formats",
+      "hidden": true
     },
     "production-serie-impression-3d-noire.jpeg": {
       "category": "fabrication",
