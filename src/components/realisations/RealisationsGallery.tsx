@@ -148,7 +148,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
       </section>
 
       {/* Projects Grid */}
-      <section ref={projectsSectionRef} id="projects-section" className="bg-white pb-2 pt-5">
+      <section ref={projectsSectionRef} id="projects-section" className="bg-white pb-16 pt-5 md:pb-20">
         <div className="container-custom px-2">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
