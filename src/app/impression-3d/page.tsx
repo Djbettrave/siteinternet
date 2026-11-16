@@ -25,21 +25,6 @@ const comparison = [
   { technology: 'Métal', material: 'Métal', precision: 'Élevée', resistance: 'Très élevée selon alliage', flexibility: 'Faible', finish: 'Variable', cost: '€€€', applications: 'Pièces mécaniques, composants techniques' },
 ]
 
-const faqs = [
-  {
-    question: 'Quelle technologie d’impression 3D choisir pour une pièce résistante ?',
-    answer: 'Le choix dépend des contraintes mécaniques, de l’environnement d’utilisation et de la géométrie. Le PETG convient à de nombreuses pièces fonctionnelles, le TPU aux pièces souples et certains alliages métalliques aux applications fortement sollicitées.',
-  },
-  {
-    question: 'Quelle différence entre l’impression 3D FDM et résine ?',
-    answer: 'L’impression 3D FDM dépose des couches successives de filament thermoplastique. L’impression résine utilise une photopolymérisation permettant généralement d’obtenir des détails plus fins et des surfaces plus lisses. Le choix dépend des dimensions, de la précision recherchée et de l’utilisation finale.',
-  },
-  {
-    question: 'Peut-on fabriquer des pièces en série par impression 3D ?',
-    answer: 'Oui. L’impression 3D permet de produire des petites et moyennes séries sans moule de fabrication traditionnel. Elle est particulièrement intéressante pour les pièces personnalisées, les géométries complexes et les productions nécessitant une certaine flexibilité.',
-  },
-]
-
 export default function Impression3DPage() {
   return (
     <ServiceNavigationPage
@@ -47,7 +32,6 @@ export default function Impression3DPage() {
       intro="Basé à Suresnes, Inphenix System accompagne vos projets d’impression 3D, du prototype à la production en série, à Paris, en Île-de-France et partout en France."
       cards={cards}
       comparison={comparison}
-      faqs={faqs}
       showCta
     />
   )

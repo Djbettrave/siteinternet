@@ -23,7 +23,7 @@
     },
     "scan-3d-sculpture-serpent-miniature-resine.jpeg": {
       "category": "realisations",
-      "order": 120,
+      "order": 125,
       "objectPosition": "center 55%",
       "tone": "soft",
       "title": "Scan 3D et reproduction résine d’une sculpture de serpent",
@@ -156,12 +156,26 @@
       "objectPosition": "center",
       "title": "Lettrages décoratifs",
       "alt": "Lettrages décoratifs imprimés en résine, peints et finis sur mesure"
+    },
+    "presentoir-lumineux-guerlain-sur-mesure.jpeg": {
+      "category": "realisations",
+      "order": 160,
+      "objectPosition": "center",
+      "title": "Présentoir lumineux sur mesure Guerlain",
+      "alt": "Présentoir lumineux sur mesure Guerlain avec flacons de parfum éclairés"
+    },
+    "impression-3d-seeding-back-to-school-coeurs-mini-telephones.webp": {
+      "category": "realisations",
+      "order": 150,
+      "objectPosition": "center",
+      "title": "Mini-téléphones et cœurs pour opération de seeding",
+      "alt": "Mini-téléphones et cœurs personnalisés, fabriqués par impression 3D pour une opération de seeding"
     }
   },
   "process": {
     "production-serie-mini-telephones-violets-noirs.jpeg": {
       "category": "fabrication",
-      "order": 35,
+      "order": 170,
       "objectPosition": "center",
       "title": "Production en série de mini téléphones personnalisés",
       "alt": "Série de mini téléphones violets et noirs personnalisés, fabriqués par impression 3D"
@@ -217,7 +231,7 @@
     },
     "resine-impression-2.jpeg": {
       "category": "fabrication",
-      "order": 40,
+      "order": 20,
       "objectPosition": "center",
       "title": "Impression 3D résine en cours",
       "alt": "Pièce en résine en cours d’impression 3D"
@@ -245,14 +259,14 @@
     },
     "piece-decorative-luxe-parc-francartier-impression-3d.jpeg": {
       "category": "fabrication",
-      "order": 20,
+      "order": 40,
       "objectPosition": "center",
       "title": "Élément décoratif de luxe pour le parc Francartier",
       "alt": "Élément décoratif de luxe pour le parc Francartier, en cours de fabrication par impression 3D"
     },
     "supports-clips-impression-3d-sur-mesure.webp": {
       "category": "fabrication",
-      "order": 15,
+      "order": 90,
       "objectPosition": "center",
       "title": "Supports clips sur mesure",
       "alt": "Supports imprimés en 3D sur mesure pour intégrer des clips et composants dans une installation de PLV"
@@ -266,7 +280,7 @@
     },
     "boitiers-electroniques-impression-3d-sur-mesure.webp": {
       "category": "fabrication",
-      "order": 35,
+      "order": 180,
       "objectPosition": "center",
       "title": "Boîtiers électroniques sur mesure",
       "alt": "Boîtiers sur mesure imprimés en 3D pour l’intégration de cartes électroniques et de câblage"
@@ -305,6 +319,76 @@
       "objectPosition": "center 48%",
       "title": "Nœud décoratif grand format",
       "alt": "Structure décorative grand format réalisée sur mesure pour une installation de marque"
+    },
+    "pieces-aluminium-usinees-sur-mesure.jpeg": {
+      "category": "fabrication",
+      "order": 60,
+      "objectPosition": "center",
+      "title": "Pièces mécaniques sur mesure",
+      "alt": "Pièces mécaniques sur mesure conçues et usinées en aluminium"
+    },
+    "impression-3d-grand-format-elements.jpeg": {
+      "category": "fabrication",
+      "order": 70,
+      "objectPosition": "center",
+      "title": "Impression 3D grand format",
+      "alt": "Impression 3D grand format en plusieurs éléments assemblés"
+    },
+    "elements-decoratifs-resine-plv.jpeg": {
+      "category": "fabrication",
+      "order": 80,
+      "objectPosition": "center",
+      "title": "Éléments décoratifs pour PLV",
+      "alt": "Éléments décoratifs sur mesure imprimés en résine pour une PLV"
+    },
+    "presentoirs-sur-mesure-impression-3d-serie.jpeg": {
+      "category": "fabrication",
+      "order": 130,
+      "objectPosition": "center",
+      "title": "Présentoirs sur mesure en série",
+      "alt": "Production en série de présentoirs sur mesure par impression 3D"
+    },
+    "etude-volumes-flacons-trois-formats.jpeg": {
+      "category": "fabrication",
+      "order": 100,
+      "objectPosition": "center",
+      "title": "Étude de volumes de flacons",
+      "alt": "Étude de volumes et prototypes de flacons en trois formats"
+    },
+    "production-serie-impression-3d-noire.jpeg": {
+      "category": "fabrication",
+      "order": 150,
+      "objectPosition": "center",
+      "title": "Production en série par impression 3D",
+      "alt": "Production en série de pièces imprimées en 3D"
+    },
+    "impression-3d-metal-pieces-techniques.jpeg": {
+      "category": "atelier",
+      "order": 45,
+      "objectPosition": "center",
+      "title": "Impression 3D métal de pièces techniques",
+      "alt": "Pièces techniques réalisées en impression 3D métal avant post-traitement"
+    },
+    "powerbanks-coty-serie.jpeg": {
+      "category": "atelier",
+      "order": 55,
+      "objectPosition": "center",
+      "title": "Fabrication en série de powerbanks pour Coty",
+      "alt": "Powerbanks personnalisés pour Coty, fabriqués en série"
+    },
+    "prototype-mecanique-motorise-essais.jpeg": {
+      "category": "atelier",
+      "order": 65,
+      "objectPosition": "center",
+      "title": "Prototype mécanique motorisé",
+      "alt": "Prototype mécanique motorisé en phase d’intégration, de réglages et d’essais"
+    },
+    "figurines-fdm-multicolores.jpeg": {
+      "category": "atelier",
+      "order": 200,
+      "objectPosition": "center",
+      "title": "Prototypage de figurines multicolores",
+      "alt": "Figurines en cours de prototypage par impression 3D FDM multicolore"
     }
   }
 }

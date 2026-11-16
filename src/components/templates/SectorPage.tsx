@@ -14,6 +14,15 @@ export interface SectorData {
   description: string
   keywords?: string[]
   heroImage?: string
+  heroImageAlt?: string
+  useCasesTitle?: string
+  useCasesSubtitle?: string
+  projects?: { image: string; alt: string; title: string }[]
+  why?: {
+    title: string
+    paragraphs: string[]
+    points: { title: string; description: string }[]
+  }
   editorial?: {
     eyebrow?: string
     title: string
@@ -31,6 +40,7 @@ export interface SectorData {
     icon?: string
   }[]
   benefits: string[]
+  showBenefits?: boolean
   services?: {
     name: string
     href: string
@@ -91,19 +101,7 @@ interface SectorPageProps {
 }
 
 export default function SectorPage({ sector }: SectorPageProps) {
-  const showHeroVisual = sector.slug === 'architecture' || sector.slug === 'medical'
-  const faqSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'FAQPage',
-    mainEntity: sector.faqs.map((faq) => ({
-      '@type': 'Question',
-      name: faq.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: faq.answer,
-      },
-    })),
-  }
+  const showHeroVisual = sector.slug === 'architecture' || sector.slug === 'medical' || sector.slug === 'luxe'
 
   return (
     <>
@@ -113,16 +111,12 @@ export default function SectorPage({ sector }: SectorPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSectorSchema(sector)) }}
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
 
       {/* Hero Section */}
       <section className="relative bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900 overflow-hidden">
         <div className="container-custom relative">
           <div className={`w-full min-w-0 py-12 lg:py-16 ${showHeroVisual && sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
-            <div className="w-full min-w-0 max-w-3xl">
+            <div className={`w-full min-w-0 max-w-3xl ${sector.slug === 'luxe' ? 'lg:order-2' : ''}`}>
               {/* Headline */}
               <h1
                 className="mb-6 max-w-full text-3xl font-bold leading-tight text-white sm:text-4xl md:text-5xl"
@@ -149,7 +143,11 @@ export default function SectorPage({ sector }: SectorPageProps) {
 
             </div>
 
-            {showHeroVisual && sector.heroImage && <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />}
+            {showHeroVisual && sector.heroImage && (
+              sector.slug === 'luxe'
+                ? <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-2xl lg:order-1"><Image src={sector.heroImage} alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`} fill priority sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover object-[center_45%]" /></div>
+                : <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />
+            )}
           </div>
         </div>
 
@@ -157,14 +155,17 @@ export default function SectorPage({ sector }: SectorPageProps) {
         <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>
       </section>
 
+      {sector.projects && (
+        <section className="bg-white py-20 lg:py-24"><div className="container-custom"><h2 className="mb-10 text-3xl font-bold tracking-[-0.04em] text-secondary-900 md:text-4xl">Réalisations pour les maisons de luxe</h2><div className="grid gap-6 md:grid-cols-3">{sector.projects.map((project) => <figure key={project.title}><div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100"><Image src={project.image} alt={project.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" /></div><figcaption className="mt-3 text-sm font-medium text-secondary-800">{project.title}</figcaption></figure>)}</div></div></section>
+      )}
+
       {/* Use Cases Section */}
-      <section className="py-24 bg-white">
+      <section className={`py-24 ${sector.projects ? 'bg-secondary-50' : 'bg-white'}`}>
         <div className="container-custom">
           <div className="text-center mb-16">
-            <h2 className="section-title">Applications pour le secteur {sector.name}</h2>
+            <h2 className="section-title">{sector.useCasesTitle || `Applications pour le secteur ${sector.name}`}</h2>
             <p className="section-subtitle mx-auto">
-              Découvrez comment nous accompagnons les professionnels du {sector.name.toLowerCase()}
-              avec des solutions sur mesure.
+              {sector.useCasesSubtitle || `Découvrez comment nous accompagnons les professionnels du ${sector.name.toLowerCase()} avec des solutions sur mesure.`}
             </p>
           </div>
 
@@ -187,6 +188,10 @@ export default function SectorPage({ sector }: SectorPageProps) {
           </div>
         </div>
       </section>
+
+      {sector.why && (
+        <section className="bg-secondary-50 py-20 lg:py-24"><div className="container-custom"><div className="max-w-4xl"><h2 className="text-3xl font-bold tracking-[-0.04em] text-secondary-900 md:text-4xl">{sector.why.title}</h2><div className="mt-7 max-w-3xl space-y-5 text-lg leading-relaxed text-secondary-600">{sector.why.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div></div><div className="mt-12 grid gap-x-10 gap-y-8 md:grid-cols-3">{sector.why.points.map((point) => <div key={point.title} className="border-t-2 border-primary-500 pt-5"><h3 className="text-base font-semibold text-secondary-900">{point.title}</h3><p className="mt-2 text-sm leading-relaxed text-secondary-600">{point.description}</p></div>)}</div></div></section>
+      )}
 
       {/* Sector perspective */}
       {sector.editorial && (
@@ -223,7 +228,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
       )}
 
       {/* Benefits Section */}
-      <section className="py-24 bg-white">
+      {sector.showBenefits !== false && <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
             <h2 className="section-title mb-6">
@@ -243,37 +248,7 @@ export default function SectorPage({ sector }: SectorPageProps) {
             </ul>
           </div>
         </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-24 bg-white">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="section-title">Questions fréquentes - {sector.name}</h2>
-              <p className="section-subtitle mx-auto">
-                Les réponses aux questions les plus courantes sur nos services pour le secteur {sector.name.toLowerCase()}.
-              </p>
-            </div>
-
-            <div className="space-y-4">
-              {sector.faqs.map((faq, index) => (
-                <details key={index} className="group border border-secondary-200 rounded-xl overflow-hidden">
-                  <summary className="px-6 py-5 cursor-pointer flex items-center justify-between gap-4 hover:bg-secondary-50 transition-colors list-none">
-                    <span className="font-semibold text-secondary-900">{faq.question}</span>
-                    <svg className="w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-5">
-                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
+      </section>}
 
       {/* CTA Section */}
       <section className="py-24 bg-primary-600">

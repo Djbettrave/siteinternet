@@ -646,10 +646,10 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'right', label: 'Visuel grand format 01', alt: 'Photo à ajouter d’un décor, d’une maquette ou d’une installation de grand format' },
       {
-        afterSection: 1,
-        position: 'left',
+        afterSection: 0,
+        position: 'right',
+        visualSize: 'compact',
         label: 'Sculpture BOSS grand format',
         alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
         image: {
@@ -659,13 +659,18 @@ export const servicesData: Record<string, ServiceData> = {
           fit: 'cover',
         },
       },
-    ],
-    specs: [
-      { label: 'Volume max monobloc', value: '850 mm de hauteur' },
-      { label: 'Taille max avec assemblage', value: 'Sans limite' },
-      { label: 'Épaisseur de couche', value: '0.2 - 0.8 mm' },
-      { label: 'Buse', value: '0.8 - 1.2 mm' },
-      { label: 'Délai standard', value: '5-10 jours' },
+      {
+        afterSection: 1,
+        position: 'left',
+        label: 'Impression 3D grand format en plusieurs éléments',
+        alt: 'Éléments d’une impression 3D grand format avant assemblage',
+        image: {
+          src: '/images/projects/process/impression-3d-grand-format-elements.jpeg',
+          alt: 'Éléments d’une impression 3D grand format avant assemblage',
+          aspect: 'portrait',
+          fit: 'contain',
+        },
+      },
     ],
     faqs: [
       {

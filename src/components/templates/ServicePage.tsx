@@ -122,6 +122,10 @@ export default function ServicePage({ service }: ServicePageProps) {
   const servicePath = service.slug.startsWith('impression-3d-')
     ? `/services/impression-3d/${service.slug.replace('impression-3d-', '')}`
     : `/services/${service.slug}`
+  const showFaqs = [
+    'impression-3d-fdm',
+    'impression-3d-resine',
+  ].includes(service.slug) && service.faqs.length > 0
   const faqSchema = {
     '@context': 'https://schema.org',
     '@type': 'FAQPage',
@@ -139,10 +143,12 @@ export default function ServicePage({ service }: ServicePageProps) {
   return (
     <>
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Services', path: '/services' }, { name: service.name, path: servicePath }]} />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
-      />
+      {showFaqs && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+        />
+      )}
 
       {/* Hero */}
       {usesPrint3DGallery ? (
@@ -404,31 +410,33 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* FAQ */}
-      <section className="py-24 bg-secondary-50">
-        <div className="container-custom">
-          <div className="max-w-3xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="section-title">Questions fréquentes</h2>
-            </div>
+      {showFaqs && (
+        <section className="py-24 bg-secondary-50">
+          <div className="container-custom">
+            <div className="max-w-3xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="section-title">Questions fréquentes</h2>
+              </div>
 
-            <div className="space-y-4">
-              {service.faqs.map((faq, index) => (
-                <details key={index} className="group bg-white border border-secondary-200 rounded-xl overflow-hidden">
-                  <summary className="px-6 py-5 cursor-pointer flex items-center justify-between gap-4 hover:bg-secondary-50 transition-colors list-none">
-                    <span className="font-semibold text-secondary-900">{faq.question}</span>
-                    <svg className="w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </summary>
-                  <div className="px-6 pb-5">
-                    <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
-                  </div>
-                </details>
-              ))}
+              <div className="space-y-4">
+                {service.faqs.map((faq, index) => (
+                  <details key={index} className="group bg-white border border-secondary-200 rounded-xl overflow-hidden">
+                    <summary className="px-6 py-5 cursor-pointer flex items-center justify-between gap-4 hover:bg-secondary-50 transition-colors list-none">
+                      <span className="font-semibold text-secondary-900">{faq.question}</span>
+                      <svg className="w-5 h-5 text-secondary-500 flex-shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                      </svg>
+                    </summary>
+                    <div className="px-6 pb-5">
+                      <p className="text-secondary-600 leading-relaxed">{faq.answer}</p>
+                    </div>
+                  </details>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* CTA */}
       {service.cta && (
