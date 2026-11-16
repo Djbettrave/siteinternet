@@ -144,7 +144,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
-  const usesPrint3DGallery = ['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'modelisation-3d', 'prototypage'].includes(service.slug)
+  const usesPrint3DGallery = ['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-en-serie', 'impression-3d-metal', 'electronique', 'impression-uv', 'modelisation-3d', 'prototypage'].includes(service.slug)
   const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal', 'impression-3d-grand-format'].includes(service.slug)
   const showSpecs = !['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
   const showProcess = service.slug === 'impression-uv'
@@ -161,8 +161,8 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* Hero */}
       {usesPrint3DGallery ? (
-        <section className="overflow-hidden bg-[#f8fafc]">
-          <div className="container-custom py-10 md:py-14 lg:py-16">
+        <section className="flex min-h-[calc(100svh-80px)] items-center overflow-hidden bg-[#f8fafc]">
+          <div className="container-custom w-full py-8 md:py-10 lg:py-12">
             <div className="grid items-center gap-8 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
               <div className={service.heroLayout === 'image-left' ? 'lg:order-2' : ''}>
                 <h1 className="text-4xl font-bold leading-[.98] tracking-[-0.055em] text-secondary-950 sm:text-5xl lg:text-[3.4rem]">
