@@ -21,13 +21,6 @@ export const servicesData: Record<string, ServiceData> = {
     headline: 'Impression UV\nobjets & pièces sur mesure',
     subheadline: 'Logos, textes et visuels imprimés directement sur vos objets, pièces imprimées en 3D et supports compatibles.',
     description: 'Une finition visuelle pour personnaliser un objet, une pièce technique, un support de présentation ou une série destinée au retail, à la PLV et à l’événementiel.',
-    galleryImages: [
-      {
-        src: '/images/projects/completed/impression-3d-seeding-back-to-school-coeurs-mini-telephones.webp',
-        alt: 'Mini-téléphones et cœurs personnalisés pour une opération de seeding',
-        fit: 'cover',
-      },
-    ],
     features: [
       {
         title: 'Logos, textes et visuels',
@@ -587,18 +580,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      {
-        afterSection: 1,
-        position: 'right',
-        visualSize: 'compact',
-        alt: 'Pièces détaillées en cours de fabrication par impression 3D résine',
-        image: {
-          src: '/images/projects/process/resine-impression-1.jpeg',
-          alt: 'Pièces détaillées en cours de fabrication par impression 3D résine',
-          aspect: 'standard',
-          fit: 'cover',
-        },
-      },
+      { afterSection: 1, position: 'right', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
     ],
     specs: [
       { label: 'Volume max', value: '190 x 120 x 200 mm' },
@@ -1167,18 +1149,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      {
-        afterSection: 1,
-        position: 'right',
-        visualSize: 'compact',
-        alt: 'Prototype mécanique motorisé en phase d’intégration',
-        image: {
-          src: '/images/projects/process/prototype-mecanique-motorise-essais.jpeg',
-          alt: 'Prototype mécanique motorisé en phase d’intégration, de réglages et d’essais',
-          aspect: 'standard',
-          fit: 'cover',
-        },
-      },
+      { afterSection: 1, position: 'right', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
     ],
     process: [
       { step: 1, title: 'Cahier des charges', description: 'Définition des fonctionnalités, contraintes d\'encombrement, alimentation...' },
