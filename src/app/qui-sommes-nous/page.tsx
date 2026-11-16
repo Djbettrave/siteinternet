@@ -147,7 +147,7 @@ export default function QuiSommesNousPage() {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">De l’idée à la pièce finie</h2>
-            <p className="section-subtitle mx-auto">
+            <p className="section-subtitle mx-auto lg:max-w-none lg:whitespace-nowrap">
               Une même équipe réunit les savoir-faire nécessaires pour concevoir, fabriquer et finaliser votre projet.
             </p>
           </div>
@@ -159,7 +159,7 @@ export default function QuiSommesNousPage() {
                 <ul className="space-y-3">
                   {cap.items.map((item) => (
                     <li key={item} className="flex items-center gap-3 text-secondary-600">
-                      <span className="flex-shrink-0 text-primary-600">✓</span>
+                      <span className="h-px w-3 flex-shrink-0 bg-primary-600" aria-hidden="true" />
                       {item}
                     </li>
                   ))}
