@@ -3,7 +3,6 @@ import Hero from '@/components/home/Hero'
 import Services from '@/components/home/Services'
 import Viewer3D from '@/components/home/Viewer3D'
 import Trust from '@/components/home/Trust'
-import FAQ from '@/components/home/FAQ'
 import WebsiteSchema from '@/components/seo/WebsiteSchema'
 
 export const metadata: Metadata = {
@@ -22,7 +21,6 @@ export default function Home() {
       <Services />
       <Viewer3D />
       <Trust />
-      <FAQ />
     </>
   )
 }
