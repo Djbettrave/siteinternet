@@ -673,6 +673,7 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
+        title: 'Pièces décoratives et installations sur mesure',
         paragraphs: [
           'Lorsque le volume le permet, la pièce peut être imprimée d’un seul tenant. Lorsque les dimensions dépassent le volume machine, la fabrication est pensée en plusieurs éléments dès la conception afin de conserver la solidité, la précision et le rendu attendu.',
           'Préparation de surface, ponçage, apprêt, peinture et intégration sont définis selon la destination finale de l’objet. La fabrication ne s’arrête pas à l’impression : elle prépare une pièce prête à être installée, présentée ou utilisée.',
