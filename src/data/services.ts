@@ -326,12 +326,13 @@ export const servicesData: Record<string, ServiceData> = {
     inlineVisuals: [
       {
         afterSection: 0,
-        position: 'right',
-        visualSize: 'compact',
-        alt: 'Éléments à préciser pour une étude de fabrication métal',
-        note: {
-          title: 'Éléments à préciser pour l’étude',
-          items: ['Fonction et environnement de la pièce', 'Efforts mécaniques et zones critiques', 'Tolérances ou interfaces à respecter', 'Quantité, finition et délai visés'],
+        position: 'left',
+        alt: 'Grande pièce en fabrication avec structures de support',
+        image: {
+          src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
+          alt: 'Grande pièce en fabrication avec structures de support et intervention en atelier',
+          aspect: 'standard',
+          fit: 'cover',
         },
       },
       {
@@ -637,9 +638,17 @@ export const servicesData: Record<string, ServiceData> = {
     slug: 'impression-3d-grand-format',
     name: 'Impression Grand Format',
     category: 'Impression 3D',
+    heroLayout: 'image-left',
     headline: 'Impression 3D Grand Format -\nPièces jusqu\'à 85 cm\nen un seul bloc',
     subheadline: 'Imprimez des pièces de grande taille d\'un seul tenant, sans limite de taille par assemblage. Idéal pour l\'événementiel, les maquettes architecturales et les installations artistiques.',
     description: 'Notre imprimante grand format permet de créer des pièces jusqu\'à 85 cm de haut en un seul bloc. Pour les pièces plus grandes, nous assemblons plusieurs éléments avec des finitions invisibles - sans limite de taille.',
+    galleryImages: [
+      {
+        src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
+        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
+        fit: 'contain',
+      },
+    ],
     features: [
       {
         title: 'Dimensions XXL',
@@ -815,14 +824,14 @@ export const servicesData: Record<string, ServiceData> = {
           src: '/images/projects/completed/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'standard',
-          fit: 'contain',
+          fit: 'cover',
           priority: true,
         },
       },
       {
         afterSection: 1,
         position: 'left',
-        layout: 'stacked',
+        visualSize: 'compact',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-serpent-miniature-resine.jpeg',
@@ -920,6 +929,20 @@ export const servicesData: Record<string, ServiceData> = {
         paragraphs: [
           'Un croquis, une photo, un plan ou une idée ne suffisent pas toujours à lancer une fabrication. La modélisation 3D transforme cette intention en une pièce définie dans ses formes, ses dimensions, ses assemblages et son usage réel.',
           'Le fichier est ensuite pensé selon le procédé de fabrication final : impression 3D, usinage, moulage ou assemblage. Cette préparation évite de découvrir trop tard une contrainte de fabrication et permet de valider la pièce avant sa production.',
+        ],
+      },
+      {
+        title: 'À partir d’un objet, d’un croquis ou d’une intention',
+        paragraphs: [
+          'Le point de départ peut être très différent selon les projets : un objet existant à adapter, des photos de référence, une esquisse, un plan coté ou simplement une intention de forme. Nous clarifions les dimensions, les parties visibles, les contraintes d’assemblage et les éléments qui doivent rester modifiables.',
+          'La modélisation ne consiste pas seulement à reproduire une silhouette. Elle organise les volumes, les épaisseurs, les raccords et les détails de façon à ce que le projet puisse ensuite être fabriqué et contrôlé.',
+        ],
+      },
+      {
+        title: 'Un fichier préparé pour la suite du projet',
+        paragraphs: [
+          'Une fois le modèle défini, il peut servir à produire une pièce unique, un prototype, une série, une maquette de présentation ou un élément de décor. Les fichiers sont préparés selon la technologie retenue et les besoins du projet : découpe, impression 3D, usinage, moulage ou intégration dans un assemblage.',
+          'Des validations intermédiaires permettent d’ajuster la forme et les proportions avant fabrication. Lorsque cela est utile, un rendu ou un prototype peut compléter cette étape pour valider le projet sur un objet réel.',
         ],
       },
     ],
