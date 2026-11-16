@@ -328,13 +328,14 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
+        visualSize: 'compact',
         label: 'Fabrication additive métal avec supports',
         alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
         image: {
           src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
           alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
           aspect: 'standard',
-          fit: 'cover',
+          fit: 'contain',
         },
       },
       {
@@ -792,25 +793,26 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
+        visualSize: 'compact',
         alt: 'Scan 3D d’une sculpture et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'standard',
-          fit: 'cover',
+          fit: 'contain',
           priority: true,
         },
       },
       {
         afterSection: 1,
         position: 'left',
-        layout: 'stacked',
+        visualSize: 'compact',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
           alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'landscape',
-          fit: 'cover',
+          fit: 'contain',
           tone: 'soft',
         },
       },

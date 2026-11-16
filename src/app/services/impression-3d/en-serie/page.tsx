@@ -67,7 +67,6 @@ export default function Impression3DEnSeriePage() {
 
       <section className="bg-white py-20 md:py-24"><div className="container-custom"><div className="mx-auto max-w-3xl"><h2 className="text-center text-3xl font-bold tracking-[-0.04em] text-secondary-950 md:text-4xl">Questions fréquentes</h2><div className="mt-10 space-y-3">{service.faqs.map((faq) => <details key={faq.question} className="group border border-secondary-200 bg-white"><summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 font-semibold text-secondary-900"><span>{faq.question}</span><span className="text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p className="px-6 pb-6 leading-relaxed text-secondary-600">{faq.answer}</p></details>)}</div></div></div></section>
 
-      {service.cta && <section className="bg-primary-700 py-20 text-white md:py-24"><div className="container-custom mx-auto max-w-3xl text-center"><p className="mb-5 text-xs font-semibold tracking-[0.16em] text-primary-100">VOTRE PROJET</p><h2 className="text-3xl font-bold tracking-[-0.04em] md:text-4xl">{service.cta.title}</h2><p className="mx-auto mt-5 max-w-2xl text-lg leading-relaxed text-primary-100">{service.cta.description}</p><Link href="/contact" className="mt-8 inline-flex items-center gap-4 bg-white px-6 py-3.5 font-semibold text-primary-800 transition hover:bg-primary-50">Nous contacter <span aria-hidden="true">↗</span></Link></div></section>}
     </>
   )
 }
