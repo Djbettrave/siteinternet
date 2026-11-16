@@ -100,8 +100,8 @@ export const sectorsData: Record<string, SectorData> = {
     subheadline: 'Décors, présentoirs et installations sur mesure pour vitrines, lancements et points de vente.',
     description: 'Inphenix System conçoit et fabrique des décors, présentoirs, objets et dispositifs sur mesure pour les maisons de luxe, du prototype à la petite série.',
     projects: [
-      { image: '/images/projects/completed/electronique.jpeg', alt: 'Signalétique décorative J’Adore en métal poli pour espace de marque', title: 'Signalétique décorative J’Adore' },
-      { image: '/images/projects/completed/sapin-noel-chanel-installation-evenementielle.jpeg', alt: 'Sapin de Noël Chanel réalisé pour une installation événementielle de marque', title: 'Installation Chanel' },
+      { image: '/images/projects/completed/electronique.jpeg', alt: 'Signalétique décorative J’Adore en métal poli pour espace de marque', title: 'Intégration lumineuse et électronique pour J’Adore' },
+      { image: '/images/projects/completed/sapin-noel-chanel-installation-evenementielle.jpeg', alt: 'Sapin de Noël Chanel réalisé pour une installation événementielle de marque', title: 'Intégration lumineuse et électronique pour Chanel' },
       { image: '/images/secteurs/luxe/sac-scane-transforme-en-faux-gateau.jpeg', alt: 'Sac de luxe scanné, modifié en 3D puis transformé en faux gâteau anniversaire', title: 'Scan 3D et transformation d’un sac en faux gâteau' },
     ],
     useCasesTitle: 'Ce que nous fabriquons',
