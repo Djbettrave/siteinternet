@@ -21,6 +21,13 @@ export const servicesData: Record<string, ServiceData> = {
     headline: 'Impression UV\nobjets & pièces sur mesure',
     subheadline: 'Logos, textes et visuels imprimés directement sur vos objets, pièces imprimées en 3D et supports compatibles.',
     description: 'Une finition visuelle pour personnaliser un objet, une pièce technique, un support de présentation ou une série destinée au retail, à la PLV et à l’événementiel.',
+    galleryImages: [
+      {
+        src: '/images/projects/completed/impression-3d-seeding-back-to-school-coeurs-mini-telephones.webp',
+        alt: 'Mini-téléphones et cœurs personnalisés pour une opération de seeding',
+        fit: 'cover',
+      },
+    ],
     features: [
       {
         title: 'Logos, textes et visuels',
@@ -210,8 +217,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         title: 'Des finitions selon le projet',
         paragraphs: [
-          'Selon le besoin, les pièces peuvent être livrées brutes ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, assemblage ou impression UV. Ces opérations sont définies avec vous lorsque le rendu final ou l’intégration à une installation le nécessite.',
-          'Nous réalisons notamment des séries pour la PLV, le retail, l’événementiel, l’architecture, les objets promotionnels, les supports techniques, les maquettes et les pièces de remplacement.',
+          'Selon le besoin, les pièces peuvent être livrées brutes ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, assemblage ou impression UV. Ces opérations sont définies avec vous lorsque le rendu final ou l’intégration à une installation le nécessite. Nous réalisons notamment des séries pour la PLV, le retail, l’événementiel, l’architecture, les objets promotionnels, les supports techniques, les maquettes et les pièces de remplacement.',
         ],
       },
     ],
@@ -329,20 +335,15 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 0,
         position: 'right',
         visualSize: 'compact',
-        label: 'Fabrication additive métal avec supports',
-        alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
-        image: {
-          src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
-          alt: 'Grande pièce métallique en fabrication avec structures de support et intervention en atelier',
-          aspect: 'standard',
-          fit: 'contain',
+        alt: 'Éléments à préciser pour une étude de fabrication métal',
+        note: {
+          title: 'Éléments à préciser pour l’étude',
+          items: ['Fonction et environnement de la pièce', 'Efforts mécaniques et zones critiques', 'Tolérances ou interfaces à respecter', 'Quantité, finition et délai visés'],
         },
       },
       {
         afterSection: 1,
         position: 'right',
-        layout: 'stacked',
-        label: 'Pièces métal sur plateau de fabrication',
         alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
         image: {
           src: '/images/projects/process/impression-3d-metal-pieces-techniques.jpeg',
@@ -570,9 +571,34 @@ export const servicesData: Record<string, ServiceData> = {
           'Elle convient aux prototypes esthétiques, aux objets de présentation, aux figurines, aux bijoux, aux petites pièces détaillées et aux modèles destinés à la création d’un moule. Ici, la précision et le rendu visuel priment sur la production de grandes dimensions.',
         ],
       },
+      {
+        title: 'De la préparation au rendu final',
+        paragraphs: [
+          'Le fichier est analysé avant production afin d’orienter la pièce, de positionner les supports et de préserver les zones visibles ou fonctionnelles. Après impression, les supports sont retirés, la pièce est lavée puis polymérisée. Cette préparation conditionne directement la netteté des détails et la qualité de surface.',
+          'Selon l’usage, une pièce peut être livrée dans son état de résine après post-traitement ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, métallisation, vernis ou assemblage. Le niveau de finition est défini par le rendu recherché, pas par une solution standardisée.',
+        ],
+      },
+      {
+        title: 'Choisir la résine selon l’usage',
+        paragraphs: [
+          'Les résines ne répondent pas toutes au même besoin. Une résine standard convient à un prototype visuel ou à une maquette détaillée ; une résine flexible, calcinable, transparente ou résistante à la température répond à des contraintes plus spécifiques. La matière est retenue en fonction de la forme, de la manipulation prévue et de la finition.',
+          'Pour une pièce destinée à être très sollicitée ou de grande dimension, une autre technologie peut être plus cohérente. Nous orientons alors le projet vers le procédé et le matériau adaptés, en tenant compte du résultat visuel attendu et des contraintes de fabrication.',
+        ],
+      },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'left', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
+      {
+        afterSection: 1,
+        position: 'right',
+        visualSize: 'compact',
+        alt: 'Pièces détaillées en cours de fabrication par impression 3D résine',
+        image: {
+          src: '/images/projects/process/resine-impression-1.jpeg',
+          alt: 'Pièces détaillées en cours de fabrication par impression 3D résine',
+          aspect: 'standard',
+          fit: 'cover',
+        },
+      },
     ],
     specs: [
       { label: 'Volume max', value: '190 x 120 x 200 mm' },
@@ -677,6 +703,13 @@ export const servicesData: Record<string, ServiceData> = {
         paragraphs: [
           'Lorsque le volume le permet, la pièce peut être imprimée d’un seul tenant. Lorsque les dimensions dépassent le volume machine, la fabrication est pensée en plusieurs éléments dès la conception afin de conserver la solidité, la précision et le rendu attendu.',
           'Préparation de surface, ponçage, apprêt, peinture et intégration sont définis selon la destination finale de l’objet. La fabrication ne s’arrête pas à l’impression : elle prépare une pièce prête à être installée, présentée ou utilisée.',
+        ],
+      },
+      {
+        title: 'Une fabrication adaptée au lieu et à l’installation',
+        paragraphs: [
+          'Un projet grand format se prépare aussi en fonction de son environnement : accès au lieu, transport, montage, stabilité, fixation, contraintes de poids et conditions d’exposition. Ces paramètres sont intégrés dès l’étude pour que la pièce soit compatible avec son installation réelle.',
+          'Nous pouvons intervenir sur la conception du volume, sa fabrication, les éléments d’assemblage, la finition et la préparation à la pose. Pour une installation plus grande que le volume d’impression, les découpes et raccords sont placés de manière à rester cohérents avec la forme et le rendu final.',
         ],
       },
     ],
@@ -797,7 +830,7 @@ export const servicesData: Record<string, ServiceData> = {
         visualSize: 'compact',
         alt: 'Scan 3D d’une sculpture et reproduction miniature en résine',
         image: {
-          src: '/images/services/scan-3d/scan-3d-sculpture-lion-reproduction-resine.jpeg',
+          src: '/images/projects/completed/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'standard',
           fit: 'contain',
@@ -810,10 +843,11 @@ export const servicesData: Record<string, ServiceData> = {
         layout: 'stacked',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
-          src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
+          src: '/images/projects/completed/scan-3d-sculpture-serpent-miniature-resine.jpeg',
           alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
-          aspect: 'landscape',
-          fit: 'contain',
+          aspect: 'panoramic',
+          fit: 'cover',
+          objectPosition: 'center 54%',
           tone: 'soft',
         },
       },
@@ -1117,9 +1151,34 @@ export const servicesData: Record<string, ServiceData> = {
           'Cette approche permet d’intégrer l’électronique directement dans une pièce, un boîtier ou une installation, afin d’obtenir un objet cohérent, fonctionnel et fabriquable.',
         ],
       },
+      {
+        title: 'Électronique, lumière et interaction',
+        paragraphs: [
+          'Nous développons des systèmes qui donnent un comportement à un objet ou à une installation : éclairage LED, déclenchement par bouton ou capteur, séquences lumineuses, mouvements mécaniques, alimentation embarquée et commandes simples. Le système est défini à partir de l’expérience attendue et des contraintes de l’objet.',
+          'Cette intervention peut concerner un prototype, une maquette fonctionnelle, une PLV, une vitrine, un mobilier ou une installation de marque. L’objectif est de rendre la solution lisible, maintenable et compatible avec les conditions d’usage prévues.',
+        ],
+      },
+      {
+        title: 'Du mécanisme au boîtier final',
+        paragraphs: [
+          'Une motorisation nécessite de coordonner le moteur, la transmission, les éléments de guidage, les pièces imprimées ou usinées et la commande électronique. Nous réalisons les essais nécessaires pour vérifier les mouvements, les accès de maintenance et l’intégration des composants dans le volume disponible.',
+          'Le boîtier ou la structure peut être conçu en même temps que l’électronique. Cela évite les adaptations tardives et permet de prévoir les fixations, passages de câbles, zones de ventilation, connecteurs et finitions dès les premières versions.',
+        ],
+      },
     ],
     inlineVisuals: [
-      { afterSection: 0, position: 'right', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
+      {
+        afterSection: 1,
+        position: 'right',
+        visualSize: 'compact',
+        alt: 'Prototype mécanique motorisé en phase d’intégration',
+        image: {
+          src: '/images/projects/process/prototype-mecanique-motorise-essais.jpeg',
+          alt: 'Prototype mécanique motorisé en phase d’intégration, de réglages et d’essais',
+          aspect: 'standard',
+          fit: 'cover',
+        },
+      },
     ],
     process: [
       { step: 1, title: 'Cahier des charges', description: 'Définition des fonctionnalités, contraintes d\'encombrement, alimentation...' },
