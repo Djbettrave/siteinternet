@@ -806,7 +806,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 1,
         position: 'left',
-        visualSize: 'compact',
+        layout: 'stacked',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         image: {
           src: '/images/services/scan-3d/scan-3d-sculpture-serpent-miniature-resine.jpeg',
