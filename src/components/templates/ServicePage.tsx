@@ -144,7 +144,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       },
     })),
   }
-  const usesPrint3DGallery = Boolean(service.galleryImages?.length)
+  const usesPrint3DGallery = ['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-grand-format', 'impression-3d-metal', 'electronique', 'impression-uv', 'modelisation-3d', 'prototypage'].includes(service.slug)
   const showFeatures = !['scan-3d', 'modelisation-3d', 'impression-uv', 'electronique', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal', 'impression-3d-grand-format'].includes(service.slug)
   const showSpecs = !['scan-3d', 'impression-3d-fdm', 'impression-3d-resine', 'impression-3d-metal'].includes(service.slug)
   const showProcess = service.slug === 'impression-uv'
