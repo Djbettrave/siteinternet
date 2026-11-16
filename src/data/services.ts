@@ -710,10 +710,10 @@ export const servicesData: Record<string, ServiceData> = {
         position: 'right',
         visualSize: 'compact',
         label: 'Sculpture BOSS grand format',
-        alt: 'Cheval Guerlain grand format imprimé en 3D et fini pour une installation de marque',
+        alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
         image: {
-          src: '/images/projects/completed/cheval-guerlain-impression-3d-grand-format.webp',
-          alt: 'Cheval Guerlain grand format imprimé en 3D et fini pour une installation de marque',
+          src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
+          alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
           aspect: 'standard',
           fit: 'contain',
           priority: true,
