@@ -149,7 +149,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
 
       {/* Projects Grid */}
       <section ref={projectsSectionRef} id="projects-section" className="bg-white pb-16 pt-5 md:pb-20">
-        <div className="container-custom px-2">
+        <div className="container-custom px-4">
           {filteredProjects.length === 0 ? (
             <div className="text-center py-12">
               <p className="text-secondary-600">
@@ -158,7 +158,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
             </div>
           ) : (
             <>
-              <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
+              <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
                 {filteredProjects.map((project, index) => (
                   <article key={project.id} className="group relative overflow-hidden bg-secondary-100">
                     <div

@@ -583,7 +583,20 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      { afterSection: 1, position: 'right', label: 'Visuel résine 01', alt: 'Photo à ajouter d’une pièce en résine aux détails fins' },
+      {
+        afterSection: 1,
+        position: 'left',
+        label: 'Prototypes de flacons Cartier en résine',
+        alt: 'Deux prototypes de flacons Cartier imprimés en résine, avec reliefs et motifs détaillés',
+        image: {
+          src: '/images/projects/completed/prototypes-flacons-cartier-resine.jpeg',
+          alt: 'Deux prototypes de flacons Cartier imprimés en résine, avec reliefs et motifs détaillés',
+          aspect: 'portrait',
+          fit: 'cover',
+          objectPosition: 'center 52%',
+          priority: true,
+        },
+      },
     ],
     specs: [
       { label: 'Volume max', value: '190 x 120 x 200 mm' },
