@@ -71,43 +71,26 @@ export default function MedicalPage() {
   return (
     <main className="bg-white">
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: 'Santé et médical', path: '/secteurs/medical' }]} />
-      <section className="bg-secondary-900 text-white">
-        <div className="container-custom grid gap-10 py-14 lg:grid-cols-[1fr_0.9fr] lg:items-center lg:py-20">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-300">
-              Santé · dentaire · médical
-            </p>
-            <h1 className="mt-5 max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] md:text-5xl">
+      <section className="bg-[#f6f6f4]">
+        <div className="container-custom grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center lg:py-16">
+          <div className="max-w-3xl">
+            <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] text-secondary-950 md:text-5xl">
               Impression 3D pour la santé, le dentaire et les cabinets médicaux.
             </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary-300">
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary-600">
               Maquettes d’aménagement, supports de formation et prototypes de
               présentation pour rendre un projet médical plus lisible, concret
               et convaincant.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="#votre-projet"
-                className="rounded-lg bg-primary-500 px-5 py-3 text-sm font-semibold text-white hover:bg-primary-400"
-              >
-                Présenter mon besoin
-              </Link>
-              <Link
-                href="#etapes"
-                className="rounded-lg border border-white/25 px-5 py-3 text-sm font-semibold text-white hover:bg-white/10"
-              >
-                Notre méthode
-              </Link>
-            </div>
           </div>
-          <div className="relative aspect-[4/3] overflow-hidden rounded-xl border border-white/10 bg-secondary-800 shadow-2xl">
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]">
             <Image
               src="/images/secteurs/medical/Medical_2.jpg"
               alt="Modèle anatomique de cœur imprimé en 3D"
               fill
               priority
               quality={95}
-              sizes="(min-width: 1024px) 500px, 100vw"
+              sizes="(min-width: 1024px) 38vw, 100vw"
               className="object-cover"
             />
           </div>
