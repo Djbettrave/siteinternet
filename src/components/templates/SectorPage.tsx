@@ -101,8 +101,8 @@ interface SectorPageProps {
 }
 
 export default function SectorPage({ sector }: SectorPageProps) {
-  const showHeroVisual = sector.slug === 'architecture' || sector.slug === 'medical' || sector.slug === 'luxe'
   const isLuxe = sector.slug === 'luxe'
+  const imageOnLeft = ['luxe', 'architecture', 'robotique'].includes(sector.slug)
   const projectsSection = sector.projects && (
     <section className="bg-white py-20 lg:py-24">
       <div className="container-custom">
@@ -131,46 +131,39 @@ export default function SectorPage({ sector }: SectorPageProps) {
       />
 
       {/* Hero Section */}
-      <section className={`relative overflow-hidden ${isLuxe ? 'bg-[#f6f6f4]' : 'bg-gradient-to-br from-secondary-900 via-secondary-800 to-primary-900'}`}>
+      <section className="relative overflow-hidden bg-[#f6f6f4]">
         <div className="container-custom relative">
-          <div className={`w-full min-w-0 py-12 lg:py-16 ${showHeroVisual && sector.heroImage ? 'grid gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center' : ''}`}>
-            <div className={`w-full min-w-0 max-w-3xl ${sector.slug === 'luxe' ? 'lg:order-2' : ''}`}>
-              {/* Headline */}
-              <h1
-                className={`mb-6 max-w-full text-3xl font-bold leading-tight sm:text-4xl md:text-5xl ${isLuxe ? 'text-secondary-950' : 'text-white'}`}
-                style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
-              >
+          <div className="grid w-full min-w-0 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center lg:py-16">
+            <div className={`w-full min-w-0 max-w-3xl ${imageOnLeft ? 'lg:order-2' : ''}`}>
+              <h1 className="mb-6 max-w-full text-3xl font-bold leading-tight text-secondary-950 sm:text-4xl md:text-5xl" style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}>
                 {sector.headline.split('\n').map((line, index) => (
-                  <span key={index} className="block">
-                    {line}
-                  </span>
+                  <span key={index} className="block">{line}</span>
                 ))}
               </h1>
-
-              {/* Subheadline */}
-              <p
-                className={`mb-8 max-w-full text-lg sm:max-w-2xl sm:text-xl ${isLuxe ? 'text-secondary-600' : 'text-secondary-300'}`}
-                style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}
-              >
+              <p className="mb-8 max-w-full text-lg text-secondary-600 sm:max-w-2xl sm:text-xl" style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}>
                 {sector.subheadline.split('. ').map((sentence, index, array) => (
                   <span key={index} className="block">
                     {sentence}{index < array.length - 1 ? '.' : sentence.endsWith('.') ? '' : '.'}
                   </span>
                 ))}
               </p>
-
             </div>
-
-            {showHeroVisual && sector.heroImage && (
-              sector.slug === 'luxe'
-                ? <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)] lg:order-1"><Image src={sector.heroImage} alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`} fill priority sizes="(min-width: 1024px) 38vw, 100vw" className="object-cover object-[center_45%]" /></div>
-                : <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} dark className="aspect-[4/3] shadow-2xl" />
+            {sector.heroImage ? (
+              <div className={`relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)] ${imageOnLeft ? 'lg:order-1' : ''}`}>
+                <Image
+                  src={sector.heroImage}
+                  alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`}
+                  fill
+                  priority
+                  sizes="(min-width: 1024px) 38vw, 100vw"
+                  className={sector.slug === 'luxe' ? 'object-cover object-[center_45%]' : 'object-cover object-center'}
+                />
+              </div>
+            ) : (
+              <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} className="aspect-[4/5] w-full max-w-md shadow-lg" />
             )}
           </div>
         </div>
-
-        {/* Decorative */}
-        {!isLuxe && <div className="absolute top-1/2 right-0 transform translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-primary-500/20 rounded-full blur-3xl"></div>}
       </section>
 
       {!isLuxe && projectsSection}
