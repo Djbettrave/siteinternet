@@ -97,6 +97,7 @@
     "detail-panneau-decoratif-resine.jpeg": {
       "category": "fabrication",
       "order": 110,
+      "hidden": true,
       "objectPosition": "center 58%",
       "scale": 1.28,
       "title": "Détail d’un panneau décoratif en résine",
@@ -197,6 +198,14 @@
     }
   },
   "process": {
+    "detail-panneau-decoratif-resine.jpeg": {
+      "category": "fabrication",
+      "order": 110,
+      "objectPosition": "center 58%",
+      "scale": 1.28,
+      "title": "Détail d’un panneau décoratif en résine",
+      "alt": "Détail de relief ornemental imprimé en résine sur un panneau décoratif"
+    },
     "production-serie-mini-telephones-violets-noirs.jpeg": {
       "category": "fabrication",
       "order": 170,
