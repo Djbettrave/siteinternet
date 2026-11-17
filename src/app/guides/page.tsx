@@ -45,7 +45,7 @@ export default function GuidesPage() {
           })}
         </div>
         <div className="mt-7 pt-5">
-          <h2 className="text-base font-semibold text-secondary-900">Ce que vous trouverez dans ces guides :</h2>
+          <h2 className="text-base font-semibold text-secondary-900">Ce que vous trouverez dans ces guides :</h2>
           <p className="mt-2 text-sm leading-7 text-secondary-600">Des conseils pratiques sur l’impression 3D FDM et résine, la préparation des fichiers 3D, le maillage, les réglages de slicer et la résolution des défauts d’impression les plus courants.</p>
         </div>
       </section>
