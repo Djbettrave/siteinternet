@@ -161,7 +161,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* Hero */}
       {usesPrint3DGallery ? (
-        <section className="flex min-h-[calc(90svh-80px)] items-center overflow-hidden bg-[#f8fafc]">
+        <section className="flex min-h-[calc(86svh-80px)] items-center overflow-hidden bg-[#f8fafc]">
           <div className="container-custom w-full py-8 md:py-10 lg:py-12">
             <div className="grid items-center gap-8 lg:grid-cols-[.88fr_1.12fr] lg:gap-14">
               <div className={service.heroLayout === 'image-left' ? 'lg:order-2' : ''}>
