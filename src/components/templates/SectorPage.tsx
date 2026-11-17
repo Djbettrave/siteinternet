@@ -258,3 +258,56 @@ export default function SectorPage({ sector }: SectorPageProps) {
       {sector.showBenefits !== false && <section className="py-24 bg-white">
         <div className="container-custom">
           <div className="max-w-4xl mx-auto">
+            <h2 className="section-title mb-6">
+              Pourquoi choisir Inphenix pour vos projets {sector.name} ?
+            </h2>
+            <p className="text-lg text-secondary-600 mb-8">
+              Notre expertise combinée en impression 3D et électronique nous permet de répondre
+              aux exigences spécifiques du secteur {sector.name.toLowerCase()}.
+            </p>
+            <ul className="space-y-4">
+              {sector.benefits.map((benefit, index) => (
+                <li key={index} className="flex items-start gap-3 text-secondary-700">
+                  <span className="mt-0.5 flex-shrink-0 text-primary-600">✓</span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </section>}
+
+      {/* CTA Section */}
+      {false && !isLuxe && <section className="py-24 bg-primary-600">
+        <div className="container-custom">
+          <div className="text-center max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+              {sector.cta.title}
+            </h2>
+            <p className="text-xl text-primary-100 mb-8">
+              {sector.cta.description}
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/contact" className="bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors whitespace-nowrap">
+                Nous contacter
+              </Link>
+              <a
+                href="https://impression3d.inphenix-system.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-primary-700 text-white hover:bg-primary-800 px-8 py-4 rounded-lg font-semibold text-lg transition-colors flex items-center justify-center gap-2 whitespace-nowrap"
+              >
+                Devis instantané Impression 3D
+                <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>}
+
+      {isLuxe && projectsSection}
+    </>
+  )
+}
