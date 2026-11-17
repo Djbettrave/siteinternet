@@ -88,6 +88,7 @@
     "panneau-decoratif-resine-grand-format.jpeg": {
       "category": "realisations",
       "order": 37,
+      "hidden": true,
       "objectPosition": "center 75%",
       "scale": 1.42,
       "title": "Panneau décoratif en résine",
