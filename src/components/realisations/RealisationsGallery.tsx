@@ -178,6 +178,7 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                           className={`${project.fit === 'contain' ? 'object-contain' : 'object-cover'} transition-transform duration-500 group-hover:scale-105 ${project.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                           style={{ objectPosition: project.objectPosition || 'center' }}
                           sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, (max-width: 1536px) 33vw, 25vw"
+                          quality={92}
                         />
                       </div>
 
@@ -253,6 +254,8 @@ export default function RealisationsGallery({ initialProjects }: RealisationsGal
                 width={1920}
                 height={1080}
                 className="h-auto max-h-[80vh] w-auto max-w-full object-contain"
+                sizes="(max-width: 768px) 100vw, 90vw"
+                quality={96}
                 priority
               />
             </div>
