@@ -201,15 +201,11 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
-        title: 'Technologies et matériaux adaptés à chaque série',
+        title: 'Technologies, matériaux et finitions pour votre série',
+        layout: 'wide',
         paragraphs: [
           'Les technologies FDM et résine font partie des solutions envisageables pour une impression 3D en série. Le FDM convient notamment aux pièces fonctionnelles, aux supports, aux boîtiers et aux éléments de grand format. La résine est choisie lorsque la précision, les détails fins ou la qualité de surface sont déterminants.',
           'Le procédé et la matière sont sélectionnés selon les contraintes réelles de la pièce : résistance, usage intérieur ou extérieur, rendu visuel, dimensions, montage et finition. Les pages dédiées à l’impression 3D FDM et à l’impression 3D résine détaillent ces technologies.',
-        ],
-      },
-      {
-        title: 'Des finitions selon le projet',
-        paragraphs: [
           'Selon le besoin, les pièces peuvent être livrées brutes ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, assemblage ou impression UV. Ces opérations sont définies avec vous lorsque le rendu final ou l’intégration à une installation le nécessite. Nous réalisons notamment des séries pour la PLV, le retail, l’événementiel, l’architecture, les objets promotionnels, les supports techniques, les maquettes et les pièces de remplacement.',
         ],
       },
@@ -318,6 +314,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Du plateau de fabrication à la pièce préparée',
+        layout: 'wide',
         paragraphs: [
           'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires.',
         ],
@@ -339,6 +336,8 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 1,
         position: 'right',
         alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
+        layout: 'stacked',
+        visualSize: 'compact',
         image: {
           src: '/images/projects/process/impression-3d-metal-pieces-techniques.jpeg',
           alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
@@ -587,6 +586,7 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 1,
         position: 'left',
         label: 'Prototypes de flacons Cartier en résine',
+        visualSize: 'compact',
         alt: 'Deux prototypes de flacons Cartier imprimés en résine, avec reliefs et motifs détaillés',
         image: {
           src: '/images/projects/completed/prototypes-flacons-cartier-resine.jpeg',
@@ -824,6 +824,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Du scan à la reproduction',
+        layout: 'wide',
         paragraphs: [
           'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce.',
         ],
@@ -838,8 +839,8 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
-          aspect: 'standard',
-          fit: 'cover',
+          aspect: 'portrait',
+          fit: 'contain',
           priority: true,
         },
       },
@@ -848,12 +849,13 @@ export const servicesData: Record<string, ServiceData> = {
         position: 'left',
         visualSize: 'compact',
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
+        layout: 'stacked',
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-serpent-miniature-resine.jpeg',
           alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
           aspect: 'panoramic',
           fit: 'cover',
-          objectPosition: 'center 54%',
+          objectPosition: 'center 50%',
           tone: 'soft',
         },
       },
@@ -948,6 +950,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'À partir d’un objet, d’un croquis ou d’une intention',
+        layout: 'wide',
         paragraphs: [
           'Le point de départ peut être très différent selon les projets : un objet existant à adapter, des photos de référence, une esquisse, un plan coté ou simplement une intention de forme. Nous clarifions les dimensions, les parties visibles, les contraintes d’assemblage et les éléments qui doivent rester modifiables.',
           'La modélisation ne consiste pas seulement à reproduire une silhouette. Elle organise les volumes, les épaisseurs, les raccords et les détails de façon à ce que le projet puisse ensuite être fabriqué et contrôlé.',
@@ -955,6 +958,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
       {
         title: 'Un fichier préparé pour la suite du projet',
+        layout: 'wide',
         paragraphs: [
           'Une fois le modèle défini, il peut servir à produire une pièce unique, un prototype, une série, une maquette de présentation ou un élément de décor. Les fichiers sont préparés selon la technologie retenue et les besoins du projet : découpe, impression 3D, usinage, moulage ou intégration dans un assemblage.',
           'Des validations intermédiaires permettent d’ajuster la forme et les proportions avant fabrication. Lorsque cela est utile, un rendu ou un prototype peut compléter cette étape pour valider le projet sur un objet réel.',
@@ -1189,7 +1193,7 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      { afterSection: 1, position: 'right', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
+      { afterSection: 1, position: 'left', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
     ],
     process: [
       { step: 1, title: 'Cahier des charges', description: 'Définition des fonctionnalités, contraintes d\'encombrement, alimentation...' },

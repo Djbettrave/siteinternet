@@ -195,7 +195,7 @@ export default function ServicePage({ service }: ServicePageProps) {
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Ce que nous proposons</h2>
-            <p className="section-subtitle mx-auto">
+            <p className={`mx-auto mt-4 text-lg text-secondary-600 ${service.slug === 'prototypage' ? 'max-w-4xl' : 'max-w-2xl'}`}>
               {service.description}
             </p>
           </div>
@@ -224,7 +224,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       {service.contentSections && (
         <section className="py-20 bg-white">
           <div className="container-custom max-w-7xl">
-            <div className="space-y-12">
+            <div className={service.slug === 'impression-3d-grand-format' ? 'space-y-16 lg:space-y-24' : 'space-y-12'}>
               {service.contentSections.map((section, index) => {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
@@ -234,9 +234,10 @@ export default function ServicePage({ service }: ServicePageProps) {
                 return (
                   <section
                     key={section.title || `section-${index}`}
-                    className={visual ? (stacked ? 'space-y-10' : 'grid items-center gap-10 lg:grid-cols-[minmax(0,1fr)_minmax(360px,1fr)] lg:gap-16') : wide ? 'max-w-none py-4' : 'max-w-4xl'}
+                    data-service-section={index}
+                    className={visual ? (stacked ? 'w-full space-y-8' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : wide ? 'w-full max-w-none py-4' : 'max-w-4xl'}
                   >
-                    <div className={`${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''} ${stacked ? 'max-w-5xl' : ''}`}>
+                    <div className={`min-w-0 ${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''}`}>
                       {section.title && <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
                         {section.paragraphs.map((paragraph, paragraphIndex) => (
@@ -245,7 +246,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                    <div className={`${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto w-full max-w-4xl' : 'w-full') : ''} ${visual.visualSize === 'compact' && !stacked ? 'lg:max-w-[440px] lg:justify-self-end' : ''}`}>
+                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked ? 'mx-auto max-w-[340px]' : ''}`}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
@@ -254,13 +255,13 @@ export default function ServicePage({ service }: ServicePageProps) {
                             </ul>
                           </aside>
                         ) : visual.image ? (
-                          <div className={`relative overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : visual.image.aspect === 'panoramic' ? 'aspect-[16/7]' : 'aspect-video'}`}>
+                          <div className={`relative w-full overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : visual.image.aspect === 'panoramic' ? 'aspect-[16/7]' : 'aspect-video'}`}>
                             <Image
                               src={visual.image.src}
                               alt={visual.image.alt}
                               fill
                               priority={visual.image.priority}
-                              sizes={stacked ? '(min-width: 1024px) 1200px, 100vw' : '(min-width: 1024px) 50vw, 100vw'}
+                              sizes={visual.visualSize === 'compact' ? (stacked ? '(min-width: 1024px) 896px, 100vw' : '(min-width: 400px) 340px, 90vw') : '(min-width: 1024px) 50vw, 100vw'}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                               style={{ objectPosition: visual.image.objectPosition }}
                             />

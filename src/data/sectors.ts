@@ -258,7 +258,7 @@ export const sectorsData: Record<string, SectorData> = {
   architecture: {
     slug: 'architecture',
     name: 'Architecture',
-    heroImage: '/images/secteurs/architecture/architecture-1.jpeg',
+    heroImage: '/images/secteurs/architecture/architecture-1.jpg',
     headline: 'Donnez forme à vos projets architecturaux',
     subheadline: 'Maquettes de présentation, prototypes de composants et solutions sur mesure pour architectes et constructeurs.',
     description: 'Inphenix System accompagne les architectes et professionnels du BTP avec des maquettes de présentation, prototypes de composants et pièces sur mesure. Précision et rendu professionnel garantis.',

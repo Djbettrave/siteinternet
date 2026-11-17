@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "npm run check:service-images && next build",
+    "build": "npm run check:service-images && npm run check:service-layouts && next build",
     "start": "next start",
     "lint": "next lint",
     "indexnow": "node scripts/submit-indexnow.mjs",
-    "check:service-images": "node scripts/check-service-images.mjs"
+    "check:service-images": "node scripts/check-service-images.mjs",
+    "check:service-layouts": "node scripts/check-service-layouts.mjs"
   },
   "dependencies": {
     "@mdx-js/loader": "^3.1.1",

@@ -42,7 +42,7 @@ export default function Impression3DEnSeriePage() {
             const visual = index === 0 ? seriesImages[3] : index === 2 ? seriesImages[4] : undefined
             const reverse = index === 2
             return (
-              <section key={section.title} className={visual ? 'grid items-center gap-10 md:grid-cols-2 md:gap-16' : 'w-full'}>
+              <section key={section.title} data-service-section={index} className={visual ? 'grid items-center gap-10 md:grid-cols-2 md:gap-16' : 'w-full'}>
                 <div className={reverse ? 'md:order-2' : ''}>
                   <h2 className="text-2xl font-bold tracking-[-0.035em] text-secondary-950 md:text-3xl">{section.title}</h2>
                   <div className="mt-5 space-y-4 leading-relaxed text-secondary-600">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>

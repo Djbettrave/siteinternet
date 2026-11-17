@@ -84,7 +84,7 @@ export default function Viewer3D() {
               </div>
             </div>
             {/* Decorative */}
-            <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-primary-100 rounded-full -z-10"></div>
+            <div className="absolute -bottom-6 right-0 sm:-right-6 w-24 h-24 bg-primary-100 rounded-full -z-10"></div>
             <div className="absolute -top-4 -left-4 w-16 h-16 bg-secondary-100 rounded-full -z-10"></div>
           </div>
         </div>
