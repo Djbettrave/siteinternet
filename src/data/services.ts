@@ -260,6 +260,13 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Impression 3D Métal',
     category: 'Impression 3D',
     heroLayout: 'text-left',
+    galleryImages: [
+      {
+        src: '/images/services/impression-metal/piece-mecanique-impression-3d-metal.webp',
+        alt: 'Pièce mécanique texturée réalisée en impression 3D métal',
+        fit: 'cover',
+      },
+    ],
     metaTitle: 'Impression 3D métal à Paris | Pièces techniques sur mesure',
     metaDescription: 'Impression 3D métal pour pièces techniques, composants mécaniques et prototypes fonctionnels. Étude de faisabilité et fabrication sur mesure à Paris et en Île-de-France.',
     keywords: [

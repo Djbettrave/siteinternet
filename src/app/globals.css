@@ -18,6 +18,11 @@ main > section.bg-white + section.bg-white {
   border-top: 1px solid #e5ebf1;
 }
 
+/* Les pages de navigation courtes doivent se terminer après leurs cartes, pas après la hauteur minimale du main. */
+main:has(.service-navigation-page) {
+  min-height: auto;
+}
+
 @layer components {
   .btn-primary {
     @apply inline-flex items-center justify-center px-6 py-3 text-base font-medium text-white bg-primary-700 rounded-lg hover:bg-primary-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-colors duration-200;
