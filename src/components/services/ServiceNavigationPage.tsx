@@ -35,7 +35,6 @@ interface ServiceNavigationPageProps {
   showCta?: boolean
   introPlacement?: 'hero' | 'after-cards'
   afterCards?: {
-    title: string
     description: string
   }
 }
@@ -105,9 +104,8 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
           </div>
           {introPlacement === 'after-cards' && <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-secondary-600 md:mt-10 md:text-base">{intro}</p>}
           {afterCards && (
-            <div className="mx-auto mt-10 max-w-3xl border-t border-secondary-200 pt-8 text-center md:mt-14 md:pt-10">
-              <h2 className="text-xl font-semibold text-secondary-900 md:text-2xl">{afterCards.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-secondary-600 md:text-base">{afterCards.description}</p>
+            <div className="mt-10 max-w-4xl md:mt-14">
+              <p className="text-left text-sm leading-relaxed text-secondary-600 md:text-base">{afterCards.description}</p>
             </div>
           )}
         </div>
