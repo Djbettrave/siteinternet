@@ -1,3 +1,6 @@
+Warning: truncated output (original token count: 20168)
+Total output lines: 1249
+
 import type { ServiceData } from '@/components/templates/ServicePage'
 
 export const servicesData: Record<string, ServiceData> = {
@@ -65,8 +68,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Personnalisation UV adaptée à votre support',
         layout: 'wide',
         paragraphs: [
-          'Nous partons toujours du support à imprimer : sa matière, son état de surface, ses dimensions et la zone réellement disponible pour le visuel. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe.',
-          'Les objets cylindriques peuvent également être personnalisés. Leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
+          'Nous partons toujours du support à imprimer : sa matière, son état de surface, ses dimensions et la zone réellement disponible pour le visuel. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe. Les objets cylindriques peuvent également être personnalisés : leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
         ],
       },
       {
@@ -577,14 +579,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'De la préparation au rendu final',
         paragraphs: [
           'Le fichier est analysé avant production afin d’orienter la pièce, de positionner les supports et de préserver les zones visibles ou fonctionnelles. Après impression, les supports sont retirés, la pièce est lavée puis polymérisée. Cette préparation conditionne directement la netteté des détails et la qualité de surface.',
-          'Selon l’usage, une pièce peut être livrée dans son état de résine après post-traitement ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, métallisation, vernis ou assemblage. Le niveau de finition est défini par le rendu recherché, pas par une solution standardisée.',
-        ],
-      },
-      {
-        title: 'Choisir la résine selon l’usage',
-        layout: 'wide',
-        paragraphs: [
-          'Les résines ne répondent pas toutes au même besoin. Une résine standard convient à un prototype visuel ou à une maquette détaillée ; une résine flexible, calcinable, transparente ou résistante à la température répond à des contraintes plus spécifiques. La matière est retenue en fonction de la forme, de la manipulation prévue et de la finition.',
+          'Selon l’usage, une pièce peut être livrée dans son état de résine après post-traitement ou recevoir une préparation complémentair…168 tokens truncated…,
           'Pour une pièce destinée à être très sollicitée ou de grande dimension, une autre technologie peut être plus cohérente. Nous orientons alors le projet vers le procédé et le matériau adaptés, en tenant compte du résultat visuel attendu et des contraintes de fabrication.',
         ],
       },
