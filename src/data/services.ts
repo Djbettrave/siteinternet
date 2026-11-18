@@ -86,7 +86,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     inlineVisuals: [
       { afterSection: 0, position: 'right', alt: 'Exemple d’impression UV sur un objet cylindrique' },
-      { afterSection: 3, position: 'left', alt: 'Exemple de pièce imprimée en 3D personnalisée par impression UV' },
+      { afterSection: 2, position: 'left', alt: 'Exemple de pièce imprimée en 3D personnalisée par impression UV' },
     ],
     specsTitle: 'Préparer un projet d’impression UV',
     specsDescription: 'Pour étudier votre demande, transmettez les éléments suivants.',
