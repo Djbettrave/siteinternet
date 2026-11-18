@@ -7,9 +7,23 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.inphenix-system.fr/services' },
 }
 
-const expertiseCategories = [
+type ExpertiseService = {
+  name: string
+  href?: string
+  wide?: boolean
+}
+
+type ExpertiseCategory = {
+  number: string
+  title: string
+  titleLines?: string[]
+  href: string
+  services: ExpertiseService[]
+}
+
+const expertiseCategories: ExpertiseCategory[] = [
   {
-    number: '01', title: 'Conception & fabrication', href: '/conception-fabrication',
+    number: '01', title: 'Conception & fabrication', titleLines: ['Conception', '& fabrication'], href: '/conception-fabrication',
     services: [
       { name: 'Scan 3D', href: '/services/scan-3d' },
       { name: 'Modélisation 3D', href: '/services/modelisation-3d' },
@@ -25,11 +39,11 @@ const expertiseCategories = [
       { name: 'Résine', href: '/services/impression-3d/resine' },
       { name: 'Métal', href: '/services/impression-3d/metal' },
       { name: 'Grand format', href: '/services/impression-3d/grand-format' },
-      { name: 'Impression en série', href: '/services/impression-3d/en-serie' },
+      { name: 'Impression en série', href: '/services/impression-3d/en-serie', wide: true },
     ],
   },
   {
-    number: '03', title: 'Électronique & motorisation', href: '/services/electronique',
+    number: '03', title: 'Électronique & motorisation', titleLines: ['Électronique', '& motorisation'], href: '/services/electronique',
     services: [
       { name: 'Électronique', href: '/services/electronique' },
       { name: 'Motorisation', href: '/services/electronique' },
@@ -70,16 +84,16 @@ export default function ServicesPage() {
                   <PhotoPlaceholder alt={`Photo à venir – ${category.title}`} />
                 </Link>
                 <div className="p-6 md:p-7">
-                  <div className="flex items-center justify-between gap-4">
-                    <Link href={category.href} className="min-w-0 whitespace-nowrap text-[clamp(1.05rem,4.4vw,1.5rem)] font-bold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600 active:text-primary-600">
-                      {category.title}
+                  <div className="flex min-h-[3.9rem] items-start justify-between gap-4">
+                    <Link href={category.href} className="min-w-0 text-[clamp(1.05rem,4.4vw,1.5rem)] font-bold leading-[1.05] tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600 active:text-primary-600">
+                      {category.titleLines ? category.titleLines.map((line) => <span key={line} className="block">{line}</span>) : category.title}
                     </Link>
                     <span className="shrink-0 font-mono text-sm text-primary-700">{category.number}</span>
                   </div>
                   <div className="mt-5 h-px w-full bg-secondary-400" />
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm leading-5">
                   {category.services.map((service) => service.href ? (
-                    <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-700 transition-colors hover:border-primary-300 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
+                    <Link key={service.name} href={service.href} className={`flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-700 transition-colors hover:border-primary-300 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600 ${service.wide ? 'col-span-2' : ''}`}>
                       {service.name}
                     </Link>
                   ) : (
