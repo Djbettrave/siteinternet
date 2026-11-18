@@ -70,17 +70,17 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
-        title: 'Du prototype à la production en série',
-        layout: 'wide',
-        paragraphs: [
-          'Le calage, la préparation et le coût sont adaptés au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité. Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
-        ],
-      },
-      {
         title: 'Applications pour le retail, la PLV et l’événementiel',
         paragraphs: [
           'L’impression UV est adaptée aux objets de marque, aux maquettes de présentation, aux éléments de PLV, aux prototypes visuels, aux pièces de décor et aux supports personnalisés pour une activation ou un point de vente. Elle permet d’intégrer une identité graphique sans recourir à une étiquette ou à un adhésif rapporté.',
           'Lorsque le projet comprend une pièce imprimée en 3D, la personnalisation peut être prévue dès la fabrication afin que les zones graphiques, l’orientation et le niveau de finition soient cohérents avec le résultat attendu.',
+        ],
+      },
+      {
+        title: 'Du prototype à la production en série',
+        layout: 'wide',
+        paragraphs: [
+          'Le calage, la préparation et le coût sont adaptés au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité. Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
         ],
       },
     ],
@@ -323,6 +323,7 @@ export const servicesData: Record<string, ServiceData> = {
         layout: 'wide',
         paragraphs: [
           'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires. Après l’impression, les pièces sont séparées du plateau puis contrôlées avant les opérations de finition. Selon le besoin, elles peuvent être ébavurées, usinées, polies ou préparées pour recevoir un traitement de surface.',
+          'Les zones d’appui et d’évacuation de la poudre sont anticipées lorsque la pièce comporte une cote critique ou une surface visible. La préparation définit ainsi les reprises à prévoir après impression, afin d’obtenir le niveau de précision et d’aspect attendu pour son usage final.',
         ],
       },
     ],
@@ -330,6 +331,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'left',
+        visualSize: 'compact',
         alt: 'Grande pièce en fabrication avec structures de support',
         image: {
           src: '/images/projects/process/fabrication-additive-grand-format-piece-technique.jpeg',
@@ -347,7 +349,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/process/impression-3d-metal-pieces-techniques.jpeg',
           alt: 'Pièces techniques métalliques sur un plateau après impression 3D métal',
-          aspect: 'landscape',
+          aspect: 'panoramic',
           fit: 'cover',
         },
       },
@@ -1075,8 +1077,9 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
+        layout: 'wide',
         paragraphs: [
-          'Ce type de réalisation illustre le rôle du prototypage : rendre un projet concret avant de passer à la fabrication. Il permet de tester les volumes, les usages, les assemblages et les choix techniques sur une pièce réelle. Les ajustements sont ainsi identifiés en amont, avant le lancement d’une petite série ou d’une production finale.',
+          'Ce type de réalisation illustre le rôle du prototypage : rendre un projet concret avant de passer à la fabrication. Il permet de tester les volumes, les usages, les assemblages et les choix techniques sur une pièce réelle. Les ajustements sont ainsi identifiés en amont, avant le lancement d’une petite série ou d’une production finale. Dans ce cas, le prototype permet aussi de vérifier l’accès à la recharge, le passage de la connectique et les conditions de maintenance une fois le système installé.',
         ],
       },
     ],
