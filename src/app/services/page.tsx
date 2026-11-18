@@ -60,10 +60,10 @@ export default function ServicesPage() {
         <div className="container-custom max-w-5xl">
           <header className="mb-6 text-center md:mb-10">
             <h1 className="text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">Nos expertises</h1>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">De la conception à la fabrication, Inphenix System peut prendre en charge votre projet dans sa globalité. Basé à Suresnes, en Île-de-France, notre atelier réunit les savoir-faire nécessaires pour concevoir, fabriquer et intégrer votre projet.</p>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">De la conception à la fabrication, Inphenix System peut prendre en charge votre projet dans sa globalité. Basé à Suresnes, en Île-de-France, notre atelier réunit les savoir-faire nécessaires pour réaliser votre projet.</p>
           </header>
 
-          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+          <div className="grid gap-6 md:grid-cols-3 md:gap-6">
             {expertiseCategories.map((category) => (
               <section key={category.title} className="overflow-hidden rounded-xl border border-secondary-200 bg-white transition-transform duration-200 hover:-translate-y-1">
                 <Link href={category.href} className="group block touch-manipulation transition-opacity hover:opacity-80 active:opacity-70" aria-label={`Voir ${category.title}`}>
