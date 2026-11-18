@@ -323,7 +323,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Du plateau de fabrication à la pièce préparée',
         layout: 'wide',
         paragraphs: [
-          'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires.',
+          'La fabrication additive métal requiert généralement des supports, une orientation de fabrication et des opérations de retrait adaptées à chaque géométrie. Ces étapes sont intégrées dès l’étude afin de préserver les zones fonctionnelles et de préparer les finitions nécessaires. Après l’impression, les pièces sont séparées du plateau puis contrôlées avant les opérations de finition. Selon le besoin, elles peuvent être ébavurées, usinées, polies ou préparées pour recevoir un traitement de surface.',
         ],
       },
     ],
@@ -833,7 +833,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Du scan à la reproduction',
         layout: 'wide',
         paragraphs: [
-          'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce.',
+          'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce. Cette préparation permet aussi de conserver les détails du modèle d’origine, puis d’adapter la pièce à l’échelle ou à l’usage recherché. Le fichier devient une base fiable pour reproduire, modifier ou développer un nouvel élément à partir de l’existant.',
         ],
       },
     ],
@@ -1073,6 +1073,11 @@ export const servicesData: Record<string, ServiceData> = {
         paragraphs: [
           'Un prototype peut aussi porter sur un élément précis d’un équipement. Ici, l’intervention a consisté à concevoir une powerbank sur mesure destinée à s’intégrer dans un distributeur automatique existant, avec ses contraintes de format, de connectique et d’accès aux ports bancaires.',
           'Le travail a porté sur le développement et l’intégration de la powerbank, et non sur la conception de la machine elle-même. Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
+        ],
+      },
+      {
+        paragraphs: [
+          'Ce type de réalisation illustre le rôle du prototypage : rendre un projet concret avant de passer à la fabrication. Il permet de tester les volumes, les usages, les assemblages et les choix techniques sur une pièce réelle. Les ajustements sont ainsi identifiés en amont, avant le lancement d’une petite série ou d’une production finale.',
         ],
       },
     ],
