@@ -41,9 +41,9 @@ export default function SecteursPage() {
                 <p className="text-secondary-600 mb-6">
                   {sector.subheadline}
                 </p>
-                <div className="mt-5 flex items-center justify-end text-xs font-semibold uppercase tracking-[0.08em] text-primary-600">
+                <div className="mt-5 flex items-center justify-end text-[11px] font-medium italic tracking-[0.04em] text-primary-600">
                   Découvrir
-                  <svg className="ml-1.5 h-3.5 w-3.5 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="ml-1.5 h-3 w-3 transition-transform group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
                 </div>
