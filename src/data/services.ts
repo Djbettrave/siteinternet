@@ -595,7 +595,7 @@ export const servicesData: Record<string, ServiceData> = {
         visualSize: 'compact',
         alt: 'Deux prototypes de flacons Cartier imprimés en résine, avec reliefs et motifs détaillés',
         image: {
-          src: '/images/projects/completed/prototypes-flacons-cartier-resine.jpeg',
+          src: '/images/services/impression-resine/prototypes-flacons-cartier-resine-cadre-equilibre.jpeg',
           alt: 'Deux prototypes de flacons Cartier imprimés en résine, avec reliefs et motifs détaillés',
           aspect: 'portrait',
           fit: 'cover',
