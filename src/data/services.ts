@@ -504,10 +504,6 @@ export const servicesData: Record<string, ServiceData> = {
         answer: 'Nous acceptons STL, OBJ, STEP, 3MF, et la plupart des formats CAO. Si vous n\'avez pas de fichier 3D, nous pouvons modéliser votre pièce.',
       },
       {
-        question: 'Les pièces FDM sont-elles étanches ?',
-        answer: 'Avec les bons paramètres (100% remplissage, bon matériau), les pièces peuvent être étanches. Nous vous conseillons selon votre application.',
-      },
-      {
         question: 'Peut-on peindre les pièces FDM ?',
         answer: 'Oui, avec une préparation adaptée (ponçage, apprêt), les pièces FDM se peignent très bien. Nous proposons ce service de finition.',
       },
