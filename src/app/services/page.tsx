@@ -47,7 +47,7 @@ function PhotoPlaceholder({ alt }: { alt: string }) {
       aria-label={alt}
     >
       <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 002 2v12a2 2 0 002 2z" />
       </svg>
     </div>
   )
@@ -76,7 +76,7 @@ export default function ServicesPage() {
                     </Link>
                     <span className="shrink-0 font-mono text-sm text-primary-700">{category.number}</span>
                   </div>
-                  <div className="mx-auto mt-5 h-px w-3/4 bg-secondary-300" />
+                  <div className="mt-5 h-px w-full bg-secondary-400" />
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm leading-5">
                   {category.services.map((service) => service.href ? (
                     <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-700 transition-colors hover:border-primary-300 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
