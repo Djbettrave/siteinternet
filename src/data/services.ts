@@ -73,8 +73,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Du prototype à la production en série',
         layout: 'wide',
         paragraphs: [
-          'Le calage, la préparation et le coût sont adaptés au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité.',
-          'Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
+          'Le calage, la préparation et le coût sont adaptés au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité. Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
         ],
       },
       {
