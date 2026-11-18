@@ -32,7 +32,6 @@ export default function Impression3DPage() {
       intro="Basé à Suresnes, Inphenix System accompagne vos projets d’impression 3D, du prototype à la production en série, à Paris, en Île-de-France et partout en France."
       cards={cards}
       afterCards={{
-        title: 'Du fichier à la pièce',
         description: 'À partir d’un fichier 3D, d’un dessin ou d’un objet existant, nous choisissons la technique d’impression 3D adaptée à son usage : prototype, pièce décorative, maquette, petite série ou pièce fonctionnelle. Selon le projet, la pièce peut ensuite être poncée, peinte, assemblée ou intégrée à son environnement.',
       }}
       comparison={comparison}
