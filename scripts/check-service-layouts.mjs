@@ -21,7 +21,7 @@ assert.equal(scan.contentSections[1].layout, 'wide')
 assert(services['modelisation-3d'].contentSections.slice(1).every(s => s.layout === 'wide'))
 assert.equal(services['impression-3d-resine'].inlineVisuals[0].visualSize, 'compact')
 assert.equal(services['impression-3d-metal'].inlineVisuals[1].layout, 'stacked')
-assert.equal(services['impression-3d-metal'].inlineVisuals[1].image.aspect, 'landscape')
+assert.equal(services['impression-3d-metal'].inlineVisuals[1].image.aspect, 'panoramic')
 const series = services['impression-3d-en-serie'].contentSections
 assert.equal(series.length, 4)
 assert.equal(series[3].layout, 'wide')
