@@ -2,179 +2,100 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Services d’impression 3D sur mesure',
-  description: 'Impression 3D FDM, résine, grand format XXL, scan 3D, modélisation et prototypage sur mesure. Devis instantané gratuit.',
-  alternates: {
-    canonical: 'https://www.inphenix-system.fr/services',
-  },
+  title: 'Nos expertises | Inphenix System',
+  description: 'Conception et fabrication, impression 3D, électronique et intégration : découvrez les expertises d’Inphenix System.',
+  alternates: { canonical: 'https://www.inphenix-system.fr/services' },
 }
 
-const serviceCategories = [
+const expertiseCategories = [
   {
-    title: 'Impression 3D',
-    description: 'Technologies FDM, résine, métal, grand format et série pour vos projets de fabrication additive.',
+    number: '01', title: 'Conception & fabrication', href: '/conception-fabrication',
     services: [
-      {
-        name: 'Impression 3D FDM',
-        description: 'Pièces résistantes et fonctionnelles en filament thermoplastique.',
-        href: '/services/impression-3d/fdm',
-        features: ['Résistance mécanique', 'Large choix matériaux', 'Économique'],
-      },
-      {
-        name: 'Impression 3D Résine',
-        description: 'Précision extrême et surfaces lisses pour détails fins.',
-        href: '/services/impression-3d/resine',
-        features: ['Précision 0.025mm', 'Joaillerie', 'Moules cire perdue'],
-      },
-      {
-        name: 'Impression 3D Métal',
-        description: 'Pièces métalliques techniques pour les applications nécessitant une forte résistance.',
-        href: '/services/impression-3d/metal',
-        features: ['Haute résistance', 'Pièces mécaniques', 'Alliages adaptés'],
-      },
-      {
-        name: 'Impression Grand Format',
-        description: 'Pièces jusqu\'à 85 cm en un seul bloc, sans limite par assemblage.',
-        href: '/services/impression-3d/grand-format',
-        features: ['85 cm monobloc', 'Événementiel', 'Maquettes XXL'],
-      },
-      {
-        name: 'Impression 3D en série',
-        description: 'Fabrication de pièces identiques, de la petite à la grande série.',
-        href: '/services/impression-3d/en-serie',
-        features: ['Petite et grande série', 'Sans moule', 'Tarifs dégressifs'],
-      },
+      { name: 'Scan 3D', href: '/services/scan-3d' },
+      { name: 'Modélisation 3D', href: '/services/modelisation-3d' },
+      { name: 'Prototypage', href: '/services/prototypage' },
+      { name: 'Découpe laser' },
     ],
   },
   {
-    title: 'Numérisation & Conception',
-    description: 'De l\'objet physique au fichier 3D, et de l\'idée au modèle.',
+    number: '02', title: 'Impression 3D', href: '/impression-3d',
     services: [
-      {
-        name: 'Scan 3D',
-        description: 'Numérisation haute précision d\'objets existants.',
-        href: '/services/scan-3d',
-        features: ['Rétro-ingénierie', 'Reproduction', 'Archivage'],
-      },
-      {
-        name: 'Modélisation 3D',
-        description: 'Création de modèles 3D sur mesure, prêts pour l\'impression.',
-        href: '/services/modelisation-3d',
-        features: ['De l\'idée au fichier', 'CAO pro', 'Multi-formats'],
-      },
-      {
-        name: 'Découpe laser',
-        description: 'Découpe de pièces sur mesure à partir de vos fichiers, plans ou besoins de fabrication.',
-        features: ['Pièces sur mesure', 'Découpe précise', 'Service à venir'],
-      },
+      { name: 'FDM', href: '/services/impression-3d/fdm' },
+      { name: 'Résine', href: '/services/impression-3d/resine' },
+      { name: 'Métal', href: '/services/impression-3d/metal' },
+      { name: 'Grand format', href: '/services/impression-3d/grand-format' },
+      { name: 'Impression en série', href: '/services/impression-3d/en-serie' },
     ],
   },
   {
-    title: 'Développement Produit',
-    description: 'Accompagnement complet pour vos projets de développement.',
+    number: '03', title: 'Électronique & intégration', href: '/services/electronique',
     services: [
-      {
-        name: 'Impression UV sur objet',
-        description: 'Personnalisation de pièces, objets et supports compatibles.',
-        href: '/services/impression-uv',
-        features: ['Logos et visuels', 'Objets cylindriques', 'Petites et grandes séries'],
-      },
-      {
-        name: 'Prototypage',
-        description: 'Du concept au prototype fonctionnel, itérations rapides.',
-        href: '/services/prototypage',
-        features: ['Validation rapide', 'Multi-technologies', 'Conseil'],
-      },
-      {
-        name: 'Électronique & Motorisation',
-        description: 'Solutions électroniques et électromécaniques sur mesure.',
-        href: '/services/electronique',
-        features: ['PCB sur mesure', 'Motorisation', 'Systèmes embarqués'],
-      },
+      { name: 'Électronique & motorisation', href: '/services/electronique' },
+      { name: 'Impression UV', href: '/services/impression-uv' },
     ],
   },
 ]
 
+function PhotoPlaceholder({ alt }: { alt: string }) {
+  return (
+    <div
+      className="flex aspect-[16/9] items-center justify-center border-b border-dashed border-secondary-300 bg-secondary-50 text-secondary-500"
+      role="img"
+      aria-label={alt}
+    >
+      <svg className="h-10 w-10" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 16m-6-12h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 002 2v12a2 2 0 002 2z" />
+      </svg>
+    </div>
+  )
+}
+
 export default function ServicesPage() {
   return (
     <>
-      {/* Services */}
       <section className="bg-white pb-24 pt-10 md:pt-14">
         <div className="container-custom">
-          <header className="mb-12 md:mb-16">
+          <header className="mb-12 max-w-3xl md:mb-16">
             <h1 className="text-4xl font-bold tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
-            <p className="mt-5 text-lg leading-relaxed text-secondary-600">Trois expertises à mobiliser seules ou ensemble : impression 3D, numérisation & conception, développement produit.</p>
+            <p className="mt-5 text-lg leading-relaxed text-secondary-600">De l’étude d’une pièce à sa fabrication et son intégration.</p>
           </header>
-          {serviceCategories.map((category, categoryIndex) => (
-            <div key={category.title} className={categoryIndex > 0 ? 'mt-16 border-t border-secondary-200 pt-16' : ''}>
-              <div className="mb-8 flex items-start gap-4 md:mb-10 md:gap-6">
-                <span className="pt-1 font-mono text-sm text-primary-700">0{categoryIndex + 1}</span>
-                <div>
-                  <h2 className="text-2xl font-bold text-secondary-900 md:text-3xl">{category.title}</h2>
-                  <p className="mt-2 text-secondary-600">{category.description}</p>
-                </div>
-              </div>
 
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {category.services.map((service) => {
-                  const card = (
-                    <>
-                    <h3 className="text-xl font-semibold text-secondary-900 mb-3 group-hover:text-primary-600 transition-colors">
+          <div className="grid gap-5 md:grid-cols-3 md:gap-6">
+            {expertiseCategories.map((category) => (
+              <section key={category.title} className="overflow-hidden rounded-xl border border-secondary-200 bg-white">
+                <Link href={category.href} className="group block transition-opacity hover:opacity-80" aria-label={`Voir ${category.title}`}>
+                  <PhotoPlaceholder alt={`Photo à venir – ${category.title}`} />
+                </Link>
+                <div className="p-6 md:p-7">
+                  <div className="flex items-start gap-4">
+                    <span className="pt-1 font-mono text-sm text-primary-700">{category.number}</span>
+                    <Link href={category.href} className="group inline-flex min-w-0 items-center gap-3 text-2xl font-bold tracking-[-0.03em] text-secondary-900 transition-colors hover:text-primary-600">
+                      <span>{category.title}</span>
+                      <span aria-hidden="true" className="text-lg font-normal transition-transform group-hover:translate-x-1">→</span>
+                    </Link>
+                  </div>
+                  <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 text-sm leading-5">
+                  {category.services.map((service) => service.href ? (
+                    <Link key={service.name} href={service.href} className="border-b border-transparent text-secondary-600 transition-colors hover:border-primary-500 hover:text-primary-600">
                       {service.name}
-                    </h3>
-                    <p className="text-secondary-600 mb-4">
-                      {service.description}
-                    </p>
-                    <div className="flex flex-wrap gap-2 mb-6">
-                      {service.features.map((feature) => (
-                        <span
-                          key={feature}
-                          className="text-xs font-medium text-secondary-500 bg-secondary-100 px-3 py-1 rounded-full"
-                        >
-                          {feature}
-                        </span>
-                      ))}
-                    </div>
-                    {service.href ? (
-                      <div className="flex items-center text-primary-600 font-medium">
-                        En savoir plus
-                        <svg className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                      </div>
-                    ) : (
-                      <div className="text-secondary-500 font-medium">Service à venir</div>
-                    )}
-                    </>
-                  )
-
-                  const className = "group card p-8 transition-all hover:border-primary-200 hover:-translate-y-1"
-                  return service.href ? (
-                    <Link key={service.name} href={service.href} className={className}>{card}</Link>
+                    </Link>
                   ) : (
-                    <div key={service.name} className={className}>{card}</div>
-                  )
-                })}
-              </div>
-            </div>
-          ))}
+                    <span key={service.name} className="text-secondary-500">{service.name}</span>
+                  ))}
+                  </div>
+                </div>
+              </section>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-24 bg-primary-600">
+      <section className="bg-primary-600 py-20 md:py-24">
         <div className="container-custom">
-          <div className="text-center max-w-2xl mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
-              Vous ne savez pas par où commencer ?
-            </h2>
-            <p className="text-xl text-primary-100 mb-8">
-              Décrivez-nous votre projet. Nous vous orienterons vers
-              les services adaptés à vos besoins.
-            </p>
-            <Link href="/contact" className="bg-white text-primary-600 hover:bg-primary-50 px-8 py-4 rounded-lg font-semibold text-lg transition-colors inline-block">
-              Contactez-nous
-            </Link>
+          <div className="mx-auto max-w-2xl text-center">
+            <h2 className="mb-6 text-3xl font-bold text-white md:text-4xl">Vous ne savez pas par où commencer ?</h2>
+            <p className="mb-8 text-xl text-primary-100">Décrivez-nous votre projet. Nous vous orienterons vers les services adaptés à vos besoins.</p>
+            <Link href="/contact" className="inline-block rounded-lg bg-white px-8 py-4 text-lg font-semibold text-primary-600 transition-colors hover:bg-primary-50">Contactez-nous</Link>
           </div>
         </div>
       </section>
