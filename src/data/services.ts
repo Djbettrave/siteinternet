@@ -55,7 +55,7 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     contentSections: [
       {
-        title: 'Impression UV sur objets et pièces imprimées en 3D',
+        title: 'Imprimer directement sur une pièce ou un objet',
         paragraphs: [
           'L’impression UV permet d’ajouter un logo, un texte, un motif ou un visuel directement sur un objet ou une pièce. Elle s’utilise notamment pour personnaliser une pièce imprimée en 3D, un support de présentation, un élément de PLV, un objet promotionnel ou un prototype destiné à être présenté.',
           'Le service peut intervenir comme une finition seule sur un objet déjà fabriqué, ou s’intégrer à une production complète réalisée par Inphenix. Cette continuité évite de multiplier les interlocuteurs lorsqu’une pièce doit être imprimée en 3D, préparée, assemblée puis personnalisée.',
@@ -65,15 +65,15 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Personnalisation UV adaptée à votre support',
         layout: 'wide',
         paragraphs: [
-          'Chaque projet est étudié selon l’objet réel : matière, état de surface, dimensions, zones à imprimer et rendu attendu. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe.',
+          'Nous partons toujours du support à imprimer : sa matière, son état de surface, ses dimensions et la zone réellement disponible pour le visuel. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe.',
           'Les objets cylindriques peuvent également être personnalisés. Leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
         ],
       },
       {
-        title: 'De la pièce unique aux petites et grandes séries',
+        title: 'Du prototype à la production en série',
         layout: 'wide',
         paragraphs: [
-          'Nous réalisons des impressions UV pour une pièce unique, une présérie, une petite série ou une grande série. Le chiffrage dépend du nombre d’objets identiques, du format du visuel, de la préparation nécessaire, des contraintes de calage et du délai souhaité.',
+          'Du prototype à la production en série, nous adaptons le calage, la préparation et le coût au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité.',
           'Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
         ],
       },
