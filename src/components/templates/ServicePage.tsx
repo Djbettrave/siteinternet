@@ -224,7 +224,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       {service.contentSections && (
         <section className="py-20 bg-white">
           <div className="container-custom max-w-7xl">
-            <div className={service.slug === 'impression-3d-grand-format' ? 'space-y-16 lg:space-y-24' : 'space-y-12'}>
+            <div className={service.slug === 'impression-3d-grand-format' ? 'space-y-16 lg:space-y-24' : 'space-y-16'}>
               {service.contentSections.map((section, index) => {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
