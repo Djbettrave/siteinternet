@@ -231,12 +231,13 @@ export default function ServicePage({ service }: ServicePageProps) {
                 const stacked = visual?.layout === 'stacked'
                 const wide = section.layout === 'wide'
                 const metalCompactVisual = service.slug === 'impression-3d-metal' && index === 0 && visual?.visualSize === 'compact'
+                const modelingCompactVisual = service.slug === 'modelisation-3d' && index === 1 && visual?.visualSize === 'compact'
 
                 return (
                   <section
                     key={section.title || `section-${index}`}
                     data-service-section={index}
-                    className={visual ? (stacked ? 'w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : wide ? 'w-full max-w-none py-4' : 'max-w-4xl'}
+                    className={visual ? (stacked ? 'w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : modelingCompactVisual ? 'grid items-center gap-6 lg:grid-cols-[360px_minmax(0,720px)] lg:justify-start lg:gap-8' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : wide ? 'w-full max-w-none py-4' : 'max-w-4xl'}
                   >
                     <div className={`min-w-0 ${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''}`}>
                       {section.title && <h2 className={`text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
@@ -247,7 +248,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked ? (metalCompactVisual ? 'mx-0 max-w-[340px]' : 'mx-auto max-w-[340px]') : ''}`}>
+                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked ? (metalCompactVisual || modelingCompactVisual ? 'mx-0 max-w-[340px]' : 'mx-auto max-w-[340px]') : ''}`}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
