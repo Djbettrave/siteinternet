@@ -34,6 +34,10 @@ interface ServiceNavigationPageProps {
   faqs?: Faq[]
   showCta?: boolean
   introPlacement?: 'hero' | 'after-cards'
+  afterCards?: {
+    title: string
+    description: string
+  }
 }
 
 function PhotoPlaceholder({ alt, wide = false }: { alt: string; wide?: boolean }) {
@@ -75,7 +79,7 @@ function ServiceCard({ card, wide = false }: { card: ServiceCard; wide?: boolean
   return card.href ? <Link href={card.href} className={className}>{content}</Link> : <div className={className}>{content}</div>
 }
 
-export default function ServiceNavigationPage({ eyebrow, title, intro, cards, comparison, faqs, showCta = false, introPlacement = 'hero' }: ServiceNavigationPageProps) {
+export default function ServiceNavigationPage({ eyebrow, title, intro, cards, comparison, faqs, showCta = false, introPlacement = 'hero', afterCards }: ServiceNavigationPageProps) {
   const [tableHasScrolled, setTableHasScrolled] = useState(false)
   const firstColumnStyle = { left: '0px', width: '60px', minWidth: '60px', maxWidth: '60px' }
   const secondColumnStyle = { left: '60px', width: '78px', minWidth: '78px', maxWidth: '78px' }
@@ -100,6 +104,12 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
             ))}
           </div>
           {introPlacement === 'after-cards' && <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-secondary-600 md:mt-10 md:text-base">{intro}</p>}
+          {afterCards && (
+            <div className="mx-auto mt-10 max-w-3xl border-t border-secondary-200 pt-8 text-center md:mt-14 md:pt-10">
+              <h2 className="text-xl font-semibold text-secondary-900 md:text-2xl">{afterCards.title}</h2>
+              <p className="mt-3 text-sm leading-relaxed text-secondary-600 md:text-base">{afterCards.description}</p>
+            </div>
+          )}
         </div>
       </section>
 
