@@ -18,7 +18,7 @@ export default function ConceptionFabricationPage() {
   return (
     <ServiceNavigationPage
       title={'Nos expertises en\nconception & fabrication'}
-      intro="Votre projet, de l’idée à sa fabrication."
+      intro="À Paris et en Île-de-France, Inphenix System accompagne vos projets sur mesure : scan 3D, modélisation, découpe laser et prototypage. Votre projet, de l’idée à sa fabrication."
       cards={cards}
     />
   )
