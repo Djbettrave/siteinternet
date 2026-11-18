@@ -56,11 +56,11 @@ function PhotoPlaceholder({ alt }: { alt: string }) {
 export default function ServicesPage() {
   return (
     <>
-      <section className="bg-white pb-24 pt-10 md:pt-14">
-        <div className="container-custom">
-          <header className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
-            <h1 className="text-4xl font-bold leading-tight tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-secondary-600 md:text-xl">De l’étude d’une pièce à sa fabrication et son intégration.</p>
+      <section className="bg-white pb-12 pt-8 md:pb-24 md:pt-12">
+        <div className="container-custom max-w-5xl">
+          <header className="mb-6 text-center md:mb-10">
+            <h1 className="text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">Nos expertises</h1>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">De l’étude d’une pièce à sa fabrication et son intégration.</p>
           </header>
 
           <div className="grid gap-5 md:grid-cols-3 md:gap-6">
@@ -76,13 +76,13 @@ export default function ServicesPage() {
                     </Link>
                     <span className="shrink-0 font-mono text-sm text-primary-700">{category.number}</span>
                   </div>
-                  <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-secondary-200 pt-4 text-sm leading-5">
+                  <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-secondary-100 pt-4 text-sm leading-5">
                   {category.services.map((service) => service.href ? (
-                    <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-200 px-1 text-secondary-700 transition-colors hover:border-primary-500 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
+                    <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-700 transition-colors hover:border-primary-300 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
                       {service.name}
                     </Link>
                   ) : (
-                    <span key={service.name} className="flex min-h-11 items-center border-b border-secondary-200 px-1 text-secondary-500">{service.name}</span>
+                    <span key={service.name} className="flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-500">{service.name}</span>
                   ))}
                   </div>
                 </div>
