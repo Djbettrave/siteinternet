@@ -15,6 +15,7 @@ const expertiseCategories = [
       { name: 'Modélisation 3D', href: '/services/modelisation-3d' },
       { name: 'Prototypage', href: '/services/prototypage' },
       { name: 'Découpe laser' },
+      { name: 'Impression UV', href: '/services/impression-uv' },
     ],
   },
   {
@@ -28,10 +29,12 @@ const expertiseCategories = [
     ],
   },
   {
-    number: '03', title: 'Électronique & intégration', href: '/services/electronique',
+    number: '03', title: 'Électronique & motorisation', href: '/services/electronique',
     services: [
-      { name: 'Électronique & motorisation', href: '/services/electronique' },
-      { name: 'Impression UV', href: '/services/impression-uv' },
+      { name: 'Électronique', href: '/services/electronique' },
+      { name: 'Motorisation', href: '/services/electronique' },
+      { name: 'LED', href: '/services/electronique' },
+      { name: 'Capteurs', href: '/services/electronique' },
     ],
   },
 ]
@@ -55,32 +58,31 @@ export default function ServicesPage() {
     <>
       <section className="bg-white pb-24 pt-10 md:pt-14">
         <div className="container-custom">
-          <header className="mb-12 max-w-3xl md:mb-16">
-            <h1 className="text-4xl font-bold tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
-            <p className="mt-5 text-lg leading-relaxed text-secondary-600">De l’étude d’une pièce à sa fabrication et son intégration.</p>
+          <header className="mx-auto mb-12 max-w-4xl text-center md:mb-16">
+            <h1 className="text-4xl font-bold leading-tight tracking-[-0.04em] text-secondary-900 md:text-5xl">Nos expertises</h1>
+            <p className="mx-auto mt-5 max-w-3xl text-lg leading-relaxed text-secondary-600 md:text-xl">De l’étude d’une pièce à sa fabrication et son intégration.</p>
           </header>
 
           <div className="grid gap-5 md:grid-cols-3 md:gap-6">
             {expertiseCategories.map((category) => (
-              <section key={category.title} className="overflow-hidden rounded-xl border border-secondary-200 bg-white">
-                <Link href={category.href} className="group block transition-opacity hover:opacity-80" aria-label={`Voir ${category.title}`}>
+              <section key={category.title} className="overflow-hidden rounded-xl border border-secondary-200 bg-white transition-transform duration-200 hover:-translate-y-1">
+                <Link href={category.href} className="group block touch-manipulation transition-opacity hover:opacity-80 active:opacity-70" aria-label={`Voir ${category.title}`}>
                   <PhotoPlaceholder alt={`Photo à venir – ${category.title}`} />
                 </Link>
                 <div className="p-6 md:p-7">
-                  <div className="flex items-start gap-4">
-                    <span className="pt-1 font-mono text-sm text-primary-700">{category.number}</span>
-                    <Link href={category.href} className="group inline-flex min-w-0 items-center gap-3 text-2xl font-bold tracking-[-0.03em] text-secondary-900 transition-colors hover:text-primary-600">
-                      <span>{category.title}</span>
-                      <span aria-hidden="true" className="text-lg font-normal transition-transform group-hover:translate-x-1">→</span>
+                  <div className="flex items-center justify-between gap-4">
+                    <Link href={category.href} className="min-w-0 whitespace-nowrap text-[clamp(1.05rem,4.4vw,1.5rem)] font-bold tracking-[-0.035em] text-secondary-900 transition-colors hover:text-primary-600 active:text-primary-600">
+                      {category.title}
                     </Link>
+                    <span className="shrink-0 font-mono text-sm text-primary-700">{category.number}</span>
                   </div>
-                  <div className="mt-6 grid grid-cols-2 gap-x-4 gap-y-3 text-sm leading-5">
+                  <div className="mt-5 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-secondary-200 pt-4 text-sm leading-5">
                   {category.services.map((service) => service.href ? (
-                    <Link key={service.name} href={service.href} className="border-b border-transparent text-secondary-600 transition-colors hover:border-primary-500 hover:text-primary-600">
+                    <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-200 px-1 text-secondary-700 transition-colors hover:border-primary-500 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
                       {service.name}
                     </Link>
                   ) : (
-                    <span key={service.name} className="text-secondary-500">{service.name}</span>
+                    <span key={service.name} className="flex min-h-11 items-center border-b border-secondary-200 px-1 text-secondary-500">{service.name}</span>
                   ))}
                   </div>
                 </div>
