@@ -86,7 +86,7 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
 
   return (
     <>
-      <section className="bg-white pb-12 pt-8 md:pb-24 md:pt-12">
+      <section className="bg-white pb-4 pt-8 md:pb-24 md:pt-12">
         <div className="container-custom max-w-5xl">
           <header className="mb-6 text-center md:mb-10">
             {eyebrow && <p className="mb-3 text-sm font-semibold uppercase tracking-[0.16em] text-primary-700">{eyebrow}</p>}
@@ -95,7 +95,7 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
             </h1>
             {introPlacement === 'hero' && <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">{intro}</p>}
           </header>
-          <div className="grid grid-cols-2 gap-3 md:gap-5">
+          <div className="-mx-2 grid grid-cols-2 gap-2 md:mx-0 md:gap-5">
             {cards.map((card, index) => (
               <div key={card.name} className={cards.length % 2 === 1 && index === cards.length - 1 ? 'col-span-2' : undefined}>
                 <ServiceCard card={card} wide={cards.length % 2 === 1 && index === cards.length - 1} />
