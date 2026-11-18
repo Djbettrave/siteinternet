@@ -60,7 +60,7 @@ export default function ServicesPage() {
         <div className="container-custom max-w-5xl">
           <header className="mb-6 text-center md:mb-10">
             <h1 className="text-3xl font-bold leading-tight text-secondary-900 md:text-4xl">Nos expertises</h1>
-            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">Une idée, un fichier ou un objet existant peut devenir un prototype, une pièce de série ou une installation complète. Nous réunissons conception, fabrication et intégration technique lorsque le projet le demande.</p>
+            <p className="mx-auto mt-5 max-w-3xl text-base leading-relaxed text-secondary-600 md:text-lg">De la conception à la fabrication, Inphenix System peut prendre en charge votre projet dans sa globalité. Notre atelier réunit l’étude, le développement, la production et l’intégration technique nécessaires à sa réalisation.</p>
           </header>
 
           <div className="grid gap-5 md:grid-cols-3 md:gap-6">
@@ -76,7 +76,7 @@ export default function ServicesPage() {
                     </Link>
                     <span className="shrink-0 font-mono text-sm text-primary-700">{category.number}</span>
                   </div>
-                  <div className="mt-5 h-px w-14 bg-secondary-400" />
+                  <div className="mx-auto mt-5 h-px w-3/4 bg-secondary-300" />
                   <div className="mt-4 grid grid-cols-2 gap-x-4 gap-y-2 text-sm leading-5">
                   {category.services.map((service) => service.href ? (
                     <Link key={service.name} href={service.href} className="flex min-h-11 items-center border-b border-secondary-100 px-1 text-secondary-700 transition-colors hover:border-primary-300 hover:text-primary-600 focus-visible:bg-primary-50 focus-visible:outline-none active:rounded-sm active:bg-primary-50 active:text-primary-600">
