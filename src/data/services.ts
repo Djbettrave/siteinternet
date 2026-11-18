@@ -837,6 +837,12 @@ export const servicesData: Record<string, ServiceData> = {
           'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce. Cette préparation permet aussi de conserver les détails du modèle d’origine, puis d’adapter la pièce à l’échelle ou à l’usage recherché. Le fichier devient une base fiable pour reproduire, modifier ou développer un nouvel élément à partir de l’existant.',
         ],
       },
+      {
+        title: 'Un scan adapté aux contraintes de l’objet',
+        paragraphs: [
+          'Avant toute numérisation, nous évaluons la taille de l’objet, sa matière, son état de surface et l’usage prévu du fichier. Les surfaces brillantes, transparentes ou très sombres, comme les zones difficiles d’accès, peuvent nécessiter une préparation ou une méthode de captation spécifique. Ce travail en amont permet de définir le niveau de détail utile, d’anticiper les limites du relevé et, si nécessaire, de prévoir une reprise de modélisation plutôt qu’un simple scan.',
+        ],
+      },
     ],
     inlineVisuals: [
       {
