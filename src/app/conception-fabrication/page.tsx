@@ -18,7 +18,7 @@ export default function ConceptionFabricationPage() {
   return (
     <ServiceNavigationPage
       title={'Nos expertises en\nconception & fabrication'}
-      intro="À Paris et en Île-de-France, Inphenix System accompagne vos projets sur mesure : scan 3D, modélisation, découpe laser et prototypage. À partir d’un objet existant, d’un fichier ou d’une idée, nous créons les éléments qui permettent de poursuivre le projet : relevé, modèle 3D, pièce découpée ou prototype."
+      intro="À Paris et en Île-de-France, Inphenix System accompagne vos projets sur mesure : scan 3D, modélisation, découpe laser et prototypage. Nous mettons au point les éléments techniques nécessaires à la fabrication : relevé 3D, modèle, pièce découpée ou prototype."
       cards={cards}
     />
   )
