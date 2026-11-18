@@ -1072,7 +1072,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Intégrer une alimentation dans un dispositif existant',
         paragraphs: [
           'Un prototype peut aussi porter sur un élément précis d’un équipement. Ici, l’intervention a consisté à concevoir une powerbank sur mesure destinée à s’intégrer dans un distributeur automatique existant, avec ses contraintes de format, de connectique et d’accès aux ports bancaires.',
-          'Le travail a porté sur le développement et l’intégration de la powerbank, et non sur la conception de la machine elle-même. Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
+          'Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
         ],
       },
       {
