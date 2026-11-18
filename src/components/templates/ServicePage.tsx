@@ -236,10 +236,10 @@ export default function ServicePage({ service }: ServicePageProps) {
                   <section
                     key={section.title || `section-${index}`}
                     data-service-section={index}
-                    className={visual ? (stacked ? 'w-full space-y-8' : metalCompactVisual ? 'mb-8 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,620px)] lg:justify-start lg:gap-12' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : wide ? 'w-full max-w-none py-4' : 'max-w-4xl'}
+                    className={visual ? (stacked ? 'w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : wide ? 'w-full max-w-none py-4' : 'max-w-4xl'}
                   >
                     <div className={`min-w-0 ${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''}`}>
-                      {section.title && <h2 className="text-2xl md:text-3xl font-bold text-secondary-900 mb-5">{section.title}</h2>}
+                      {section.title && <h2 className={`text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
                         {section.paragraphs.map((paragraph, paragraphIndex) => (
                           <p key={paragraph} className={service.slug === 'impression-3d-metal' && index === 1 && paragraphIndex === 0 ? 'pt-5' : ''}>{paragraph}</p>
