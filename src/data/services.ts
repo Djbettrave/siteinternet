@@ -1,6 +1,3 @@
-Warning: truncated output (original token count: 20168)
-Total output lines: 1249
-
 import type { ServiceData } from '@/components/templates/ServicePage'
 
 export const servicesData: Record<string, ServiceData> = {
@@ -579,7 +576,14 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'De la préparation au rendu final',
         paragraphs: [
           'Le fichier est analysé avant production afin d’orienter la pièce, de positionner les supports et de préserver les zones visibles ou fonctionnelles. Après impression, les supports sont retirés, la pièce est lavée puis polymérisée. Cette préparation conditionne directement la netteté des détails et la qualité de surface.',
-          'Selon l’usage, une pièce peut être livrée dans son état de résine après post-traitement ou recevoir une préparation complémentair…168 tokens truncated…,
+          'Selon l’usage, une pièce peut être livrée dans son état de résine après post-traitement ou recevoir une préparation complémentaire : ponçage, apprêt, peinture, métallisation, vernis ou assemblage. Le niveau de finition est défini par le rendu recherché, pas par une solution standardisée.',
+        ],
+      },
+      {
+        title: 'Choisir la résine selon l’usage',
+        layout: 'wide',
+        paragraphs: [
+          'Les résines ne répondent pas toutes au même besoin. Une résine standard convient à un prototype visuel ou à une maquette détaillée ; une résine flexible, calcinable, transparente ou résistante à la température répond à des contraintes plus spécifiques. La matière est retenue en fonction de la forme, de la manipulation prévue et de la finition.',
           'Pour une pièce destinée à être très sollicitée ou de grande dimension, une autre technologie peut être plus cohérente. Nous orientons alors le projet vers le procédé et le matériau adaptés, en tenant compte du résultat visuel attendu et des contraintes de fabrication.',
         ],
       },
