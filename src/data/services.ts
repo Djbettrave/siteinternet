@@ -975,15 +975,14 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     inlineVisuals: [
       {
-        afterSection: 0,
-        position: 'right',
+        afterSection: 1,
+        position: 'left',
         alt: 'Sac de référence et son modèle 3D en cours de conception',
         image: {
           src: '/images/services/modelisation-3d/modelisation-sac-reference-modele-3d.jpeg',
           alt: 'Sac de référence et son modèle 3D en cours de conception',
           aspect: 'landscape',
         },
-        layout: 'stacked',
         visualSize: 'compact',
       },
     ],
