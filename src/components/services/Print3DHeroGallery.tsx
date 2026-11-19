@@ -5,6 +5,7 @@ export type Print3DGalleryImage = {
   src: string
   alt: string
   fit?: 'cover' | 'contain'
+  frame?: 'compact-landscape'
 }
 
 type Print3DHeroGalleryProps = {
@@ -25,7 +26,13 @@ function GallerySlot({ image, className }: { image?: Print3DGalleryImage; classN
 export default function Print3DHeroGallery({ images = [] }: Print3DHeroGalleryProps) {
   if (images.length === 0) return <GallerySlot className="h-[280px] sm:h-[360px] lg:h-[min(54svh,520px)]" />
 
-  if (images.length === 1) return <GallerySlot image={images[0]} className="h-[280px] sm:h-[360px] lg:h-[min(54svh,520px)]" />
+  if (images.length === 1) {
+    const image = images[0]
+    const frame = image.frame === 'compact-landscape'
+      ? 'mx-auto aspect-[5/3] w-[92%]'
+      : 'h-[280px] sm:h-[360px] lg:h-[min(54svh,520px)]'
+    return <GallerySlot image={image} className={frame} />
+  }
 
   if (images.length === 2) {
     return <div className="grid h-[360px] grid-cols-[1.45fr_1fr] gap-4 sm:h-[440px] lg:h-[min(54svh,520px)]"><GallerySlot image={images[0]} className="h-full" /><GallerySlot image={images[1]} className="h-full" /></div>

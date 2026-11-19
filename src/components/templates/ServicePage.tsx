@@ -4,7 +4,7 @@ import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import MobileReveal from '@/components/ui/MobileReveal'
-import Print3DHeroGallery from '@/components/services/Print3DHeroGallery'
+import Print3DHeroGallery, { type Print3DGalleryImage } from '@/components/services/Print3DHeroGallery'
 
 export interface ServiceData {
   slug: string
@@ -19,11 +19,7 @@ export interface ServiceData {
     alt: string
     label: string
   }
-  galleryImages?: {
-    src: string
-    alt: string
-    fit?: 'cover' | 'contain'
-  }[]
+  galleryImages?: Print3DGalleryImage[]
   heroLayout?: 'text-left' | 'image-left'
   description: string
   features: {

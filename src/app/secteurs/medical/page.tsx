@@ -52,7 +52,12 @@ export default function MedicalPage() {
     <main className="bg-white">
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: 'Santé et médical', path: '/secteurs/medical' }]} />
       <SectorHero
-        headline="Impression 3D pour la santé, le dentaire et les cabinets médicaux."
+        headline={(
+          <span className="block lg:max-xl:text-[clamp(2.5rem,4vw,3rem)] lg:max-xl:leading-tight">
+            Impression 3D pour la santé, le dentaire et les cabinets&nbsp;médicaux.
+          </span>
+        )}
+        centerText
         subheadline="Maquettes d’aménagement, supports de formation et prototypes de présentation pour rendre un projet médical plus lisible, concret et convaincant. Les pièces sont imprimées dans notre atelier à Suresnes."
         image={{
           src: '/images/secteurs/medical/modele-dentaire-detoure.webp',

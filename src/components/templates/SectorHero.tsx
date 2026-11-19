@@ -12,6 +12,7 @@ interface SectorHeroProps {
     focus?: 'upper'
   }
   imageOnLeft?: boolean
+  centerText?: boolean
   placeholderLabel?: string
 }
 
@@ -20,6 +21,7 @@ export default function SectorHero({
   subheadline,
   image,
   imageOnLeft = false,
+  centerText = false,
   placeholderLabel = 'Photo de couverture du secteur',
 }: SectorHeroProps) {
   const layout = imageOnLeft
@@ -42,11 +44,11 @@ export default function SectorHero({
   return (
     <section className="relative overflow-hidden bg-[#f6f6f4]">
       <div className={`container-custom grid gap-10 py-12 lg:items-center lg:py-16 ${layout}`}>
-        <div className={`min-w-0 max-w-3xl [overflow-wrap:anywhere] ${imageOnLeft ? 'lg:order-2' : ''}`}>
-          <h1 className="mb-6 text-3xl font-bold leading-tight text-secondary-950 sm:text-4xl md:text-5xl">
+        <div className={`min-w-0 max-w-3xl [overflow-wrap:anywhere] ${imageOnLeft ? 'lg:order-2' : ''} ${centerText ? 'mx-auto text-center' : ''}`}>
+          <h1 className={`mb-6 text-3xl font-bold leading-tight text-secondary-950 sm:text-4xl md:text-5xl ${centerText ? 'text-balance' : ''}`}>
             {headline}
           </h1>
-          <p className="mb-8 text-lg text-secondary-600 sm:max-w-2xl sm:text-xl">
+          <p className={`mb-8 text-lg text-secondary-600 sm:max-w-2xl sm:text-xl ${centerText ? 'mx-auto' : ''}`}>
             {subheadline}
           </p>
         </div>

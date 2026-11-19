@@ -406,7 +406,7 @@ export const servicesData: Record<string, ServiceData> = {
       {
         src: '/images/secteurs/architecture/architecture-hero-escalier.jpg',
         alt: 'Maquette de maison imprimée en 3D avec escalier extérieur',
-        fit: 'contain',
+        frame: 'compact-landscape',
       },
     ],
     headline: 'Impression 3D FDM -\nPièces résistantes et fonctionnelles',
@@ -495,8 +495,7 @@ export const servicesData: Record<string, ServiceData> = {
       { name: 'PETG', properties: 'Résistant, flexible. Usage général, pièces fonctionnelles.' },
       { name: 'ABS', properties: 'Résistant aux chocs et chaleur. Pièces mécaniques.' },
       { name: 'ASA', properties: 'Résistant UV, usage extérieur. Signalétique, automobile.' },
-      { name: 'Nylon PA12', properties: 'Haute résistance, flexibilité. Engrenages, pièces mécaniques.' },
-      { name: 'PA12-CF', properties: 'Nylon chargé carbone. Rigidité et légèreté maximales.' },
+      { name: 'TPU', properties: 'Souple et résistant aux déformations. Joints, protections et pièces flexibles.' },
       { name: 'PC', properties: 'Polycarbonate transparent. Résistance aux chocs.' },
     ],
     process: [
