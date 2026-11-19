@@ -59,7 +59,7 @@ export default function MedicalPage() {
             <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary-600">
               Maquettes d’aménagement, supports de formation et prototypes de
               présentation pour rendre un projet médical plus lisible, concret
-              et convaincant.
+              et convaincant. Les pièces sont imprimées dans notre atelier à Suresnes.
             </p>
           </div>
           <div className="relative mx-auto aspect-[4/3] w-full max-w-[320px] overflow-hidden rounded-xl">
@@ -162,7 +162,7 @@ export default function MedicalPage() {
               Nous commençons par voir ce que le modèle doit montrer et dans quelles conditions il sera utilisé. Pour expliquer une articulation en formation, on peut agrandir le modèle ou séparer certains éléments pour mieux voir comment ils s’emboîtent. Pour une maquette de cabinet, on s’attache surtout à garder les bonnes proportions entre le mobilier, les équipements et les espaces de circulation. À partir de vos plans, d’un fichier 3D ou de quelques visuels de référence, nous déterminons avec vous la taille du modèle et les détails à faire ressortir.
             </p>
             <p>
-              Nous pouvons créer le modèle 3D ou adapter un fichier existant. L’impression 3D est réalisée dans notre atelier à Suresnes. Une pièce destinée à être manipulée régulièrement peut demander d’épaissir un détail fragile ou de revoir un assemblage. Pour une maquette d’aménagement, nous pouvons imprimer certains équipements séparément afin de les déplacer et de comparer plusieurs implantations. Sur un modèle anatomique, la couleur peut servir à distinguer les structures. Sur une maquette de présentation, elle peut aider à identifier les équipements ou les différentes zones du cabinet.
+              Nous pouvons créer le modèle 3D ou adapter un fichier existant pour l’impression. Nous le préparons en fonction de l’usage prévu. Si la pièce doit être manipulée régulièrement, il peut être utile d’épaissir un détail fragile ou de revoir un assemblage. Pour une maquette d’aménagement, nous pouvons imprimer certains équipements séparément afin de les déplacer et de comparer plusieurs implantations. Selon le projet, nous réalisons aussi les finitions nécessaires. Sur un modèle anatomique, la couleur peut servir à distinguer les structures. Sur une maquette de présentation, elle peut aider à identifier les équipements ou les différentes zones du cabinet.
             </p>
           </div>
         </div>
