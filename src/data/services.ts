@@ -402,6 +402,13 @@ export const servicesData: Record<string, ServiceData> = {
     name: 'Impression 3D FDM',
     category: 'Impression 3D',
     heroLayout: 'text-left',
+    galleryImages: [
+      {
+        src: '/images/secteurs/architecture/architecture-hero-escalier.jpg',
+        alt: 'Maquette de maison imprimée en 3D avec escalier extérieur',
+        fit: 'contain',
+      },
+    ],
     headline: 'Impression 3D FDM -\nPièces résistantes et fonctionnelles',
     subheadline: 'La technologie FDM (Fused Deposition Modeling) pour des pièces solides, fonctionnelles et économiques. Idéale pour le prototypage et les petites séries.',
     description: 'L\'impression 3D FDM utilise des filaments thermoplastiques pour créer des pièces couche par couche. Cette technologie offre un excellent rapport qualité-prix pour les prototypes fonctionnels et les pièces de production.',
@@ -457,8 +464,13 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 0,
         position: 'right',
-        label: 'Visuel FDM 01 — pièce FDM en usage',
-        alt: 'Photo à ajouter d’une pièce FDM utilisée dans un projet',
+        alt: 'Prototype fonctionnel d’un mécanisme de défilement de film',
+        image: {
+          src: '/images/services/prototypage/prototype-mecanisme-defilement-film.jpeg',
+          alt: 'Prototype fonctionnel d’un mécanisme de défilement de film',
+          aspect: 'standard',
+          fit: 'cover',
+        },
       },
       {
         afterSection: 1,

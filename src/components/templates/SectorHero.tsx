@@ -8,7 +8,7 @@ interface SectorHeroProps {
   image?: {
     src: string
     alt: string
-    variant?: 'landscape' | 'cutout'
+    variant?: 'landscape' | 'cutout' | 'wide-cutout'
     focus?: 'upper'
   }
   imageOnLeft?: boolean
@@ -25,11 +25,13 @@ export default function SectorHero({
   const layout = imageOnLeft
     ? 'lg:grid-cols-[28rem_minmax(0,1fr)]'
     : 'lg:grid-cols-[minmax(0,1fr)_28rem]'
-  const imageFrame = image?.variant === 'cutout'
-    ? 'aspect-[720/593] max-w-[320px]'
-    : image?.variant === 'landscape'
-      ? 'aspect-[11/6] max-w-[400px] overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]'
-      : 'aspect-[4/5] overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]'
+  const framedImage = 'overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]'
+  const imageFrames = {
+    cutout: 'aspect-[720/593] max-w-[320px]',
+    'wide-cutout': 'aspect-[4/3]',
+    landscape: `aspect-[11/6] max-w-[400px] ${framedImage}`,
+  }
+  const imageFrame = image?.variant ? imageFrames[image.variant] : `aspect-[4/5] ${framedImage}`
   const imageFit = image?.variant
     ? 'object-contain'
     : image?.focus === 'upper'

@@ -94,7 +94,7 @@ export default function MedicalPage() {
         </div>
       </section>
 
-      <section className="bg-secondary-50 py-12 lg:py-16">
+      <section className="py-12 lg:py-16">
         <div className="container-custom grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:items-center lg:gap-12">
           <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100">
             <Image
@@ -138,7 +138,7 @@ export default function MedicalPage() {
         <div aria-hidden="true" className="aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100" />
       </section>
 
-      <section className="bg-secondary-50 py-12 lg:py-16">
+      <section className="py-12 lg:py-16">
         <div className="container-custom text-left">
           <h2 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900">
             Un accompagnement adapté à chaque projet
