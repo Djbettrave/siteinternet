@@ -13,7 +13,6 @@ export const metadata: Metadata = {
 const audiences = [
   {
     title: "Dentaire",
-    eyebrow: "Cabinets · pédagogie · présentation",
     description:
       "Modèles de démonstration, éléments de présentation de cabinet et supports physiques pour expliquer un projet ou un protocole.",
     points: [
@@ -25,7 +24,6 @@ const audiences = [
   },
   {
     title: "Cabinets et cliniques",
-    eyebrow: "Aménagement · parcours · accueil",
     description:
       "Visualisez un espace de soins, un accueil, une signalétique ou un agencement avant la réalisation grâce à une maquette claire et tangible.",
     points: [
@@ -37,7 +35,6 @@ const audiences = [
   },
   {
     title: "Formation et communication",
-    eyebrow: "Congrès · pédagogie · démonstration",
     description:
       "Donnez une forme physique à un concept anatomique, un parcours de soin ou une présentation destinée à la formation et à la communication.",
     points: [
@@ -86,10 +83,7 @@ export default function MedicalPage() {
               key={audience.title}
               className="rounded-xl border border-secondary-200 p-7 hover:border-primary-200"
             >
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary-600">
-                {audience.eyebrow}
-              </p>
-              <h2 className="mt-4 text-2xl font-bold tracking-[-0.025em] text-secondary-900">
+              <h2 className="text-2xl font-bold tracking-[-0.025em] text-secondary-900">
                 {audience.title}
               </h2>
               <p className="mt-4 leading-7 text-secondary-600">
@@ -97,18 +91,15 @@ export default function MedicalPage() {
               </p>
               <ul className="mt-6 space-y-3">
                 {audience.points.map((point) => (
-                  <li
-                    key={point}
-                    className="flex gap-3 text-sm leading-6 text-secondary-700"
-                  >
-                    <span className="mt-0.5 text-primary-600">✓</span>
+                  <li key={point} className="flex gap-3 text-sm leading-6 text-secondary-700">
+                    <span aria-hidden="true" className="mt-0.5 shrink-0 font-medium text-primary-600">–</span>
                     {point}
                   </li>
                 ))}
               </ul>
               <Link
                 href="/contact"
-                className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-primary-600 hover:text-primary-700"
+                className="ml-auto mt-8 flex w-fit items-center gap-2 text-[13px] font-semibold italic leading-5 text-primary-600 hover:text-primary-700"
               >
                 {audience.cta}
                 <span aria-hidden="true">→</span>
@@ -159,7 +150,7 @@ export default function MedicalPage() {
             </p>
           </div>
         </div>
-        <div aria-hidden="true" className="hidden aspect-[4/3] rounded-xl bg-secondary-100 lg:block" />
+        <div aria-hidden="true" className="aspect-[4/3] w-full max-w-52 rounded-xl bg-secondary-100 lg:max-w-none" />
       </section>
 
       <section className="bg-secondary-50 py-12 lg:py-16">
@@ -175,6 +166,7 @@ export default function MedicalPage() {
               Notre atelier de Suresnes peut intervenir dès la modélisation 3D, puis assurer l’impression et les finitions nécessaires. Qu’il s’agisse d’un modèle anatomique, d’une maquette d’aménagement ou d’un prototype de présentation, l’objectif reste le même : réaliser un support physique adapté à votre projet et à votre public.
             </p>
           </div>
+          <div aria-hidden="true" className="mt-8 aspect-[4/3] w-full max-w-52 rounded-xl bg-secondary-100 lg:max-w-sm" />
         </div>
       </section>
     </main>
