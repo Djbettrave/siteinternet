@@ -51,7 +51,7 @@ export default function MedicalPage() {
     <main className="bg-white">
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: 'Santé et médical', path: '/secteurs/medical' }]} />
       <section className="bg-[#f6f6f4]">
-        <div className="container-custom grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center lg:py-16">
+        <div className="container-custom grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)] lg:items-center lg:py-16">
           <div className="max-w-3xl">
             <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] text-secondary-950 md:text-5xl">
               Impression 3D pour la santé, le dentaire et les cabinets médicaux.
@@ -62,14 +62,13 @@ export default function MedicalPage() {
               et convaincant.
             </p>
           </div>
-          <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]">
+          <div className="relative mx-auto aspect-[4/3] w-full max-w-[320px] overflow-hidden rounded-xl">
             <Image
               src="/images/secteurs/medical/Medical_2.jpg"
               alt="Modèle dentaire imprimé en 3D sur articulateur"
               fill
               priority
-              quality={95}
-              sizes="(min-width: 1024px) 38vw, 100vw"
+              sizes="(min-width: 360px) 320px, calc(100vw - 32px)"
               className="object-cover"
             />
           </div>
@@ -160,10 +159,10 @@ export default function MedicalPage() {
           </h2>
           <div className="mt-5 space-y-5 leading-7 text-secondary-600">
             <p>
-              Chaque réalisation dépend de ce que vous souhaitez montrer et de la manière dont le support sera utilisé. À partir d’un fichier 3D existant, de plans ou d’une simple idée, nous étudions les possibilités de fabrication en tenant compte des dimensions, du niveau de détail et du rendu recherché.
+              Nous commençons par voir ce que le modèle doit montrer et dans quelles conditions il sera utilisé. Pour expliquer une articulation en formation, on peut agrandir le modèle ou séparer certains éléments pour mieux voir comment ils s’emboîtent. Pour une maquette de cabinet, on s’attache surtout à garder les bonnes proportions entre le mobilier, les équipements et les espaces de circulation. À partir de vos plans, d’un fichier 3D ou de quelques visuels de référence, nous déterminons avec vous la taille du modèle et les détails à faire ressortir.
             </p>
             <p>
-              Notre atelier de Suresnes peut intervenir dès la modélisation 3D, puis assurer l’impression et les finitions nécessaires. Qu’il s’agisse d’un modèle anatomique, d’une maquette d’aménagement ou d’un prototype de présentation, l’objectif reste le même : réaliser un support physique adapté à votre projet et à votre public.
+              À Suresnes, nous pouvons créer le modèle 3D ou adapter un fichier existant avant de passer à l’impression. Une pièce destinée à être manipulée régulièrement peut demander d’épaissir un détail fragile ou de revoir un assemblage. Pour une maquette d’aménagement, nous pouvons imprimer certains équipements séparément afin de les déplacer et de comparer plusieurs implantations. Après impression, les pièces peuvent être assemblées, poncées ou peintes. Sur un modèle anatomique, la couleur peut servir à distinguer les structures. Sur une maquette de présentation, elle peut aider à identifier les équipements ou les différentes zones du cabinet.
             </p>
           </div>
         </div>
