@@ -49,24 +49,6 @@ const audiences = [
   },
 ];
 
-const steps = [
-  [
-    "01",
-    "Décrivez votre besoin",
-    "Partagez le contexte, le public, les dimensions souhaitées et vos échéances.",
-  ],
-  [
-    "02",
-    "Définissons la solution",
-    "Nous cadrons l’échelle, le niveau de détail, le matériau et le format de présentation.",
-  ],
-  [
-    "03",
-    "Fabriquons votre support",
-    "Votre maquette ou support de démonstration est préparé pour être présenté, expliqué ou exposé.",
-  ],
-];
-
 export default function MedicalPage() {
   return (
     <main className="bg-white">
@@ -86,7 +68,7 @@ export default function MedicalPage() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)]">
             <Image
               src="/images/secteurs/medical/Medical_2.jpg"
-              alt="Modèle anatomique de cœur imprimé en 3D"
+              alt="Modèle dentaire imprimé en 3D sur articulateur"
               fill
               priority
               quality={95}
@@ -97,21 +79,8 @@ export default function MedicalPage() {
         </div>
       </section>
 
-    <section id="votre-projet" className="container-custom py-16 lg:py-20">
-        <div className="max-w-6xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-600">
-            Trois besoins, une approche sur mesure
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-[-0.035em] text-secondary-900 md:text-4xl">
-            Concevoir un support qui aide vraiment à expliquer votre projet.
-          </h2>
-          <p className="mt-4 text-lg leading-8 text-secondary-600">
-            Chaque projet santé a son public : patient, équipe, étudiant,
-            partenaire ou décideur. Le support doit donc être adapté à l’usage
-            réel.
-          </p>
-        </div>
-        <div className="mt-10 grid gap-6 lg:grid-cols-3">
+      <section id="votre-projet" className="container-custom py-12 lg:py-16">
+        <div className="grid gap-6 lg:grid-cols-3">
           {audiences.map((audience) => (
             <article
               key={audience.title}
@@ -120,9 +89,9 @@ export default function MedicalPage() {
               <p className="text-xs font-semibold uppercase tracking-[0.14em] text-primary-600">
                 {audience.eyebrow}
               </p>
-              <h3 className="mt-4 text-2xl font-bold tracking-[-0.025em] text-secondary-900">
+              <h2 className="mt-4 text-2xl font-bold tracking-[-0.025em] text-secondary-900">
                 {audience.title}
-              </h3>
+              </h2>
               <p className="mt-4 leading-7 text-secondary-600">
                 {audience.description}
               </p>
@@ -149,137 +118,63 @@ export default function MedicalPage() {
         </div>
       </section>
 
-    <section className="bg-secondary-50 py-16 lg:py-20">
-        <div className="container-custom grid gap-8 lg:grid-cols-[0.85fr_1.15fr] lg:items-center">
-          <div className="rounded-xl border border-secondary-200 bg-white p-7 sm:p-9">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-600">
-              Un cadre rassurant
-            </p>
-            <h2 className="mt-3 text-3xl font-bold tracking-[-0.035em] text-secondary-900">
-              Confidentialité et objectif de présentation.
-            </h2>
-            <p className="mt-4 leading-7 text-secondary-600">
-              Vos fichiers et informations projet sont utilisés uniquement pour
-              préparer votre demande. Cette offre est dédiée aux maquettes,
-              prototypes et supports de présentation, de formation ou
-              d’aménagement.
-            </p>
-          </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-xl border border-secondary-200 bg-white p-6">
-              <p className="text-sm font-semibold text-secondary-900">
-                Présenter un espace
-              </p>
-              <p className="mt-3 text-sm leading-6 text-secondary-600">
-                Maquette de cabinet, d’accueil, de parcours patient ou
-                d’aménagement intérieur.
-              </p>
-            </div>
-            <div className="rounded-xl border border-secondary-200 bg-white p-6">
-              <p className="text-sm font-semibold text-secondary-900">
-                Expliquer un concept
-              </p>
-              <p className="mt-3 text-sm leading-6 text-secondary-600">
-                Support de présentation pour équipe, patient, étudiant, congrès
-                ou rendez-vous professionnel.
-              </p>
-            </div>
-            <div className="rounded-xl border border-secondary-200 bg-white p-6">
-              <p className="text-sm font-semibold text-secondary-900">
-                Préparer une formation
-              </p>
-              <p className="mt-3 text-sm leading-6 text-secondary-600">
-                Modèles pédagogiques et éléments visuels destinés à faciliter la
-                compréhension.
-              </p>
-            </div>
-            <div className="rounded-xl border border-secondary-200 bg-white p-6">
-              <p className="text-sm font-semibold text-secondary-900">
-                Construire un prototype
-              </p>
-              <p className="mt-3 text-sm leading-6 text-secondary-600">
-                Objet de démonstration, élément d’agencement, présentoir ou
-                pièce de communication.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-    <section className="border-y border-secondary-200 bg-white py-16 lg:py-20">
-        <div className="container-custom grid gap-6 md:grid-cols-3">
-          <figure className="relative aspect-[16/10] overflow-hidden rounded-xl bg-secondary-100">
+      <section className="bg-secondary-50 py-12 lg:py-16">
+        <div className="container-custom grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)] lg:items-center lg:gap-12">
+          <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100">
             <Image
               src="/images/secteurs/medical/Medical_1.jpg"
               alt="Maquette anatomique de bassin imprimée en 3D"
               fill
-              quality={95}
-              sizes="(min-width: 768px) 33vw, 100vw"
+              sizes="(min-width: 1280px) 390px, (min-width: 1024px) 33vw, 100vw"
               className="object-cover"
             />
-          </figure>
-          <figure className="relative aspect-[16/10] overflow-hidden rounded-xl bg-secondary-100">
-            <Image
-              src="/images/secteurs/medical/Medical_3.jpg"
-              alt="Modèle de dentition imprimé en 3D"
-              fill
-              quality={95}
-              sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover"
-            />
-          </figure>
-          <figure className="relative aspect-[16/10] overflow-hidden rounded-xl bg-secondary-100">
-            <Image
-              src="/images/secteurs/medical/Medical_4.jpg"
-              alt="Support médical imprimé en 3D"
-              fill
-              quality={95}
-              sizes="(min-width: 768px) 33vw, 100vw"
-              className="object-cover"
-            />
-          </figure>
-        </div>
-      </section>
-
-    <section id="etapes" className="container-custom py-16 lg:py-20">
-        <div className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary-600">
-            Un processus clair
-          </p>
-          <h2 className="mt-3 text-3xl font-bold tracking-[-0.035em] text-secondary-900">
-            Du besoin au support physique.
-          </h2>
-        </div>
-        <div className="mt-12 grid gap-8 md:grid-cols-3">
-          {steps.map(([number, title, description]) => (
-            <div key={number} className="border-t-2 border-primary-500 pt-5">
-              <p className="font-mono text-sm text-primary-600">{number}</p>
-              <h3 className="mt-3 text-xl font-bold text-secondary-900">
-                {title}
-              </h3>
-              <p className="mt-3 leading-7 text-secondary-600">{description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-primary-600 py-16 text-white">
-        <div className="container-custom flex flex-col gap-7 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 className="text-3xl font-bold tracking-[-0.035em]">
-              Parlons de votre projet santé.
+          </div>
+          <div className="text-left">
+            <h2 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900">
+              Des modèles anatomiques pour expliquer et former
             </h2>
-            <p className="mt-3 max-w-2xl text-primary-100">
-              Partagez une intention, un plan, un fichier ou un brief : nous
-              vous aiderons à choisir un support adapté à votre usage.
+            <div className="mt-5 space-y-5 leading-7 text-secondary-600">
+              <p>
+                Pour une formation, une présentation ou une démonstration, un modèle physique permet parfois de mieux comprendre ce qu’une image ne suffit pas à montrer. Nous réalisons des représentations anatomiques imprimées en 3D pour illustrer le fonctionnement d’une articulation, la structure d’un squelette ou les effets d’une pathologie comme l’arthrose.
+              </p>
+              <p>
+                Ces modèles peuvent être fabriqués à taille réelle ou à une échelle adaptée, avec certains éléments mis en évidence pour faciliter la compréhension. Ils s’adressent notamment aux organismes de formation, aux professionnels de santé et aux entreprises qui souhaitent disposer d’un support pédagogique concret, destiné à être manipulé, présenté ou exposé.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="container-custom grid gap-8 py-12 lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)] lg:items-center lg:gap-12 lg:py-16">
+        <div className="text-left">
+          <h2 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900">
+            Des maquettes pour présenter vos équipements et vos espaces
+          </h2>
+          <div className="mt-5 space-y-5 leading-7 text-secondary-600">
+            <p>
+              Pour présenter un nouveau fauteuil dentaire, un équipement médical ou l’aménagement d’un cabinet, une maquette permet de visualiser un projet avant sa réalisation. Elle aide à comprendre les proportions, l’organisation d’un espace ou l’apparence d’un produit, sans avoir besoin de fabriquer immédiatement un exemplaire à taille réelle.
+            </p>
+            <p>
+              À partir de plans, de fichiers 3D ou de références visuelles, nous réalisons des modèles réduits et des prototypes de présentation. L’impression 3D résine permet notamment de reproduire les détails de petits équipements ou de pièces miniatures. Ces maquettes peuvent être utilisées lors d’un salon professionnel, d’une présentation commerciale ou d’un échange entre concepteurs, fabricants et clients.
             </p>
           </div>
-          <Link
-            href="/contact"
-            className="shrink-0 rounded-lg bg-white px-6 py-3 text-sm font-semibold text-primary-700 hover:bg-primary-50"
-          >
-            Nous contacter
-          </Link>
+        </div>
+        <div aria-hidden="true" className="hidden aspect-[4/3] rounded-xl bg-secondary-100 lg:block" />
+      </section>
+
+      <section className="bg-secondary-50 py-12 lg:py-16">
+        <div className="container-custom text-left">
+          <h2 className="text-3xl font-bold tracking-[-0.035em] text-secondary-900">
+            Un accompagnement adapté à chaque projet
+          </h2>
+          <div className="mt-5 space-y-5 leading-7 text-secondary-600">
+            <p>
+              Chaque réalisation dépend de ce que vous souhaitez montrer et de la manière dont le support sera utilisé. À partir d’un fichier 3D existant, de plans ou d’une simple idée, nous étudions les possibilités de fabrication en tenant compte des dimensions, du niveau de détail et du rendu recherché.
+            </p>
+            <p>
+              Notre atelier de Suresnes peut intervenir dès la modélisation 3D, puis assurer l’impression et les finitions nécessaires. Qu’il s’agisse d’un modèle anatomique, d’une maquette d’aménagement ou d’un prototype de présentation, l’objectif reste le même : réaliser un support physique adapté à votre projet et à votre public.
+            </p>
+          </div>
         </div>
       </section>
     </main>
