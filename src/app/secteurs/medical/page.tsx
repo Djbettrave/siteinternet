@@ -150,7 +150,7 @@ export default function MedicalPage() {
             </p>
           </div>
         </div>
-        <div aria-hidden="true" className="aspect-[4/3] w-full max-w-52 rounded-xl bg-secondary-100 lg:max-w-none" />
+        <div aria-hidden="true" className="aspect-[4/3] overflow-hidden rounded-xl bg-secondary-100" />
       </section>
 
       <section className="bg-secondary-50 py-12 lg:py-16">
@@ -166,7 +166,6 @@ export default function MedicalPage() {
               Notre atelier de Suresnes peut intervenir dès la modélisation 3D, puis assurer l’impression et les finitions nécessaires. Qu’il s’agisse d’un modèle anatomique, d’une maquette d’aménagement ou d’un prototype de présentation, l’objectif reste le même : réaliser un support physique adapté à votre projet et à votre public.
             </p>
           </div>
-          <div aria-hidden="true" className="mt-8 aspect-[4/3] w-full max-w-52 rounded-xl bg-secondary-100 lg:max-w-sm" />
         </div>
       </section>
     </main>
