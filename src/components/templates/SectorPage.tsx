@@ -4,6 +4,7 @@ import type { Metadata } from 'next'
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema'
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder'
 import MobileReveal from '@/components/ui/MobileReveal'
+import SectorHero from './SectorHero'
 
 export interface SectorData {
   slug: string
@@ -130,41 +131,23 @@ export default function SectorPage({ sector }: SectorPageProps) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(generateSectorSchema(sector)) }}
       />
 
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-[#f6f6f4]">
-        <div className="container-custom relative">
-          <div className="grid w-full min-w-0 gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(320px,0.7fr)] lg:items-center lg:py-16">
-            <div className={`w-full min-w-0 max-w-3xl ${imageOnLeft ? 'lg:order-2' : ''}`}>
-              <h1 className="mb-6 max-w-full text-3xl font-bold leading-tight text-secondary-950 sm:text-4xl md:text-5xl" style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}>
-                {sector.headline.split('\n').map((line, index) => (
-                  <span key={index} className="block">{line}</span>
-                ))}
-              </h1>
-              <p className="mb-8 max-w-full text-lg text-secondary-600 sm:max-w-2xl sm:text-xl" style={{ overflowWrap: 'anywhere', whiteSpace: 'normal' }}>
-                {sector.subheadline.split('. ').map((sentence, index, array) => (
-                  <span key={index} className="block">
-                    {sentence}{index < array.length - 1 ? '.' : sentence.endsWith('.') ? '' : '.'}
-                  </span>
-                ))}
-              </p>
-            </div>
-            {sector.heroImage ? (
-              <div className={`relative mx-auto aspect-[4/5] w-full max-w-md overflow-hidden rounded-2xl shadow-[0_16px_40px_rgba(24,31,42,0.14)] ${imageOnLeft ? 'lg:order-1' : ''}`}>
-                <Image
-                  src={sector.heroImage}
-                  alt={sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`}
-                  fill
-                  priority
-                  sizes="(min-width: 1024px) 38vw, 100vw"
-                  className={sector.slug === 'luxe' ? 'object-cover object-[center_45%]' : 'object-cover object-center'}
-                />
-              </div>
-            ) : (
-              <ImagePlaceholder ariaLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`} className="aspect-[4/5] w-full max-w-md shadow-lg" />
-            )}
-          </div>
-        </div>
-      </section>
+      <SectorHero
+        headline={sector.headline.split('\n').map((line, index) => (
+          <span key={index} className="block">{line}</span>
+        ))}
+        subheadline={sector.subheadline.split('. ').map((sentence, index, array) => (
+          <span key={index} className="block">
+            {sentence}{index < array.length - 1 ? '.' : sentence.endsWith('.') ? '' : '.'}
+          </span>
+        ))}
+        image={sector.heroImage ? {
+          src: sector.heroImage,
+          alt: sector.heroImageAlt || `Photo de couverture pour le secteur ${sector.name}`,
+          focus: isLuxe ? 'upper' : undefined,
+        } : undefined}
+        imageOnLeft={imageOnLeft}
+        placeholderLabel={`Photo de couverture à choisir pour le secteur ${sector.name}`}
+      />
 
       {!isLuxe && projectsSection}
 

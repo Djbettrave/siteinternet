@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import BreadcrumbSchema from '@/components/seo/BreadcrumbSchema';
+import SectorHero from '@/components/templates/SectorHero';
 
 export const metadata: Metadata = {
   title: "Impression 3D santé et dentaire",
@@ -50,30 +51,15 @@ export default function MedicalPage() {
   return (
     <main className="bg-white">
       <BreadcrumbSchema items={[{ name: 'Accueil', path: '/' }, { name: 'Secteurs', path: '/secteurs' }, { name: 'Santé et médical', path: '/secteurs/medical' }]} />
-      <section className="bg-[#f6f6f4]">
-        <div className="container-custom grid gap-10 py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,320px)] lg:items-center lg:py-16">
-          <div className="max-w-3xl">
-            <h1 className="max-w-3xl text-4xl font-bold leading-tight tracking-[-0.04em] text-secondary-950 md:text-5xl">
-              Impression 3D pour la santé, le dentaire et les cabinets médicaux.
-            </h1>
-            <p className="mt-6 max-w-2xl text-lg leading-8 text-secondary-600">
-              Maquettes d’aménagement, supports de formation et prototypes de
-              présentation pour rendre un projet médical plus lisible, concret
-              et convaincant. Les pièces sont imprimées dans notre atelier à Suresnes.
-            </p>
-          </div>
-          <div className="relative mx-auto aspect-[4/3] w-full max-w-[320px] overflow-hidden rounded-xl">
-            <Image
-              src="/images/secteurs/medical/Medical_2.jpg"
-              alt="Modèle dentaire imprimé en 3D sur articulateur"
-              fill
-              priority
-              sizes="(min-width: 360px) 320px, calc(100vw - 32px)"
-              className="object-cover"
-            />
-          </div>
-        </div>
-      </section>
+      <SectorHero
+        headline="Impression 3D pour la santé, le dentaire et les cabinets médicaux."
+        subheadline="Maquettes d’aménagement, supports de formation et prototypes de présentation pour rendre un projet médical plus lisible, concret et convaincant. Les pièces sont imprimées dans notre atelier à Suresnes."
+        image={{
+          src: '/images/secteurs/medical/modele-dentaire-detoure.webp',
+          alt: 'Modèle dentaire imprimé en 3D sur articulateur',
+          variant: 'cutout',
+        }}
+      />
 
       <section id="votre-projet" className="container-custom py-12 lg:py-16">
         <div className="grid gap-6 lg:grid-cols-3">
