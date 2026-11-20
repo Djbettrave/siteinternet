@@ -707,23 +707,22 @@ export const servicesData: Record<string, ServiceData> = {
       {
         title: 'Impression 3D grand format : pièces, décors et installations sur mesure',
         paragraphs: [
-          'L’impression 3D grand format permet de réaliser des volumes qui prennent place dans un décor, un point de vente, une exposition, une maquette ou une installation artistique. Elle s’adresse aux projets pour lesquels la taille, la présence physique et le rendu final comptent autant que la forme de la pièce.',
-          'Du prototype grandeur nature à la sculpture, de la PLV à l’élément architectural, nous adaptons la fabrication à l’usage, aux dimensions et aux contraintes d’installation du projet.',
+          'L’impression 3D grand format permet de réaliser des volumes qui prennent place dans un décor, un point de vente, une exposition, une maquette ou une installation artistique. Elle s’adresse aux projets pour lesquels les dimensions, la forme et le rendu final nécessitent une fabrication adaptée. Nous réalisons aussi bien des sculptures et des objets décoratifs que des présentoirs, des éléments architecturaux, des reproductions de pièces existantes ou des prototypes à taille réelle. Ces réalisations peuvent présenter des formes organiques complexes, des reliefs détaillés ou des géométries techniques difficiles à obtenir avec des méthodes de fabrication traditionnelles. Selon le projet, nous pouvons travailler à partir d’un modèle 3D existant, d’une pièce à reproduire ou d’une conception entièrement nouvelle. Chaque fabrication tient compte de l’utilisation prévue, des dimensions souhaitées et des contraintes propres à l’objet.',
         ],
       },
       {
         title: 'Pièces décoratives et installations sur mesure',
         paragraphs: [
-          'Lorsque le volume le permet, la pièce peut être imprimée d’un seul tenant. Lorsque les dimensions dépassent le volume machine, la fabrication est pensée en plusieurs éléments dès la conception afin de conserver la solidité, la précision et le rendu attendu.',
-          'Préparation de surface, ponçage, apprêt, peinture et intégration sont définis selon la destination finale de l’objet. La fabrication ne s’arrête pas à l’impression : elle prépare une pièce prête à être installée, présentée ou utilisée.',
+          'Notre équipement permet d’imprimer des pièces jusqu’à 85 cm en un seul bloc, selon leur géométrie. Pour les réalisations de dimensions supérieures, nous pouvons diviser le modèle en plusieurs éléments qui seront imprimés séparément puis assemblés. Cette méthode permet de fabriquer des sculptures et des structures de plusieurs mètres, tout en adaptant la conception des différentes parties à leur forme et à leur résistance. Les zones de jonction sont étudiées pour faciliter l’assemblage et limiter leur visibilité après finition. Selon les besoins, nous pouvons également prévoir des renforts ou des structures internes pour améliorer la rigidité de l’ensemble.',
+          'Une fois les éléments réunis, différentes opérations de post-traitement peuvent être réalisées : ponçage, préparation des surfaces, application d’apprêt et peinture. Les finitions peuvent être mates, satinées ou brillantes, avec des couleurs unies, des effets métallisés ou des peintures imitant l’aspect du chrome, de l’or ou d’autres matériaux. Certains projets nécessitent une surface parfaitement lisse, tandis que d’autres conservent volontairement des textures ou des reliefs. Le choix de la finition dépend du rendu recherché, de la distance d’observation et des conditions dans lesquelles la pièce sera présentée.',
         ],
       },
       {
         title: 'Une fabrication adaptée au lieu et à l’installation',
         layout: 'wide',
         paragraphs: [
-          'Un projet grand format se prépare aussi en fonction de son environnement : accès au lieu, transport, montage, stabilité, fixation, contraintes de poids et conditions d’exposition. Ces paramètres sont intégrés dès l’étude pour que la pièce soit compatible avec son installation réelle.',
-          'Nous pouvons intervenir sur la conception du volume, sa fabrication, les éléments d’assemblage, la finition et la préparation à la pose. Pour une installation plus grande que le volume d’impression, les découpes et raccords sont placés de manière à rester cohérents avec la forme et le rendu final.',
+          'Un projet d’impression 3D grand format se prépare également en fonction de son environnement. Les dimensions finales, le poids, la stabilité, les accès au lieu d’installation et les conditions de transport peuvent influencer directement la conception de l’objet. Une sculpture destinée à une vitrine, un élément suspendu ou une structure installée dans un espace événementiel ne présentent pas les mêmes contraintes. Nous étudions notamment les points de fixation, les surfaces d’appui et les éventuels supports nécessaires pour maintenir les éléments en position.',
+          'Pour les réalisations volumineuses, la possibilité de transporter les différentes parties séparément peut également être prise en compte dès la modélisation. Nous pouvons intervenir sur l’ensemble des étapes, depuis la préparation des fichiers et la fabrication jusqu’aux finitions et à la préparation du montage. L’objectif est d’obtenir une réalisation adaptée à son emplacement, à sa durée d’utilisation et aux contraintes techniques de son installation.',
         ],
       },
     ],
