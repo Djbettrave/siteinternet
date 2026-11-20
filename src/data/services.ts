@@ -62,10 +62,10 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
-        title: 'Personnalisation UV adaptée à votre support',
+        title: 'Une impression UV adaptée à votre support, du prototype à la série',
         layout: 'wide',
         paragraphs: [
-          'Nous partons toujours du support à imprimer : sa matière, son état de surface, ses dimensions et la zone réellement disponible pour le visuel. Certains supports rigides conviennent directement. D’autres nécessitent une validation préalable, en particulier lorsqu’ils présentent une forme irrégulière, une texture marquée ou une surface courbe. Les objets cylindriques peuvent également être personnalisés : leur diamètre, leur hauteur et la zone graphique utile sont vérifiés avant production afin de définir un visuel adapté à la géométrie de l’objet.',
+          'Avant de commencer une impression UV, nous examinons l’objet à personnaliser : sa matière, son état de surface, ses dimensions et la place disponible pour le visuel. Une surface plane ne se travaille pas de la même manière qu’un objet arrondi, texturé ou présentant des reliefs. Selon le support, certaines contraintes peuvent limiter la zone imprimable ou nécessiter des essais préalables. Pour un prototype, nous pouvons commencer par imprimer le visuel sur une seule pièce. Cela permet de vérifier le rendu directement sur l’objet et d’ajuster si nécessaire la taille, les couleurs ou l’emplacement du motif. Une fois le résultat validé, nous pouvons passer à la production de plusieurs exemplaires en veillant à conserver un rendu régulier d’une pièce à l’autre. La nature du support et la complexité du marquage peuvent également influencer le temps de préparation. Le devis tient compte du nombre de pièces, de la taille du visuel et du délai demandé. Sur une série de pièces identiques, le coût de préparation se répartit sur l’ensemble des exemplaires.',
         ],
       },
       {
@@ -73,13 +73,6 @@ export const servicesData: Record<string, ServiceData> = {
         paragraphs: [
           'L’impression UV est adaptée aux objets de marque, aux maquettes de présentation, aux éléments de PLV, aux prototypes visuels, aux pièces de décor et aux supports personnalisés pour une activation ou un point de vente. Elle permet d’intégrer une identité graphique sans recourir à une étiquette ou à un adhésif rapporté.',
           'Lorsque le projet comprend une pièce imprimée en 3D, la personnalisation peut être prévue dès la fabrication afin que les zones graphiques, l’orientation et le niveau de finition soient cohérents avec le résultat attendu.',
-        ],
-      },
-      {
-        title: 'Du prototype à la production en série',
-        layout: 'wide',
-        paragraphs: [
-          'Le calage, la préparation et le coût sont adaptés au volume de votre projet. Le chiffrage dépend aussi du format du visuel et du délai souhaité. Pour les productions en quantité, le tarif est ajusté selon le volume. Un fichier graphique bien préparé et un support homogène facilitent le lancement et permettent d’optimiser le coût unitaire.',
         ],
       },
     ],
