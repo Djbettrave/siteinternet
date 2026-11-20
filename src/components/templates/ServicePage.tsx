@@ -66,6 +66,12 @@ export interface ServiceData {
       caption?: string
       hoverZoom?: boolean
     }
+    video?: {
+      src: string
+      width: number
+      height: number
+      caption: string
+    }
     maxWidth?: number
     visualSize?: 'normal' | 'compact'
     note?: {
@@ -227,7 +233,7 @@ export default function ServicePage({ service }: ServicePageProps) {
               {service.contentSections.map((section, index) => {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
-                const caption = visual?.image?.caption
+                const caption = visual?.video?.caption ?? visual?.image?.caption
                 const VisualContainer = caption ? 'figure' : 'div'
                 const stacked = visual?.layout === 'stacked'
                 const compactWidth = visual?.visualSize === 'compact'
@@ -259,6 +265,18 @@ export default function ServicePage({ service }: ServicePageProps) {
                               {visual.note.items.map((item) => <li key={item} className="flex gap-3"><span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary-600" />{item}</li>)}
                             </ul>
                           </aside>
+                        ) : visual.video ? (
+                          <video
+                            src={visual.video.src}
+                            width={visual.video.width}
+                            height={visual.video.height}
+                            aria-label={visual.alt}
+                            className="block h-auto w-full rounded-xl bg-secondary-100"
+                            controls
+                            muted
+                            playsInline
+                            preload="metadata"
+                          />
                         ) : visual.image ? (
                           <div className={`relative w-full overflow-hidden rounded-xl ${visual.image.aspect === 'portrait' ? 'aspect-[4/5]' : visual.image.aspect === 'standard' ? 'aspect-[4/3]' : visual.image.aspect === 'panoramic' ? 'aspect-[16/7]' : 'aspect-video'} ${visual.image.hoverZoom ? 'group' : ''}`}>
                             <Image
@@ -281,7 +299,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                           <ImagePlaceholder ariaLabel={visual.alt} className="aspect-[4/3]" />
                         )}
                         {caption && (
-                          <figcaption className={`mt-3 text-xs leading-relaxed text-secondary-500 ${service.slug === 'prototypage' || service.slug === 'scan-3d' ? 'text-center' : ''}`}>
+                          <figcaption className={`mt-3 text-xs leading-relaxed text-secondary-500 ${visual.video || service.slug === 'prototypage' || service.slug === 'scan-3d' ? 'text-center' : ''}`}>
                             {caption}
                           </figcaption>
                         )}

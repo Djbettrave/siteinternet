@@ -1223,7 +1223,17 @@ export const servicesData: Record<string, ServiceData> = {
       },
     ],
     inlineVisuals: [
-      { afterSection: 1, position: 'left', label: 'Visuel électronique 01', alt: 'Photo à ajouter d’un système électronique intégré à son objet final' },
+      {
+        afterSection: 1,
+        position: 'left',
+        alt: 'Démonstration du mouvement et des positions d’arrêt du mécanisme',
+        video: {
+          src: '/videos/validation-motorisation.mp4',
+          width: 826,
+          height: 480,
+          caption: 'Essai de motorisation pour valider l’orientation et les positions d’arrêt',
+        },
+      },
     ],
     process: [
       { step: 1, title: 'Cahier des charges', description: 'Définition des fonctionnalités, contraintes d\'encombrement, alimentation...' },
