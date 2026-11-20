@@ -280,7 +280,11 @@ export default function ServicePage({ service }: ServicePageProps) {
                         ) : (
                           <ImagePlaceholder ariaLabel={visual.alt} className="aspect-[4/3]" />
                         )}
-                        {caption && <figcaption className="mt-3 text-xs leading-relaxed text-secondary-500">{caption}</figcaption>}
+                        {caption && (
+                          <figcaption className={`mt-3 text-xs leading-relaxed text-secondary-500 ${service.slug === 'prototypage' ? 'text-center' : ''}`}>
+                            {caption}
+                          </figcaption>
+                        )}
                       </VisualContainer>
                     )}
                   </section>
