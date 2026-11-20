@@ -22,6 +22,7 @@ export default function ConceptionFabricationPage() {
       cards={cards}
       afterCards={{
         spaceBelow: true,
+        centeredItalic: true,
         description: 'Nos activités de conception et de fabrication couvrent des besoins très différents, depuis la création d’une pièce entièrement nouvelle jusqu’à la reproduction ou la modification d’un objet existant. Nous travaillons aussi bien sur des éléments techniques, des mécanismes et des assemblages que sur des formes plus complexes ou des réalisations créatives. Selon la nature du projet, nous pouvons réaliser une modélisation 3D, numériser une pièce, effectuer des découpes précises dans différents matériaux ou fabriquer un prototype destiné à tester une solution concrète. Chaque intervention tient compte des dimensions, des matériaux et de l’utilisation prévue.',
       }}
     />

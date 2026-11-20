@@ -37,6 +37,7 @@ interface ServiceNavigationPageProps {
   afterCards?: {
     description: string
     spaceBelow?: boolean
+    centeredItalic?: boolean
   }
 }
 
@@ -105,8 +106,8 @@ export default function ServiceNavigationPage({ eyebrow, title, intro, cards, co
           </div>
           {introPlacement === 'after-cards' && <p className="mx-auto mt-8 max-w-3xl text-center text-sm leading-relaxed text-secondary-600 md:mt-10 md:text-base">{intro}</p>}
           {afterCards && (
-            <div className={`mt-10 max-w-4xl md:mt-14${afterCards.spaceBelow ? ' pb-6' : ''}`}>
-              <p className="text-left text-sm leading-relaxed text-secondary-600 md:text-base">{afterCards.description}</p>
+            <div className={`mt-10 max-w-4xl md:mt-14${afterCards.spaceBelow ? ' pb-6' : ''}${afterCards.centeredItalic ? ' mx-auto' : ''}`}>
+              <p className={`text-sm leading-relaxed text-secondary-600 md:text-base ${afterCards.centeredItalic ? 'text-center italic' : 'text-left'}`}>{afterCards.description}</p>
             </div>
           )}
         </div>
