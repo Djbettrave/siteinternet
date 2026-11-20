@@ -1082,14 +1082,16 @@ export const servicesData: Record<string, ServiceData> = {
       {
         title: 'Intégrer une alimentation dans un dispositif existant',
         paragraphs: [
-          'Un prototype peut aussi porter sur un élément précis d’un équipement. Ici, l’intervention a consisté à concevoir une powerbank sur mesure destinée à s’intégrer dans un distributeur automatique existant, avec ses contraintes de format, de connectique et d’accès aux ports bancaires.',
-          'Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
+          'Un prototype peut aussi porter sur un élément précis d’un équipement. Ici, l’intervention a consisté à concevoir une powerbank sur mesure destinée à s’intégrer dans un distributeur automatique existant, avec ses contraintes de format, de connectique et d’accès aux ports bancaires. Cette phase permet de valider l’implantation, le raccordement et l’usage du système avant sa mise en production.',
+          'Ce type de réalisation illustre le rôle du prototypage : rendre un projet concret avant de passer à la fabrication. Il permet de tester les volumes, les usages, les assemblages et les choix techniques sur une pièce réelle. Les ajustements sont ainsi identifiés en amont, avant le lancement d’une petite série ou d’une production finale. Dans ce cas, le prototype permet aussi de vérifier l’accès à la recharge, le passage de la connectique et les conditions de maintenance une fois le système installé.',
         ],
       },
       {
+        title: 'Plusieurs compétences techniques réunies dans notre atelier',
         layout: 'wide',
         paragraphs: [
-          'Ce type de réalisation illustre le rôle du prototypage : rendre un projet concret avant de passer à la fabrication. Il permet de tester les volumes, les usages, les assemblages et les choix techniques sur une pièce réelle. Les ajustements sont ainsi identifiés en amont, avant le lancement d’une petite série ou d’une production finale. Dans ce cas, le prototype permet aussi de vérifier l’accès à la recharge, le passage de la connectique et les conditions de maintenance une fois le système installé.',
+          'Chez Inphenix System, nous disposons de plusieurs technologies de fabrication et de compétences techniques au sein de notre atelier à Suresnes. Cette polyvalence nous permet de prendre en charge des projets de prototypage variés, qu’il s’agisse de fabriquer une pièce, de développer un mécanisme ou de réaliser un prototype complet intégrant plusieurs fonctions. Grâce à nos équipements d’impression 3D et d’usinage CNC, nous pouvons travailler sur différentes formes, dimensions et matières en fonction des contraintes du projet. Nos compétences en conception 3D, en électronique et en motorisation nous permettent également de développer des systèmes fonctionnels, d’intégrer des composants et de réaliser les assemblages nécessaires. Nous ne sommes donc pas limités à une seule méthode de fabrication et pouvons combiner plusieurs techniques lorsque le projet le nécessite.',
+          'Le fait de réunir ces moyens dans un même atelier présente un avantage important pour le développement d’un prototype. Nous pouvons suivre directement chaque étape, de la conception aux premiers essais, tout en conservant la maîtrise des choix techniques et des ajustements à effectuer. Lorsqu’une pièce doit être modifiée, qu’un mécanisme doit être amélioré ou qu’une autre solution de fabrication doit être envisagée, nos équipes peuvent intervenir sans multiplier les échanges avec différents prestataires. Cette proximité entre la conception, la fabrication et les essais nous permet de gagner en réactivité, de limiter les délais entre les différentes étapes et de mieux anticiper les contraintes d’assemblage ou de fonctionnement. Elle facilite également les modifications successives, souvent indispensables pendant le prototypage. En centralisant l’ensemble de ces compétences, nous sommes en mesure de réaliser rapidement des prototypes complets, cohérents et adaptés aux exigences techniques de chaque projet, avec un interlocuteur unique et une maîtrise directe de leur fabrication.',
         ],
       },
     ],
@@ -1098,9 +1100,13 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 0,
         position: 'right',
         alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
+        visualSize: 'compact',
+        maxWidth: 550,
         image: {
           src: '/images/services/prototypage/prototype-mecanisme-defilement-film.jpeg',
           alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
+          caption: 'Prototype d’un mécanisme à roulette pour tester un concept de PLV.',
+          hoverZoom: true,
           aspect: 'standard',
           fit: 'cover',
         },
@@ -1112,6 +1118,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/prototypage/powerbank-sur-mesure-distributeur-automatique.jpeg',
           alt: 'Powerbank sur mesure intégrée à un distributeur automatique existant',
+          caption: 'Powerbank sur mesure développée pour Coty.',
           aspect: 'standard',
           fit: 'cover',
         },
