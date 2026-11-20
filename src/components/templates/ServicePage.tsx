@@ -252,6 +252,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                   : undefined
                 const reducedStackedWidth = stacked && visual?.maxWidth !== undefined
                 const metalCompactVisual = service.slug === 'impression-3d-metal' && index === 0 && visual?.visualSize === 'compact'
+                const grandFormatIntro = service.slug === 'impression-3d-grand-format' && index === 0
 
                 return (
                   <section
@@ -260,7 +261,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                     className={visual ? (stacked ? 'mb-8 w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : `grid items-center gap-x-8 gap-y-8 lg:gap-x-16 ${splitColumns} ${trailingParagraphs.length ? 'lg:gap-y-4' : ''}`) : 'w-full max-w-none'}
                   >
                     <div className={`min-w-0 ${visualOnLeft && !stacked ? 'lg:order-2' : ''} ${trailingParagraphs.length ? `${textColumn} lg:row-start-1 lg:self-end` : ''}`}>
-                      {section.title && <h2 className={`text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
+                      {section.title && <h2 className={`whitespace-pre-line text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
                         {leadingParagraphs.map((paragraph, paragraphIndex) => (
                           <p key={paragraph} className={service.slug === 'impression-3d-metal' && index === 1 && paragraphIndex === 0 ? 'pt-5' : ''}>{paragraph}</p>
@@ -268,7 +269,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                    <VisualContainer className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${compactWidth && !metalCompactVisual ? 'mx-auto' : ''} ${trailingParagraphs.length ? `${visualColumn} lg:row-span-2 lg:row-start-1` : ''}`} style={compactWidth ? { maxWidth: compactWidth, width: reducedStackedWidth ? '92%' : undefined } : undefined}>
+                    <VisualContainer className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${compactWidth && !metalCompactVisual ? 'mx-auto' : ''} ${trailingParagraphs.length ? `${visualColumn} lg:row-span-2 lg:row-start-1` : ''} ${grandFormatIntro ? 'lg:translate-x-5' : ''}`} style={compactWidth ? { maxWidth: compactWidth, width: reducedStackedWidth ? '92%' : undefined } : undefined}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>

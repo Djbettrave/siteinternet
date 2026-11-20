@@ -711,7 +711,7 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
-        title: 'Pièces décoratives et installations sur mesure',
+        title: 'Pièces décoratives et\ninstallations sur mesure',
         paragraphs: [
           'Notre équipement permet d’imprimer des pièces jusqu’à 85 cm en un seul bloc, selon leur géométrie. Pour les réalisations de dimensions supérieures, nous pouvons diviser le modèle en plusieurs éléments qui seront imprimés séparément puis assemblés. Cette méthode permet de fabriquer des sculptures et des structures de plusieurs mètres, tout en adaptant la conception des différentes parties à leur forme et à leur résistance. Les zones de jonction sont étudiées pour faciliter l’assemblage et limiter leur visibilité après finition. Selon les besoins, nous pouvons également prévoir des renforts ou des structures internes pour améliorer la rigidité de l’ensemble.',
           'Une fois les éléments réunis, différentes opérations de post-traitement peuvent être réalisées : ponçage, préparation des surfaces, application d’apprêt et peinture. Les finitions peuvent être mates, satinées ou brillantes, avec des couleurs unies, des effets métallisés ou des peintures imitant l’aspect du chrome, de l’or ou d’autres matériaux. Certains projets nécessitent une surface parfaitement lisse, tandis que d’autres conservent volontairement des textures ou des reliefs. Le choix de la finition dépend du rendu recherché, de la distance d’observation et des conditions dans lesquelles la pièce sera présentée.',
@@ -735,8 +735,8 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/completed/sculpture-boss-impression-3d-grand-format.webp',
           alt: 'Sculpture BOSS grand format imprimée en 3D et finie pour une présentation parfum',
-          aspect: 'standard',
-          fit: 'cover',
+          aspect: 'portrait',
+          fit: 'contain',
           priority: true,
         },
       },
