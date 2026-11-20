@@ -1200,26 +1200,25 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     contentSections: [
       {
-        title: 'Tout est pensé ensemble',
-        layout: 'wide',
-        paragraphs: [
-          'Une carte, un moteur ou une lumière ne se conçoivent pas séparément de l’objet qui les accueille. L’encombrement, l’alimentation, les éléments mécaniques, l’assemblage et l’usage final sont définis ensemble dès le départ.',
-          'Cette approche permet d’intégrer l’électronique directement dans une pièce, un boîtier ou une installation, afin d’obtenir un objet cohérent, fonctionnel et fabriquable.',
-        ],
-      },
-      {
         title: 'Électronique, lumière et interaction',
+        layout: 'wide',
         paragraphs: [
-          'Nous développons des systèmes qui donnent un comportement à un objet ou à une installation : éclairage LED, déclenchement par bouton ou capteur, séquences lumineuses, mouvements mécaniques, alimentation embarquée et commandes simples. Le système est défini à partir de l’expérience attendue et des contraintes de l’objet.',
-          'Cette intervention peut concerner un prototype, une maquette fonctionnelle, une PLV, une vitrine, un mobilier ou une installation de marque. L’objectif est de rendre la solution lisible, maintenable et compatible avec les conditions d’usage prévues.',
+          'Nous concevons et intégrons des systèmes électroniques pour éclairer, animer ou rendre un objet interactif. Un éclairage LED peut rester fixe, changer de couleur, varier en intensité ou suivre une séquence programmée. Nous pouvons également associer la lumière à des boutons, des capteurs ou des commandes pour déclencher différents effets. Selon le projet, nous pouvons programmer des scénarios lumineux, synchroniser plusieurs sources d’éclairage ou faire réagir une installation à la présence et aux actions du public. Nous travaillons aussi sur la diffusion de la lumière, son orientation et son intégration dans la structure afin d’obtenir un rendu homogène ou de mettre en valeur certains détails. Ces solutions peuvent être utilisées seules ou associées à un mouvement, notamment pour des vitrines, des présentoirs, des sculptures ou des installations événementielles. Selon le projet, nous étudions les composants, leur alimentation et leur pilotage pour adapter le fonctionnement à l’objet et à l’effet recherché.',
         ],
       },
       {
-        title: 'Du mécanisme au boîtier final',
+        title: 'Motorisation et mouvements sur mesure',
+        paragraphs: [
+          'Faire tourner une sculpture, déplacer un élément, créer un mouvement de va-et-vient ou faire varier l’orientation d’une pièce : nous concevons des systèmes de motorisation adaptés au mouvement recherché. Celui-ci peut être continu, répétitif ou déclenché par une commande ou un capteur. Le choix du moteur et du mécanisme dépend notamment du poids de l’élément à déplacer, de la vitesse souhaitée, de l’amplitude du mouvement et de l’espace disponible. Selon les besoins, nous pouvons concevoir des pièces mécaniques spécifiques, développer un système de transmission ou associer la motorisation à un pilotage électronique.',
+          'Avant l’intégration définitive, nous réalisons des essais pour vérifier le comportement du mécanisme et effectuer les réglages nécessaires. Nous pouvons ainsi ajuster la vitesse, les angles de rotation, la course ou les positions d’arrêt, puis contrôler la régularité et la répétabilité du mouvement. Cette phase de test et de validation permet de repérer les éventuelles contraintes mécaniques et de modifier le dispositif avant son assemblage final. Elle est particulièrement importante lorsqu’un mouvement doit être précis ou répété de nombreuses fois, comme dans le cas d’une installation animée ou d’un présentoir motorisé.',
+        ],
+      },
+      {
+        title: 'Une intégration adaptée à chaque projet',
         layout: 'wide',
         paragraphs: [
-          'Une motorisation nécessite de coordonner le moteur, la transmission, les éléments de guidage, les pièces imprimées ou usinées et la commande électronique. Nous réalisons les essais nécessaires pour vérifier les mouvements, les accès de maintenance et l’intégration des composants dans le volume disponible.',
-          'Le boîtier ou la structure peut être conçu en même temps que l’électronique. Cela évite les adaptations tardives et permet de prévoir les fixations, passages de câbles, zones de ventilation, connecteurs et finitions dès les premières versions.',
+          'L’intégration d’un mécanisme ou d’un système électronique dépend du moment où nous intervenons. Lorsque le projet est conçu dès le départ, nous pouvons prévoir les moteurs, les composants électroniques, les fixations et les passages de câbles dès l’étude de la structure. L’objet est ainsi dessiné et fabriqué en tenant compte du fonctionnement attendu.',
+          'Nous pouvons également intervenir sur une pièce ou une installation déjà existante, pour lui ajouter un mouvement, un éclairage ou une fonction interactive. Dans ce cas, nous étudions les dimensions, les matériaux, l’espace disponible et les possibilités de fixation afin de trouver une solution adaptée. Grâce à nos compétences en conception et en impression 3D, nous pouvons fabriquer des supports, des adaptateurs ou des pièces mécaniques sur mesure permettant d’intégrer le dispositif sans devoir entièrement repenser l’objet. Notre atelier nous permet de prendre en charge les différentes étapes, de l’étude technique aux essais, puis à la fabrication des pièces et à l’assemblage final.',
         ],
       },
     ],
