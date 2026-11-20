@@ -47,7 +47,7 @@ export default function Impression3DEnSeriePage() {
                   <h2 className="text-2xl font-bold tracking-[-0.035em] text-secondary-950 md:text-3xl">{section.title}</h2>
                   <div className="mt-5 space-y-4 leading-relaxed text-secondary-600">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                 </div>
-                {visual && <figure className={reverse ? 'md:order-1' : 'mx-auto w-11/12 max-w-md md:w-full'}><SeriesInlineVisual image={visual} className={visual === seriesImages[3] ? 'aspect-[3/4]' : 'aspect-[4/3]'} /><figcaption className="mt-3 text-xs leading-relaxed text-secondary-500">{visual.caption}</figcaption></figure>}
+                {visual && <figure className={reverse ? 'md:order-1' : 'mx-auto w-11/12 max-w-md md:w-full'}><SeriesInlineVisual image={visual} className={visual === seriesImages[3] ? 'aspect-[3/4]' : 'aspect-[4/3]'} /><figcaption className="mt-3 text-center text-xs leading-relaxed text-secondary-500">{visual.caption}</figcaption></figure>}
               </section>
             )
           })}

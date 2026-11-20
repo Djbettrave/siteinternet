@@ -853,7 +853,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-lion-reproduction-resine.jpeg',
           alt: 'Sculpture de lion scannée en 3D avec sa reproduction miniature en résine',
-          caption: 'Scan 3D d’une sculpture d’artiste pour une reproduction destinée à une vitrine Balmain. La crinière a été retouchée à la main sur le modèle 3D.',
+          caption: 'Scan 3D d’une sculpture d’artiste pour une reproduction destinée à une vitrine Balmain. La crinière a été retouchée à la main sur le modèle 3D',
           hoverZoom: true,
           aspect: 'portrait',
           fit: 'contain',
@@ -870,7 +870,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-serpent-miniature-resine.jpeg',
           alt: 'Sculpture de serpent scannée en 3D avec sa reproduction miniature en résine',
-          caption: 'Scan 3D d’une sculpture d’artiste, puis adaptation du modèle pour une reproduction destinée à une vitrine Balmain.',
+          caption: 'Scan 3D d’une sculpture d’artiste, puis adaptation du modèle pour une reproduction destinée à une vitrine Balmain',
           hoverZoom: true,
           aspect: 'panoramic',
           fit: 'cover',
@@ -1105,7 +1105,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/prototypage/prototype-mecanisme-defilement-film.jpeg',
           alt: 'Prototype fonctionnel d’un mécanisme de défilement à film',
-          caption: 'Prototype d’un mécanisme à roulette pour tester un concept de PLV.',
+          caption: 'Prototype d’un mécanisme à roulette pour tester un concept de PLV',
           hoverZoom: true,
           aspect: 'standard',
           fit: 'cover',
@@ -1118,7 +1118,7 @@ export const servicesData: Record<string, ServiceData> = {
         image: {
           src: '/images/services/prototypage/powerbank-sur-mesure-distributeur-automatique.jpeg',
           alt: 'Powerbank sur mesure intégrée à un distributeur automatique existant',
-          caption: 'Powerbank sur mesure développée pour Coty.',
+          caption: 'Powerbank sur mesure développée pour Coty',
           aspect: 'standard',
           fit: 'cover',
         },
