@@ -225,8 +225,11 @@ export default function ServicePage({ service }: ServicePageProps) {
               {service.contentSections.map((section, index) => {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
-                const compactWidth = visual?.maxWidth ?? 340
                 const stacked = visual?.layout === 'stacked'
+                const compactWidth = visual?.visualSize === 'compact'
+                  ? visual.maxWidth ?? (stacked ? 896 : 340)
+                  : undefined
+                const reducedStackedWidth = stacked && visual?.maxWidth !== undefined
                 const metalCompactVisual = service.slug === 'impression-3d-metal' && index === 0 && visual?.visualSize === 'compact'
 
                 return (
@@ -244,7 +247,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked && !metalCompactVisual ? 'mx-auto' : ''}`} style={visual.visualSize === 'compact' && !stacked ? { maxWidth: compactWidth } : undefined}>
+                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${compactWidth && !metalCompactVisual ? 'mx-auto' : ''}`} style={compactWidth ? { maxWidth: compactWidth, width: reducedStackedWidth ? '92%' : undefined } : undefined}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
@@ -259,7 +262,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                               alt={visual.image.alt}
                               fill
                               priority={visual.image.priority}
-                              sizes={visual.visualSize === 'compact' ? (stacked ? '(min-width: 1024px) 896px, 100vw' : `(min-width: 420px) ${compactWidth}px, 90vw`) : '(min-width: 1024px) 50vw, 100vw'}
+                              sizes={compactWidth ? (stacked ? `(min-width: 1024px) ${compactWidth}px, ${reducedStackedWidth ? '92vw' : '100vw'}` : `(min-width: 420px) ${compactWidth}px, 90vw`) : '(min-width: 1024px) 50vw, 100vw'}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                               style={{ objectPosition: visual.image.objectPosition }}
                             />

@@ -839,7 +839,7 @@ export const servicesData: Record<string, ServiceData> = {
         title: 'Du scan à la reproduction',
         layout: 'wide',
         paragraphs: [
-          'Une fois l’objet numérisé, le fichier nécessite souvent quelques retouches avant de pouvoir être utilisé. Le scanner génère un maillage 3D qui reprend les formes de l’objet, mais certaines surfaces peuvent présenter des défauts ou des zones manquantes. Nous travaillons alors sur le fichier pour nettoyer le maillage, corriger les irrégularités et reconstruire les parties qui n’ont pas pu être relevées correctement. Selon le projet, nous pouvons également modifier les dimensions, changer l’échelle ou préparer le modèle pour une impression 3D. Une sculpture peut par exemple être reproduite en miniature ou agrandie, tandis qu’une pièce mécanique peut demander un travail de modélisation supplémentaire pour retrouver certaines dimensions ou adapter sa géométrie.',
+          'Une fois l’objet numérisé, le fichier nécessite souvent quelques retouches avant de pouvoir être utilisé. Le scanner génère un maillage 3D qui reprend les formes de l’objet, mais certaines surfaces peuvent présenter des défauts ou des zones manquantes. Nous travaillons alors sur le fichier pour nettoyer le maillage, corriger les irrégularités et reconstruire les parties qui n’ont pas pu être relevées correctement. Selon le projet, nous pouvons également modifier les dimensions, changer l’échelle ou préparer le modèle pour une impression 3D. Une sculpture peut par exemple être reproduite en miniature ou agrandie, tandis qu’une pièce mécanique peut demander un travail de modélisation supplémentaire pour retrouver certaines dimensions ou adapter sa géométrie. Si certains détails risquent de disparaître à l’impression, nous pouvons les renforcer légèrement pour qu’ils restent visibles sur la pièce finale.',
         ],
       },
       {
@@ -869,6 +869,7 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 1,
         position: 'left',
         visualSize: 'compact',
+        maxWidth: 740,
         alt: 'Scan 3D d’un serpent et reproduction miniature en résine',
         layout: 'stacked',
         image: {
