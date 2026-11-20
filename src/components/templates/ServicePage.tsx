@@ -52,7 +52,7 @@ export interface ServiceData {
   inlineVisuals?: {
     afterSection: number
     position: 'left' | 'right'
-    layout?: 'split' | 'stacked'
+    layout?: 'split' | 'stacked' | 'split-third'
     alt: string
     label?: string
     image?: {
@@ -236,6 +236,11 @@ export default function ServicePage({ service }: ServicePageProps) {
                 const caption = visual?.video?.caption ?? visual?.image?.caption
                 const VisualContainer = caption ? 'figure' : 'div'
                 const stacked = visual?.layout === 'stacked'
+                const thirdWidth = visual?.layout === 'split-third'
+                const visualOnLeft = visual?.position === 'left'
+                const splitColumns = thirdWidth
+                  ? visualOnLeft ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]' : 'lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]'
+                  : 'lg:grid-cols-2'
                 const compactWidth = visual?.visualSize === 'compact'
                   ? visual.maxWidth ?? (stacked ? 896 : 340)
                   : undefined
@@ -246,9 +251,9 @@ export default function ServicePage({ service }: ServicePageProps) {
                   <section
                     key={section.title || `section-${index}`}
                     data-service-section={index}
-                    className={visual ? (stacked ? 'mb-8 w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : 'grid items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:gap-16') : 'w-full max-w-none'}
+                    className={visual ? (stacked ? 'mb-8 w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : `grid items-center gap-8 lg:gap-16 ${splitColumns}`) : 'w-full max-w-none'}
                   >
-                    <div className={`min-w-0 ${visual?.position === 'left' && !stacked ? 'lg:order-2' : ''}`}>
+                    <div className={`min-w-0 ${visualOnLeft && !stacked ? 'lg:order-2' : ''}`}>
                       {section.title && <h2 className={`text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
                         {section.paragraphs.map((paragraph, paragraphIndex) => (
@@ -284,7 +289,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                               alt={visual.image.alt}
                               fill
                               priority={visual.image.priority}
-                              sizes={compactWidth ? (stacked ? `(min-width: 1024px) ${compactWidth}px, ${reducedStackedWidth ? '92vw' : '100vw'}` : `(min-width: 420px) ${compactWidth}px, 90vw`) : '(min-width: 1024px) 50vw, 100vw'}
+                              sizes={compactWidth ? (stacked ? `(min-width: 1024px) ${compactWidth}px, ${reducedStackedWidth ? '92vw' : '100vw'}` : `(min-width: 420px) ${compactWidth}px, 90vw`) : `(min-width: 1024px) ${thirdWidth ? '33vw' : '50vw'}, 100vw`}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''} ${visual.image.hoverZoom ? 'motion-safe:transition motion-safe:duration-500 motion-safe:group-hover:scale-[1.035]' : ''}`}
                               style={{ objectPosition: visual.image.objectPosition }}
                             />

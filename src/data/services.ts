@@ -961,26 +961,26 @@ export const servicesData: Record<string, ServiceData> = {
     ],
     contentSections: [
       {
-        title: 'Concevoir une pièce prête à être fabriquée',
+        title: 'De la pièce technique aux formes les plus complexes',
         paragraphs: [
-          'Un croquis, une photo, un plan ou une idée ne suffisent pas toujours à lancer une fabrication. La modélisation 3D transforme cette intention en une pièce définie dans ses formes, ses dimensions, ses assemblages et son usage réel.',
-          'Le fichier est ensuite pensé selon le procédé de fabrication final : impression 3D, usinage, moulage ou assemblage. Cette préparation évite de découvrir trop tard une contrainte de fabrication et permet de valider la pièce avant sa production.',
+          'Nous réalisons des modélisations 3D pour des projets très différents, depuis une petite pièce mécanique jusqu’à une sculpture aux formes particulièrement complexes. Pour les éléments techniques, nous travaillons sur les dimensions, les épaisseurs, les fixations, les emboîtements et les différentes pièces qui composent un assemblage. Il peut s’agir de concevoir un boîtier, un mécanisme, un support spécifique, une pièce de remplacement ou un objet entièrement nouveau. Nous pouvons également modéliser plusieurs composants qui doivent fonctionner ensemble, vérifier leur positionnement et prévoir les espaces nécessaires à leur assemblage.',
+          'Nous travaillons aussi sur des formes beaucoup plus libres, où les proportions, les courbes et les détails prennent une place importante. Une sculpture, un objet décoratif, un flacon ou un présentoir peuvent nécessiter un travail approfondi sur les volumes et les surfaces. Certaines formes présentent des reliefs très fins, des courbures irrégulières, des transitions complexes ou des détails qu’il faut reprendre individuellement. Selon la forme recherchée, nous travaillons avec des logiciels de CAO comme Fusion 360 ou Rhino, ou avec Blender pour la modélisation polygonale et la sculpture numérique. Ces différentes méthodes nous permettent de travailler aussi bien sur des formes géométriques précises que sur des volumes organiques, asymétriques ou très détaillés.',
+          'Certains projets réunissent d’ailleurs ces deux approches. Une sculpture peut intégrer une structure intérieure, des points de fixation ou des logements destinés à recevoir des composants électroniques et mécaniques. À l’inverse, un objet technique peut présenter une enveloppe extérieure aux formes très travaillées. Nous pouvons alors concevoir séparément les différentes parties du modèle 3D, tout en conservant une cohérence entre son apparence, ses dimensions et sa construction.',
         ],
       },
       {
-        title: 'À partir d’un objet, d’un croquis ou d’une intention',
+        title: 'Modéliser à partir d’un croquis, d’une photo ou d’un objet existant',
         layout: 'wide',
         paragraphs: [
-          'Le point de départ peut être très différent selon les projets : un objet existant à adapter, des photos de référence, une esquisse, un plan coté ou simplement une intention de forme. Nous clarifions les dimensions, les parties visibles, les contraintes d’assemblage et les éléments qui doivent rester modifiables.',
-          'La modélisation ne consiste pas seulement à reproduire une silhouette. Elle organise les volumes, les épaisseurs, les raccords et les détails de façon à ce que le projet puisse ensuite être fabriqué et contrôlé.',
+          'Nous n’avons pas nécessairement besoin d’un plan technique complet pour commencer une modélisation 3D. Certains projets nous sont présentés avec des dessins cotés, d’autres avec quelques photographies, une esquisse à main levée, un objet de référence ou simplement une description de ce qui est recherché. Nous pouvons travailler à partir de ces différents éléments pour construire progressivement le modèle. Lorsqu’une référence manque de précision, il faut parfois interpréter certaines formes, retrouver les proportions ou déterminer comment plusieurs volumes se rejoignent. Une photographie, par exemple, ne permet pas toujours de connaître la profondeur d’un objet ou la forme exacte de ses parties cachées. Nous pouvons alors nous appuyer sur plusieurs vues, des mesures complémentaires ou des éléments de comparaison pour reconstituer les volumes. Une première version du modèle permet ensuite de vérifier les proportions et d’apporter les corrections nécessaires. Ce travail peut demander plusieurs ajustements, notamment lorsque l’objet présente des formes irrégulières ou des détails difficiles à distinguer sur les références fournies.',
+          'Nous intervenons également sur des fichiers 3D déjà existants. Il peut s’agir de modifier certaines dimensions, de reprendre une géométrie, d’ajouter des détails, de simplifier une forme trop complexe ou de concevoir de nouveaux éléments autour d’un modèle fourni. Nous pouvons aussi retravailler un fichier présentant des défauts de géométrie, des surfaces incomplètes ou des parties qui ne correspondent plus aux dimensions souhaitées. Selon l’état du modèle et les modifications demandées, nous reprenons uniquement les zones concernées ou reconstruisons certaines parties. Il n’est donc pas toujours nécessaire de recommencer toute la modélisation lorsqu’un projet évolue.',
         ],
       },
       {
-        title: 'Un fichier préparé pour la suite du projet',
+        title: 'Un modèle 3D qui peut évoluer avec le projet',
         layout: 'wide',
         paragraphs: [
-          'Une fois le modèle défini, il peut servir à produire une pièce unique, un prototype, une série, une maquette de présentation ou un élément de décor. Les fichiers sont préparés selon la technologie retenue et les besoins du projet : découpe, impression 3D, usinage, moulage ou intégration dans un assemblage.',
-          'Des validations intermédiaires permettent d’ajuster la forme et les proportions avant fabrication. Lorsque cela est utile, un rendu ou un prototype peut compléter cette étape pour valider le projet sur un objet réel.',
+          'Une modélisation 3D n’est pas nécessairement définitive dès sa première version. Nous pouvons faire évoluer les dimensions, revoir certaines proportions, modifier des détails ou ajouter des éléments au fur et à mesure que le projet se précise. Lorsqu’un objet comporte plusieurs composants, nous pouvons les modéliser séparément pour faciliter leur positionnement, leur modification et leur assemblage numérique. Il est également possible de créer plusieurs variantes d’une même pièce, par exemple pour comparer différentes formes, tester un autre système de fixation ou adapter un modèle à plusieurs dimensions. Selon son utilisation, le fichier 3D peut ensuite être préparé pour une impression 3D, un usinage CNC, un moulage ou une autre méthode de fabrication. Certaines géométries demandent des adaptations spécifiques, notamment lorsqu’elles comportent des parties très fines, des éléments imbriqués ou des formes difficiles à produire en une seule pièce. Nous pouvons également fournir les modèles dans différents formats, selon les logiciels et les besoins du projet. Le fichier peut ainsi être repris, modifié ou utilisé pour une fabrication dans notre atelier comme chez un autre prestataire.',
         ],
       },
     ],
@@ -988,13 +988,13 @@ export const servicesData: Record<string, ServiceData> = {
       {
         afterSection: 1,
         position: 'left',
+        layout: 'split-third',
         alt: 'Sac de référence et son modèle 3D en cours de conception',
         image: {
           src: '/images/services/modelisation-3d/modelisation-sac-reference-modele-3d.jpeg',
           alt: 'Sac de référence et son modèle 3D en cours de conception',
           aspect: 'landscape',
         },
-        visualSize: 'compact',
       },
     ],
     process: [
