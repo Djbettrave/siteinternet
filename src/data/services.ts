@@ -986,6 +986,7 @@ export const servicesData: Record<string, ServiceData> = {
     inlineVisuals: [
       {
         afterSection: 1,
+        mobileAfterParagraph: 1,
         position: 'left',
         layout: 'split-third',
         alt: 'Sac de référence et son modèle 3D en cours de conception',

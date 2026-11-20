@@ -51,6 +51,7 @@ export interface ServiceData {
   }[]
   inlineVisuals?: {
     afterSection: number
+    mobileAfterParagraph?: number
     position: 'left' | 'right'
     layout?: 'split' | 'stacked' | 'split-third'
     alt: string
@@ -238,6 +239,11 @@ export default function ServicePage({ service }: ServicePageProps) {
                 const stacked = visual?.layout === 'stacked'
                 const thirdWidth = visual?.layout === 'split-third'
                 const visualOnLeft = visual?.position === 'left'
+                const mobileAfterParagraph = visual?.mobileAfterParagraph
+                const leadingParagraphs = section.paragraphs.slice(0, mobileAfterParagraph)
+                const trailingParagraphs = mobileAfterParagraph === undefined ? [] : section.paragraphs.slice(mobileAfterParagraph)
+                const textColumn = visualOnLeft ? 'lg:col-start-2' : 'lg:col-start-1'
+                const visualColumn = visualOnLeft ? 'lg:col-start-1' : 'lg:col-start-2'
                 const splitColumns = thirdWidth
                   ? visualOnLeft ? 'lg:grid-cols-[minmax(0,1fr)_minmax(0,2fr)]' : 'lg:grid-cols-[minmax(0,2fr)_minmax(0,1fr)]'
                   : 'lg:grid-cols-2'
@@ -251,18 +257,18 @@ export default function ServicePage({ service }: ServicePageProps) {
                   <section
                     key={section.title || `section-${index}`}
                     data-service-section={index}
-                    className={visual ? (stacked ? 'mb-8 w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : `grid items-center gap-8 lg:gap-16 ${splitColumns}`) : 'w-full max-w-none'}
+                    className={visual ? (stacked ? 'mb-8 w-full space-y-8' : metalCompactVisual ? 'mb-12 grid items-center gap-8 lg:grid-cols-[380px_minmax(0,1fr)] lg:justify-start lg:gap-12' : `grid items-center gap-x-8 gap-y-8 lg:gap-x-16 ${splitColumns} ${trailingParagraphs.length ? 'lg:gap-y-4' : ''}`) : 'w-full max-w-none'}
                   >
-                    <div className={`min-w-0 ${visualOnLeft && !stacked ? 'lg:order-2' : ''}`}>
+                    <div className={`min-w-0 ${visualOnLeft && !stacked ? 'lg:order-2' : ''} ${trailingParagraphs.length ? `${textColumn} lg:row-start-1 lg:self-end` : ''}`}>
                       {section.title && <h2 className={`text-2xl font-bold text-secondary-900 md:text-3xl ${metalCompactVisual ? 'mb-3' : 'mb-5'}`}>{section.title}</h2>}
                       <div className="space-y-4 text-secondary-600 leading-relaxed">
-                        {section.paragraphs.map((paragraph, paragraphIndex) => (
+                        {leadingParagraphs.map((paragraph, paragraphIndex) => (
                           <p key={paragraph} className={service.slug === 'impression-3d-metal' && index === 1 && paragraphIndex === 0 ? 'pt-5' : ''}>{paragraph}</p>
                         ))}
                       </div>
                     </div>
                     {visual && (
-                    <VisualContainer className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${compactWidth && !metalCompactVisual ? 'mx-auto' : ''}`} style={compactWidth ? { maxWidth: compactWidth, width: reducedStackedWidth ? '92%' : undefined } : undefined}>
+                    <VisualContainer className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${compactWidth && !metalCompactVisual ? 'mx-auto' : ''} ${trailingParagraphs.length ? `${visualColumn} lg:row-span-2 lg:row-start-1` : ''}`} style={compactWidth ? { maxWidth: compactWidth, width: reducedStackedWidth ? '92%' : undefined } : undefined}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
@@ -309,6 +315,11 @@ export default function ServicePage({ service }: ServicePageProps) {
                           </figcaption>
                         )}
                       </VisualContainer>
+                    )}
+                    {trailingParagraphs.length > 0 && (
+                      <div className={`min-w-0 space-y-4 leading-relaxed text-secondary-600 ${textColumn} lg:row-start-2 lg:self-start`}>
+                        {trailingParagraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+                      </div>
                     )}
                   </section>
                 )
