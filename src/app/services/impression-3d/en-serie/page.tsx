@@ -36,8 +36,8 @@ export default function Impression3DEnSeriePage() {
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-28">
-        <div className="container-custom max-w-6xl space-y-20 md:space-y-28">
+      <section className="service-section-spacing bg-white">
+        <div className="container-custom max-w-6xl space-y-16 md:space-y-20">
           {service.contentSections?.map((section, index) => {
             const visual = index === 0 ? seriesImages[3] : index === 2 ? seriesImages[4] : undefined
             const reverse = index === 2
@@ -47,16 +47,16 @@ export default function Impression3DEnSeriePage() {
                   <h2 className="text-2xl font-bold tracking-[-0.035em] text-secondary-950 md:text-3xl">{section.title}</h2>
                   <div className="mt-5 space-y-4 leading-relaxed text-secondary-600">{section.paragraphs.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}</div>
                 </div>
-                {visual && <figure className={reverse ? 'md:order-1' : ''}><SeriesInlineVisual image={visual} className={visual === seriesImages[3] ? 'aspect-[3/4]' : 'aspect-[4/3]'} /><figcaption className="mt-3 text-xs leading-relaxed text-secondary-500">{visual.caption}</figcaption></figure>}
+                {visual && <figure className={reverse ? 'md:order-1' : 'mx-auto w-11/12 max-w-md md:w-full'}><SeriesInlineVisual image={visual} className={visual === seriesImages[3] ? 'aspect-[3/4]' : 'aspect-[4/3]'} /><figcaption className="mt-3 text-xs leading-relaxed text-secondary-500">{visual.caption}</figcaption></figure>}
               </section>
             )
           })}
         </div>
       </section>
 
-      <section className="bg-secondary-50 py-24"><div className="container-custom"><div className="text-center"><h2 className="section-title">Spécifications techniques</h2><p className="section-subtitle mx-auto">Les caractéristiques clés de cette production.</p></div><div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl border border-secondary-200 bg-white shadow-sm">{service.specs?.map((spec, index) => <div key={spec.label} className={`flex items-center justify-between gap-5 px-6 py-5 ${index !== service.specs!.length - 1 ? 'border-b border-secondary-100' : ''}`}><div className="flex items-center gap-3"><span className="h-2 w-2 flex-shrink-0 rounded-full bg-primary-500" /><span className="font-medium text-secondary-700">{spec.label}</span></div><span className="rounded-lg bg-secondary-100 px-3 py-1 text-right text-sm font-bold text-secondary-900">{spec.value}</span></div>)}</div></div></section>
+      <section className="service-section-spacing bg-secondary-50"><div className="container-custom"><div className="text-center"><h2 className="section-title">Spécifications techniques</h2><p className="section-subtitle mx-auto">Les caractéristiques clés de cette production.</p></div><div className="mx-auto mt-12 max-w-3xl overflow-hidden rounded-2xl border border-secondary-200 bg-white shadow-sm">{service.specs?.map((spec, index) => <div key={spec.label} className={`flex items-center justify-between gap-5 px-6 py-5 ${index !== service.specs!.length - 1 ? 'border-b border-secondary-100' : ''}`}><div className="flex items-center gap-3"><span className="h-2 w-2 flex-shrink-0 rounded-full bg-primary-500" /><span className="font-medium text-secondary-700">{spec.label}</span></div><span className="rounded-lg bg-secondary-100 px-3 py-1 text-right text-sm font-bold text-secondary-900">{spec.value}</span></div>)}</div></div></section>
 
-      <section className="bg-white py-20 md:py-24"><div className="container-custom"><div className="mx-auto max-w-3xl"><h2 className="text-center text-3xl font-bold tracking-[-0.04em] text-secondary-950 md:text-4xl">Questions fréquentes</h2><div className="mt-10 space-y-3">{service.faqs.map((faq) => <details key={faq.question} className="group border border-secondary-200 bg-white"><summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 font-semibold text-secondary-900"><span>{faq.question}</span><span className="text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p className="px-6 pb-6 leading-relaxed text-secondary-600">{faq.answer}</p></details>)}</div></div></div></section>
+      <section className="service-section-spacing bg-white"><div className="container-custom"><div className="mx-auto max-w-3xl"><h2 className="text-center text-3xl font-bold tracking-[-0.04em] text-secondary-950 md:text-4xl">Questions fréquentes</h2><div className="mt-10 space-y-3">{service.faqs.map((faq) => <details key={faq.question} className="group border border-secondary-200 bg-white"><summary className="flex cursor-pointer list-none items-center justify-between gap-5 px-6 py-5 font-semibold text-secondary-900"><span>{faq.question}</span><span className="text-xl transition-transform group-open:rotate-45" aria-hidden="true">+</span></summary><p className="px-6 pb-6 leading-relaxed text-secondary-600">{faq.answer}</p></details>)}</div></div></div></section>
 
     </>
   )

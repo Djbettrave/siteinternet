@@ -832,21 +832,21 @@ export const servicesData: Record<string, ServiceData> = {
       {
         title: 'De l’objet existant à un fichier exploitable',
         paragraphs: [
-          'Le scan 3D permet de récupérer la géométrie d’un objet réel lorsqu’il n’existe plus de plan, de fichier ou de modèle numérique exploitable. Il constitue une base utile pour reproduire une pièce, l’adapter, l’archiver ou engager un travail de rétro-ingénierie.',
-          'Le relevé numérique conserve les proportions, les volumes et les détails utiles du modèle. Il permet de repartir d’une pièce réelle, y compris lorsqu’elle ne peut pas être mesurée directement dans toutes ses zones.',
+          'Le scan 3D permet de numériser un objet physique lorsqu’aucun plan ou fichier 3D n’est disponible. Il peut s’agir d’une sculpture, d’un élément décoratif, d’une pièce mécanique ou d’un objet ancien que l’on souhaite reproduire ou modifier. Dans notre atelier, nous utilisons cette méthode pour relever les formes, les dimensions et les détails accessibles de l’objet. Selon sa complexité, nous pouvons compléter le scan par des mesures manuelles. Le fichier obtenu peut ensuite servir à réaliser une reproduction, modifier certaines parties ou reconstruire un modèle en CAO.',
         ],
       },
       {
         title: 'Du scan à la reproduction',
         layout: 'wide',
         paragraphs: [
-          'Après la numérisation, le maillage est nettoyé, corrigé et préparé selon sa destination. Le fichier peut ensuite servir à une impression 3D, à une modélisation CAO, à une adaptation dimensionnelle ou à la création d’une nouvelle pièce. Cette préparation permet aussi de conserver les détails du modèle d’origine, puis d’adapter la pièce à l’échelle ou à l’usage recherché. Le fichier devient une base fiable pour reproduire, modifier ou développer un nouvel élément à partir de l’existant.',
+          'Une fois l’objet numérisé, le fichier nécessite souvent quelques retouches avant de pouvoir être utilisé. Le scanner génère un maillage 3D qui reprend les formes de l’objet, mais certaines surfaces peuvent présenter des défauts ou des zones manquantes. Nous travaillons alors sur le fichier pour nettoyer le maillage, corriger les irrégularités et reconstruire les parties qui n’ont pas pu être relevées correctement. Selon le projet, nous pouvons également modifier les dimensions, changer l’échelle ou préparer le modèle pour une impression 3D. Une sculpture peut par exemple être reproduite en miniature ou agrandie, tandis qu’une pièce mécanique peut demander un travail de modélisation supplémentaire pour retrouver certaines dimensions ou adapter sa géométrie.',
         ],
       },
       {
-        title: 'Un scan adapté aux contraintes de l’objet',
+        title: 'Chaque objet demande une approche différente',
         paragraphs: [
-          'Avant toute numérisation, nous évaluons la taille de l’objet, sa matière, son état de surface et l’usage prévu du fichier. Les surfaces brillantes, transparentes ou très sombres, comme les zones difficiles d’accès, peuvent nécessiter une préparation ou une méthode de captation spécifique. Ce travail en amont permet de définir le niveau de détail utile, d’anticiper les limites du relevé et, si nécessaire, de prévoir une reprise de modélisation plutôt qu’un simple scan.',
+          'Tous les objets ne se numérisent pas de la même manière. Avant de commencer, nous examinons leur taille, leur forme, leur matière et leur état de surface. Une sculpture avec de nombreux reliefs, une pièce mécanique comportant des cavités ou un objet aux surfaces brillantes ne présentent pas les mêmes difficultés. Les matières transparentes ou réfléchissantes sont notamment plus compliquées à scanner, tout comme les parties creuses, les recoins et les zones difficilement accessibles. Selon les cas, nous devons repositionner l’objet, réaliser plusieurs prises de vue ou préparer certaines surfaces pour obtenir un relevé suffisamment complet.',
+          'Le travail dépend aussi de ce que l’on souhaite faire du fichier. Pour reproduire un élément décoratif, nous nous concentrons principalement sur la restitution des formes et des détails visibles. Pour une pièce mécanique destinée à s’assembler avec d’autres composants, il faut également vérifier certaines dimensions et prévoir les ajustements nécessaires. Lorsque des parties n’ont pas pu être numérisées, nous pouvons les reconstruire à partir des mesures disponibles ou les reprendre en modélisation 3D. Dans notre atelier de Suresnes, nous réalisons ces différentes opérations en fonction de l’objet et du résultat attendu, que le fichier soit destiné à une reproduction, une modification ou une fabrication par impression 3D.',
         ],
       },
     ],
@@ -855,6 +855,7 @@ export const servicesData: Record<string, ServiceData> = {
         afterSection: 0,
         position: 'right',
         visualSize: 'compact',
+        maxWidth: 380,
         alt: 'Scan 3D d’une sculpture et reproduction miniature en résine',
         image: {
           src: '/images/projects/completed/scan-3d-sculpture-lion-reproduction-resine.jpeg',

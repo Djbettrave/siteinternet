@@ -64,6 +64,7 @@ export interface ServiceData {
       objectPosition?: string
       priority?: boolean
     }
+    maxWidth?: number
     visualSize?: 'normal' | 'compact'
     note?: {
       title: string
@@ -187,7 +188,7 @@ export default function ServicePage({ service }: ServicePageProps) {
       )}
 
       {/* Features */}
-      {showFeatures && <section className="py-24 bg-white">
+      {showFeatures && <section className="service-section-spacing bg-white">
         <div className="container-custom">
           <div className="text-center mb-16">
             <h2 className="section-title">Ce que nous proposons</h2>
@@ -218,12 +219,13 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* SEO content */}
       {service.contentSections && (
-        <section className="py-20 bg-white">
+        <section className="service-section-spacing bg-white">
           <div className="container-custom max-w-7xl">
             <div className={service.slug === 'impression-3d-grand-format' ? 'space-y-16 lg:space-y-24' : 'space-y-16'}>
               {service.contentSections.map((section, index) => {
                 const visual = service.inlineVisuals?.find((item) => item.afterSection === index)
 
+                const compactWidth = visual?.maxWidth ?? 340
                 const stacked = visual?.layout === 'stacked'
                 const metalCompactVisual = service.slug === 'impression-3d-metal' && index === 0 && visual?.visualSize === 'compact'
 
@@ -242,7 +244,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                       </div>
                     </div>
                     {visual && (
-                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked ? (metalCompactVisual ? 'mx-0 max-w-[340px]' : 'mx-auto max-w-[340px]') : ''}`}>
+                    <div className={`w-full min-w-0 ${visual.position === 'left' && !stacked ? 'lg:order-1' : ''} ${stacked ? (visual.visualSize === 'compact' ? 'mx-auto max-w-4xl' : '') : ''} ${visual.visualSize === 'compact' && !stacked && !metalCompactVisual ? 'mx-auto' : ''}`} style={visual.visualSize === 'compact' && !stacked ? { maxWidth: compactWidth } : undefined}>
                         {visual.note ? (
                           <aside className="rounded-xl border border-secondary-200 bg-secondary-50 p-6">
                             <p className="text-sm font-semibold tracking-[-0.01em] text-secondary-900">{visual.note.title}</p>
@@ -257,7 +259,7 @@ export default function ServicePage({ service }: ServicePageProps) {
                               alt={visual.image.alt}
                               fill
                               priority={visual.image.priority}
-                              sizes={visual.visualSize === 'compact' ? (stacked ? '(min-width: 1024px) 896px, 100vw' : '(min-width: 400px) 340px, 90vw') : '(min-width: 1024px) 50vw, 100vw'}
+                              sizes={visual.visualSize === 'compact' ? (stacked ? '(min-width: 1024px) 896px, 100vw' : `(min-width: 420px) ${compactWidth}px, 90vw`) : '(min-width: 1024px) 50vw, 100vw'}
                               className={`${visual.image.fit === 'cover' ? 'object-cover' : 'object-contain'} ${visual.image.tone === 'soft' ? 'brightness-[0.94] contrast-[1.02]' : ''}`}
                               style={{ objectPosition: visual.image.objectPosition }}
                             />
@@ -283,7 +285,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* Specs */}
       {service.specs && showSpecs && (
-        <section className="py-24 bg-secondary-50">
+        <section className="service-section-spacing bg-secondary-50">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="section-title">{service.specsTitle || 'Spécifications techniques'}</h2>
@@ -340,7 +342,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* Materials */}
       {service.materials && (
-        <section className="py-24 bg-white">
+        <section className="service-section-spacing bg-white">
           <div className="container-custom">
             <div className="text-center mb-12">
               <h2 className="section-title">Matériaux disponibles</h2>
@@ -367,7 +369,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* Process */}
       {service.process && showProcess && (
-        <section className="py-24 bg-white">
+        <section className="service-section-spacing bg-white">
           <div className="container-custom">
             <div className="text-center mb-16">
               <h2 className="section-title">Notre processus</h2>
@@ -400,7 +402,7 @@ export default function ServicePage({ service }: ServicePageProps) {
 
       {/* FAQ */}
       {showFaqs && (
-        <section className="py-24 bg-secondary-50">
+        <section className="service-section-spacing bg-secondary-50">
           <div className="container-custom">
             <div className="max-w-3xl mx-auto">
               <div className="text-center mb-12">
