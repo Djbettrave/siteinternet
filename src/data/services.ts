@@ -1214,6 +1214,13 @@ export const servicesData: Record<string, ServiceData> = {
         ],
       },
       {
+        title: 'Installations et murs cinétiques',
+        layout: 'wide',
+        paragraphs: [
+          'Nous concevons des installations cinétiques dans lesquelles plusieurs éléments motorisés se déplacent de manière coordonnée pour créer des animations en mouvement. Ces dispositifs peuvent prendre différentes formes, comme des murs composés de modules qui avancent, reculent ou pivotent, faisant évoluer les reliefs et les volumes au fil d’une séquence programmée. Nous réalisons également des systèmes cinétiques à LED, où les mouvements des éléments et les animations lumineuses sont synchronisés pour créer des effets visuels dynamiques. Chaque installation nécessite une étude des mécanismes, des moteurs et du pilotage électronique afin de coordonner les déplacements et de garantir leur précision. Nous pouvons développer ces systèmes à différentes échelles, depuis de petits dispositifs jusqu’à des murs cinétiques de grandes dimensions, en adaptant la conception mécanique et électronique aux contraintes du projet. Ces réalisations trouvent notamment leur place dans les vitrines, les espaces commerciaux, les scénographies et les installations événementielles.',
+        ],
+      },
+      {
         title: 'Une intégration adaptée à chaque projet',
         layout: 'wide',
         paragraphs: [
