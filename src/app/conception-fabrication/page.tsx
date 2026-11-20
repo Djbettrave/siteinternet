@@ -21,7 +21,7 @@ export default function ConceptionFabricationPage() {
       intro="À Paris et en Île-de-France, Inphenix System accompagne vos projets sur mesure : scan 3D, modélisation, découpe laser et prototypage. Votre projet, de l’idée à sa fabrication."
       cards={cards}
       afterCards={{
-        description: 'Nos activités de conception et de fabrication couvrent des besoins très différents, depuis la création d’une pièce entièrement nouvelle jusqu’à la reproduction ou la modification d’un objet existant. Nous travaillons aussi bien sur des éléments techniques, des mécanismes et des assemblages que sur des formes plus complexes ou des réalisations créatives. Selon la nature du projet, nous pouvons réaliser une modélisation 3D, numériser une pièce, effectuer des découpes précises dans différents matériaux ou fabriquer un prototype destiné à tester une solution concrète. Chaque intervention tient compte des dimensions, des matériaux, de l’utilisation prévue et des contraintes propres à l’objet à réaliser.',
+        description: 'Nos activités de conception et de fabrication couvrent des besoins très différents, depuis la création d’une pièce entièrement nouvelle jusqu’à la reproduction ou la modification d’un objet existant. Nous travaillons aussi bien sur des éléments techniques, des mécanismes et des assemblages que sur des formes plus complexes ou des réalisations créatives. Selon la nature du projet, nous pouvons réaliser une modélisation 3D, numériser une pièce, effectuer des découpes précises dans différents matériaux ou fabriquer un prototype destiné à tester une solution concrète. Chaque intervention tient compte des dimensions, des matériaux et de l’utilisation prévue.',
       }}
     />
   )
